@@ -1,0 +1,20 @@
+== ethalsurveillance
+
+=== Description
+Plugin servant à la surveillance d'un equipement.
+
+'''
+=== Présentation
+include::partie_1.asciidoc[]
+
+'''
+=== Configuration
+include::partie_2.asciidoc[]
+
+'''
+=== Widget
+include::partie_3.asciidoc[]
+
+'''
+=== FAQ
+include::faq.asciidoc[]
