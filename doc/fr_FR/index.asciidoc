@@ -1,4 +1,4 @@
-== ethalsurveillance
+== Plugin ethal surveillance
 
 === Description
 Plugin servant à la surveillance d'un equipement.
