@@ -12,31 +12,31 @@ Commande de l'equipement de type "numeric" :
 
 image::../images/image2.png[]
 
-Alarme : status d'alarme de l'équipement (ALARME = 1, OFF = 0)
-Démarré : heure démarrage (passage Etat à ON) de l'équipement
-Arreté : heure d'arret (passage Etat à OFF) de l'équipement	
-Temps Fct : Temps de fonctionnement de l'équipement en seconde
-Temps Fct (H:M:S) : Temps de fonctionnement de l'équipement au format Heure:Minute:Seconde
-Etat : status d'etat de l'équipement (ON = 1, OFF = 0)
-Compteur : compte le nombre de passage de l'etat de l'équipement de OFF à ON  
-RAZ Compteur : remise à zero du compteur
+** Alarme : status d'alarme de l'équipement (ALARME = 1, OFF = 0)
+** Démarré : heure démarrage (passage Etat à ON) de l'équipement
+** Arreté : heure d'arret (passage Etat à OFF) de l'équipement	
+** Temps Fct : Temps de fonctionnement de l'équipement en seconde
+** Temps Fct (H:M:S) : Temps de fonctionnement de l'équipement au format Heure:Minute:Seconde
+** Etat : status d'etat de l'équipement (ON = 1, OFF = 0)
+** Compteur : compte le nombre de passage de l'etat de l'équipement de OFF à ON  
+** RAZ Compteur : remise à zero du compteur
 
 Lors du passage à de l'etat de OFF à ON, les commmandes suivantes sont mises à jour comme suit :
-Alarme : passage à OFF
-Demarré : heure courante du démarrage
-Arreté : '-'
-Tempts Fct : 0 seconde 
-Tempts Fct (H:M:S) : '-'
-Compteur : Incrémenter de 1
-Etat : Passage à ON
+** Alarme : passage à OFF
+** Demarré : heure courante du démarrage
+** Arreté : '-'
+** Tempts Fct : 0 seconde 
+** Tempts Fct (H:M:S) : '-'
+** Compteur : Incrémenter de 1
+** Etat : Passage à ON
 
 Lors du passage à de l'etat de ON à OFF, les valeurs des commandes suivantes sont mises à jour comme suit :
-Alarme : voir ci dessous
-Demarré : pas de changement
-Arreté : heure courante de l'arret
-Tempts Fct : heure d'arret moins heure de démarrage en seconde 
-Tempts Fct (H:M:S) : heure d'arret moins heure de démarrage au format Heure:Minute:Seconde  
-Compteur : pas de changement
-Etat : Passage à OFF
+** Alarme : voir ci dessous
+** Demarré : pas de changement
+** Arreté : heure courante de l'arret
+** Tempts Fct : heure d'arret moins heure de démarrage en seconde 
+** Tempts Fct (H:M:S) : heure d'arret moins heure de démarrage au format Heure:Minute:Seconde  
+** Compteur : pas de changement
+** Etat : Passage à OFF
 
 
