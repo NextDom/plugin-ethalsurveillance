@@ -1,4 +1,4 @@
-=== Configuration
+= Configuration
 
 == Equipement
 
@@ -21,7 +21,7 @@ image::../images/image2.png[]
 * Compteur : compte le nombre de passage de l'etat de l'équipement de OFF à ON  
 * RAZ Compteur : remise à zero du compteur
 
-Lors du passage à de l'etat de OFF à ON, les commmandes suivantes sont mises à jour comme suit :
+Lors du passage à de l'etat de OFF à ON, les commmandes suivantes sont mises à jour comme suit
 * Alarme : passage à OFF
 * Demarré : heure courante du démarrage
 * Arreté : '-'
@@ -30,7 +30,7 @@ Lors du passage à de l'etat de OFF à ON, les commmandes suivantes sont mises �
 * Compteur : Incrémenter de 1
 * Etat : Passage à ON
 
-Lors du passage à de l'etat de ON à OFF, les valeurs des commandes suivantes sont mises à jour comme suit :
+Lors du passage à de l'etat de ON à OFF, les valeurs des commandes suivantes sont mises à jour comme suit
 * Alarme : voir ci dessous
 * Demarré : pas de changement
 * Arreté : heure courante de l'arret
