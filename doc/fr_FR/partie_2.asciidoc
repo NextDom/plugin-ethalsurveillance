@@ -13,12 +13,12 @@ Commande de l'equipement de type "numeric" :
 image::../images/image2.png[]
 
 * Alarme : status d'alarme de l'équipement (ALARME = 1, OFF = 0)
-* Démarré : heure démarrage (passage Etat à ON) de l'équipement
-* Arreté : heure d'arret (passage Etat à OFF) de l'équipement	
+* Démarré : heure démarrage de l'équipement
+* Arreté : heure d'arret de l'équipement	
 * Temps Fct : Temps de fonctionnement de l'équipement en seconde
 * Temps Fct (H:M:S) : Temps de fonctionnement de l'équipement au format Heure:Minute:Seconde
-* Etat : status d'etat de l'équipement (ON = 1, OFF = 0)
-* Compteur : compte le nombre de passage de l'etat de l'équipement de OFF à ON  
+* Etat : status de l'etat de l'équipement (ON = 1, OFF = 0)
+* Compteur : compte le nombre de passage de commande Etat de l'équipement de OFF à ON  
 * RAZ Compteur : remise à zero du compteur
 
 Lors du passage de la commande Etat de OFF à ON, les commmandes suivantes sont mises à jour comme suit:
