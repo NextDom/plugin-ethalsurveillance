@@ -1,9 +1,9 @@
 === Configuration
 
--Equipement
+* Equipement
 image::../images/image1.png[]
 
 
--Commandes
+* Commandes
 image::../images/image2.png[]
 
