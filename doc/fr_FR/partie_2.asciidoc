@@ -1,2 +1,9 @@
 === Configuration
 
+-Equipement
+image::../images/image1.png[]
+
+
+-Commandes
+image::../images/image2.png[]
+
