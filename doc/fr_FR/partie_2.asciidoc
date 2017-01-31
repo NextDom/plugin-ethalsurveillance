@@ -26,7 +26,7 @@ Lors du passage de la commande Etat de OFF à ON, les commmandes suivantes sont 
 * Demarré : heure courante du démarrage
 * Arreté : '-'
 * Tempts Fct : 0 seconde 
-* Tempts Fct (H:M:S) : '-'
+* Tempts Fct (H:M:S) : '00:00:00'
 * Compteur : Incrémenter de 1
 * Etat : Passage à ON
 
