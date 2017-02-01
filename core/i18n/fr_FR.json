@@ -1,0 +1,40 @@
+{
+    "plugins\/ethalsurveillance\/plugin_info\/info.json": {
+        "Verification du fonctionnement d'un equipement": "Verification du fonctionnement d'un equipement"
+    },
+    "plugins\/ethalsurveillance\/desktop\/php\/ethalsurveillance.php": {
+        "Gestion": "Gestion",
+        "Configuration": "Configuration",
+        "Mes equipements ethalsurveillance": "Mes equipements ethalsurveillance",
+        "Sauvegarder": "Sauvegarder",
+        "Supprimer": "Supprimer",
+        "Configuration avancée": "Configuration avancée",
+        "Equipement": "Equipement",
+        "Commandes": "Commandes",
+        "Nom de l'equipement": "Nom de l'equipement",
+        "Activer": "Activer",
+        "Visible": "Visible",
+        "Objet parent": "Objet parent",
+        "Catégorie": "Catégorie",
+        "Mesure Puissance (W)": "Mesure Puissance (W)",
+        "Puissance équipement (W)": "Puissance équipement (W)",
+        "Heure de fonctionnement prévu (HHMM)":"Heure de fonctionnement prévu (HHMM)",
+        "Temps mini de fonctionnement (min)":"Temps mini de fonctionnement (min)",
+        "Temps max de fonctionnement (min)":"Temps max de fonctionnement (min)",
+        "Compteur Général":"Compteur Général",
+        "Commentaire":"Commentaire",
+        "Nom":"Nom",
+        "Type":"Type",
+        "Options":"Options"
+
+    },
+    "plugins\/ethalsurveillance\/desktop\/js\/ethalsurveillance.js": {
+        "Commande": "Commande",
+        "ID": "ID",
+        "Afficher": "Afficher",
+        "Historiser": "Historiser",
+    },
+    "plugins\/ethalsurveillance\/core\/class\/ethalsurveillance.class.php": {
+        "Défaut": "Défaut"
+    }
+}
