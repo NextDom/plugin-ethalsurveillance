@@ -1,4 +1,4 @@
-= Plugin Ethal Surveillance
+= Plugin Surveillance Equipement
 
 == Description
 Plugin servant à la surveillance d'un equipement.
