@@ -4,7 +4,10 @@
 
 image::../images/image1.png[]
 
-Commande de l'equipement de type "numeric" :
+Commande de l'equipement de type "logic" :
+
+
+
 
 
 
@@ -38,3 +41,14 @@ Lors du passage de la commande Etat de ON à OFF, les valeurs des commandes suiv
 * Tempts Fct (H:M:S) : heure d'arret moins heure de démarrage au format Heure:Minute:Seconde  
 * Compteur : pas de changement
 * Etat : Passage à OFF
+
+Alarme :
+* Type de commande "Logique"
+si la durée de la commande Etat à ON est superieur ou egal au temps max de fonctionnement 
+si la durée de la commande lors du passage de l'Etat ON à OFF est inferieur ou egal au temps min de fonctionnement 
+
+* Type de commande "Analogique"
+** si compteur géneral est coché,
+si la durée de la commande Etat à ON est superieur ou egal au temps max de fonctionnement 
+si la durée de la commande lors du passage de l'Etat ON à OFF est inferieur ou egal au temps min de fonctionnement
+
