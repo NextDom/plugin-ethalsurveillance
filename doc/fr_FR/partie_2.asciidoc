@@ -4,28 +4,30 @@
 
 image::../images/image1.png[]
 
-** *Type de commande* : Logique ou Analogique,
+** *Type de commande* : Type de la commande qui servira à surveiller l'equipement , Logique ou Analogique, 
 
-Commande de l'equipement à surveiller de type "logique"
+Commande de l'equipement à surveiller de type "Logique"
 
-** *Type de commande* : Analogique
-** *Commande equipement* : mettre la commande de mesure de puissance de l'équipement
-** *Compteur Général* : coché
-** *Heure de fonctionnement pévu* : laisser vide
-** *Puissance equipement* : laisser vide
+** *Commande equipement* : Commande d'etat de l'équipement à surveiller 
+** *Temps min de fonctionnement* : Temps de fonctionnement minimun de l'equipement pour générer une alarme, doit etre vide pour ne pas générer d'alarme 
+** *Temps max de fonctionnement* : Temps de fonctionnement maximun de l'equipement pour générer une alarme, doit etre vide pour ne pas générer d'alarme
+
+Commande de l'equipement à surveiller de type "Analogique"
+
+** *Commande equipement* : Commande de mesure de puissance de l'équipement à surveiller ou Commande de mesure de puissance générale
+** *Compteur Général* : coché si la *Commande equipement* est une mesure de puissance globale de votre logement
+** *Heure de fonctionnement pévu* : obligatoire si *Compteur Général* coché
+** *Puissance equipement* : obligatoire si *Compteur Général* coché
 ** *P Mini* : si votre lave linge consomme environ 5W mini pendant un cyle, mettre 5
 ** *P Maxi* : si votre lave linge consomme environ 100W au demarrage d'un cyle, mettre 100
-** *Temps min de fonctionnement* : laisser vide ou non 
-** *Temps max de fonctionnement* : laisser vide ou non
-
-
-
-
-
+** *Temps min de fonctionnement* : Temps de fonctionnement minimun de l'equipement pour générer une alarme, doit etre vide pour ne pas générer d'alarme 
+** *Temps max de fonctionnement* : Temps de fonctionnement maximun de l'equipement pour générer une alarme, doit etre vide pour ne pas générer d'alarme
 
 == Onglet Commandes
 
 image::../images/image2.png[]
+
+Les commandes sont crées automatiquement à la sauvegarde de l'equipement, il n'est pas possible d'en ajouter.
 
 * *Alarme* : status d'alarme de l'équipement (1 = ALARME, 0 = OFF)
 * *Démarré* : heure démarrage de l'équipement
@@ -42,7 +44,6 @@ image::../images/image2.png[]
 
 * *Type de commande* : "Logique"
 ** lors du passage de *Commande équipment* à ON
-** Si la *Commande équipment* est egale à OFF , passage de la commande Etat à OFF
 
 * *Type de commande* : "Analogique"
 ** Si *Compteur Général* est coché,
