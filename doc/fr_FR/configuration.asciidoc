@@ -49,7 +49,7 @@ Les commandes sont crées automatiquement à la sauvegarde de l'equipement, il n
 
 * *Type de commande* : "Analogique"
 ** Si *Compteur Général* est coché,
-*** Si la *Commande equipement* est superieur ou egal à *Puissance equipement* ET dans l'heure prevue de fonctionnement definit dans la commande *Heure de founctionnement prévu* ET que la commande *Etat* est à OFF
+*** Si la *Commande equipement* est superieur ou egal à *Puissance equipement* ET dans l'heure prevue de fonctionnement definit dans la commande *Heure de fonctionnement prévu* ET que la commande *Etat* est à OFF
 ** Si *Compteur Général* n'est pas coché,
 *** Si la *Commande equipement* est superieur ou egal à *P Max* ET que la commande *Etat* est à OFF  
 
