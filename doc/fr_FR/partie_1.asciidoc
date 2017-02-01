@@ -6,4 +6,4 @@ la surveillance est faite soit à partir d'une commande d' *Etat* ou d'une comma
 il permet de connaitre un temps de fonctionnement, il gére une commande d'alarme, function, d'un temps de fonctionnement minimun et/ou maximun
 un compteur de cylcle
 
-image::../images/image3.png[]
+image::../images/widgets.png[]
