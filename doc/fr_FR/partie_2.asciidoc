@@ -17,9 +17,9 @@ Commande de l'equipement à surveiller de type "Analogique"
 ** *Commande equipement* : Commande de mesure de puissance de l'équipement à surveiller ou Commande de mesure de puissance générale
 ** *Compteur Général* : coché si la *Commande equipement* est une mesure de puissance globale de votre logement
 ** *Heure de fonctionnement pévu* : obligatoire si *Compteur Général* coché
-** *Puissance equipement* : obligatoire si *Compteur Général* coché
-** *P Mini* : si votre lave linge consomme environ 5W mini pendant un cyle, mettre 5
-** *P Maxi* : si votre lave linge consomme environ 100W au demarrage d'un cyle, mettre 100
+** *Puissance equipement* : obligatoire si *Compteur Général* coché, doit etre vide dans le cas contraire
+** *P Mini* : obligatoire si *Compteur Général* NON coché, Puissance mini à l'arrêt de l'équipement à surveiller 
+** *P Maxi* : obligatoire si *Compteur Général* NON coché, Puissance de votre équipement à surveiller au démarrage
 ** *Temps min de fonctionnement* : Temps de fonctionnement minimun de l'equipement pour générer une alarme, doit etre vide pour ne pas générer d'alarme 
 ** *Temps max de fonctionnement* : Temps de fonctionnement maximun de l'equipement pour générer une alarme, doit etre vide pour ne pas générer d'alarme
 
@@ -144,3 +144,5 @@ le compteur sera incrementé de 1, la commande *Etat* passera à ON, si la valeu
 le cycle sera considéré terminé si la mesure de puissance est inferieur à 5W, et la commande *Etat* passera à OFF.
 
 Si les valeurs *Temps min de fonctionnement* ou *Temps max de fonctionnement* ne sont pas vide, la commande *Alarme* passera à ON suivant la valeur de la commande *Temps Fct* 
+
+
