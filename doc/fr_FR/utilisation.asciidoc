@@ -29,7 +29,7 @@ Vous aurez la commande *Alarme* qui passera à 1 à 00:10(23h30+20 minutes) s'il
 
 * Compter le nombre de cycle de votre lave linge avec une prise avec mesure de consommation
 
-image::../images/utilisation".png[]
+image::../images/utilisation3.png[]
 
 ** *Type de commande* : Analogique
 ** *Commande equipement* : mettre la commande de mesure de puissance du lave linge
