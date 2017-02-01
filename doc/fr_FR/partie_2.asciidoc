@@ -89,8 +89,6 @@ A défaut, toutes les 5 min, les valeurs des commandes suivantes sont mises à j
 == Cas d'utilisation
 * Prise avec retour d'etat sur la télévison
 
-configurer l'equipment comme suit:
-
 ** *Type de commande* : Logique
 ** *Commande equipement* : mettre la commande etat de la prise
 ** *Temps min de fonctionnement* : laisser vide
@@ -100,14 +98,14 @@ vous aurez la commande *Alarme* qui passera à 1 ou bout de 70 minutes
 
 * Surveiller son chauffe eau avec la mesure de puissance sur l'arrivé général de votre logement
 
-* *Type de commande* : Analogique
-* *Commande equipement* : mettre la commande de mesure de puissance
-* *Compteur Général* : Coché
-* *Heure de fonctionnement pévu* : mettre l'heure à laquelle votre chauffe eau est prévu de démarré (ex :2330)
-* *Puissance equipement* : mettre la puissance de votre chauffe eau (ex 2000)
-* *P Mini* : laisser vide
-* *P Maxi* : laisser vide
-* *Temps min de fonctionnement* : mettre par exemple 20
-* *Temps max de fonctionnement* : mettre par exemple 240
+** *Type de commande* : Analogique
+** *Commande equipement* : mettre la commande de mesure de puissance
+** *Compteur Général* : Coché
+** *Heure de fonctionnement pévu* : mettre l'heure à laquelle votre chauffe eau est prévu de démarré (ex :2330)
+** *Puissance equipement* : mettre la puissance de votre chauffe eau (ex 2000)
+** *P Mini* : laisser vide
+** *P Maxi* : laisser vide
+** *Temps min de fonctionnement* : mettre par exemple 20
+** *Temps max de fonctionnement* : mettre par exemple 240
 
-vous aurez la commande *Alarme* qui passera à 1 à 00:10 20 minutes 
+Vous aurez la commande *Alarme* qui passera à 1 à 00:10 s'il n'as pas demarré ou si son temps de fonctionnement est inferieur a 20 minutues ou superieur a 4 heures 
