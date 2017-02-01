@@ -1,5 +1,5 @@
 == Cas d'utilisation
-* Surveiller la durée a laquelle votre télévison est allumée
+* Surveiller la durée à laquelle votre télévison est allumée
 
 image::../images/utilisation1.png[]
 
