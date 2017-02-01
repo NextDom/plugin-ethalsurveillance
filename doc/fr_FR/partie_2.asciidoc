@@ -4,8 +4,9 @@
 
 image::../images/image1.png[]
 
-Commande de l'equipement de type "logic" :
+Commande de l'equipement de type "logic"
 
+* test
 
 
 
@@ -15,24 +16,27 @@ Commande de l'equipement de type "logic" :
 
 image::../images/image2.png[]
 
-* Alarme : status d'alarme de l'équipement (ALARME = 1, OFF = 0)
-* Démarré : heure démarrage de l'équipement
-* Arreté : heure d'arret de l'équipement	
-* Temps Fct : Temps de fonctionnement de l'équipement en seconde
-* Temps Fct (H:M:S) : Temps de fonctionnement de l'équipement au format Heure:Minute:Seconde
-* Etat : status de l'etat de l'équipement (ON = 1, OFF = 0)
-* Compteur : compte le nombre de passage de commande Etat de l'équipement de OFF à ON  
-* RAZ Compteur : remise à zero du compteur
+* *Alarme* : status d'alarme de l'équipement (ALARME = 1, OFF = 0)
+* *Démarré* : heure démarrage de l'équipement
+* *Arreté* : heure d'arret de l'équipement	
+* *Temps Fct* : Temps de fonctionnement de l'équipement en seconde
+* *Temps Fct (H:M:S)* : Temps de fonctionnement de l'équipement au format Heure:Minute:Seconde
+* *Etat* : status de surveillance de l'équipement (ON = 1, OFF = 0)
+* *Compteur* : compte le nombre de passage de commande Etat de l'équipement de OFF à ON  
+* *RAZ Compteur* : remise à zero du compteur
 
-Lors du passage de la commande Etat de OFF à ON, les commmandes suivantes sont mises à jour comme suit:
-* Alarme : passage à OFF
-* Demarré : heure courante du démarrage
-* Arreté : '-'
-* Tempts Fct : 0 seconde 
-* Tempts Fct (H:M:S) : '00:00:00'
-* Compteur : Incrémenter de 1
-* Etat : Passage à ON
+Lors du passage de la commande *Etat* de OFF à ON, les commmandes suivantes sont mises à jour comme suit:
+
+* *Alarme* : passage à OFF
+* *Demarré* : heure courante du démarrage
+* *Arreté* : '-'
+* *Tempts Fct* : 0 seconde 
+* *Tempts Fct (H:M:S)* : '00:00:00'
+* *Compteur* : Incrémenter de 1
+* *Etat* : Passage à ON
+
 Lors du passage de la commande Etat de ON à OFF, les valeurs des commandes suivantes sont mises à jour comme suit:
+
 * Alarme : voir ci dessous
 * Demarré : pas de changement
 * Arreté : heure courante de l'arret
@@ -41,18 +45,40 @@ Lors du passage de la commande Etat de ON à OFF, les valeurs des commandes suiv
 * Compteur : pas de changement
 * Etat : Passage à OFF
 
-Alarme :
-* Type de commande "Logique"
-si la durée de la commande Etat à ON est superieur ou egal au temps max de fonctionnement 
-si la durée de la commande Etat lors du passage de ON à OFF est inferieur ou egal au temps min de fonctionnement 
-* Type de commande "Analogique"
-** si compteur géneral est coché,
-***si la durée de la commande Etat à ON est superieur ou egal au temps max de fonctionnement 
-***si la durée de la commande Etat, lors du passage de ON à OFF, est inferieur ou egal au temps min de fonctionnement
-***si la commande Etat est a OFF depuis l'heure de fonctionement prévu plus le temps min de fonctionnement
-** si compteur géneral non coché,
-***si la durée de la commande Etat à ON est superieur ou egal au temps max de fonctionnement 
-***si la durée de la commande Etat, lors du passage de ON à OFF, est inferieur ou egal au temps min de fonctionnement
+A défaut, toutes les 5 min, les valeurs des commandes suivantes sont mises à jour comme suit:
 
+* Alarme : voir ci dessous
+* Demarré : pas de changement
+* Arreté : pas de changement
+* Tempts Fct : heure d'arret moins heure de démarrage en seconde 
+* Tempts Fct (H:M:S) : heure d'arret moins heure de démarrage au format Heure:Minute:Seconde  
+* Compteur : pas de changement
+* Etat : Pas de changement
+
+mise à jour de la commande *Etat*:
+
+* Type de commande "Logique"
+** Si la commande équipment est egale à ON , passage de la commande Etat à ON
+** Si la commande équipment est egale à OFF , passage de la commande Etat à OFF
+
+* Type de commande "Analogique"
+** Si compteur général est coché,
+
+
+
+Alarme :
+
+* Type de commande "Logique"
+** Si la durée de la commande *Etat* à ON est superieur ou égal au temps max de fonctionnement 
+** Si la durée de la commande *Etat* lors du passage de ON à OFF est inferieur ou égal au temps min de fonctionnement
+
+* Type de commande "Analogique"
+** Si compteur géneral est coché,
+*** Si la durée de la commande Etat à ON est superieur ou egal au temps max de fonctionnement 
+*** Si la durée de la commande Etat, lors du passage de ON à OFF, est inferieur ou egal au temps min de fonctionnement
+*** Si la commande Etat est a OFF depuis l'heure de fonctionement prévu plus le temps min de fonctionnement
+** Si compteur géneral non coché,
+*** Si la durée de la commande Etat à ON est superieur ou egal au temps max de fonctionnement 
+*** Si la durée de la commande Etat, lors du passage de ON à OFF, est inferieur ou egal au temps min de fonctionnement
 
 
