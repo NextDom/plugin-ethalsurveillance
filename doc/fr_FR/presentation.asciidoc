@@ -3,7 +3,7 @@
 Ce plugin permet la surveillance d'un équipement 
 la surveillance est faite soit à partir d'une commande d' *Etat* ou d'une commande de mesure de *puissance*,
 
-il permet de connaitre un temps de fonctionnement, il gére une commande d'alarme, function, d'un temps de fonctionnement minimun et/ou maximun
-un compteur de cylcle
+il permet de connaitre un temps de fonctionnement, il gére une commande d'alarme, function d'un temps de fonctionnement minimun et/ou maximun
+un compteur de cylcle de fonctionnement
 
 image::../images/widgets.png[]
