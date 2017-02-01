@@ -1,11 +1,10 @@
 {
     "plugins\/ethalsurveillance\/plugin_info\/info.json": {
-        "Verification du fonctionnement d'un equipement": "Verification du fonctionnement d'un equipement"
+        "Surveillance du fonctionnement d'un equipement": "surveillance du fonctionnement d'un equipement"
     },
     "plugins\/ethalsurveillance\/desktop\/php\/ethalsurveillance.php": {
-        "Gestion": "Gestion",
         "Configuration": "Configuration",
-        "Mes equipements ethalsurveillance": "Mes equipements ethalsurveillance",
+        "Ajouter un équipement à surveiller": "Ajouter un équipement à surveiller",
         "Sauvegarder": "Sauvegarder",
         "Supprimer": "Supprimer",
         "Configuration avancée": "Configuration avancée",
@@ -16,9 +15,12 @@
         "Visible": "Visible",
         "Objet parent": "Objet parent",
         "Catégorie": "Catégorie",
+        "Type de commande": "Type de commande",
         "Mesure Puissance (W)": "Mesure Puissance (W)",
-        "Puissance équipement (W)": "Puissance équipement (W)",
-        "Heure de fonctionnement prévu (HHMM)":"Heure de fonctionnement prévu (HHMM)",
+        "commande equipement": "commande équipement",
+        "Heure de fonctionnement prévu +/- 2 min (HHMM)":"Heure de fonctionnement prévu +/- 2 min (HHMM)",
+        "P mini (W)" : "P mini (W)",
+        "P mini (W)" : "P max (W)",
         "Temps mini de fonctionnement (min)":"Temps mini de fonctionnement (min)",
         "Temps max de fonctionnement (min)":"Temps max de fonctionnement (min)",
         "Compteur Général":"Compteur Général",
