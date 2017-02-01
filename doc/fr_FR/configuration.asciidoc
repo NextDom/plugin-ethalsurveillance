@@ -27,7 +27,7 @@ image::../images/equipement-analogique.png[]
 
 == Onglet Commandes
 
-image::../images/image2.png[]
+image::../images/commandes.png[]
 
 Les commandes sont crées automatiquement à la sauvegarde de l'equipement, il n'est pas possible d'en ajouter.
 
@@ -55,6 +55,11 @@ Les commandes sont crées automatiquement à la sauvegarde de l'equipement, il n
 . Mise à jour de la commande *Etat* à OFF :
 * *Type de commande* : "Logique"
 ** lors du passage de *Commande équipment* à OFF
+
+* *Type de commande* : "Analogique"
+** Si *Compteur Général* est coché,
+*** Si la *Commande equipement* et que la commande *Etat* est à OFF  
+** Si *Compteur Général* n'est pas coché,
 
 . Mise à jour de la commande *Alarme* à ON :
 
