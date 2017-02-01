@@ -1,16 +1,16 @@
-== Plugin ethal surveillance
+= Plugin Ethal Surveillance
 
-=== Description
+== Description
 Plugin servant à la surveillance d'un equipement.
 
-=== Présentation
+== Présentation
 include::partie_1.asciidoc[]
 
-=== Configuration
+== Configuration
 include::partie_2.asciidoc[]
 
-=== Widget
+== Widget
 include::partie_3.asciidoc[]
 
-=== FAQ
+== FAQ
 include::faq.asciidoc[]
