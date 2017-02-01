@@ -5,6 +5,7 @@
 ** *Type de commande* : Type de la commande qui servira à surveiller l'equipement , Logique ou Analogique, 
 
 Commande de l'equipement à surveiller de type "Logique"
+
 image::../images/equipement-logique.png[]
 
 ** *Commande equipement* : Commande d'etat de l'équipement à surveiller 
@@ -12,6 +13,7 @@ image::../images/equipement-logique.png[]
 ** *Temps max de fonctionnement* : Temps de fonctionnement maximun de l'equipement pour générer une alarme, doit etre vide pour ne pas générer d'alarme
 
 Commande de l'equipement à surveiller de type "Analogique"
+
 image::../images/equipement-analogique.png[]
 
 ** *Commande equipement* : Commande de mesure de puissance de l'équipement à surveiller ou Commande de mesure de puissance générale
