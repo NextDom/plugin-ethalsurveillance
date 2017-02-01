@@ -4,13 +4,13 @@
 Plugin servant à la surveillance d'un equipement.
 
 == Présentation
-include::partie_1.asciidoc[]
+include::presentation.asciidoc[]
+
+== Cas d'utilisation
+include::utilisation.asciidoc[]
 
 == Configuration
-include::partie_2.asciidoc[]
-
-== Widget
-include::partie_3.asciidoc[]
+include::configuration.asciidoc[]
 
 == FAQ
 include::faq.asciidoc[]
