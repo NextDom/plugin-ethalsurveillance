@@ -1,0 +1,7 @@
+== Change Log
+
+* Version 1.1
+** Ajout de la commande *Compteur journalier*
+
+* Version 1.0
+** Plugin initial
