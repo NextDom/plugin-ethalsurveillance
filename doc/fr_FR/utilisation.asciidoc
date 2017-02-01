@@ -1,6 +1,8 @@
 == Cas d'utilisation
 * Surveiller la durée a laquelle votre télévison est allumée
 
+image::../images/utilisation1.png[]
+
 ** *Type de commande* : Logique
 ** *Commande equipement* : mettre la commande etat de la prise qui commande votre télévision
 ** *Temps min de fonctionnement* : laisser vide
@@ -10,6 +12,8 @@ vous aurez la commande *Alarme* qui passera à 1 ou bout de 70 minutes
 le compteur sera incrémenté a chaque a passage a ON de votre commande
 
 * Surveiller son chauffe eau avec la mesure de puissance sur l'arrivé général de votre logement
+
+image::../images/utilisation2.png[]
 
 ** *Type de commande* : Analogique
 ** *Commande equipement* : mettre la commande de mesure de puissance
@@ -24,6 +28,8 @@ le compteur sera incrémenté a chaque a passage a ON de votre commande
 Vous aurez la commande *Alarme* qui passera à 1 à 00:10(23h30+20 minutes) s'il n'as pas demarré ou si son temps de fonctionnement est inferieur a 20 minutues ou superieur a 4 heures 
 
 * Compter le nombre de cycle de votre lave linge avec une prise avec mesure de consommation
+
+image::../images/utilisation".png[]
 
 ** *Type de commande* : Analogique
 ** *Commande equipement* : mettre la commande de mesure de puissance du lave linge
