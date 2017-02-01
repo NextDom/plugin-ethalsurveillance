@@ -32,7 +32,6 @@ Lors du passage de la commande Etat de OFF à ON, les commmandes suivantes sont 
 * Tempts Fct (H:M:S) : '00:00:00'
 * Compteur : Incrémenter de 1
 * Etat : Passage à ON
-
 Lors du passage de la commande Etat de ON à OFF, les valeurs des commandes suivantes sont mises à jour comme suit:
 * Alarme : voir ci dessous
 * Demarré : pas de changement
@@ -46,15 +45,14 @@ Alarme :
 * Type de commande "Logique"
 si la durée de la commande Etat à ON est superieur ou egal au temps max de fonctionnement 
 si la durée de la commande Etat lors du passage de ON à OFF est inferieur ou egal au temps min de fonctionnement 
-
 * Type de commande "Analogique"
 ** si compteur géneral est coché,
-si la durée de la commande Etat à ON est superieur ou egal au temps max de fonctionnement 
-si la durée de la commande Etat, lors du passage de ON à OFF, est inferieur ou egal au temps min de fonctionnement
-si la commande Etat est a OFF depuis l'heure de fonctionement prévu plus le temps min de fonctionnement
+***si la durée de la commande Etat à ON est superieur ou egal au temps max de fonctionnement 
+***si la durée de la commande Etat, lors du passage de ON à OFF, est inferieur ou egal au temps min de fonctionnement
+***si la commande Etat est a OFF depuis l'heure de fonctionement prévu plus le temps min de fonctionnement
 ** si compteur géneral non coché,
-si la durée de la commande Etat à ON est superieur ou egal au temps max de fonctionnement 
-si la durée de la commande Etat, lors du passage de ON à OFF, est inferieur ou egal au temps min de fonctionnement
+***si la durée de la commande Etat à ON est superieur ou egal au temps max de fonctionnement 
+***si la durée de la commande Etat, lors du passage de ON à OFF, est inferieur ou egal au temps min de fonctionnement
 
 
 
