@@ -25,6 +25,37 @@ image::../images/image2.png[]
 * *Compteur* : compte le nombre de passage de commande Etat de l'équipement de OFF à ON  
 * *RAZ Compteur* : remise à zero du compteur
 
+== Fonctionnement
+
+Mise à jour de la commande *Etat*:
+
+* *Type de commande* : "Logique"
+** Si la *Commande équipment* est egale à ON , passage de la commande Etat à ON
+** Si la *Commande équipment* est egale à OFF , passage de la commande Etat à OFF
+
+* *Type de commande* : "Analogique"
+** Si *Compteur Général* est coché,
+*** Si la *Commande equipement* et que la commande *Etat* est à OFF  
+** Si *Compteur Général* n'est pas coché,
+
+
+
+Mise à jour de la commande *Alarme* :
+
+* *Type de commande* : "Logique"
+** Si la durée de la commande *Etat* à ON est superieur ou égal au *Temps max de fonctionnement* 
+** Si la durée de la commande *Etat* lors du passage de ON à OFF est inferieur ou égal au *Temps min de fonctionnement*
+
+* *Type de commande* : "Analogique"
+** Si *Compteur Général* est coché,
+*** Si la durée de la commande *Etat* à ON est superieur ou egal au *temps max de fonctionnement* 
+*** Si la durée de la commande *Etat*, lors du passage de ON à OFF, est inferieur ou egal au *temps min de fonctionnement*
+*** Si la commande *Etat* est a OFF depuis *Heure de fonctionement prévu* plus *Temps min de fonctionnement*
+** Si *Compteur Général* n'est pas coché,
+*** Si la durée de la commande *Etat* à ON est superieur ou egal au *Temps max de fonctionnement* 
+*** Si la durée de la commande *Etat*, lors du passage de ON à OFF, est inferieur ou egal au *Temps min de fonctionnement*
+
+
 Lors du passage de la commande *Etat* de OFF à ON, les commmandes suivantes sont mises à jour comme suit:
 
 * *Alarme* : passage à OFF
@@ -35,50 +66,48 @@ Lors du passage de la commande *Etat* de OFF à ON, les commmandes suivantes son
 * *Compteur* : Incrémenter de 1
 * *Etat* : Passage à ON
 
-Lors du passage de la commande Etat de ON à OFF, les valeurs des commandes suivantes sont mises à jour comme suit:
+Lors du passage de la commande *Etat* de ON à OFF, les valeurs des commandes suivantes sont mises à jour comme suit:
 
-* Alarme : voir ci dessous
-* Demarré : pas de changement
-* Arreté : heure courante de l'arret
-* Tempts Fct : heure d'arret moins heure de démarrage en seconde 
-* Tempts Fct (H:M:S) : heure d'arret moins heure de démarrage au format Heure:Minute:Seconde  
-* Compteur : pas de changement
-* Etat : Passage à OFF
+* *Alarme* : voir ci dessus
+* *Demarré* : pas de changement
+* *Arreté* : heure courante de l'arret
+* *Tempts Fct* : heure d'arret moins heure de démarrage en seconde 
+* *Tempts Fct (H:M:S)* : heure d'arret moins heure de démarrage au format Heure:Minute:Seconde  
+* *Compteur* : pas de changement
+* *Etat* : Passage à OFF
 
 A défaut, toutes les 5 min, les valeurs des commandes suivantes sont mises à jour comme suit:
 
-* Alarme : voir ci dessous
-* Demarré : pas de changement
-* Arreté : pas de changement
-* Tempts Fct : heure d'arret moins heure de démarrage en seconde 
-* Tempts Fct (H:M:S) : heure d'arret moins heure de démarrage au format Heure:Minute:Seconde  
-* Compteur : pas de changement
-* Etat : Pas de changement
+* *Alarme* : voir ci dessus
+* *Demarré* : pas de changement
+* *Arreté* : pas de changement
+* *Tempts Fct* : heure d'arret moins heure de démarrage en seconde 
+* *Tempts Fct (H:M:S)* : heure d'arret moins heure de démarrage au format Heure:Minute:Seconde  
+* *Compteur* : pas de changement
+* *Etat* : Pas de changement
 
-mise à jour de la commande *Etat*:
+== Cas d'utilisation
+* Prise avec retour d'etat sur la télévison
 
-* Type de commande "Logique"
-** Si la commande équipment est egale à ON , passage de la commande Etat à ON
-** Si la commande équipment est egale à OFF , passage de la commande Etat à OFF
+configurer l'equipment comme suit:
 
-* Type de commande "Analogique"
-** Si compteur général est coché,
+** *Type de commande* : Logique
+** *Commande equipement* : mettre la commande etat de la prise
+** *Temps min de fonctionnement* : laisser vide
+** *Temps max de fonctionnement* : mettre par exemple 70
 
+vous aurez la commande *Alarme* qui passera à 1 ou bout de 70 minutes
 
+* Surveiller son chauffe eau avec la mesure de puissance sur l'arrivé général de votre logement
 
-Alarme :
+* *Type de commande* : Analogique
+* *Commande equipement* : mettre la commande de mesure de puissance
+* *Compteur Général* : Coché
+* *Heure de fonctionnement pévu* : mettre l'heure à laquelle votre chauffe eau est prévu de démarré (ex :2330)
+* *Puissance equipement* : mettre la puissance de votre chauffe eau (ex 2000)
+* *P Mini* : laisser vide
+* *P Maxi* : laisser vide
+* *Temps min de fonctionnement* : mettre par exemple 20
+* *Temps max de fonctionnement* : mettre par exemple 240
 
-* Type de commande "Logique"
-** Si la durée de la commande *Etat* à ON est superieur ou égal au temps max de fonctionnement 
-** Si la durée de la commande *Etat* lors du passage de ON à OFF est inferieur ou égal au temps min de fonctionnement
-
-* Type de commande "Analogique"
-** Si compteur géneral est coché,
-*** Si la durée de la commande Etat à ON est superieur ou egal au temps max de fonctionnement 
-*** Si la durée de la commande Etat, lors du passage de ON à OFF, est inferieur ou egal au temps min de fonctionnement
-*** Si la commande Etat est a OFF depuis l'heure de fonctionement prévu plus le temps min de fonctionnement
-** Si compteur géneral non coché,
-*** Si la durée de la commande Etat à ON est superieur ou egal au temps max de fonctionnement 
-*** Si la durée de la commande Etat, lors du passage de ON à OFF, est inferieur ou egal au temps min de fonctionnement
-
-
+vous aurez la commande *Alarme* qui passera à 1 à 00:10 20 minutes 
