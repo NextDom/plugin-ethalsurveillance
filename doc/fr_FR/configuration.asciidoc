@@ -25,6 +25,10 @@ image::../images/equipement-analogique.png[]
 ** *Temps min de fonctionnement* : Temps de fonctionnement minimun de l'equipement pour générer une alarme, doit etre vide pour ne pas générer d'alarme 
 ** *Temps max de fonctionnement* : Temps de fonctionnement maximun de l'equipement pour générer une alarme, doit etre vide pour ne pas générer d'alarme
 
+[IMPORTANT]
+Vous ne pouvez créer qu'un seul équipement à surveiller avec l'option *Compteur Général*,
+c'est a dire avec une mesure de puissance global de votre logement 
+
 == Onglet Commandes
 
 image::../images/commandes.png[]
