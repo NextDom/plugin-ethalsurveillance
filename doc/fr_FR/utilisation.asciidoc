@@ -8,7 +8,7 @@ image::../images/utilisation1-equipement.png[]
 ** *Temps min de fonctionnement* : laisser vide
 ** *Temps max de fonctionnement* : mettre par exemple 400
 
-vous aurez la commande *Alarme* qui passera à 1 ou bout de 400 minutes (soit un peu plus de 6 heures et demi , ça commence a faire beaucoup ;) )
+vous aurez la commande *Alarme* qui passera à 1 au bout de 400 minutes (soit un peu plus de 6 heures et demi , ça commence a faire beaucoup ;) )
 le compteur sera incrémenté a chaque passage a ON de votre commande
 
 pour un widget personalisé a l'equipement, selectionner les commandes commandes comme ci dessous
