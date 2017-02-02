@@ -40,7 +40,7 @@ Les commandes sont crées automatiquement à la sauvegarde de l'equipement, il n
 * *Temps Fct* : Temps de fonctionnement de l'équipement en seconde
 * *Temps Fct Total(H:M:S)* : Temps de fonctionnement de l'équipement au format Heure:Minute:Seconde
 * *Temps Fct Total* : Temps de fonctionnement de l'équipement en seconde
-* *RAZ Tps Fct Total* : remise à zero du temps de fonctionnement total (*Temps Fct Total(H:M:S)* et *Temps Fct Total*)
+* *RAZ Tps Fct Total* : remise à zero du temps de fonctionnement total (commande *Temps Fct Total(H:M:S)* et *Temps Fct Total*)
 * *Démarré* : heure démarrage de l'équipement
 * *Arreté* : heure d'arret de l'équipement	
 * *Temps Fct* : Temps de fonctionnement de l'équipement en seconde
