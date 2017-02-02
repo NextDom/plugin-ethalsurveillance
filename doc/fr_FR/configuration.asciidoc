@@ -36,13 +36,18 @@ image::../images/commandes.png[]
 Les commandes sont crées automatiquement à la sauvegarde de l'equipement, il n'est pas possible d'en ajouter.
 
 * *Alarme* : status d'alarme de l'équipement (1 = ALARME, 0 = OFF)
+* *Temps Fct (H:M:S)* : Temps de fonctionnement de l'équipement au format Heure:Minute:Seconde
+* *Temps Fct* : Temps de fonctionnement de l'équipement en seconde
+* *Temps Fct Total(H:M:S)* : Temps de fonctionnement de l'équipement au format Heure:Minute:Seconde
+* *Temps Fct Total* : Temps de fonctionnement de l'équipement en seconde
+* *RAZ Tps Fct Total* : remise à zero du temps de fonctionnement total (*Temps Fct Total(H:M:S)* et *Temps Fct Total*)
 * *Démarré* : heure démarrage de l'équipement
 * *Arreté* : heure d'arret de l'équipement	
 * *Temps Fct* : Temps de fonctionnement de l'équipement en seconde
 * *Temps Fct (H:M:S)* : Temps de fonctionnement de l'équipement au format Heure:Minute:Seconde
 * *Etat* : status de surveillance de l'équipement (1 = ON, 0 = OFF)
 * *Compteur* : nombre de passage de la commande *Etat* de OFF à ON  
-* *RAZ Compteur* : remise à zero du compteur
+* *RAZ Compteur* : remise à zero de la commande *Compteur*
 
 == Fonctionnement
 
@@ -90,29 +95,35 @@ Les commandes sont crées automatiquement à la sauvegarde de l'equipement, il n
 . Mise à jour des commandes, lors du passage de la commande *Etat* de OFF à ON :
 
 * *Alarme* : passage à OFF
+* *Tempts Fct (H:M:S)* : '00:00:00'
+* *Tempts Fct* : 0 seconde 
+* *Tempts Fct Total(H:M:S)* : pas de changement
+* *Tempts Fct Total* : pas de changement 
 * *Demarré* : heure courante du démarrage
 * *Arreté* : '-'
-* *Tempts Fct* : 0 seconde 
-* *Tempts Fct (H:M:S)* : '00:00:00'
-* *Compteur* : Incrémenter de 1
 * *Etat* : Passage à ON
+* *Compteur* : Incrémenter de 1
 
 . Mise à jour des commandes, lors du passage de la commande *Etat* de ON à OFF : 
 
 * *Alarme* : voir ci dessus
+* *Tempts Fct (H:M:S)* : heure d'arret moins heure de démarrage au format Heure:Minute:Seconde  
+* *Tempts Fct* : heure d'arret moins heure de démarrage en seconde 
+* *Tempts Fct Total(H:M:S)* : heure d'arret moins heure de démarrage plus *Tempts Fct Total(H:M:S)* précedent au format Heure:Minute:Seconde 
+* *Tempts Fct Total* : heure d'arret moins heure de démarrage plus *Tempts Fct Total* précédent en seconde 
 * *Demarré* : pas de changement
 * *Arreté* : heure courante de l'arret
-* *Tempts Fct* : heure d'arret moins heure de démarrage en seconde 
-* *Tempts Fct (H:M:S)* : heure d'arret moins heure de démarrage au format Heure:Minute:Seconde  
-* *Compteur* : pas de changement
 * *Etat* : Passage à OFF
+* *Compteur* : pas de changement
 
 . Mise à jour des commandes toutes les 5 min :
 
 * *Alarme* : voir ci dessus
+* *Tempts Fct* : heure courante moins heure de démarrage en seconde 
+* *Tempts Fct (H:M:S)* : heure courante moins heure de démarrage au format Heure:Minute:Seconde  
+* *Tempts Fct Total(H:M:S)* : heure courante moins heure de démarrage plus *Tempts Fct Total(H:M:S)* précedent au format Heure:Minute:Seconde 
+* *Tempts Fct Total* : heure courante moins heure de démarrage plus *Tempts Fct Total* précédent en seconde 
 * *Demarré* : pas de changement
 * *Arreté* : pas de changement
-* *Tempts Fct* : heure d'arret moins heure de démarrage en seconde 
-* *Tempts Fct (H:M:S)* : heure d'arret moins heure de démarrage au format Heure:Minute:Seconde  
-* *Compteur* : pas de changement
 * *Etat* : Pas de changement
+* *Compteur* : pas de changement
