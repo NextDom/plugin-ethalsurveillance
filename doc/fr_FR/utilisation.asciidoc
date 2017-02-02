@@ -6,9 +6,9 @@ image::../images/utilisation1.png[]
 ** *Type de commande* : Logique
 ** *Commande equipement* : mettre la commande etat de la prise qui commande votre télévision
 ** *Temps min de fonctionnement* : laisser vide
-** *Temps max de fonctionnement* : mettre par exemple 70
+** *Temps max de fonctionnement* : mettre par exemple 400
 
-vous aurez la commande *Alarme* qui passera à 1 ou bout de 70 minutes
+vous aurez la commande *Alarme* qui passera à 1 ou bout de 400 minutes (un peu plus de 3 heures et demi)
 le compteur sera incrémenté a chaque passage a ON de votre commande
 
 * Surveiller son chauffe eau avec la mesure de puissance sur l'arrivé général de votre logement
