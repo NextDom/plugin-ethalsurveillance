@@ -11,7 +11,7 @@ image::../images/utilisation1-equipement.png[]
 vous aurez la commande *Alarme* qui passera à 1 au bout de 400 minutes (soit un peu plus de 6 heures et demi , ça commence a faire beaucoup ;) )
 le compteur sera incrémenté a chaque passage a ON de votre commande
 
-pour un widget personalisé a l'equipement, selectionner les commandes commandes comme ci dessous
+pour un widget personalisé à l'equipement, selectionner les commandes comme ci-dessous
 
 image::../images/utilisation1-commandes.png[]
 
@@ -33,7 +33,7 @@ image::../images/utilisation2-equipement.png[]
 
 Vous aurez la commande *Alarme* qui passera à 1 à 00:10(23h30+20 minutes) s'il n'as pas demarré ou si son temps de fonctionnement est inferieur a 20 minutues ou superieur a 4 heures 
 
-pour un widget personalisé a l'equipement, selectionner les commandes commandes comme ci dessous
+pour un widget personalisé à l'equipement, selectionner les commandes comme ci-dessous
 
 image::../images/utilisation2-commandes.png[]
 
@@ -59,7 +59,7 @@ le cycle sera considéré terminé si la mesure de puissance est inferieur à 5W
 
 Si les valeurs *Temps min de fonctionnement* ou *Temps max de fonctionnement* ne sont pas vide, la commande *Alarme* passera à ON suivant la valeur de la commande *Temps Fct* 
 
-pour un widget personalisé a l'equipement, selectionner les commandes commandes comme ci dessous
+pour un widget personalisé à l'equipement, selectionner les commandes comme ci-dessous
 
 image::../images/utilisation3-commandes.png[]
 
