@@ -19,7 +19,7 @@ image::../images/utilisation1-widget.png[]
 
 * Surveiller son chauffe eau avec la mesure de puissance sur l'arrivé général de votre logement
 
-image::../images/utilisation2.png[]
+image::../images/utilisation2-equipement.png[]
 
 ** *Type de commande* : Analogique
 ** *Commande equipement* : mettre la commande de mesure de puissance
@@ -33,9 +33,16 @@ image::../images/utilisation2.png[]
 
 Vous aurez la commande *Alarme* qui passera à 1 à 00:10(23h30+20 minutes) s'il n'as pas demarré ou si son temps de fonctionnement est inferieur a 20 minutues ou superieur a 4 heures 
 
+pour le widget personalisé a l'equipement, selectionner les commandes commandes comme ci dessous
+
+image::../images/utilisation2-commandes.png[]
+
+image::../images/utilisation2-widget.png[]
+
+
 * Compter le nombre de cycle de votre lave linge avec une prise avec mesure de consommation
 
-image::../images/utilisation3.png[]
+image::../images/utilisation3-equipement.png[]
 
 ** *Type de commande* : Analogique
 ** *Commande equipement* : mettre la commande de mesure de puissance du lave linge
@@ -46,6 +53,13 @@ image::../images/utilisation3.png[]
 ** *P Maxi* : si votre lave linge consomme environ 100W au demarrage d'un cyle, mettre 100
 ** *Temps min de fonctionnement* : laisser vide ou non 
 ** *Temps max de fonctionnement* : laisser vide ou non
+
+pour le widget personalisé a l'equipement, selectionner les commandes commandes comme ci dessous
+
+image::../images/utilisation3-commandes.png[]
+
+image::../images/utilisation3-widget.png[]
+
 
 le compteur sera incrementé de 1, la commande *Etat* passera à ON, si la valeur mesure de puissance est superieur à 100W, 
 le cycle sera considéré terminé si la mesure de puissance est inferieur à 5W, et la commande *Etat* passera à OFF.
