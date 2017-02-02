@@ -9,7 +9,7 @@ image::../images/utilisation1.png[]
 ** *Temps max de fonctionnement* : mettre par exemple 70
 
 vous aurez la commande *Alarme* qui passera à 1 ou bout de 70 minutes
-le compteur sera incrémenté a chaque a passage a ON de votre commande
+le compteur sera incrémenté a chaque passage a ON de votre commande
 
 * Surveiller son chauffe eau avec la mesure de puissance sur l'arrivé général de votre logement
 
