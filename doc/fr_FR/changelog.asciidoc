@@ -2,6 +2,7 @@
 
 * Version 1.2 (en cours de dev)
 ** Correction d'un bug sur la génération de la commande *Alarme* 
+** Amélioration sur la génération de la commande *Alarme* 
 
 * Version 1.1 (version market : 2017-02-02 22:24:32)
 ** Ajout des commandes *Temps Fct Total(H:M:S)*, *Temps Fct Total* et *RAZ Tps Fct Total* 
