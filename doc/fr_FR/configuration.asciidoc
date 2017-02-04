@@ -12,6 +12,9 @@ image::../images/equipement-logique.png[]
 ** *Temps min de fonctionnement* : Temps de fonctionnement minimun de l'equipement pour générer une alarme, doit etre vide pour ne pas générer d'alarme 
 ** *Temps max de fonctionnement* : Temps de fonctionnement maximun de l'equipement pour générer une alarme, doit etre vide pour ne pas générer d'alarme
 
+[IMPORTANT]
+la *commande equipement* doit etre de type "info et de sous type "binary"
+
 Commande de l'equipement à surveiller de type "Analogique"
 
 image::../images/equipement-analogique.png[]
