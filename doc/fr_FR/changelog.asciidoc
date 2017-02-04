@@ -1,6 +1,10 @@
 == Change Log
 
 * Version 1.2 (en cours de dev)
+** amélioration du code
+** mise à jour de la documentation
+
+* Version 1.2 (version market : 2017-02-03 22:25:59)
 ** Correction d'un bug sur la génération de la commande *Alarme* 
 ** Amélioration sur la génération de la commande *Alarme* 
 
