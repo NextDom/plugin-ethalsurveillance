@@ -39,7 +39,7 @@ image::../images/equipement-analogique.png[]
 ** *Heure prévue equipement en Marche (HHMM)* : heure à laquelle l'equipement (ie la commande etat) est prevue d'etre à ON,, non disponible si *Compteur Général* est coché
 
 [NOTE]
-il peut y a une latence de 5min au declenchement de l'arlarme sur les paramètres *Heure prévue equipement en Arrêt (HHMM)* et *Heure prévue equipement en Marche (HHMM)*
+il peut y avoir une latence de 5min au declenchement de l'alarme sur les paramètres *Heure prévue equipement en Arrêt (HHMM)* et *Heure prévue equipement en Marche (HHMM)*
 
 [IMPORTANT]
 la *commande equipement* doit etre de type "info et de sous type "numeric" pour *Type de commande* analogique
