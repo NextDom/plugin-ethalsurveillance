@@ -8,11 +8,11 @@ Commande de l'equipement à surveiller de type "Logique"
 
 image::../images/equipement-logique.png[]
 
-** *Commande equipement* : Commande d'etat de l'équipement à surveiller 
-** *Temps min de fonctionnement* : Temps de fonctionnement minimun de l'equipement pour générer une alarme, laisser vide pour ne pas générer d'alarme 
-** *Temps max de fonctionnement* : Temps de fonctionnement maximun de l'equipement pour générer une alarme, doit etre vide pour ne pas générer d'alarme
-** *Heure prévue equipement en Arrêt (HHMM)* : heure à laquelle l'equipement (ie la *Commande equipement*) est prevue d'etre à OFF,laisser vide pour ne pas générer d'alarme
-** *Heure prévue equipement en Marche (HHMM)* : heure à laquelle l'equipement (ie *Commande equipement*) est prevue d'etre à ON,laisser vide pour ne pas générer d'alarme
+** *Commande équipement* : Commande d'etat de l'équipement à surveiller 
+** *Temps min de fonctionnement* : Temps de fonctionnement minimun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme 
+** *Temps max de fonctionnement* : Temps de fonctionnement maximun de l'équipement pour générer une alarme, laisser pour ne pas générer d'alarme
+** *Heure prévue équipement en Arrêt (HHMM)* : heure à laquelle l'équipement (ie la *Commande equipement*) est prevue d'etre à OFF, laisser vide pour ne pas générer d'alarme
+** *Heure prévue équipement en Marche (HHMM)* : heure à laquelle l'équipement (ie *Commande equipement*) est prevue d'etre à ON, laisser vide pour ne pas générer d'alarme
 
 Commande de l'equipement à surveiller de type "Analogique" avec *Compteur Général* coché
 
@@ -33,13 +33,13 @@ image::../images/equipement-analogique.png[]
 ** *Compteur Général* : NON coché 
 ** *Puissance Mini* : obligatoire si *Compteur Général* NON coché, Puissance mini à l'arrêt de l'équipement à surveiller 
 ** *Puissance Maxi* : obligatoire si *Compteur Général* NON coché, Puissance de votre équipement à surveiller au démarrage
-** *Temps min de fonctionnement* : Temps de fonctionnement minimun de l'equipement pour générer une alarme, doit etre vide pour ne pas générer d'alarme
-** *Temps max de fonctionnement* : Temps de fonctionnement maximun de l'equipement pour générer une alarme, doit etre vide pour ne pas générer d'alarme
-** *Heure prévue equipement en Arrêt (HHMM)* : heure à laquelle l'equipement (ie la commande etat) est prevue d'etre à OFF, non disponible si *Compteur Général* est coché
-** *Heure prévue equipement en Marche (HHMM)* : heure à laquelle l'equipement (ie la commande etat) est prevue d'etre à ON,, non disponible si *Compteur Général* est coché
+** *Temps min de fonctionnement* : Temps de fonctionnement minimun de l'equipement pour générer une alarme, laisser vide pour ne pas générer d'alarme
+** *Temps max de fonctionnement* : Temps de fonctionnement maximun de l'equipement pour générer une alarme, laisser pour ne pas générer d'alarme
+** *Heure prévue equipement en Arrêt (HHMM)* : heure à laquelle l'equipement (ie *Commande equipement*) est prevue d'etre à OFF, laisser pour ne pas générer d'alarme
+** *Heure prévue equipement en Marche (HHMM)* : heure à laquelle l'equipement (ie *Commande equipement*) est prevue d'etre à ON,laisser pour ne pas générer d'alarme
 
 [NOTE]
-il peut y avoir une latence de 5min au declenchement de l'alarme sur les paramètres *Heure prévue equipement en Arrêt (HHMM)* et *Heure prévue equipement en Marche (HHMM)*
+il peut y avoir une latence de 5 minutes au déclenchement de l'alarme sur les paramètres *Heure prévue equipement en Arrêt (HHMM)* et *Heure prévue equipement en Marche (HHMM)*
 
 [IMPORTANT]
 la *commande equipement* doit etre de type "info et de sous type "numeric" pour *Type de commande* analogique
@@ -54,7 +54,8 @@ c'est a dire avec une mesure de puissance global de votre logement.
 
 image::../images/commandes.png[]
 
-Les commandes sont crées automatiquement à la sauvegarde de l'equipement, il n'est pas possible d'en ajouter.
+Les commandes sont crées automatiquement à la sauvegarde de l'equipement, il n'est pas possible d'en ajouter, d'en supprimer.
+Utiliser la case a coché affcher, si vous ne souhaitez pas voir certaines commandes sur le widget.
 
 * *Alarme* : status d'alarme de l'équipement (1 = ALARME, 0 = OFF)
 * *Temps Fct (H:M:S)* : Temps de fonctionnement de l'équipement au format Heure:Minute:Seconde
@@ -81,7 +82,7 @@ Les commandes sont crées automatiquement à la sauvegarde de l'equipement, il n
 ** Si *Compteur Général* est coché,
 *** Si la *Commande equipement* est superieur ou egal à *Puissance equipement* ET dans l'heure prevue de fonctionnement definit dans la commande *Heure de fonctionnement prévu* ET que la commande *Etat* est à OFF
 ** Si *Compteur Général* n'est pas coché,
-*** Si la *Commande equipement* est superieur ou egal à *P Max* ET que la commande *Etat* est à OFF  
+*** Si la *Commande equipement* est superieur ou egal à *Puissance Max* ET que la commande *Etat* est à OFF  
 
 
 . Passage de la commande *Etat* à OFF :
@@ -92,22 +93,28 @@ Les commandes sont crées automatiquement à la sauvegarde de l'equipement, il n
 ** Si *Compteur Général* est coché,
 *** Si la *Commande equipement* est inferieur ou egal à *Puissance equipement* ET que la commande *Etat* est à ON
 ** Si *Compteur Général* n'est pas coché,
-*** Si la *Commande equipement* est superieur ou egal à *P Min* ET que la commande *Etat* est à ON
+*** Si la *Commande equipement* est superieur ou egal à *Puissance Min* ET que la commande *Etat* est à ON
 
 . Passage de la commande *Alarme* à ON :
 
 * *Type de commande* : "Logique"
 ** Si la durée de la commande *Etat* à ON est superieur ou égal au *Temps max de fonctionnement* 
 ** Si la durée de la commande *Etat* lors du passage de ON à OFF est inferieur ou égal au *Temps min de fonctionnement*
+*** Si la commande *Etat* à OFF et l'heure du systeme est supérieur ou egal au *Heure prévue equipement en Marche (HHMM)*   
+*** Si la commande *Etat* à ON et l'heure du systeme est supérieur ou egal au *Heure prévue equipement en Arrêt (HHMM)*   
 
 * *Type de commande* : "Analogique"
 ** Si *Compteur Général* est coché,
-*** Si la durée de la commande *Etat* à ON est superieur ou egal au *temps max de fonctionnement* 
+*** Si la durée de la commande *Etat* à ON est supérieur ou egal au *temps max de fonctionnement* 
 *** Si la durée de la commande *Etat*, lors du passage de ON à OFF, est inferieur ou egal au *temps min de fonctionnement*
-*** Si la commande *Etat* est a OFF depuis *Heure de fonctionement prévu* plus *Temps min de fonctionnement*
+*** Si la commande *Etat* est a OFF depuis *Heure de fonctionement prévue* plus *Temps min de fonctionnement*
 ** Si *Compteur Général* n'est pas coché,
 *** Si la durée de la commande *Etat* à ON est superieur ou egal au *Temps max de fonctionnement* 
 *** Si la durée de la commande *Etat*, lors du passage de ON à OFF, est inferieur ou egal au *Temps min de fonctionnement*
+*** Si la commande *Etat* à OFF et l'heure du systeme est supérieur ou egal au *Heure prévue equipement en Marche (HHMM)*   
+*** Si la commande *Etat* à ON et l'heure du systeme est supérieur ou egal au *Heure prévue equipement en Arrêt (HHMM)*   
+
+
 
 . Passage de la commande *Alarme* à OFF:
 
