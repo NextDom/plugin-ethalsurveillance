@@ -16,7 +16,7 @@ image::../images/equipement-logique.png[]
 
 Commande de l'equipement à surveiller de type "Analogique" avec *Compteur Général* coché
 
-image::../images/equipement-analogique.png[]
+image::../images/equipement-analogique-1.png[]
 
 ** *Commande equipement* : Commande de mesure de puissance de l'équipement à surveiller ou Commande de mesure de puissance générale
 ** *Compteur Général* : coché si la *Commande equipement* est une mesure de puissance globale de votre logement
@@ -27,7 +27,7 @@ image::../images/equipement-analogique.png[]
 
 Commande de l'equipement à surveiller de type "Analogique" avec *Compteur Général* NON coché
 
-image::../images/equipement-analogique.png[]
+image::../images/equipement-analogique-2.png[]
 
 ** *Commande equipement* : Commande de mesure de puissance de l'équipement à surveiller ou Commande de mesure de puissance générale
 ** *Compteur Général* : NON coché 
