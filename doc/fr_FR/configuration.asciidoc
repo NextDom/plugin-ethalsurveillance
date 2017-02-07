@@ -57,7 +57,7 @@ image::../images/commandes.png[]
 Les commandes sont crées automatiquement à la sauvegarde de l'equipement, il n'est pas possible d'en ajouter, d'en supprimer.
 Utiliser la case a coché affcher, si vous ne souhaitez pas voir certaines commandes sur le widget.
 
-* *Alarme* : status d'alarme de l'équipement (1 = ALARME, 0 = OFF)
+* *Alarme* : status d'alarme de l'équipement (1 = ALARME = ON, 0 = OFF)
 * *Temps Fct (H:M:S)* : Temps de fonctionnement de l'équipement au format Heure:Minute:Seconde
 * *Temps Fct* : Temps de fonctionnement de l'équipement en seconde
 * *Temps Fct Total(H:M:S)* : Temps de fonctionnement de l'équipement au format Heure:Minute:Seconde
@@ -114,6 +114,9 @@ Utiliser la case a coché affcher, si vous ne souhaitez pas voir certaines comma
 *** Si la commande *Etat* à OFF et l'heure du systeme est compris entre *Heure prévue equipement en Marche (HHMM)* et *Heure prévue equipement en Marche (HHMM)* plus 5 min  
 *** Si la commande *Etat* à ON et l'heure du systeme est compris entre *Heure prévue equipement en Arrêt (HHMM)* et *Heure prévue equipement en Arrêt (HHMM)* plus 5 min  
 
+
+[NOTE]
+Si la commande *Alarme* est déja à ON , et qu'une nouvelle conditions d'alarme est présente , la commande n'est pas remise à jour.  
 
 . Passage de la commande *Alarme* à OFF:
 
