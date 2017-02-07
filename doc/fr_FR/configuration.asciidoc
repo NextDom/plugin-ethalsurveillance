@@ -100,8 +100,8 @@ Utiliser la case a coché affcher, si vous ne souhaitez pas voir certaines comma
 * *Type de commande* : "Logique"
 ** Si la durée de la commande *Etat* à ON est superieur ou égal au *Temps max de fonctionnement* 
 ** Si la durée de la commande *Etat* lors du passage de ON à OFF est inferieur ou égal au *Temps min de fonctionnement*
-*** Si la commande *Etat* à OFF et l'heure du systeme est supérieur ou egal au *Heure prévue equipement en Marche (HHMM)*   
-*** Si la commande *Etat* à ON et l'heure du systeme est supérieur ou egal au *Heure prévue equipement en Arrêt (HHMM)*   
+*** Si la commande *Etat* à OFF et l'heure du systeme est supérieur ou egal à *Heure prévue equipement en Marche (HHMM)*   
+*** Si la commande *Etat* à ON et l'heure du systeme est supérieur ou egal à *Heure prévue equipement en Arrêt (HHMM)*   
 
 * *Type de commande* : "Analogique"
 ** Si *Compteur Général* est coché,
@@ -111,9 +111,8 @@ Utiliser la case a coché affcher, si vous ne souhaitez pas voir certaines comma
 ** Si *Compteur Général* n'est pas coché,
 *** Si la durée de la commande *Etat* à ON est superieur ou egal au *Temps max de fonctionnement* 
 *** Si la durée de la commande *Etat*, lors du passage de ON à OFF, est inferieur ou egal au *Temps min de fonctionnement*
-*** Si la commande *Etat* à OFF et l'heure du systeme est supérieur ou egal au *Heure prévue equipement en Marche (HHMM)*   
-*** Si la commande *Etat* à ON et l'heure du systeme est supérieur ou egal au *Heure prévue equipement en Arrêt (HHMM)*   
-
+*** Si la commande *Etat* à OFF et l'heure du systeme est supérieur ou egal à *Heure prévue equipement en Marche (HHMM)*   
+*** Si la commande *Etat* à ON et l'heure du systeme est supérieur ou egal à *Heure prévue equipement en Arrêt (HHMM)*   
 
 
 . Passage de la commande *Alarme* à OFF:
