@@ -14,11 +14,6 @@ image::../images/equipement-logique.png[]
 ** *Heure prévue equipement en Arrêt (HHMM)* : heure à laquelle l'equipement (ie la *Commande equipement*) est prevue d'etre à OFF,laisser vide pour ne pas générer d'alarme
 ** *Heure prévue equipement en Marche (HHMM)* : heure à laquelle l'equipement (ie *Commande equipement*) est prevue d'etre à ON,laisser vide pour ne pas générer d'alarme
 
-[NOTE]
-il peut y a une latence de 5 minutes au déclenchement de l'alarme sur les paramètres *Heure prévue equipement en Arrêt (HHMM)* et *Heure prévue equipement en Marche (HHMM)*
-[IMPORTANT]
-la *commande equipement* doit etre de type "info et de sous type "binary"
-
 Commande de l'equipement à surveiller de type "Analogique" avec *Compteur Général* coché
 
 image::../images/equipement-analogique.png[]
@@ -30,18 +25,14 @@ image::../images/equipement-analogique.png[]
 ** *Temps min de fonctionnement* : Temps de fonctionnement minimun de l'equipement pour générer une alarme, laisser vide pour ne pas générer d'alarme
 ** *Temps max de fonctionnement* : Temps de fonctionnement maximun de l'equipement pour générer une alarme, laisser vide pour ne pas générer d'alarme
 
-[IMPORTANT]
-Vous ne pouvez créer qu'un seul équipement à surveiller avec l'option *Compteur Général*,
-c'est a dire avec une mesure de puissance global de votre logement.
-
 Commande de l'equipement à surveiller de type "Analogique" avec *Compteur Général* NON coché
 
 image::../images/equipement-analogique.png[]
 
 ** *Commande equipement* : Commande de mesure de puissance de l'équipement à surveiller ou Commande de mesure de puissance générale
 ** *Compteur Général* : NON coché 
-** *P Mini* : obligatoire si *Compteur Général* NON coché, Puissance mini à l'arrêt de l'équipement à surveiller 
-** *P Maxi* : obligatoire si *Compteur Général* NON coché, Puissance de votre équipement à surveiller au démarrage
+** *Puissance Mini* : obligatoire si *Compteur Général* NON coché, Puissance mini à l'arrêt de l'équipement à surveiller 
+** *Puissance Maxi* : obligatoire si *Compteur Général* NON coché, Puissance de votre équipement à surveiller au démarrage
 ** *Temps min de fonctionnement* : Temps de fonctionnement minimun de l'equipement pour générer une alarme, doit etre vide pour ne pas générer d'alarme
 ** *Temps max de fonctionnement* : Temps de fonctionnement maximun de l'equipement pour générer une alarme, doit etre vide pour ne pas générer d'alarme
 ** *Heure prévue equipement en Arrêt (HHMM)* : heure à laquelle l'equipement (ie la commande etat) est prevue d'etre à OFF, non disponible si *Compteur Général* est coché
@@ -51,7 +42,13 @@ image::../images/equipement-analogique.png[]
 il peut y a une latence de 5min au declenchement de l'arlarme sur les paramètres *Heure prévue equipement en Arrêt (HHMM)* et *Heure prévue equipement en Marche (HHMM)*
 
 [IMPORTANT]
-la *commande equipement* doit etre de type "info et de sous type "numeric"
+la *commande equipement* doit etre de type "info et de sous type "numeric" pour *Type de commande* analogique
+la *commande equipement* doit etre de type "info et de sous type "binary" pour *Type de commande* logique
+
+[IMPORTANT]
+Vous ne pouvez créer qu'un seul équipement à surveiller avec l'option *Compteur Général*,
+c'est a dire avec une mesure de puissance global de votre logement.
+
 
 == Onglet Commandes
 
