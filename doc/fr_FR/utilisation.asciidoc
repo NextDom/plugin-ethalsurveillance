@@ -1,43 +1,53 @@
 == Cas d'utilisation
-* Surveiller la durée a laquelle votre télévison est allumée
+* Surveiller la durée de fonctionnement de votre télévison est allumée
 
-image::../images/utilisation1.png[]
+image::../images/utilisation1-equipement.png[]
 
 ** *Type de commande* : Logique
 ** *Commande equipement* : mettre la commande etat de la prise qui commande votre télévision
 ** *Temps min de fonctionnement* : laisser vide
-** *Temps max de fonctionnement* : mettre par exemple 70
+** *Temps max de fonctionnement* : mettre par exemple 400
+** *Heure prévue équipement en Arrêt (HHMM)* : mettre par exemple 2300
 
-vous aurez la commande *Alarme* qui passera à 1 ou bout de 70 minutes
-le compteur sera incrémenté a chaque a passage a ON de votre commande
+vous aurez la commande *Alarme* qui passera à 1 au bout de 400 minutes (soit un peu plus de 6 heures et demi , ça commence a faire beaucoup ;)) ou si a 23H00 la commande *Etat* est toujours à ON (c'est a dire votre TV tjrs allumé) 
+le compteur sera incrémenté a chaque passage a ON de votre commande
+
+pour un widget personalisé à l'equipement, selectionner les commandes comme ci-dessous
+
+image::../images/utilisation1-commandes.png[]
+
+image::../images/utilisation1-widget.png[]
 
 * Surveiller son chauffe eau avec la mesure de puissance sur l'arrivé général de votre logement
 
-image::../images/utilisation2.png[]
+image::../images/utilisation2-equipement.png[]
 
 ** *Type de commande* : Analogique
 ** *Commande equipement* : mettre la commande de mesure de puissance
 ** *Compteur Général* : coché
 ** *Heure de fonctionnement pévu* : mettre l'heure à laquelle votre chauffe eau est prévu de démarré (ex :2330)
 ** *Puissance equipement* : mettre la puissance de votre chauffe eau (ex 2000)
-** *P Mini* : laisser vide
-** *P Maxi* : laisser vide
 ** *Temps min de fonctionnement* : mettre par exemple 20
 ** *Temps max de fonctionnement* : mettre par exemple 240
 
-Vous aurez la commande *Alarme* qui passera à 1 à 00:10(23h30+20 minutes) s'il n'as pas demarré ou si son temps de fonctionnement est inferieur a 20 minutues ou superieur a 4 heures 
+Vous aurez la commande *Alarme* qui passera à ON à 00:10(23h30+20 minutes) s'il n'as pas demarré ou si son temps de fonctionnement est inferieur à 20 minutues ou superieur a 4 heures 
+
+pour un widget personalisé à l'equipement, selectionner les commandes comme ci-dessous
+
+image::../images/utilisation2-commandes.png[]
+
+image::../images/utilisation2-widget.png[]
+
 
 * Compter le nombre de cycle de votre lave linge avec une prise avec mesure de consommation
 
-image::../images/utilisation3.png[]
+image::../images/utilisation3-equipement.png[]
 
 ** *Type de commande* : Analogique
 ** *Commande equipement* : mettre la commande de mesure de puissance du lave linge
 ** *Compteur Général* : non coché
-** *Heure de fonctionnement pévu* : laisser vide
-** *Puissance equipement* : laisser vide
-** *P Mini* : si votre lave linge consomme environ 5W mini pendant un cyle, mettre 5
-** *P Maxi* : si votre lave linge consomme environ 100W au demarrage d'un cyle, mettre 100
+** *Puissance Mini* : si votre lave linge consomme environ 5W mini pendant un cyle, mettre 5
+** *Puissance Maxi* : si votre lave linge consomme environ 100W au demarrage d'un cyle, mettre 100
 ** *Temps min de fonctionnement* : laisser vide ou non 
 ** *Temps max de fonctionnement* : laisser vide ou non
 
@@ -45,3 +55,10 @@ le compteur sera incrementé de 1, la commande *Etat* passera à ON, si la valeu
 le cycle sera considéré terminé si la mesure de puissance est inferieur à 5W, et la commande *Etat* passera à OFF.
 
 Si les valeurs *Temps min de fonctionnement* ou *Temps max de fonctionnement* ne sont pas vide, la commande *Alarme* passera à ON suivant la valeur de la commande *Temps Fct* 
+
+pour un widget personalisé à l'equipement, selectionner les commandes comme ci-dessous
+
+image::../images/utilisation3-commandes.png[]
+
+image::../images/utilisation3-widget.png[]
+
