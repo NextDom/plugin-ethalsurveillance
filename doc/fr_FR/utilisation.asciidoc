@@ -27,12 +27,10 @@ image::../images/utilisation2-equipement.png[]
 ** *Compteur Général* : coché
 ** *Heure de fonctionnement pévu* : mettre l'heure à laquelle votre chauffe eau est prévu de démarré (ex :2330)
 ** *Puissance equipement* : mettre la puissance de votre chauffe eau (ex 2000)
-** *P Mini* : laisser vide
-** *P Maxi* : laisser vide
 ** *Temps min de fonctionnement* : mettre par exemple 20
 ** *Temps max de fonctionnement* : mettre par exemple 240
 
-Vous aurez la commande *Alarme* qui passera à 1 à 00:10(23h30+20 minutes) s'il n'as pas demarré ou si son temps de fonctionnement est inferieur a 20 minutues ou superieur a 4 heures 
+Vous aurez la commande *Alarme* qui passera à ON à 00:10(23h30+20 minutes) s'il n'as pas demarré ou si son temps de fonctionnement est inferieur à 20 minutues ou superieur a 4 heures 
 
 pour un widget personalisé à l'equipement, selectionner les commandes comme ci-dessous
 
@@ -48,10 +46,8 @@ image::../images/utilisation3-equipement.png[]
 ** *Type de commande* : Analogique
 ** *Commande equipement* : mettre la commande de mesure de puissance du lave linge
 ** *Compteur Général* : non coché
-** *Heure de fonctionnement pévu* : laisser vide
-** *Puissance equipement* : laisser vide
-** *P Mini* : si votre lave linge consomme environ 5W mini pendant un cyle, mettre 5
-** *P Maxi* : si votre lave linge consomme environ 100W au demarrage d'un cyle, mettre 100
+** *Puissance Mini* : si votre lave linge consomme environ 5W mini pendant un cyle, mettre 5
+** *Puissance Maxi* : si votre lave linge consomme environ 100W au demarrage d'un cyle, mettre 100
 ** *Temps min de fonctionnement* : laisser vide ou non 
 ** *Temps max de fonctionnement* : laisser vide ou non
 
