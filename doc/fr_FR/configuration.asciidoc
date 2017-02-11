@@ -99,25 +99,25 @@ Utiliser la case a coché affcher, si vous ne souhaitez pas voir certaines comma
 . Passage de la commande *Alarme* à ON :
 
 * *Type de commande* : "Logique"
-** Si la durée de la commande *Etat* à ON est superieur ou égal au *Temps max de fonctionnement* (code alarme 4)
 ** Si la durée de la commande *Etat* lors du passage de ON à OFF est inferieur ou égal au *Temps min de fonctionnement* (code alarme 2)
-*** Si la commande *Etat* à OFF et l'heure du systeme est compris entre *Heure prévue equipement en Marche (HHMM)* et *Heure prévue equipement en Marche (HHMM)* plus 5 min (code alarme 16)
-*** Si la commande *Etat* à ON et l'heure du systeme est compris entre *Heure prévue equipement en Arrêt (HHMM)* et *Heure prévue equipement en Arrêt (HHMM)* plus 5 min  (code alarme 8)
+** Si la durée de la commande *Etat* à ON est superieur ou égal au *Temps max de fonctionnement* (code alarme 4)
+** Si la commande *Etat* à ON et l'heure du systeme est compris entre *Heure prévue equipement en Arrêt (HHMM)* et *Heure prévue equipement en Arrêt (HHMM)* plus 5 min  (code alarme 8)
+** Si la commande *Etat* à OFF et l'heure du systeme est compris entre *Heure prévue equipement en Marche (HHMM)* et *Heure prévue equipement en Marche (HHMM)* plus 5 min (code alarme 16)
 
 * *Type de commande* : "Analogique"
 ** Si *Compteur Général* est coché,
-*** Si la durée de la commande *Etat* à ON est supérieur ou égal au *temps max de fonctionnement* (code alarme 4)
-*** Si la durée de la commande *Etat*, lors du passage de ON à OFF, est inferieur ou égal au *temps min de fonctionnement* (code alarme 2)
 *** Si la commande *Etat* est a OFF depuis *Heure de fonctionement prévue* plus *Temps min de fonctionnement* (code alarme 1)
+*** Si la durée de la commande *Etat*, lors du passage de ON à OFF, est inferieur ou égal au *temps min de fonctionnement* (code alarme 2)
+*** Si la durée de la commande *Etat* à ON est supérieur ou égal au *temps max de fonctionnement* (code alarme 4)
 ** Si *Compteur Général* n'est pas coché,
-*** Si la durée de la commande *Etat* à ON est superieur ou égal au *Temps max de fonctionnement* (code alarme 4)
 *** Si la durée de la commande *Etat*, lors du passage de ON à OFF, est inferieur ou égal au *Temps min de fonctionnement* (code alarme 2)
-*** Si la commande *Etat* à OFF et l'heure du systeme est compris entre *Heure prévue equipement en Marche (HHMM)* et *Heure prévue equipement en Marche (HHMM)* plus 5 min (code alarme 16)
+*** Si la durée de la commande *Etat* à ON est superieur ou égal au *Temps max de fonctionnement* (code alarme 4)
 *** Si la commande *Etat* à ON et l'heure du systeme est compris entre *Heure prévue equipement en Arrêt (HHMM)* et *Heure prévue equipement en Arrêt (HHMM)* plus 5 min  (code alarme 8)
-
+*** Si la commande *Etat* à OFF et l'heure du systeme est compris entre *Heure prévue equipement en Marche (HHMM)* et *Heure prévue equipement en Marche (HHMM)* plus 5 min (code alarme 16)
 
 [NOTE]
-Si la commande *Alarme* est déja à ON , et qu'une nouvelle conditions d'alarme est présente , la commande n'est pas remise à jour.  
+Si la commande *Alarme* est déja à ON , et qu'une nouvelle conditions d'alarme est présente , la commande n'est pas remise à jour
+seule la commande *Code Alarme* est mise à jour.  
 
 . Passage de la commande *Alarme* à OFF et remise à zéro de *Code Alarme*:
 
