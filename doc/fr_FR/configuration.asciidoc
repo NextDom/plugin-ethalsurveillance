@@ -116,8 +116,7 @@ Utiliser la case a coché affcher, si vous ne souhaitez pas voir certaines comma
 *** Si la commande *Etat* à OFF et l'heure du systeme est compris entre *Heure prévue equipement en Marche (HHMM)* et *Heure prévue equipement en Marche (HHMM)* plus 5 min (code alarme 16)
 
 [NOTE]
-Si la commande *Alarme* est déja à ON , et qu'une nouvelle conditions d'alarme est présente , la commande n'est pas remise à jour
-seule la commande *Code Alarme* est mise à jour.  
+Si la commande *Alarme* est déja à ON , et qu'une nouvelle conditions d'alarme est présente , celle-ci n'est pas remise à jour, seule la commande *Code Alarme* est mise à jour.
 
 . Passage de la commande *Alarme* à OFF et remise à zéro de *Code Alarme*:
 
