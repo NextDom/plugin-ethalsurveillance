@@ -125,6 +125,7 @@ Si la commande *Alarme* est déja à ON , et qu'une nouvelle conditions d'alarme
 . Mise à jour des commandes, lors du passage de la commande *Etat* de OFF à ON :
 
 * *Alarme* : passage à OFF
+* *Code Alarme* : passage à zéro
 * *Tempts Fct (H:M:S)* : '00:00:00'
 * *Tempts Fct* : 0 seconde 
 * *Tempts Fct Total(H:M:S)* : pas de changement
@@ -137,6 +138,7 @@ Si la commande *Alarme* est déja à ON , et qu'une nouvelle conditions d'alarme
 . Mise à jour des commandes, lors du passage de la commande *Etat* de ON à OFF : 
 
 * *Alarme* : voir ci dessus
+* *Code Alarme* : voir ci dessus
 * *Tempts Fct (H:M:S)* : heure d'arret moins heure de démarrage au format Heure:Minute:Seconde  
 * *Tempts Fct* : heure d'arret moins heure de démarrage en seconde 
 * *Tempts Fct Total(H:M:S)* : heure d'arret moins heure de démarrage plus *Tempts Fct Total(H:M:S)* précedent au format Heure:Minute:Seconde 
@@ -149,6 +151,7 @@ Si la commande *Alarme* est déja à ON , et qu'une nouvelle conditions d'alarme
 . Mise à jour des commandes toutes les 5 min :
 
 * *Alarme* : voir ci dessus
+* *Code Alarme* : voir ci dessus
 * *Tempts Fct* : heure courante moins heure de démarrage en seconde 
 * *Tempts Fct (H:M:S)* : heure courante moins heure de démarrage au format Heure:Minute:Seconde  
 * *Tempts Fct Total(H:M:S)* : heure courante moins heure de démarrage plus *Tempts Fct Total(H:M:S)* précedent au format Heure:Minute:Seconde 
