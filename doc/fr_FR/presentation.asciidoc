@@ -10,8 +10,12 @@ Un code d'alarme, permettant de connaître la cause de l'alarme,
 
 Un compteur de cycle de fonctionnement,
 
+Un graphique repésentant le temps de fonctionnement, 
+
 image::../images/utilisation1-widget.png[]
 
 image::../images/utilisation2-widget.png[]
 
 image::../images/utilisation3-widget.png[]
+
+image::../images/donnees.png[]
