@@ -72,6 +72,13 @@ Utiliser la case a coché affcher, si vous ne souhaitez pas voir certaines comma
 * *Compteur* : nombre de passage de la commande *Etat* de OFF à ON  
 * *RAZ Compteur* : remise à zero de la commande *Compteur*
 
+== Onglet Données
+
+image::../images/donnees.png[]
+
+Cet onglet fournit une représentation grahique du temps de fonctionnement de l'équipement,
+il est possble de le visualiser ce temps de fonctionnement par jour,semaine,mois
+
 == Fonctionnement
 
 . Passage de la commande *Etat* à ON :
