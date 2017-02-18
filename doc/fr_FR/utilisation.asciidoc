@@ -23,9 +23,9 @@ image::../images/utilisation1-widget.png[]
 image::../images/utilisation2-equipement.png[]
 
 ** *Type de commande* : analogique
-** *Commande équipement* : mettre la commande de mesure de puissance
+** *Commande équipement* : mettre la commande de mesure de puissance générale de votre logement
 ** *Compteur général* : coché
-** *Heure de fonctionnement pévu* : mettre l'heure d'allumage de votre chauffe eau (ex : 2330)
+** *Heure de fonctionnement pévu* : mettre l'heure prévu de mise en route de votre chauffe eau (ex : 2330) 
 ** *Puissance equipement* : mettre la puissance de votre chauffe eau (ex : 2000)
 ** *Temps min de fonctionnement* (minutes) : mettre par exemple 20
 ** *Temps max de fonctionnement* (minutes) : mettre par exemple 240
