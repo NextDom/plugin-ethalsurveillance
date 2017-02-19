@@ -1,6 +1,6 @@
 == Change Log
 
-* Version 1.4 (version en cours de dev)
+* Version 1.4 (version market : 2017-02-19 10:10:30)
 ** ajout de la commande *Code Alarme*
 ** ajout de l'onglet *Données* pour une visualisation graphique du temps de fonctionnement
 ** amélioration du code
