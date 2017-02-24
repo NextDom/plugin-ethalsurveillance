@@ -18,7 +18,7 @@ image::../images/utilisation1-commandes.png[]
 
 image::../images/utilisation1-widget.png[]
 
-* Surveiller son chauffe eau avec la mesure de puissance sur l'arrivée générale de votre logement :
+* Surveiller son chauffe eau avec la mesure de puissance de votre arrivée générale de votre logement :
 
 image::../images/utilisation2-equipement.png[]
 
