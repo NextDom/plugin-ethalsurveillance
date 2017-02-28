@@ -1,0 +1,55 @@
+{
+    "plugins\/ethalsurveillance\/plugin_info\/info.json": {
+        "Surveillance du fonctionnement d'un equipement": "Surveillance du fonctionnement d'un equipement"
+    },
+    "plugins\/ethalsurveillance\/desktop\/php\/ethalsurveillance.php": {
+        "Configuration": "Configuration",
+        "Ajouter un équipement à surveiller": "Ajouter un équipement à surveiller",
+        "Rechercher" : "Rechercher",
+        "Sauvegarder": "Sauvegarder",
+        "Supprimer": "Supprimer",
+        "Configuration avancée": "Configuration avancée",
+        "Equipement": "Equipement",
+        "Commandes": "Commandes",
+        "Nom de l'equipement": "Nom de l'equipement",
+        "Activer": "Activer",
+        "Visible": "Visible",
+        "Objet parent": "Objet parent",
+        "Aucun" : "Aucun",
+        "Catégorie": "Catégorie",
+        "Type de commande": "Type de commande",
+        "Puissance équipement (W)": "Puissance équipement (W)",
+        "Commande equipement": "Commande équipement",
+        "Heure de fonctionnement prévu +/- 2 min (HHMM)":"Heure de fonctionnement prévu +/- 2 min (HHMM)",
+        "Puissance mini (W)" : "Puissance mini (W)",
+        "Puissance max (W)" : "Puissance max (W)",
+        "Temps mini de fonctionnement (min)":"Temps mini de fonctionnement (min)",
+        "Temps max de fonctionnement (min)":"Temps max de fonctionnement (min)",
+        "Heure prévue équipement en Arrêt (HHMM)" : "Heure prévue équipement en Arrêt (HHMM)",
+        "Heure prévue équipement en Marche (HHMM)" : "Heure prévue équipement en Marche (HHMM)",
+        "Compteur Général":"Compteur Général",
+        "Nom":"Nom",
+        "Type":"Type",
+        "Options":"Options"
+
+    },
+    "plugins\/ethalsurveillance\/desktop\/js\/ethalsurveillance.js": {
+        "Tester": "Tester",
+        "Afficher": "Afficher",
+        "Historiser": "Historiser"
+    },
+    "plugins\/ethalsurveillance\/core\/class\/ethalsurveillance.class.php": {
+        "Défaut": "Défaut",
+        "Alarme": "Alarme",
+        "Temps Fct(H:M:S)":"Temps Fct(H:M:S)",
+        "Temps Fct" : "Temps Fct",
+        "Temps Fct Total(H:M:S)" : "Temps Fct Total(H:M:S)",
+        "Temps Fct Total" : "Temps Fct Total",
+        "RAZ Tps Fct Total" : "RAZ Tps Fct Total",
+        "Démarré" : "Démarré",
+        "Arreté" : "Arreté",
+        "Etat" : "Etat",
+        "Compteur" : "Compteur",
+        "RAZ Compteur" : "RAZ Compteur" 
+    }
+}

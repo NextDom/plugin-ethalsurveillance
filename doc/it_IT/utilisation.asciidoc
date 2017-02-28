@@ -1,0 +1,62 @@
+== Cas d'utilisation
+* Surveiller la durée de fonctionnement de votre télévison
+
+image::../images/utilisation1-equipement.png[]
+
+** *Type de commande* : logique
+** *Commande equipement* : mettre la commande état de la prise qui commande votre télévision
+** *Temps min de fonctionnement* : laisser vide
+** *Temps max de fonctionnement* (minutes) : mettre par exemple 400
+** *Heure prévue équipement en Arrêt (HHMM)* : mettre par exemple 2300
+
+Cela signifie que la commande *Alarme* passera à 1 au bout de 400 minutes (soit 6 heures et 40 minutes, ça commence à faire beaucoup ;)) ou à 23H00 si la commande *Etat* est toujours à ON (c'est-à-dire votre TV est toujours allumée).
+Le compteur sera incrémenté à chaque passage à ON de votre commande.
+
+Pour un widget personnalisé à l'equipement, sélectionnez les commandes comme ci-dessous :
+
+image::../images/utilisation1-commandes.png[]
+
+image::../images/utilisation1-widget.png[]
+
+* Surveiller son chauffe eau avec la mesure de puissance de votre arrivée générale du logement :
+
+image::../images/utilisation2-equipement.png[]
+
+** *Type de commande* : analogique
+** *Commande équipement* : mettre la commande de mesure de puissance générale de votre logement
+** *Compteur général* : coché
+** *Heure de fonctionnement pévu* : mettre l'heure prévu de mise en route de votre chauffe eau (ex : 2330) 
+** *Puissance equipement* : mettre la puissance de votre chauffe eau (ex : 2000)
+** *Temps min de fonctionnement* (minutes) : mettre par exemple 20
+** *Temps max de fonctionnement* (minutes) : mettre par exemple 240
+
+cela signifie que la commande *Alarme* passera à ON à 00:10 (23h30+20 minutes) s'il n'as pas demarré ou si son temps de fonctionnement est inferieur à 20 minutes ou supérieur à 4 heures.
+
+Pour un widget personalisé à l'equipement, selectionnez les commandes comme ci-dessous :
+
+image::../images/utilisation2-commandes.png[]
+
+image::../images/utilisation2-widget.png[]
+
+* Compter le nombre de cycles de votre lave linge connecté à une prise avec mesure de consommation :
+
+image::../images/utilisation3-equipement.png[]
+
+** *Type de commande* : analogique
+** *Commande équipement* : mettre la commande de mesure de puissance du lave linge
+** *Compteur général* : non coché
+** *Puissance Mini* (Watt) : si votre lave linge consomme environ 5W mini pendant un cyle, mettre 5
+** *Puissance Maxi* (Watt) : si votre lave linge consomme environ 100W au démarrage d'un cyle, mettre 100
+** *Temps min de fonctionnement* : laisser vide ou non 
+** *Temps max de fonctionnement* : laisser vide ou non
+
+le compteur sera incrementé de 1, la commande *Etat* passera à ON, si la valeur mesure de puissance est supérieure à 100W, 
+le cycle sera considéré comme terminé si la mesure de puissance est inférieure à 5W et la commande *Etat* passera à OFF.
+
+Si les valeurs *Temps min de fonctionnement* ou *Temps max de fonctionnement* ne sont pas vides, la commande *Alarme* passera à ON suivant la valeur de la commande *Temps Fct*.
+
+Pour un widget personalisé à l'équipement, selectionner les commandes comme ci-dessous :
+
+image::../images/utilisation3-commandes.png[]
+
+image::../images/utilisation3-widget.png[]
