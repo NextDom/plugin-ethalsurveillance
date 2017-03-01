@@ -1,4 +1,4 @@
-== FAQ
+=== FAQ
 
 S'il y a lieu, la FAQ sera alimentée par les échanges dans le sujet link:https://www.jeedom.com/forum/viewtopic.php?f=28&t=24637[Sujet officiel Surveillance Equipement] du forum jeedom.
 

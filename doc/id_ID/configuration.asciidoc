@@ -1,6 +1,6 @@
-= Configuration
+=== Configuration
 
-== Onglet Equipement
+==== Onglet Equipement
 
 ** *Type de commande* : Type de la commande qui servira à surveiller l'equipement , Logique ou Analogique, 
 
@@ -47,15 +47,15 @@ la *commande equipement* doit etre de type "info et de sous type "binary" pour *
 
 [IMPORTANT]
 Vous ne pouvez créer qu'un seul équipement à surveiller avec l'option *Compteur Général*,
-c'est a dire avec une mesure de puissance global de votre logement.
+c'est à dire avec une mesure de puissance global de votre logement.
 
 
-== Onglet Commandes
+==== Onglet Commandes
 
 image::../images/commandes.png[]
 
 Les commandes sont crées automatiquement à la sauvegarde de l'equipement, il n'est pas possible d'en ajouter, d'en supprimer.
-Utiliser la case a coché affcher, si vous ne souhaitez pas voir certaines commandes sur le widget.
+Utiliser la case à coché *afficher*, si vous ne souhaitez pas voir certaines commandes sur le widget.
 
 * *Alarme* : status d'alarme de l'équipement (1 = ALARME = ON, 0 = OFF)
 * *Code Alarme* : somme des codes d'alarme ayant déclenchée l'alarme , voir ci dessous les valeurs des codes d'alarmes
@@ -72,7 +72,7 @@ Utiliser la case a coché affcher, si vous ne souhaitez pas voir certaines comma
 * *Compteur* : nombre de passage de la commande *Etat* de OFF à ON  
 * *RAZ Compteur* : remise à zero de la commande *Compteur*
 
-== Onglet Données
+==== Onglet Données
 
 image::../images/donnees.png[]
 
@@ -83,7 +83,7 @@ Pour cela , il faut historiser la commande *Temps Fct Total*, avec l'option *Mod
 
 Ces options sont disponible depuis la roue dentée en face de la commande dans l'onglet *Commandes*.   
 
-== Fonctionnement
+=== Fonctionnement
 
 . Passage de la commande *Etat* à ON :
 
