@@ -6,11 +6,11 @@ Plugin servant à la surveillance d'un equipement.
 == Présentation
 include::presentation.asciidoc[]
 
-== Cas d'utilisation
-include::utilisation.asciidoc[]
-
 == Configuration
 include::configuration.asciidoc[]
+
+== Cas d'utilisation
+include::utilisation.asciidoc[]
 
 == FAQ
 include::faq.asciidoc[]
