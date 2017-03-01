@@ -1,5 +1,3 @@
-=== Cas d'utilisation
-
 * Surveiller la durée de fonctionnement de votre télévison
 
 image::../images/utilisation1-equipement.png[]
