@@ -17,7 +17,7 @@ image::../images/utilisation1-commandes.png[]
 
 image::../images/utilisation1-widget.png[]
 
-=== Surveiller son chauffe eau avec la mesure de puissance de votre arrivée générale du logement :
+=== Surveiller son chauffe eau avec la mesure de puissance de votre arrivée générale du logement
 
 image::../images/utilisation2-equipement.png[]
 
@@ -37,7 +37,7 @@ image::../images/utilisation2-commandes.png[]
 
 image::../images/utilisation2-widget.png[]
 
-=== Compter le nombre de cycles de votre lave linge connecté à une prise avec mesure de consommation :
+=== Compter le nombre de cycles de votre lave linge
 
 image::../images/utilisation3-equipement.png[]
 
