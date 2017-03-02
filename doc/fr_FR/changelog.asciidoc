@@ -1,7 +1,7 @@
-* Version 1.5 (2017-03-02 08:46:49)		
+* Version 1.5 (version market : 2017-03-02 08:46:49)		
 ** idem à la 1.4, mise à jour sur le market suite au passage du "robot" qui a fournit une nouvelle version , pas compris ce qu'il c'est passé
 
-* Version 1.4 ()
+* Version 1.4 (version market : 2017-02-19 10:10:30)
 ** ajout de la commande *Code Alarme*
 ** ajout de l'onglet *Données* pour une visualisation graphique du temps de fonctionnement
 ** amélioration du code
