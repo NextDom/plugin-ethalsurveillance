@@ -1,5 +1,5 @@
 * Version 1.5 (2017-03-02 08:46:49)		
-** idem à la 1.4, mise à jour le market suite au passage du Robot qui a fournit une nouvelle version
+** idem à la 1.4, mise à jour sur le market suite au passage du Robot qui a fournit une nouvelle version
 
 * Version 1.4 ()
 ** ajout de la commande *Code Alarme*
