@@ -1,6 +1,4 @@
-=== Configuration
-
-==== Onglet Equipement
+=== Onglet Equipement
 
 ** *Type de commande* : Type de la commande qui servira à surveiller l'equipement , Logique ou Analogique, 
 
@@ -50,7 +48,7 @@ Vous ne pouvez créer qu'un seul équipement à surveiller avec l'option *Compte
 c'est à dire avec une mesure de puissance global de votre logement.
 
 
-==== Onglet Commandes
+=== Onglet Commandes
 
 image::../images/commandes.png[]
 
@@ -72,12 +70,12 @@ Utiliser la case à coché *afficher*, si vous ne souhaitez pas voir certaines c
 * *Compteur* : nombre de passage de la commande *Etat* de OFF à ON  
 * *RAZ Compteur* : remise à zero de la commande *Compteur*
 
-==== Onglet Données
+=== Onglet Données
 
 image::../images/donnees.png[]
 
 Cet onglet fournit une représentation grahique du temps de fonctionnement de l'équipement,
-il est possble de visualiser ce temps de fonctionnement par jour, semaine, mois (selecteur Cumul par jour, cumul par semaine, cumul par mois)
+il est possble de visualiser ce temps de fonctionnement par jour, semaine, mois (selecteur cumul par jour, cumul par semaine, cumul par mois)
 
 Pour cela , il faut historiser la commande *Temps Fct Total*, avec l'option *Mode de lissage* sur *Aucun*.
 

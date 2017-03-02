@@ -1,5 +1,3 @@
-=== Présentation
-
 Ce plugin permet la surveillance d'un équipement. 
 
 La surveillance est faite soit à partir d'une commande d' *Etat* ou d'une commande de mesure de *puissance*,
