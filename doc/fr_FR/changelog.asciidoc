@@ -1,7 +1,7 @@
-* Version 1.5 (version en cours)		
-** Correction du bug lors de la remise à zéro	du temps de fonctionnement total
+* Version 1.5 (2017-03-02 08:46:49)		
+** idem à la 1.4, mise à jour le market suite au passage du Robot qui a fournit une nouvelle version
 
-* Version 1.4 (version en cours de dev)
+* Version 1.4 ()
 ** ajout de la commande *Code Alarme*
 ** ajout de l'onglet *Données* pour une visualisation graphique du temps de fonctionnement
 ** amélioration du code
