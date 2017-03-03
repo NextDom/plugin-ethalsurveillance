@@ -1,4 +1,4 @@
-=== Onglet Equipement
+=== Registerkarte Geräte
 
 ** *Type de commande* : Type de la commande qui servira à surveiller l'equipement , Logique ou Analogique, 
 

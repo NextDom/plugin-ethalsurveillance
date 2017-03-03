@@ -1,19 +1,19 @@
-= Plugin Surveillance Equipement
+= Überwachungsgeräte Plugin
 
-== Description
-Plugin servant à la surveillance d'un equipement.
+== Beschreibung
+Plugin, das der Überwachung eines Gerätes dient.
 
-== Présentation
+== Präsentation
 include::presentation.asciidoc[]
 
-== Configuration
+== Konfiguration
 include::configuration.asciidoc[]
 
-== Cas d'utilisation
+== Anwendungsfall
 include::utilisation.asciidoc[]
 
 == FAQ
 include::faq.asciidoc[]
 
-== Change Log
+== Änderungsprotokoll
 include::changelog.asciidoc[]
