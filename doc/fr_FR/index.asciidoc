@@ -1,7 +1,7 @@
 = Plugin Surveillance Equipement
 
 == Description
-Plugin servant à la surveillance d'un equipement.
+Plugin servant à la surveillance d'un équipement.
 
 == Présentation
 include::presentation.asciidoc[]
