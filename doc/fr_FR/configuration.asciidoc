@@ -77,8 +77,7 @@ image::../images/donnees.png[]
 Cet onglet fournit une représentation grahique du temps de fonctionnement de l'équipement,
 il est possble de visualiser ce temps de fonctionnement par jour, semaine, mois (sélecteur cumul par jour, cumul par semaine, cumul par mois)
 
-Pour cela , il faut historiser la commande *Temps Fct Total*, avec l'option *Mode de lissage* sur *Aucun*.
-
+Pour cela , la commande *etat* doit être historisée avec l'option *Mode de lissage* sur *Aucun*.
 Ces options sont disponible depuis la roue dentée en face de la commande dans l'onglet *Commandes*.   
 
 === Fonctionnement
