@@ -18,38 +18,38 @@
         "Aucun" : "Keine",
         "Catégorie": "Kategorie",
         "Type de commande": "Befehlstyp",
-        "Puissance équipement (W)": "Geräteleistung ",
-        "Commande equipement": "Steuergerät",
+        "Puissance équipement (W)": "Geräteleistung (W)",
+        "Commande equipement": "Gerät Befehl",
         "Heure de fonctionnement prévu +/- 2 min (HHMM)":" Vorgesehene Betriebsstunden +/- 2 min (HHMM)",
-        "Puissance mini (W)" : "Leistung mini ",
-        "Puissance max (W)" : "Leistung maxi (W)",
+        "Puissance mini (W)" : "Minimale Leistung (W)",
+        "Puissance max (W)" : "Maximale Leistung (W)",
         "Temps mini de fonctionnement (min)":"Minimale Betriebszeit (min)",
         "Temps max de fonctionnement (min)":"Maximale Betriebszeit (min)",
-        "Heure prévue équipement en Arrêt (HHMM)" : "Vorgesehene Zeit, Gerät ausgeschalten (HHMM)",
-        "Heure prévue équipement en Marche (HHMM)" : "Vorgesehene Zeit, Gerät eingeschalten (HHMM)",
-        "Compteur Général":"Compteur Général",
-        "Nom":"Nom",
-        "Type":"Type",
-        "Options":"Options"
+        "Heure prévue équipement en Arrêt (HHMM)" : "Zeit, der geplanten Geräte Abschaltung (HHMM)",
+        "Heure prévue équipement en Marche (HHMM)" : "Zeit, der geplanten Geräte Anschaltung (HHMM)",
+        "Compteur Général":"Allgemein Zähler",
+        "Nom":"Name",
+        "Type":"Typ",
+        "Options":"Optionen"
 
     },
     "plugins\/ethalsurveillance\/desktop\/js\/ethalsurveillance.js": {
-        "Tester": "Tester",
-        "Afficher": "Afficher",
-        "Historiser": "Historiser"
+        "Tester": "Testen",
+        "Afficher": "Anzeigen",
+        "Historiser": "Archivieren"
     },
     "plugins\/ethalsurveillance\/core\/class\/ethalsurveillance.class.php": {
-        "Défaut": "Défaut",
-        "Alarme": "Alarme",
-        "Temps Fct(H:M:S)":"Temps Fct(H:M:S)",
-        "Temps Fct" : "Temps Fct",
-        "Temps Fct Total(H:M:S)" : "Temps Fct Total(H:M:S)",
-        "Temps Fct Total" : "Temps Fct Total",
-        "RAZ Tps Fct Total" : "RAZ Tps Fct Total",
-        "Démarré" : "Démarré",
-        "Arreté" : "Arreté",
-        "Etat" : "Etat",
-        "Compteur" : "Compteur",
-        "RAZ Compteur" : "RAZ Compteur" 
+        "Défaut": "Standard",
+        "Alarme": "Alarm",
+        "Temps Fct(H:M:S)":"Betriebszeit (H:M:S)",
+        "Temps Fct" : "Betriebszeit",
+        "Temps Fct Total(H:M:S)" : "gesamte Betriebszeit (H:M:S)",
+        "Temps Fct Total" : "gesamte Betriebszeit",
+        "RAZ Tps Fct Total" : "gesamte Betriebszeit zurücksetzen",
+        "Démarré" : "gestartet",
+        "Arreté" : " beendet",
+        "Etat" : "Zustand",
+        "Compteur" : "Zähler",
+        "RAZ Compteur" : "Zähler zurücksetzen" 
     }
 }

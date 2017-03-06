@@ -5,14 +5,14 @@
 ** idem à la 1.4, mise à jour sur le market suite au passage du "robot" qui a fournit une nouvelle version , pas compris ce qu'il s'est passé
 
 * Version 1.4 (Markt Version : 2017-02-19 10:10:30)
-** Befehl hinzugefügt 
+** Befehl hinzugefügt *Alarm Code*
 ** Die Registerkarte *Daten* hinzugefügt, für eine grafische Visualisierung der Betriebszeit 
 ** Code verbessert
 ** Aktualisierung der Dokumentation
 
 * Version 1.3 (Markt Version : 2017-02-10 11:07:08)
-** ajout des paramètres *Heure prévue équipement en Arrêt* et *Heure prévue équipement en Marche*
-** Modification affichage *Temps Fct Total*
+** Parameter *Zeit, der geplanten Geräte Abschaltung* und *Zeit, der geplanten Geräte Anschaltung* hinzugefügt
+* Anzeige geändert *gesamte Betriebszeit*
 ** Code verbessert
 ** Aktualisierung der Dokumentation
 

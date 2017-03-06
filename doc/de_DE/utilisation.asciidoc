@@ -1,17 +1,17 @@
-=== Surveiller la durée de fonctionnement de votre télévison
+=== Überwachung der Betriebsdauer ihres Fernsehers
 
 image::../images/utilisation1-equipement.png[]
 
-* *Type de commande* : logique
-* *Commande équipement* : mettre la commande état de la prise qui commande votre télévision
-* *Temps min de fonctionnement* : laisser vide
-* *Temps max de fonctionnement* (minutes) : mettre par exemple 400
-* *Heure prévue équipement en Arrêt (HHMM)* : mettre par exemple 2300
+* *Befehlstyp* : logisch
+* *Geräte Befehl* : Befehl, der den Zustand der Steckdose, ihres zu steuernden Fernseher festlegt
+* *Minimale Betriebszeit (min)* : leer lassen
+* *Maximale Betriebszeit (min)* : zum Beispiel auf 400 setzen
+* *Zeit, der geplanten Geräte Abschaltung (HHMM)* : zum Beispiel auf 2300 setzen
 
 Cela signifie que la commande *Alarme* passera à 1 au bout de 400 minutes (soit 6 heures et 40 minutes, cela commence à faire beaucoup ;)) ou à 23H00 si la commande *Etat* est toujours à ON (c'est à dire votre TV est toujours allumée).
-Le compteur sera incrémenté à chaque passage à ON de votre commande.
+Der Zähler wird bei jedem Wechsel auf AN, ihres Befehls, erhöht werden.
 
-Pour un widget personnalisé à l'équipement, sélectionnez les commandes comme ci-dessous :
+Für ein eigenes Geräte Widget, wählen Sie die Befehle wie folgt :
 
 image::../images/utilisation1-commandes.png[]
 
@@ -21,40 +21,40 @@ image::../images/utilisation1-widget.png[]
 
 image::../images/utilisation2-equipement.png[]
 
-* *Type de commande* : analogique
-* *Commande équipement* : mettre la commande de mesure de puissance générale de votre logement
-* *Compteur général* : coché
-* *Heure de fonctionnement pévu* : mettre l'heure prévue de mise en route de votre chauffe-eau (ex : 2330) 
-* *Puissance équipement* : mettre la puissance de votre chauffe-eau (ex : 2000)
-* *Temps min de fonctionnement* (minutes) : mettre par exemple 20
-* *Temps max de fonctionnement* (minutes) : mettre par exemple 240
+* *Befehlstyp* : analog
+* *Geräte Befehl* : Befehl, der die allgemeine Leistung ihrer Wohnung misst
+* *Allgemein Zähler* : ankreuzen
+* *Vorgesehene Betriebsstunden* : die geplante Inbetriebnahme ihrer Wasser-Heizung festlegen (zB: 2330) 
+* *Geräteleistung* : die Leistung Ihrer Wasserheizung festlegen (zB 2000)
+* *Minimale Betriebszeit (min)* : zum Beispiel auf 20 setzen
+* *Maximale Betriebszeit (min)* : zum Beispiel auf 240 setzen
 
 cela signifie que la commande *Alarme* passera à ON à 00:10 (23h30+20 minutes) si l'équipement n'a pas demarré ou si son temps de fonctionnement est inférieur à 20 minutes ou supérieur à 4 heures.
 
-Pour un widget personalisé à l'équipement, selectionnez les commandes comme ci-dessous :
+Für ein eigenes Geräte Widget, wählen Sie die Befehle wie folgt :
 
 image::../images/utilisation2-commandes.png[]
 
 image::../images/utilisation2-widget.png[]
 
-=== Compter le nombre de cycles de votre lave-linge
+=== Die Anzahl Ihrer Waschmaschinen Zyklen zählen
 
 image::../images/utilisation3-equipement.png[]
 
-* *Type de commande* : analogique
-* *Commande équipement* : mettre la commande de mesure de puissance du lave-linge
-* *Compteur général* : non coché
-* *Puissance Mini* (Watt) : si votre lave-linge consomme environ 5W mini pendant un cyle, mettre 5
-* *Puissance Maxi* (Watt) : si votre lave-linge consomme environ 100W au démarrage d'un cyle, mettre 100
-* *Temps min de fonctionnement* : laisser vide ou non 
-* *Temps max de fonctionnement* : laisser vide ou non
+* *Befehlstyp* : analog
+* *Geräte Befehl* : Befehl, der die Leistung ihrer Waschmaschiene misst
+* *Allgemein Zähler* : nicht ankreuzen
+* *Minimale Leistung (W)* : Wenn Ihre Waschmaschine minimal ungefähr 5W während eines Zyklus verbraucht, setzen Sie 5
+* *Maximale Leistung (W)* : wenn Ihre Waschmaschine ungefähr 100W beim starten eines Zyklus verbraucht, setzen Sie 100 
+* *Minimale Betriebszeit (min)* : leer lassen oder nicht 
+* *Maximale Betriebszeit (min)* : leer lassen oder nicht
 
-le compteur sera incrémenté de 1, la commande *Etat* passera à ON, si la valeur mesure de puissance est supérieure à 100W, 
-le cycle sera considéré comme terminé si la mesure de puissance est inférieure à 5W et la commande *Etat* passera à OFF.
+Der Zähler wird um 1 erhöht, der Befehl *Zustand* geht auf AN, wenn der gemessene Leistungswert größer 100W ist, 
+der Zyklus wird als beendet angesehen, wenn die gemessene Leistung kleiner als 5W ist, und der Befehl *Zustand* zu AUS übergegangen ist.
 
-Si les champs *Temps min de fonctionnement* ou *Temps max de fonctionnement* ne sont pas vides, la commande *Alarme* passera à ON suivant la valeur de la commande *Temps Fct*.
+Wenn die Felder *Minimale Betriebszeit* oder *Maximale Betriebszeit* nicht leer sind, der Befehl *Alarm* auf AN geht  folgt der Wert des Befehls *Betriebszeit*
 
-Pour un widget personalisé à l'équipement, selectionner les commandes comme ci-dessous :
+Für ein eigenes Geräte Widget, wählen Sie die Befehle wie folgt :
 
 image::../images/utilisation3-commandes.png[]
 

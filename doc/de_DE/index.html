@@ -428,13 +428,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_anwendungsfall">4. Anwendungsfall</a>
 <ul class="sectlevel2">
-<li><a href="#_surveiller_la_durée_de_fonctionnement_de_votre_télévison">4.1. Surveiller la durée de fonctionnement de votre télévison</a></li>
+<li><a href="#_Überwachung_der_betriebsdauer_ihres_fernsehers">4.1. Überwachung der Betriebsdauer ihres Fernsehers</a></li>
 <li><a href="#_surveiller_son_chauffe_eau_avec_la_mesure_de_puissance_de_l_arrivée_générale_de_votre_logement">4.2. Surveiller son chauffe-eau avec la mesure de puissance de l&#8217;arrivée générale de votre logement</a></li>
-<li><a href="#_compter_le_nombre_de_cycles_de_votre_lave_linge">4.3. Compter le nombre de cycles de votre lave-linge</a></li>
+<li><a href="#_die_anzahl_ihrer_waschmaschinen_zyklen_zählen">4.3. Die Anzahl Ihrer Waschmaschinen Zyklen zählen</a></li>
 </ul>
 </li>
 <li><a href="#_faq">5. FAQ</a></li>
-<li><a href="#_Änderungsprotokoll">6. Änderungsprotokoll</a></li>
+<li><a href="#_changelog">6. Changelog</a></li>
 </ul>
 </div>
 </div>
@@ -573,7 +573,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><strong>Commande équipement</strong> : Commande de mesure de puissance de l&#8217;équipement à surveiller ou Commande de mesure de puissance générale</p>
 </li>
 <li>
-<p><strong>Compteur Général</strong> : NON coché</p>
+<p><strong>Allgemein Zähler</strong> : nicht ankreuzen</p>
 </li>
 <li>
 <p><strong>Puissance Mini</strong> : obligatoire si <strong>Compteur Général</strong> NON coché, Puissance mini à l&#8217;arrêt de l&#8217;équipement à surveiller</p>
@@ -901,34 +901,34 @@ Si la commande <strong>Alarme</strong> est déja à ON , et qu&#8217;une nouvell
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alarme</strong> : passage à OFF</p>
+<p><strong>Alarm</strong> : umschalten zu AUS</p>
 </li>
 <li>
-<p><strong>Code Alarme</strong> : passage à zéro</p>
+<p><strong>Alarm Code</strong> : Übergang auf null</p>
 </li>
 <li>
-<p><strong>Tempts Fct (H:M:S)</strong> : '00:00:00'</p>
+<p><strong>Betriebszeit (H:M:S)</strong> : '00:00:00'</p>
 </li>
 <li>
-<p><strong>Tempts Fct</strong> : 0 seconde</p>
+<p><strong>Betriebszeit</strong> : 0 Sekunden</p>
 </li>
 <li>
-<p><strong>Tempts Fct Total(H:M:S)</strong> : pas de changement</p>
+<p><strong>gesamte Betriebszeit (H:M:S)</strong> : Keine Änderung</p>
 </li>
 <li>
-<p><strong>Tempts Fct Total</strong> : pas de changement</p>
+<p><strong>gesamte Betriebszeit</strong> : Keine Änderung</p>
 </li>
 <li>
-<p><strong>Demarré</strong> : heure courante du démarrage</p>
+<p><strong>Gestartet</strong> : aktuelle Startzeit</p>
 </li>
 <li>
-<p><strong>Arreté</strong> : '-'</p>
+<p><strong>beendet</strong> : '-'</p>
 </li>
 <li>
-<p><strong>Etat</strong> : Passage à ON</p>
+<p><strong>Zustand</strong> : umschalten zu AN</p>
 </li>
 <li>
-<p><strong>Compteur</strong> : Incrémenter de 1</p>
+<p><strong>Zähler</strong> : um 1 erhöhen</p>
 </li>
 </ul>
 </div>
@@ -938,16 +938,16 @@ Si la commande <strong>Alarme</strong> est déja à ON , et qu&#8217;une nouvell
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alarme</strong> : voir ci-dessus</p>
+<p><strong>Alarm</strong> : siehe oben</p>
 </li>
 <li>
-<p><strong>Code Alarme</strong> : voir ci-dessus</p>
+<p><strong>Alarm Code</strong> : siehe oben</p>
 </li>
 <li>
 <p><strong>Tempts Fct (H:M:S)</strong> : heure d&#8217;arrêt moins heure de démarrage au format Heure:Minute:Seconde</p>
 </li>
 <li>
-<p><strong>Tempts Fct</strong> : heure d&#8217;arrêt moins heure de démarrage en secondes</p>
+<p><strong>Betriebszeit</strong> : Ausschaltzeit weniger Startzeit in Sekunden</p>
 </li>
 <li>
 <p><strong>Tempts Fct Total(H:M:S)</strong> : heure d&#8217;arrêt moins heure de démarrage plus <strong>Tempts Fct Total(H:M:S)</strong> précédent au format Heure:Minute:Seconde</p>
@@ -956,10 +956,8 @@ Si la commande <strong>Alarme</strong> est déja à ON , et qu&#8217;une nouvell
 <p><strong>Tempts Fct Total</strong> : heure d&#8217;arrêt moins heure de démarrage plus <strong>Tempts Fct Total</strong> précédent en secondes</p>
 </li>
 <li>
-<p><strong>Démarré</strong> : pas de changement</p>
-</li>
-<li>
-<p><strong>Arrêté</strong> : heure courante de l&#8217;arrêt</p>
+<p><strong>Starten</strong> : Keine Änderung
+<strong>Anhalten</strong> : aktuelle Zeit vom anhalten</p>
 </li>
 <li>
 <p><strong>Zustand</strong> : umschalten zu AUS</p>
@@ -975,10 +973,10 @@ Si la commande <strong>Alarme</strong> est déja à ON , et qu&#8217;une nouvell
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alarme</strong> : voir ci-dessus</p>
+<p><strong>Alarm</strong> : siehe oben</p>
 </li>
 <li>
-<p><strong>Code Alarme</strong> : voir ci-dessus</p>
+<p><strong>Alarm Code</strong> : siehe oben</p>
 </li>
 <li>
 <p><strong>Tempts Fct</strong> : heure courante moins heure de démarrage en secondes</p>
@@ -993,10 +991,10 @@ Si la commande <strong>Alarme</strong> est déja à ON , et qu&#8217;une nouvell
 <p><strong>Tempts Fct Total</strong> : heure courante moins heure de démarrage plus <strong>Tempts Fct Total</strong> précédent en secondes</p>
 </li>
 <li>
-<p><strong>Démarré</strong> : pas de changement</p>
+<p><strong>Starten</strong> : Keine Änderung</p>
 </li>
 <li>
-<p><strong>Arrêté</strong> : pas de changement</p>
+<p><strong>Anhalten</strong> : Keine Änderung</p>
 </li>
 <li>
 <p><strong>Zustand</strong> : Keine Änderung</p>
@@ -1016,7 +1014,7 @@ Si la commande <strong>Alarme</strong> est déja à ON , et qu&#8217;une nouvell
 <h2 id="_anwendungsfall">4. Anwendungsfall</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_surveiller_la_durée_de_fonctionnement_de_votre_télévison">4.1. Surveiller la durée de fonctionnement de votre télévison</h3>
+<h3 id="_Überwachung_der_betriebsdauer_ihres_fernsehers">4.1. Überwachung der Betriebsdauer ihres Fernsehers</h3>
 <div class="imageblock">
 <div class="content">
 <img src="../images/utilisation1-equipement.png" alt="utilisation1 equipement">
@@ -1025,28 +1023,28 @@ Si la commande <strong>Alarme</strong> est déja à ON , et qu&#8217;une nouvell
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Type de commande</strong> : logique</p>
+<p><strong>Befehlstyp</strong> : logisch</p>
 </li>
 <li>
-<p><strong>Commande équipement</strong> : mettre la commande état de la prise qui commande votre télévision</p>
+<p><strong>Geräte Befehl</strong> : Befehl, der den Zustand der Steckdose, ihres zu steuernden Fernseher festlegt</p>
 </li>
 <li>
-<p><strong>Temps min de fonctionnement</strong> : laisser vide</p>
+<p><strong>Minimale Betriebszeit (min)</strong> : leer lassen</p>
 </li>
 <li>
-<p><strong>Temps max de fonctionnement</strong> (minutes) : mettre par exemple 400</p>
+<p><strong>Maximale Betriebszeit (min)</strong> : zum Beispiel auf 400 setzen</p>
 </li>
 <li>
-<p><strong>Heure prévue équipement en Arrêt (HHMM)</strong> : mettre par exemple 2300</p>
+<p><strong>Zeit, der geplanten Geräte Abschaltung (HHMM)</strong> : zum Beispiel auf 2300 setzen</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>Cela signifie que la commande <strong>Alarme</strong> passera à 1 au bout de 400 minutes (soit 6 heures et 40 minutes, cela commence à faire beaucoup ;)) ou à 23H00 si la commande <strong>Etat</strong> est toujours à ON (c&#8217;est à dire votre TV est toujours allumée).
-Le compteur sera incrémenté à chaque passage à ON de votre commande.</p>
+Der Zähler wird bei jedem Wechsel auf AN, ihres Befehls, erhöht werden.</p>
 </div>
 <div class="paragraph">
-<p>Pour un widget personnalisé à l&#8217;équipement, sélectionnez les commandes comme ci-dessous :</p>
+<p>Für ein eigenes Geräte Widget, wählen Sie die Befehle wie folgt :</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1069,25 +1067,25 @@ Le compteur sera incrémenté à chaque passage à ON de votre commande.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Type de commande</strong> : analogique</p>
+<p><strong>Befehlstyp</strong> : analog</p>
 </li>
 <li>
-<p><strong>Commande équipement</strong> : mettre la commande de mesure de puissance générale de votre logement</p>
+<p><strong>Geräte Befehl</strong> : Befehl, der die allgemeine Leistung ihrer Wohnung misst</p>
 </li>
 <li>
-<p><strong>Compteur général</strong> : coché</p>
+<p><strong>Allgemein Zähler</strong> : ankreuzen</p>
 </li>
 <li>
-<p><strong>Heure de fonctionnement pévu</strong> : mettre l&#8217;heure prévue de mise en route de votre chauffe-eau (ex : 2330)</p>
+<p><strong>Vorgesehene Betriebsstunden</strong> : die geplante Inbetriebnahme ihrer Wasser-Heizung festlegen (zB: 2330)</p>
 </li>
 <li>
-<p><strong>Puissance équipement</strong> : mettre la puissance de votre chauffe-eau (ex : 2000)</p>
+<p><strong>Geräteleistung</strong> : die Leistung Ihrer Wasserheizung festlegen (zB 2000)</p>
 </li>
 <li>
-<p><strong>Temps min de fonctionnement</strong> (minutes) : mettre par exemple 20</p>
+<p><strong>Minimale Betriebszeit (min)</strong> : zum Beispiel auf 20 setzen</p>
 </li>
 <li>
-<p><strong>Temps max de fonctionnement</strong> (minutes) : mettre par exemple 240</p>
+<p><strong>Maximale Betriebszeit (min)</strong> : zum Beispiel auf 240 setzen</p>
 </li>
 </ul>
 </div>
@@ -1095,7 +1093,7 @@ Le compteur sera incrémenté à chaque passage à ON de votre commande.</p>
 <p>cela signifie que la commande <strong>Alarme</strong> passera à ON à 00:10 (23h30+20 minutes) si l&#8217;équipement n&#8217;a pas demarré ou si son temps de fonctionnement est inférieur à 20 minutes ou supérieur à 4 heures.</p>
 </div>
 <div class="paragraph">
-<p>Pour un widget personalisé à l&#8217;équipement, selectionnez les commandes comme ci-dessous :</p>
+<p>Für ein eigenes Geräte Widget, wählen Sie die Befehle wie folgt :</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1109,7 +1107,7 @@ Le compteur sera incrémenté à chaque passage à ON de votre commande.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_compter_le_nombre_de_cycles_de_votre_lave_linge">4.3. Compter le nombre de cycles de votre lave-linge</h3>
+<h3 id="_die_anzahl_ihrer_waschmaschinen_zyklen_zählen">4.3. Die Anzahl Ihrer Waschmaschinen Zyklen zählen</h3>
 <div class="imageblock">
 <div class="content">
 <img src="../images/utilisation3-equipement.png" alt="utilisation3 equipement">
@@ -1118,37 +1116,37 @@ Le compteur sera incrémenté à chaque passage à ON de votre commande.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Type de commande</strong> : analogique</p>
+<p><strong>Befehlstyp</strong> : analog</p>
 </li>
 <li>
-<p><strong>Commande équipement</strong> : mettre la commande de mesure de puissance du lave-linge</p>
+<p><strong>Geräte Befehl</strong> : Befehl, der die Leistung ihrer Waschmaschiene misst</p>
 </li>
 <li>
-<p><strong>Compteur général</strong> : non coché</p>
+<p><strong>Allgemein Zähler</strong> : nicht ankreuzen</p>
 </li>
 <li>
-<p><strong>Puissance Mini</strong> (Watt) : si votre lave-linge consomme environ 5W mini pendant un cyle, mettre 5</p>
+<p><strong>Minimale Leistung (W)</strong> : Wenn Ihre Waschmaschine minimal ungefähr 5W während eines Zyklus verbraucht, setzen Sie 5</p>
 </li>
 <li>
-<p><strong>Puissance Maxi</strong> (Watt) : si votre lave-linge consomme environ 100W au démarrage d&#8217;un cyle, mettre 100</p>
+<p><strong>Maximale Leistung (W)</strong> : wenn Ihre Waschmaschine ungefähr 100W beim starten eines Zyklus verbraucht, setzen Sie 100</p>
 </li>
 <li>
-<p><strong>Temps min de fonctionnement</strong> : laisser vide ou non</p>
+<p><strong>Minimale Betriebszeit (min)</strong> : leer lassen oder nicht</p>
 </li>
 <li>
-<p><strong>Temps max de fonctionnement</strong> : laisser vide ou non</p>
+<p><strong>Maximale Betriebszeit (min)</strong> : leer lassen oder nicht</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>le compteur sera incrémenté de 1, la commande <strong>Etat</strong> passera à ON, si la valeur mesure de puissance est supérieure à 100W,
-le cycle sera considéré comme terminé si la mesure de puissance est inférieure à 5W et la commande <strong>Etat</strong> passera à OFF.</p>
+<p>Der Zähler wird um 1 erhöht, der Befehl <strong>Zustand</strong> geht auf AN, wenn der gemessene Leistungswert größer 100W ist,
+der Zyklus wird als beendet angesehen, wenn die gemessene Leistung kleiner als 5W ist, und der Befehl <strong>Zustand</strong> zu AUS übergegangen ist.</p>
 </div>
 <div class="paragraph">
-<p>Si les champs <strong>Temps min de fonctionnement</strong> ou <strong>Temps max de fonctionnement</strong> ne sont pas vides, la commande <strong>Alarme</strong> passera à ON suivant la valeur de la commande <strong>Temps Fct</strong>.</p>
+<p>Wenn die Felder <strong>Minimale Betriebszeit</strong> oder <strong>Maximale Betriebszeit</strong> nicht leer sind, der Befehl <strong>Alarm</strong> auf AN geht  folgt der Wert des Befehls <strong>Betriebszeit</strong></p>
 </div>
 <div class="paragraph">
-<p>Pour un widget personalisé à l&#8217;équipement, selectionner les commandes comme ci-dessous :</p>
+<p>Für ein eigenes Geräte Widget, wählen Sie die Befehle wie folgt :</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1169,13 +1167,13 @@ le cycle sera considéré comme terminé si la mesure de puissance est inférieu
 <div class="ulist">
 <ul>
 <li>
-<p>Après une mise à jour du plugin, il est préférable de faire une sauvegarde de chaque "Surveillance équipement"</p>
+<p>Nach der Aktualisierung des Plugins ist es am besten ein Backup jeder "Geräte Überwachung" zu machen</p>
 </li>
 <li>
 <p>Pour avoir une représentation graphique du temps de fonctionnement, il faut historiser la commande <strong>Temps Fct Total</strong> avec l&#8217;option <strong>Mode de lissage</strong> sur <strong>Aucun</strong></p>
 </li>
 <li>
-<p>Puissance Mini et Puissance Max ne doivent pas être égales</p>
+<p>Min-Leistung und Max-Leistung dürfen nicht gleich sein</p>
 </li>
 </ul>
 </div>
@@ -1185,7 +1183,7 @@ le cycle sera considéré comme terminé si la mesure de puissance est inférieu
 </div>
 </div>
 <div class="sect1">
-<h2 id="_Änderungsprotokoll">6. Änderungsprotokoll</h2>
+<h2 id="_changelog">6. Changelog</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1214,7 +1212,7 @@ le cycle sera considéré comme terminé si la mesure de puissance est inférieu
 <div class="ulist">
 <ul>
 <li>
-<p>Befehl hinzugefügt</p>
+<p>Befehl hinzugefügt <strong>Alarm Code</strong></p>
 </li>
 <li>
 <p>Die Registerkarte <strong>Daten</strong> hinzugefügt, für eine grafische Visualisierung der Betriebszeit</p>
@@ -1233,11 +1231,15 @@ le cycle sera considéré comme terminé si la mesure de puissance est inférieu
 <div class="ulist">
 <ul>
 <li>
-<p>ajout des paramètres <strong>Heure prévue équipement en Arrêt</strong> et <strong>Heure prévue équipement en Marche</strong></p>
+<p>Parameter <strong>Zeit, der geplanten Geräte Abschaltung</strong> und <strong>Zeit, der geplanten Geräte Anschaltung</strong> hinzugefügt</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Modification affichage <strong>Temps Fct Total</strong></p>
-</li>
+<p>Anzeige geändert <strong>gesamte Betriebszeit</strong></p>
+<div class="ulist">
+<ul>
 <li>
 <p>Code verbessert</p>
 </li>

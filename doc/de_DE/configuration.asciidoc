@@ -28,7 +28,7 @@ Commande de l'équipement à surveiller de type "Analogique" avec *Compteur Gén
 image::../images/equipement-analogique-2.png[]
 
 ** *Commande équipement* : Commande de mesure de puissance de l'équipement à surveiller ou Commande de mesure de puissance générale
-** *Compteur Général* : NON coché 
+** *Allgemein Zähler* : nicht ankreuzen 
 ** *Puissance Mini* : obligatoire si *Compteur Général* NON coché, Puissance mini à l'arrêt de l'équipement à surveiller 
 ** *Puissance Maxi* : obligatoire si *Compteur Général* NON coché, Puissance de votre équipement à surveiller au démarrage
 ** *Temps min de fonctionnement* : Temps de fonctionnement minimun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme
@@ -133,39 +133,39 @@ Si la commande *Alarme* est déja à ON , et qu'une nouvelle condition d'alarme 
 
 . Mise à jour des commandes, lors du passage de la commande *Etat* de OFF à ON :
 
-* *Alarme* : passage à OFF
-* *Code Alarme* : passage à zéro
-* *Tempts Fct (H:M:S)* : '00:00:00'
-* *Tempts Fct* : 0 seconde 
-* *Tempts Fct Total(H:M:S)* : pas de changement
-* *Tempts Fct Total* : pas de changement 
-* *Demarré* : heure courante du démarrage
-* *Arreté* : '-'
-* *Etat* : Passage à ON
-* *Compteur* : Incrémenter de 1
+* *Alarm* : umschalten zu AUS
+* *Alarm Code* : Übergang auf null
+* *Betriebszeit (H:M:S)* : '00:00:00'
+* *Betriebszeit* : 0 Sekunden 
+* *gesamte Betriebszeit (H:M:S)* : Keine Änderung
+* *gesamte Betriebszeit* : Keine Änderung 
+* *Gestartet* : aktuelle Startzeit
+* *beendet* : '-'
+* *Zustand* : umschalten zu AN
+* *Zähler* : um 1 erhöhen 
 
 . Mise à jour des commandes, lors du passage de la commande *Etat* de ON à OFF : 
 
-* *Alarme* : voir ci-dessus
-* *Code Alarme* : voir ci-dessus
+* *Alarm* : siehe oben
+* *Alarm Code* : siehe oben
 * *Tempts Fct (H:M:S)* : heure d'arrêt moins heure de démarrage au format Heure:Minute:Seconde  
-* *Tempts Fct* : heure d'arrêt moins heure de démarrage en secondes 
+* *Betriebszeit* : Ausschaltzeit weniger Startzeit in Sekunden 
 * *Tempts Fct Total(H:M:S)* : heure d'arrêt moins heure de démarrage plus *Tempts Fct Total(H:M:S)* précédent au format Heure:Minute:Seconde 
 * *Tempts Fct Total* : heure d'arrêt moins heure de démarrage plus *Tempts Fct Total* précédent en secondes 
-* *Démarré* : pas de changement
-* *Arrêté* : heure courante de l'arrêt
+* *Starten* : Keine Änderung
+ *Anhalten* : aktuelle Zeit vom anhalten
 * *Zustand* : umschalten zu AUS
 * *Zähler* : Keine Änderung
 
 . Aktualisiert die Befehle alle 5 Minuten :
 
-* *Alarme* : voir ci-dessus
-* *Code Alarme* : voir ci-dessus
+* *Alarm* : siehe oben
+* *Alarm Code* : siehe oben
 * *Tempts Fct* : heure courante moins heure de démarrage en secondes 
 * *Tempts Fct (H:M:S)* : heure courante moins heure de démarrage au format Heure:Minute:Seconde  
 * *Tempts Fct Total(H:M:S)* : heure courante moins heure de démarrage plus *Tempts Fct Total(H:M:S)* précédent au format Heure:Minute:Seconde 
 * *Tempts Fct Total* : heure courante moins heure de démarrage plus *Tempts Fct Total* précédent en secondes 
-* *Démarré* : pas de changement
-* *Arrêté* : pas de changement
+* *Starten* : Keine Änderung
+* *Anhalten* : Keine Änderung
 * *Zustand* : Keine Änderung
 * *Zähler* : Keine Änderung

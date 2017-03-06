@@ -15,5 +15,5 @@ include::utilisation.asciidoc[]
 == FAQ
 include::faq.asciidoc[]
 
-== Änderungsprotokoll
+== Changelog
 include::changelog.asciidoc[]

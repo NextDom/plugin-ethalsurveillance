@@ -1,5 +1,5 @@
-* Après une mise à jour du plugin, il est préférable de faire une sauvegarde de chaque "Surveillance équipement"
+* Nach der Aktualisierung des Plugins ist es am besten ein Backup jeder "Geräte Überwachung" zu machen
 * Pour avoir une représentation graphique du temps de fonctionnement, il faut historiser la commande *Temps Fct Total* avec l'option *Mode de lissage* sur *Aucun*
-* Puissance Mini et Puissance Max ne doivent pas être égales
+* Min-Leistung und Max-Leistung dürfen nicht gleich sein
 
 S'il y a lieu, la FAQ est alimentée par les échanges dans le sujet link:https://www.jeedom.com/forum/viewtopic.php?f=28&t=24637[Sujet officiel Surveillance Equipement] du forum Jeedom.
