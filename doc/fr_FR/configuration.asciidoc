@@ -169,7 +169,7 @@ Si la commande *Alarme* est déja à ON , et qu'une nouvelle condition d'alarme 
 * *Etat* : Pas de changement
 * *Compteur* : pas de changement
 
-=== Codes alarmes
+=== Codes alarme
 
 Ci dessous la liste des codes d'alarme en fonction du/des alarme(s)
 
