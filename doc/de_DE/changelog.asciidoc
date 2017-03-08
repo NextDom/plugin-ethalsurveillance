@@ -1,5 +1,7 @@
 * Version 1.6 (Aktuelle Version)		
 ** Fehler behoben, beim zurücksetzen der gesamten Betriebszeit 
+** Amélioration du code
+** Aktualisierung der Dokumentation
 
 * Version 1.5 (Markt Version : 2017-03-02 08:46:49)		
 ** idem à la 1.4, mise à jour sur le market suite au passage du "robot" qui a fournit une nouvelle version , pas compris ce qu'il s'est passé

@@ -1,18 +1,18 @@
 === Registerkarte Geräte
 
-** *Type de commande* : Type de la commande qui servira à surveiller l'équipement , Logique ou Analogique, 
+** *Befehlstyp* : Befehlstyp, der´verwendet wird, um Geräte zu überwachen, Logik oder Analog 
 
-Commande de l'équipement à surveiller de type "Logique"
+Geräte Befehl mit dem Überwachungs Typ "Logik"
 
 image::../images/equipement-logique.png[]
 
-** *Commande équipement* : Commande d'état de l'équipement à surveiller 
+** *Geräte Befehl* : Befehl des Zustands, des zu überwachenden Gerätes 
 ** *Temps min de fonctionnement* : Temps de fonctionnement minimun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme 
 ** *Temps max de fonctionnement* : Temps de fonctionnement maximun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme
 ** *Heure prévue équipement en Arrêt (HHMM)* : heure à laquelle l'équipement (ie la *Commande equipement*) est prévu d'être à OFF, laisser vide pour ne pas générer d'alarme
 ** *Heure prévue équipement en Marche (HHMM)* : heure à laquelle l'équipement (ie *Commande equipement*) est prévu d'être à ON, laisser vide pour ne pas générer d'alarme
 
-Commande de l'équipement à surveiller de type "Analogique" avec *Compteur Général* coché
+Geräte Befehl mit dem Überwachungs Typ "Analog" mit angehakten *Allgemein Zähler*
 
 image::../images/equipement-analogique-1.png[]
 
@@ -77,8 +77,7 @@ image::../images/donnees.png[]
 Cet onglet fournit une représentation grahique du temps de fonctionnement de l'équipement,
 il est possble de visualiser ce temps de fonctionnement par jour, semaine, mois (sélecteur cumul par jour, cumul par semaine, cumul par mois)
 
-Pour cela , il faut historiser la commande *Temps Fct Total*, avec l'option *Mode de lissage* sur *Aucun*.
-
+Pour cela , la commande *etat* doit être historisée avec l'option *Mode de lissage* sur *Aucun*.
 Ces options sont disponible depuis la roue dentée en face de la commande dans l'onglet *Commandes*.   
 
 === Funktionsweise
