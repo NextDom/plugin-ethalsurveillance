@@ -1,4 +1,4 @@
-* Version 1.7 (version en cours)		
+* Version 1.7 (version en developpement)		
 ** Correction du bug lors de la remise à zéro	du temps de fonctionnement total
 ** Amélioration du code
 ** mise à jour de la documentation
