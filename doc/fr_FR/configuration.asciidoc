@@ -40,8 +40,7 @@ image::../images/equipement-analogique-2.png[]
 il peut y avoir une latence de 5 minutes au déclenchement de l'alarme sur les paramètres *Heure prévue équipement en Arrêt (HHMM)* et *Heure prévue équipement en Marche (HHMM)*
 
 [IMPORTANT]
-la *commande équipement* doit être de type "info et de sous type "numeric" pour *Type de commande* analogique
-la *commande équipement* doit être de type "info et de sous type "binary" pour *Type de commande* logique
+la *commande équipement* doit être de type "info et de sous type "numeric" pour un *Type de commande* analogique, la *commande équipement* doit être de type "info et de sous type "binary" pour un *Type de commande* logique
 
 [IMPORTANT]
 Vous ne pouvez créer qu'un seul équipement à surveiller avec l'option *Compteur Général*,
