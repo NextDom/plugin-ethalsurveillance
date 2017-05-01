@@ -461,6 +461,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Il permet de connaître un temps de fonctionnement, il gère une commande d&#8217;alarme, fonction d&#8217;un temps de fonctionnement minimun et/ou maximun, d&#8217;une heure prévue d&#8217;arrêt et de marche,</p>
 </div>
 <div class="paragraph">
+<p>Le temps de fonctionnement minimun et/ou maximun, l' heure prévue d&#8217;arrêt et de marche peut etre paramétré hebdomadairement,</p>
+</div>
+<div class="paragraph">
 <p>Ein Alarm-Code, um die Ursache des Alarms zu wissen,</p>
 </div>
 <div class="paragraph">
@@ -615,8 +618,7 @@ il peut y avoir une latence de 5 minutes au déclenchement de l&#8217;alarme sur
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-la <strong>commande équipement</strong> doit être de type "info et de sous type "numeric" pour <strong>Type de commande</strong> analogique
-la <strong>commande équipement</strong> doit être de type "info et de sous type "binary" pour <strong>Type de commande</strong> logique
+la <strong>commande équipement</strong> doit être de type "info et de sous type "numeric" pour un <strong>Type de commande</strong> analogique, la <strong>commande équipement</strong> doit être de type "info et de sous type "binary" pour un <strong>Type de commande</strong> logique
 </td>
 </tr>
 </table>
@@ -705,7 +707,7 @@ Utiliser la case à cocher <strong>afficher</strong>, si vous ne souhaitez pas v
 il est possble de visualiser ce temps de fonctionnement par jour, semaine, mois (sélecteur cumul par jour, cumul par semaine, cumul par mois)</p>
 </div>
 <div class="paragraph">
-<p>Pour cela , la commande <strong>etat</strong> doit être historisée avec l&#8217;option <strong>Mode de lissage</strong> sur <strong>Aucun</strong>.
+<p>Pour cela , la commande <strong>Temps Fct Total</strong> doit être historisée avec l&#8217;option <strong>Mode de lissage</strong> sur <strong>Aucun</strong>.
 Ces options sont disponible depuis la roue dentée en face de la commande dans l&#8217;onglet <strong>Commandes</strong>.  </p>
 </div>
 </div>
@@ -1198,11 +1200,27 @@ der Zyklus wird als beendet angesehen, wenn die gemessene Leistung kleiner als 5
 <div class="ulist">
 <ul>
 <li>
-<p>Version 1.6 (Aktuelle Version)</p>
+<p>Version 1.7 (version en developpement)</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Fehler behoben, beim zurücksetzen der gesamten Betriebszeit</p>
+</li>
+<li>
+<p>Amélioration du code</p>
+</li>
+<li>
+<p>Aktualisierung der Dokumentation</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Version 1.6 (version market : 2017-04-30 15:41:14)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Ajout d&#8217;un calendrier hebdomadaire</p>
 </li>
 <li>
 <p>Amélioration du code</p>

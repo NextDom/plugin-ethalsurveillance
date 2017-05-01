@@ -4,6 +4,8 @@ La surveillance est faite à partir d'une commande d' *Etat* ou d'une commande d
 
 Il permet de connaître un temps de fonctionnement, il gère une commande d'alarme, fonction d'un temps de fonctionnement minimun et/ou maximun, d'une heure prévue d'arrêt et de marche,
 
+Le temps de fonctionnement minimun et/ou maximun, l' heure prévue d'arrêt et de marche peut etre paramétré hebdomadairement,
+
 Un code d'alarme, permettant de connaître la cause de l'alarme,
 
 Un compteur de cycle de fonctionnement,
