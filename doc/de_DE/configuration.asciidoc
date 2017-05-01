@@ -40,8 +40,7 @@ image::../images/equipement-analogique-2.png[]
 il peut y avoir une latence de 5 minutes au déclenchement de l'alarme sur les paramètres *Heure prévue équipement en Arrêt (HHMM)* et *Heure prévue équipement en Marche (HHMM)*
 
 [IMPORTANT]
-la *commande équipement* doit être de type "info et de sous type "numeric" pour *Type de commande* analogique
-la *commande équipement* doit être de type "info et de sous type "binary" pour *Type de commande* logique
+la *commande équipement* doit être de type "info et de sous type "numeric" pour un *Type de commande* analogique, la *commande équipement* doit être de type "info et de sous type "binary" pour un *Type de commande* logique
 
 [IMPORTANT]
 Vous ne pouvez créer qu'un seul équipement à surveiller avec l'option *Compteur Général*,
@@ -77,7 +76,7 @@ image::../images/donnees.png[]
 Cet onglet fournit une représentation grahique du temps de fonctionnement de l'équipement,
 il est possble de visualiser ce temps de fonctionnement par jour, semaine, mois (sélecteur cumul par jour, cumul par semaine, cumul par mois)
 
-Pour cela , la commande *etat* doit être historisée avec l'option *Mode de lissage* sur *Aucun*.
+Pour cela , la commande *Temps Fct Total* doit être historisée avec l'option *Mode de lissage* sur *Aucun*.
 Ces options sont disponible depuis la roue dentée en face de la commande dans l'onglet *Commandes*.   
 
 === Funktionsweise
