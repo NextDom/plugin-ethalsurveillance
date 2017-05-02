@@ -30,8 +30,15 @@
         "Compteur Général":"Medidor General",
         "Nom":"Nombre",
         "Type":"Tipo",
-        "Options":"Opciones"
-
+        "Options":"Opciones",
+        "Défaut":"Défaut",
+        "Lundi":"Lundi",
+        "Mardi":"Mardi",
+        "Mercredi":"Mercredi",
+        "Jeudi":"Jeudi",
+        "Vendredi":"Vendredi",
+        "Samedi":"Samedi",
+        "Dimanche":"Dimanche"
     },
     "plugins\/ethalsurveillance\/desktop\/js\/ethalsurveillance.js": {
         "Tester": "Prueba",

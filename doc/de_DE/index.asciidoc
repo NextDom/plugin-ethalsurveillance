@@ -1,7 +1,7 @@
 = Überwachungsgeräte Plugin
 
 == Beschreibung
-Plugin, das der Überwachung eines Gerätes dient.
+Plugin servant à la surveillance d'un équipement.
 
 == Präsentation
 include::presentation.asciidoc[]
