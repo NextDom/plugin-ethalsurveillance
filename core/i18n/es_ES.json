@@ -38,7 +38,8 @@
         "Jeudi":"Jeudi",
         "Vendredi":"Vendredi",
         "Samedi":"Samedi",
-        "Dimanche":"Dimanche"
+        "Dimanche":"Dimanche",
+        "code d'alarme":"code d'alarme"
     },
     "plugins\/ethalsurveillance\/desktop\/js\/ethalsurveillance.js": {
         "Tester": "Prueba",
