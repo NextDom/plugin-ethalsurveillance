@@ -3,7 +3,7 @@
 ** Amélioration du code
 ** mise à jour de la documentation
 
-* Version 1.7 (version market : )		
+* Version 1.7 (version market : 2017-05-05)		
 ** Correction de bug sur le calendrier hebdomadaire
 ** Amélioration du code
 ** mise à jour de la documentation
