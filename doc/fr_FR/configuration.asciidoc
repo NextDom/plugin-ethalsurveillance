@@ -171,5 +171,6 @@ Si la commande *Alarme* est déja à ON , et qu'une nouvelle condition d'alarme 
 === Codes alarme
 
 Ci dessous la liste des codes d'alarme en fonction du/des alarme(s)
+les lignes grisées indique que la combinaison n'est pas possible, il n'y a donc pas d'alarme n'y de code d'alarme généré.
 
 image::../images/codes_alarme.png[]
