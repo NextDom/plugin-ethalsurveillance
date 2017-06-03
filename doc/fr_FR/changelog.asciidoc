@@ -1,5 +1,10 @@
-* Version 1.8 (version en developpement)		
+* Version 1.9 (version en developpement)		
 ** Correction du bug lors de la remise à zéro	du temps de fonctionnement total
+** Amélioration du code
+** mise à jour de la documentation
+
+* Version 1.8 (version market : )		
+** Ajout d'un delai sur la puissance mini
 ** Amélioration du code
 ** mise à jour de la documentation
 
