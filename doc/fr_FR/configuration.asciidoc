@@ -33,7 +33,7 @@ image::../images/equipement-analogique-2.png[]
 
 ** *Commande équipement* : Commande de mesure de puissance de l'équipement à surveiller ou Commande de mesure de puissance générale
 ** *Compteur Général* : NON coché 
-** *Puissance Mini* : obligatoire si *Compteur Général* NON coché, Puissance mini à l'arrêt de l'équipement à surveiller
+** *Puissance mini* : obligatoire si *Compteur Général* NON coché, Puissance mini à l'arrêt de l'équipement à surveiller
 ** *Delai Puissance mini (min)* : Delai en minute pour lequel la Puisssance mini est considérer comme valide,
 ** *Puissance Maxi* : obligatoire si *Compteur Général* NON coché, Puissance de votre équipement à surveiller au démarrage
 ** *Temps min de fonctionnement* : Temps de fonctionnement minimun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme
