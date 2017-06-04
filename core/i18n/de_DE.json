@@ -22,6 +22,7 @@
         "Commande equipement": "Gerät Befehl",
         "Heure de fonctionnement prévu +/- 2 min (HHMM)":" Vorgesehene Betriebsstunden +/- 2 min (HHMM)",
         "Puissance mini (W)" : "Minimale Leistung (W)",
+        "Delai Puissance mini (min)" : "Delai Puissance mini (min)",
         "Puissance max (W)" : "Maximale Leistung (W)",
         "Temps mini de fonctionnement (min)":"Minimale Betriebszeit (min)",
         "Temps max de fonctionnement (min)":"Maximale Betriebszeit (min)",

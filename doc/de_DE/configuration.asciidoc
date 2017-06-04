@@ -12,6 +12,8 @@ image::../images/equipement-logique.png[]
 ** *Heure prévue équipement en Arrêt (HHMM)* : heure à laquelle l'équipement (ie la *Commande equipement*) est prévu d'être à OFF, laisser vide pour ne pas générer d'alarme
 ** *Heure prévue équipement en Marche (HHMM)* : heure à laquelle l'équipement (ie *Commande equipement*) est prévu d'être à ON, laisser vide pour ne pas générer d'alarme
 
+** les valeurs definit dans les onglets des jours de la semaine sont prioritaires à celles définit dans l'onglet défaut 
+
 Geräte Befehl mit dem Überwachungs Typ "Analog" mit angehakten *Allgemein Zähler*
 
 image::../images/equipement-analogique-1.png[]
@@ -23,18 +25,23 @@ image::../images/equipement-analogique-1.png[]
 ** *Temps min de fonctionnement* : Temps de fonctionnement minimun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme
 ** *Temps max de fonctionnement* : Temps de fonctionnement maximun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme
 
+** les valeurs definit dans les onglets des jours de la semaine sont prioritaires à celles définit dans l'onglet défaut 
+
 Commande de l'équipement à surveiller de type "Analogique" avec *Compteur Général* NON coché
 
 image::../images/equipement-analogique-2.png[]
 
 ** *Commande équipement* : Commande de mesure de puissance de l'équipement à surveiller ou Commande de mesure de puissance générale
 ** *Allgemein Zähler* : nicht ankreuzen 
-** *Puissance Mini* : obligatoire si *Compteur Général* NON coché, Puissance mini à l'arrêt de l'équipement à surveiller 
+** *Puissance mini* : obligatoire si *Compteur Général* NON coché, Puissance mini à l'arrêt de l'équipement à surveiller
+** *Delai Puissance mini (min)* : Delai en minute pour lequel la Puisssance mini est considérer comme valide,
 ** *Puissance Maxi* : obligatoire si *Compteur Général* NON coché, Puissance de votre équipement à surveiller au démarrage
 ** *Temps min de fonctionnement* : Temps de fonctionnement minimun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme
 ** *Temps max de fonctionnement* : Temps de fonctionnement maximun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme
 ** *Heure prévue équipement en Arrêt (HHMM)* : heure à laquelle l'équipement (ie *Commande équipement*) est prévu d'être à OFF, laisser vide pour ne pas générer d'alarme
 ** *Heure prévue équipement en Marche (HHMM)* : heure à laquelle l'équipement (ie *Commande équipement*) est prévu d'être à ON,laisser vide pour ne pas générer d'alarme
+
+** les valeurs definit dans les onglets des jours de la semaine sont prioritaires à celles définit dans l'onglet défaut 
 
 [NOTE]
 il peut y avoir une latence de 5 minutes au déclenchement de l'alarme sur les paramètres *Heure prévue équipement en Arrêt (HHMM)* et *Heure prévue équipement en Marche (HHMM)*
@@ -99,7 +106,7 @@ Ces options sont disponible depuis la roue dentée en face de la commande dans l
 
 * *Type de commande* : "Analogique"
 ** Si *Compteur Général* est coché,
-*** Si la *Commande équipement* est inférieure ou égale à *Puissance équipement* ET que la commande *Etat* est à ON
+*** Si la *Commande équipement* est inférieure ou égale à *Puissance équipement* ET que la commande *Etat* est à ON ET que *Delai Puissance mini (min)* est atteint 
 ** Si *Compteur Général* n'est pas coché,
 *** Si la *Commande équipement* est supérieure ou égale à *Puissance Min* ET que la commande *Etat* est à ON
 

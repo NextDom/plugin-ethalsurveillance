@@ -1,5 +1,10 @@
-* Version 1.8 (version en developpement)		
+* Version 1.9 (version en developpement)		
 ** Fehler behoben, beim zurücksetzen der gesamten Betriebszeit 
+** Amélioration du code
+** Aktualisierung der Dokumentation
+
+* Version 1.8 (version market : beta test en cours)		
+** Ajout d'un delai sur la puissance mini
 ** Amélioration du code
 ** Aktualisierung der Dokumentation
 

@@ -531,6 +531,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li>
 <p><strong>Heure prévue équipement en Marche (HHMM)</strong> : heure à laquelle l&#8217;équipement (ie <strong>Commande equipement</strong>) est prévu d&#8217;être à ON, laisser vide pour ne pas générer d&#8217;alarme</p>
 </li>
+<li>
+<p>les valeurs definit dans les onglets des jours de la semaine sont prioritaires à celles définit dans l&#8217;onglet défaut</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -561,6 +564,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li>
 <p><strong>Temps max de fonctionnement</strong> : Temps de fonctionnement maximun de l&#8217;équipement pour générer une alarme, laisser vide pour ne pas générer d&#8217;alarme</p>
 </li>
+<li>
+<p>les valeurs definit dans les onglets des jours de la semaine sont prioritaires à celles définit dans l&#8217;onglet défaut</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -580,7 +586,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><strong>Allgemein Zähler</strong> : nicht ankreuzen</p>
 </li>
 <li>
-<p><strong>Puissance Mini</strong> : obligatoire si <strong>Compteur Général</strong> NON coché, Puissance mini à l&#8217;arrêt de l&#8217;équipement à surveiller</p>
+<p><strong>Puissance mini</strong> : obligatoire si <strong>Compteur Général</strong> NON coché, Puissance mini à l&#8217;arrêt de l&#8217;équipement à surveiller</p>
+</li>
+<li>
+<p><strong>Delai Puissance mini (min)</strong> : Delai en minute pour lequel la Puisssance mini est considérer comme valide,</p>
 </li>
 <li>
 <p><strong>Puissance Maxi</strong> : obligatoire si <strong>Compteur Général</strong> NON coché, Puissance de votre équipement à surveiller au démarrage</p>
@@ -596,6 +605,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li>
 <p><strong>Heure prévue équipement en Marche (HHMM)</strong> : heure à laquelle l&#8217;équipement (ie <strong>Commande équipement</strong>) est prévu d&#8217;être à ON,laisser vide pour ne pas générer d&#8217;alarme</p>
+</li>
+<li>
+<p>les valeurs definit dans les onglets des jours de la semaine sont prioritaires à celles définit dans l&#8217;onglet défaut</p>
 </li>
 </ul>
 </div>
@@ -782,7 +794,7 @@ Ces options sont disponible depuis la roue dentée en face de la commande dans l
 <div class="ulist">
 <ul>
 <li>
-<p>Si la <strong>Commande équipement</strong> est inférieure ou égale à <strong>Puissance équipement</strong> ET que la commande <strong>Etat</strong> est à ON</p>
+<p>Si la <strong>Commande équipement</strong> est inférieure ou égale à <strong>Puissance équipement</strong> ET que la commande <strong>Etat</strong> est à ON ET que <strong>Delai Puissance mini (min)</strong> est atteint</p>
 </li>
 </ul>
 </div>
@@ -1203,11 +1215,27 @@ der Zyklus wird als beendet angesehen, wenn die gemessene Leistung kleiner als 5
 <div class="ulist">
 <ul>
 <li>
-<p>Version 1.8 (version en developpement)</p>
+<p>Version 1.9 (version en developpement)</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Fehler behoben, beim zurücksetzen der gesamten Betriebszeit</p>
+</li>
+<li>
+<p>Amélioration du code</p>
+</li>
+<li>
+<p>Aktualisierung der Dokumentation</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Version 1.8 (version market : beta test en cours)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Ajout d&#8217;un delai sur la puissance mini</p>
 </li>
 <li>
 <p>Amélioration du code</p>
