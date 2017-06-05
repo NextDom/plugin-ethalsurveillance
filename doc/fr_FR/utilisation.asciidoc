@@ -44,13 +44,14 @@ image::../images/utilisation3-equipement.png[]
 * *Type de commande* : analogique
 * *Commande équipement* : mettre la commande de mesure de puissance du lave-linge
 * *Compteur général* : non coché
-* *Puissance Mini* (Watt) : si votre lave-linge consomme environ 5W mini pendant un cyle, mettre 5
-* *Puissance Maxi* (Watt) : si votre lave-linge consomme environ 100W au démarrage d'un cyle, mettre 100
+* *Puissance mini* (Watt) : si votre lave-linge consomme environ 10W mini pendant un cyle, mettre 10
+* *Délai Puissance mini* (Watt) : il est possible que le lave-linge passe en dessous de la puissance mini pendant un cycle, dans ce cas mettre par exemple 12, il faudra alors que la valeur de la puissance mini soit à 10W pendant 12 min pour être prise en compte
+* *Puissance maxi* (Watt) : si votre lave-linge consomme environ 100W au démarrage d'un cyle, mettre 100
 * *Temps min de fonctionnement* : laisser vide ou non 
 * *Temps max de fonctionnement* : laisser vide ou non
 
 le compteur sera incrémenté de 1, la commande *Etat* passera à ON, si la valeur mesure de puissance est supérieure à 100W, 
-le cycle sera considéré comme terminé si la mesure de puissance est inférieure à 5W et la commande *Etat* passera à OFF.
+le cycle sera considéré comme terminé si la mesure de puissance est inférieure à 10W , et que celle ci soit continuellement inférieur à 10W  pendant 12 min, la commande *Etat* passera alors à OFF.
 
 Si les champs *Temps min de fonctionnement* ou *Temps max de fonctionnement* ne sont pas vides, la commande *Alarme* passera à ON suivant la valeur de la commande *Temps Fct*.
 
