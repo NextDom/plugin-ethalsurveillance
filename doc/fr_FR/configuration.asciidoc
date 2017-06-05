@@ -35,9 +35,6 @@ image::../images/equipement-analogique-2.png[]
 ** *Compteur Général* : NON coché 
 ** *Puissance mini* : obligatoire si *Compteur Général* NON coché, Puissance mini à l'arrêt de l'équipement à surveiller
 ** *Delai Puissance mini (min)* : Delai en minute pour lequel la *Puisssance mini* est considéré comme valide
-
-image::../images/delai.png[]
-
 ** *Puissance Maxi* : obligatoire si *Compteur Général* NON coché, Puissance de votre équipement à surveiller au démarrage
 ** *Temps min de fonctionnement* : Temps de fonctionnement minimun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme
 ** *Temps max de fonctionnement* : Temps de fonctionnement maximun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme
@@ -112,6 +109,8 @@ Ces options sont disponible depuis la roue dentée en face de la commande dans l
 *** Si la *Commande équipement* est inférieure ou égale à *Puissance équipement* ET que la commande *Etat* est à ON 
 ** Si *Compteur Général* n'est pas coché,
 *** Si la *Commande équipement* est inferieure ou égale à *Puissance Min*  ET que *Delai Puissance mini (min)* est atteint ET que la commande *Etat* est à ON
+
+image::../images/delai.png[]
 
 . Passage de la commande *Alarme* à ON :
 
