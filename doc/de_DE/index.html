@@ -589,7 +589,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><strong>Puissance mini</strong> : obligatoire si <strong>Compteur Général</strong> NON coché, Puissance mini à l&#8217;arrêt de l&#8217;équipement à surveiller</p>
 </li>
 <li>
-<p><strong>Delai Puissance mini (min)</strong> : Delai en minute pour lequel la Puisssance mini est considérer comme valide,</p>
+<p><strong>Delai Puissance mini (min)</strong> : Delai en minute pour lequel la <strong>Puisssance mini</strong> est considéré comme valide</p>
 </li>
 <li>
 <p><strong>Puissance Maxi</strong> : obligatoire si <strong>Compteur Général</strong> NON coché, Puissance de votre équipement à surveiller au démarrage</p>
@@ -794,7 +794,7 @@ Ces options sont disponible depuis la roue dentée en face de la commande dans l
 <div class="ulist">
 <ul>
 <li>
-<p>Si la <strong>Commande équipement</strong> est inférieure ou égale à <strong>Puissance équipement</strong> ET que la commande <strong>Etat</strong> est à ON ET que <strong>Delai Puissance mini (min)</strong> est atteint</p>
+<p>Si la <strong>Commande équipement</strong> est inférieure ou égale à <strong>Puissance équipement</strong> ET que la commande <strong>Etat</strong> est à ON</p>
 </li>
 </ul>
 </div>
@@ -804,7 +804,7 @@ Ces options sont disponible depuis la roue dentée en face de la commande dans l
 <div class="ulist">
 <ul>
 <li>
-<p>Si la <strong>Commande équipement</strong> est supérieure ou égale à <strong>Puissance Min</strong> ET que la commande <strong>Etat</strong> est à ON</p>
+<p>Si la <strong>Commande équipement</strong> est inferieure ou égale à <strong>Puissance Min</strong>  ET que <strong>Delai Puissance mini (min)</strong> est atteint ET que la commande <strong>Etat</strong> est à ON</p>
 </li>
 </ul>
 </div>
@@ -815,6 +815,15 @@ Ces options sont disponible depuis la roue dentée en face de la commande dans l
 </ul>
 </div>
 </li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/delai.png" alt="delai">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Passage de la commande <strong>Alarme</strong> à ON :</p>
 <div class="ulist">
@@ -1106,7 +1115,7 @@ Der Zähler wird bei jedem Wechsel auf AN, ihres Befehls, erhöht werden.</p>
 <p><strong>Vorgesehene Betriebsstunden</strong> : die geplante Inbetriebnahme ihrer Wasser-Heizung festlegen (zB: 2330)</p>
 </li>
 <li>
-<p><strong>Geräteleistung</strong> : die Leistung Ihrer Wasserheizung festlegen (zB 2000)</p>
+<p><strong>Puissance équipement</strong> : mettre une valeur légérement inférieur à la puissance de votre chauffe-eau (ex : si votre chauffe eau est un 2000W , mettre 1800)</p>
 </li>
 <li>
 <p><strong>Minimale Betriebszeit (min)</strong> : zum Beispiel auf 20 setzen</p>
@@ -1152,10 +1161,13 @@ Der Zähler wird bei jedem Wechsel auf AN, ihres Befehls, erhöht werden.</p>
 <p><strong>Allgemein Zähler</strong> : nicht ankreuzen</p>
 </li>
 <li>
-<p><strong>Minimale Leistung (W)</strong> : Wenn Ihre Waschmaschine minimal ungefähr 5W während eines Zyklus verbraucht, setzen Sie 5</p>
+<p><strong>Puissance mini</strong> (Watt) : si votre lave-linge consomme environ 10W mini pendant un cyle, mettre 10</p>
 </li>
 <li>
-<p><strong>Maximale Leistung (W)</strong> : wenn Ihre Waschmaschine ungefähr 100W beim starten eines Zyklus verbraucht, setzen Sie 100</p>
+<p><strong>Délai Puissance mini</strong> (Watt) : il est possible que le lave-linge passe en dessous de la puissance mini pendant un cycle, dans ce cas mettre par exemple 12, il faudra alors que la valeur de la puissance mini soit à 10W pendant 12 min pour être prise en compte</p>
+</li>
+<li>
+<p><strong>Puissance maxi</strong> (Watt) : si votre lave-linge consomme environ 100W au démarrage d&#8217;un cyle, mettre 100</p>
 </li>
 <li>
 <p><strong>Minimale Betriebszeit (min)</strong> : leer lassen oder nicht</p>
@@ -1167,7 +1179,7 @@ Der Zähler wird bei jedem Wechsel auf AN, ihres Befehls, erhöht werden.</p>
 </div>
 <div class="paragraph">
 <p>Der Zähler wird um 1 erhöht, der Befehl <strong>Zustand</strong> geht auf AN, wenn der gemessene Leistungswert größer 100W ist,
-der Zyklus wird als beendet angesehen, wenn die gemessene Leistung kleiner als 5W ist, und der Befehl <strong>Zustand</strong> zu AUS übergegangen ist.</p>
+le cycle sera considéré comme terminé si la mesure de puissance est inférieure à 10W , et que celle ci soit continuellement inférieur à 10W  pendant 12 min, la commande <strong>Etat</strong> passera alors à OFF.</p>
 </div>
 <div class="paragraph">
 <p>Wenn die Felder <strong>Minimale Betriebszeit</strong> oder <strong>Maximale Betriebszeit</strong> nicht leer sind, der Befehl <strong>Alarm</strong> auf AN geht  folgt der Wert des Befehls <strong>Betriebszeit</strong></p>
@@ -1231,7 +1243,7 @@ der Zyklus wird als beendet angesehen, wenn die gemessene Leistung kleiner als 5
 </div>
 </li>
 <li>
-<p>Version 1.8 (version market : beta test en cours)</p>
+<p>Version 1.8 (version market : 2017-06-05)</p>
 <div class="ulist">
 <ul>
 <li>
