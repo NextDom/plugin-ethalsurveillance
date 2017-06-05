@@ -25,7 +25,7 @@ image::../images/utilisation2-equipement.png[]
 * *Commande équipement* : mettre la commande de mesure de puissance générale de votre logement
 * *Compteur général* : coché
 * *Heure de fonctionnement pévu* : mettre l'heure prévue de mise en route de votre chauffe-eau (ex : 2330) 
-* *Puissance équipement* : mettre la puissance de votre chauffe-eau (ex : 2000)
+* *Puissance équipement* : mettre une valeur légérement inférieur à la puissance de votre chauffe-eau (ex : si votre chauffe eau est un 2000W , mettre 1900)
 * *Temps min de fonctionnement* (minutes) : mettre par exemple 20
 * *Temps max de fonctionnement* (minutes) : mettre par exemple 240
 
