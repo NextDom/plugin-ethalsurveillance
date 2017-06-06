@@ -3,7 +3,7 @@
 ** Amélioration du code
 ** mise à jour de la documentation
 
-* Version 1.8 (version market : 2017-06-05)		
+* Version 1.8 (version market : 2017-06-06)		
 ** Ajout d'un delai sur la puissance mini
 ** Amélioration du code
 ** mise à jour de la documentation
