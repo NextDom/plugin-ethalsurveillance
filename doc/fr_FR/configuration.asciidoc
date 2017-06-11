@@ -2,7 +2,7 @@
 
 ** *Type de commande* : Type de la commande qui servira à surveiller l'équipement , Logique ou Analogique, 
 
-Commande de l'équipement à surveiller de type "Logique"
+#Commande de l'équipement à surveiller de type "Logique"#
 
 image::../images/equipement-logique.png[]
 
