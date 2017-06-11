@@ -1,6 +1,10 @@
-* Version 1.9 (version en developpement)		
+* Version 2.0 (version en developpement)		
 ** Fehler behoben, beim zurücksetzen der gesamten Betriebszeit 
 ** Amélioration du code
+** Aktualisierung der Dokumentation
+
+* Version 1.9 (version market : en cours)		
+** Ajout du code d'alarme 32 sur une valeur haute du compteur
 ** Aktualisierung der Dokumentation
 
 * Version 1.8 (version market : 2017-06-06)		

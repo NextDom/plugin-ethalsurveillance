@@ -532,6 +532,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><strong>Heure prévue équipement en Marche (HHMM)</strong> : heure à laquelle l&#8217;équipement (ie <strong>Commande equipement</strong>) est prévu d&#8217;être à ON, laisser vide pour ne pas générer d&#8217;alarme</p>
 </li>
 <li>
+<p><strong>Valeur compteur haut</strong> : Valeur haute du compteur pour générer une alarme, laisser vide pour ne pas générer d&#8217;alarme</p>
+</li>
+<li>
 <p>les valeurs definit dans les onglets des jours de la semaine sont prioritaires à celles définit dans l&#8217;onglet défaut</p>
 </li>
 </ul>
@@ -563,6 +566,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li>
 <p><strong>Temps max de fonctionnement</strong> : Temps de fonctionnement maximun de l&#8217;équipement pour générer une alarme, laisser vide pour ne pas générer d&#8217;alarme</p>
+</li>
+<li>
+<p><strong>Valeur compteur haut</strong> : Valeur haute du compteur pour générer une alarme, laisser vide pour ne pas générer d&#8217;alarme</p>
 </li>
 <li>
 <p>les valeurs definit dans les onglets des jours de la semaine sont prioritaires à celles définit dans l&#8217;onglet défaut</p>
@@ -605,6 +611,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li>
 <p><strong>Heure prévue équipement en Marche (HHMM)</strong> : heure à laquelle l&#8217;équipement (ie <strong>Commande équipement</strong>) est prévu d&#8217;être à ON,laisser vide pour ne pas générer d&#8217;alarme</p>
+</li>
+<li>
+<p><strong>Valeur compteur haut</strong> : Valeur haute du compteur pour générer une alarme, laisser vide pour ne pas générer d&#8217;alarme</p>
 </li>
 <li>
 <p>les valeurs definit dans les onglets des jours de la semaine sont prioritaires à celles définit dans l&#8217;onglet défaut</p>
@@ -844,6 +853,9 @@ Ces options sont disponible depuis la roue dentée en face de la commande dans l
 <li>
 <p>Si la commande <strong>Etat</strong> à OFF et l&#8217;heure du système est comprise entre <strong>Heure prévue équipement en Marche (HHMM)</strong> et <strong>Heure prévue équipement en Marche (HHMM)</strong> plus 5 min (code alarme 16)</p>
 </li>
+<li>
+<p>Lors du passage de la commande <strong>Etat</strong> de OFF à ON et que <strong>Valeur compteur haut</strong> est supérieur ou égale à la commande <strong>Compteur</strong>(code alarme 32)</p>
+</li>
 </ul>
 </div>
 </li>
@@ -868,6 +880,9 @@ Ces options sont disponible depuis la roue dentée en face de la commande dans l
 </div>
 </li>
 <li>
+<p>Lors du passage de la commande <strong>Etat</strong> de OFF à ON et que <strong>Valeur compteur haut</strong> est supérieur ou égale à la commande <strong>Compteur</strong>(code alarme 32)</p>
+</li>
+<li>
 <p>Si <strong>Compteur Général</strong> n&#8217;est pas coché,</p>
 <div class="ulist">
 <ul>
@@ -885,6 +900,9 @@ Ces options sont disponible depuis la roue dentée en face de la commande dans l
 </li>
 </ul>
 </div>
+</li>
+<li>
+<p>Lors du passage de la commande <strong>Etat</strong> de OFF à ON et que <strong>Valeur compteur haut</strong> est supérieur ou égale à la commande <strong>Compteur</strong>(code alarme 32)</p>
 </li>
 </ul>
 </div>
@@ -1229,7 +1247,7 @@ le cycle sera considéré comme terminé si la mesure de puissance est inférieu
 <div class="ulist">
 <ul>
 <li>
-<p>Version 1.9 (version en developpement)</p>
+<p>Version 2.0 (version en developpement)</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1237,6 +1255,19 @@ le cycle sera considéré comme terminé si la mesure de puissance est inférieu
 </li>
 <li>
 <p>Amélioration du code</p>
+</li>
+<li>
+<p>mise à jour de la documentation</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Version 1.9 (version market : en cours)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Ajout du code d&#8217;alarme 32 sur une valeur haute du compteur</p>
 </li>
 <li>
 <p>mise à jour de la documentation</p>
