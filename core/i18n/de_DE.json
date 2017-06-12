@@ -28,6 +28,7 @@
         "Temps max de fonctionnement (min)":"Maximale Betriebszeit (min)",
         "Heure prévue équipement en Arrêt (HHMM)" : "Zeit, der geplanten Geräte Abschaltung (HHMM)",
         "Heure prévue équipement en Marche (HHMM)" : "Zeit, der geplanten Geräte Anschaltung (HHMM)",
+        "Valeur compteur haut" : "Valeur compteur haut",
         "Compteur Général":"Allgemein Zähler",
         "Nom":"Name",
         "Type":"Typ",
