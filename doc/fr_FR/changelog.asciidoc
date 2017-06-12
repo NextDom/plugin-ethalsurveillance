@@ -1,9 +1,9 @@
-* Version 2.0 (version en developpement)		
+* Version 2.0 (to do)		
 ** Correction du bug lors de la remise à zéro	du temps de fonctionnement total
 ** Amélioration du code
 ** mise à jour de la documentation
 
-* Version 1.9 (version market : en cours)		
+* Version 1.9 (en cours de developpement)		
 ** Ajout du code d'alarme 32 sur une valeur haute du compteur
 ** mise à jour de la documentation
 
