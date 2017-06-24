@@ -1,8 +1,8 @@
 Ce plugin permet la surveillance d'un équipement. 
 
-La surveillance est faite à partir d'une commande d' *Etat* ou d'une commande de mesure de *puissance*,
+La surveillance est faite à partir d'une commande d' *Etat* ou d'une commande de mesure de *analogique*,
 
-Il permet de connaître un temps de fonctionnement, il gère une commande d'alarme, en fonction d'un temps de fonctionnement minimun et/ou maximun, d'une heure prévue d'arrêt et de marche,
+Il permet de connaître un temps de fonctionnement, il gère une commande d'alarme, en fonction d'un temps de fonctionnement minimun et/ou maximun, d'une heure prévue d'arrêt et de marche, d'une valeur haute sur un compteur
 
 Le temps de fonctionnement minimun et/ou maximun, l' heure prévue d'arrêt et de marche peuvent être paramétrés hebdomadairement,
 
