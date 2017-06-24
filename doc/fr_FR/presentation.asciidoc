@@ -1,10 +1,10 @@
 Ce plugin permet la surveillance d'un équipement. 
 
-La surveillance est faite à partir d'une commande d' *Etat* ou d'une commande de mesure de *analogique*,
+La surveillance est faite à partir d'une commande *logique* (ie etat,...) ou d'une commande de mesure de *analogique* (puissance,temperature,...)
 
-Il permet de connaître le temps où l'équipement est actif, il gère une commande d'alarme, en fonction d'un temps minimun et/ou maximun où l'équipement est actif, d'une heure prévue où l'équipement est inactif ou actif, d'une valeur haute sur un compteur
+Il permet de connaître le temps où l'équipement est actif, il gère une commande d'alarme, en fonction d'un temps minimun et/ou maximun où l'équipement est actif, d'une heure prévue de l'équipement inactif ou actif, d'une valeur haute sur un compteur,
 
-Le temps de fonctionnement minimun et/ou maximun, l' heure prévue d'arrêt et de marche peuvent être paramétrés hebdomadairement,
+Ces paramètres sont disponible pour une gestion hebdomadaire,
 
 Un code d'alarme, permettant de connaître la cause de l'alarme,
 
