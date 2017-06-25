@@ -7,8 +7,8 @@ Commande de l'équipement à surveiller de type "Logique"
 image::../images/equipement-logique.png[]
 
 ** *Commande équipement* : Commande d'état de l'équipement à surveiller 
-** *Temps mini surveillance active (min)* : Temps de fonctionnement minimun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme 
-** *Temps max surveillance active (min)* : Temps de fonctionnement maximun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme
+** *Temps mini surveillance active (min)* : Temps de surveillance minimun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme 
+** *Temps max surveillance active (min)* : Temps de surveillancet maximun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme
 ** *Heure prévue surveillance inactive (HHMM)* : heure à laquelle l'équipement (ie la *Commande equipement*) est prévu d'être à OFF, laisser vide pour ne pas générer d'alarme
 ** *Heure prévue surveillance active (HHMM)* : heure à laquelle l'équipement (ie *Commande equipement*) est prévu d'être à ON, laisser vide pour ne pas générer d'alarme
 ** *Valeur compteur haut* : Valeur haute du compteur pour générer une alarme, laisser vide pour ne pas générer d'alarme
@@ -23,8 +23,8 @@ image::../images/equipement-analogique-1.png[]
 ** *Compteur Général* : coché si la *Commande équipement* est une mesure de puissance globale de votre logement
 ** *Heure de surveillance prévue +/- 2 min (HHMM)* : obligatoire si *Compteur Général* coché
 ** *Valeur surveillance active* : obligatoire si *Compteur Général* coché, doit être vide dans le cas contraire
-** *Temps mini surveillance active (min)* : Temps de fonctionnement minimun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme
-** *Temps max surveillance active (min)* : Temps de fonctionnement maximun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme
+** *Temps mini surveillance active (min)* : Temps de surveillance minimun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme
+** *Temps max surveillance active (min)* : Temps de surveillance maximun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme
 ** *Valeur compteur haut* : Valeur haute du compteur pour générer une alarme, laisser vide pour ne pas générer d'alarme
 
 ** les valeurs definit dans les onglets des jours de la semaine sont prioritaires à celles définit dans l'onglet défaut 
@@ -38,8 +38,8 @@ image::../images/equipement-analogique-2.png[]
 ** *Valeur surveillance inactive* : obligatoire si *Compteur Général* NON coché, Puissance mini à l'arrêt de l'équipement à surveiller
 ** *Délai valeur surveillance inactive (min)* : Delai en minute pour lequel la *Puisssance mini* est considéré comme valide
 ** *Valeur surveillance active* : obligatoire si *Compteur Général* NON coché, Puissance de votre équipement à surveiller au démarrage
-** *Temps mini surveillance active (min)* : Temps de fonctionnement minimun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme
-** *Temps max surveillance active (min)* : Temps de fonctionnement maximun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme
+** *Temps mini surveillance active (min)* : Temps de surveillance minimun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme
+** *Temps max surveillance active (min)* : Temps de surveillance maximun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme
 ** *Heure prévue surveillance inactive (HHMM)* : heure à laquelle l'équipement (ie *Commande équipement*) est prévu d'être à OFF, laisser vide pour ne pas générer d'alarme
 ** *Heure prévue surveillance active (HHMM)* : heure à laquelle l'équipement (ie *Commande équipement*) est prévu d'être à ON,laisser vide pour ne pas générer d'alarme
 ** *Valeur compteur haut* : Valeur haute du compteur pour générer une alarme, laisser vide pour ne pas générer d'alarme
