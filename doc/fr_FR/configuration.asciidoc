@@ -111,7 +111,7 @@ Ces options sont disponible depuis la roue dentée en face de la commande dans l
 ** Si *Compteur Général* n'est pas coché,
 *** Si la *Commande équipement* est inferieure ou égale à *Valeur surveillance inactive  ET que *Délai valeur surveillance inactive* est atteint ET que la commande *Etat* est à ON
 
-image::../images/delai.png[]
+image::../images/commande-etat-fct-analogique.png[]
 
 . Passage de la commande *Alarme* à ON :
 
