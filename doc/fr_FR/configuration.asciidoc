@@ -71,8 +71,8 @@ Utiliser la case à cocher *afficher*, si vous ne souhaitez pas voir certaines c
 * *Temps Actif Total(H:M:S)* : Temps de fonctionnement de l'équipement au format Heure:Minute:Seconde
 * *Temps Actif Total* : Temps de fonctionnement de l'équipement en secondes
 * *RAZ Tps Actif Total* : remise à zero du temps de fonctionnement total (commande *Temps Fct Total(H:M:S)* et *Temps Fct Total*)
-* *Actif à* : heure démarrage de l'équipement
-* *Inactif à* : heure d'arrêt de l'équipement	
+* *Actif à* : heure à laquelle la commande *Etat* est passé à ON
+* *Inactif à* : heure à laquelle la commande *Etat* est passé à OFF	
 * *Etat* : statut de surveillance de l'équipement (1 = ON, 0 = OFF)
 * *Compteur* : nombre de passage de la commande *Etat* de OFF à ON  
 * *RAZ Compteur* : remise à zéro de la commande *Compteur*
@@ -84,7 +84,7 @@ image::../images/donnees.png[]
 Cet onglet fournit une représentation grahique du temps de fonctionnement de l'équipement,
 il est possble de visualiser ce temps de fonctionnement par jour, semaine, mois (sélecteur cumul par jour, cumul par semaine, cumul par mois)
 
-Pour cela , la commande *Temps Fct Total* doit être historisée avec l'option *Mode de lissage* sur *Aucun*.
+Pour cela , la commande *Temps Actif Total* doit être historisée avec l'option *Mode de lissage* sur *Aucun*.
 Ces options sont disponible depuis la roue dentée en face de la commande dans l'onglet *Commandes*.   
 
 === Fonctionnement
