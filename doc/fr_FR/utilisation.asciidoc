@@ -24,12 +24,12 @@ image::../images/utilisation2-equipement.png[]
 * *Type de commande* : analogique
 * *Commande équipement* : mettre la commande de mesure de puissance générale de votre logement
 * *Compteur général* : coché
-* *Heure de fonctionnement pévu* : mettre l'heure prévue de mise en route de votre chauffe-eau (ex : 2330) 
-* *Puissance équipement* : mettre une valeur légérement inférieur à la puissance de votre chauffe-eau (ex : si votre chauffe eau est un 2000W , mettre 1800)
-* *Temps min de fonctionnement* (minutes) : mettre par exemple 20
-* *Temps max de fonctionnement* (minutes) : mettre par exemple 240
+* *Heure de surveillance prévue* : mettre l'heure prévue de mise en route de votre chauffe-eau (ex : 2330) 
+* *Valeur surveillance active* : mettre une valeur légérement inférieur à la puissance de votre chauffe-eau (ex : si votre chauffe eau est un 2000W , mettre 1800)
+* *Temps mini surveillance active* (minutes) : mettre par exemple 20
+* *Temps max surveillance active* (minutes) : mettre par exemple 360
 
-cela signifie que la commande *Alarme* passera à ON à 00:10 (23h30+20 minutes) si l'équipement n'a pas demarré ou si son temps de fonctionnement est inférieur à 20 minutes ou supérieur à 4 heures.
+cela signifie que la commande *Alarme* passera à ON à 00:10 (23h30+20 minutes) si l'équipement n'a pas demarré ou si son temps de fonctionnement est inférieur à 20 minutes ou supérieur à 6 heures.
 
 Pour un widget personalisé à l'équipement, selectionnez les commandes comme ci-dessous :
 
