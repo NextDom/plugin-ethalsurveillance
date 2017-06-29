@@ -3,7 +3,7 @@
 ** Amélioration du code
 ** mise à jour de la documentation
 
-* Version 1.9 (en cours de developpement)		
+* Version 1.9 (version market : 2017-06-29)		
 ** Ajout du code d'alarme 32 sur une valeur haute du compteur
 ** mise à jour de la documentation
 
