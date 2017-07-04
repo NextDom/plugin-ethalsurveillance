@@ -19,7 +19,7 @@
         "Catégorie": "Catégorie",
         "Type de commande": "Type de commande",
         "Commande equipement": "Commande équipement",
-        "Heure de fonctionnement prévu +/- 2 min (HHMM)":"Heure de fonctionnement prévu +/- 2 min (HHMM)",
+        "Heure de surveillance prévue +/- 2 min (HHMM)":"Heure de surveillance prévue +/- 2 min (HHMM)",
         "Valeur surveillance inactive" : "Valeur surveillance inactive",
         "Délai valeur surveillance inactive (min)" : "Délai valeur surveillance inactive (min)",
         "Valeur surveillance active" : "Valeur surveillance active",
@@ -51,14 +51,14 @@
         "Défaut": "Défaut",
         "Alarme": "Alarme",
         "Temps Actif(H:M:S)":"Temps Actif(H:M:S)",
-        "Temps Actif" : "Temps Actif",
-        "Temps Actif Total(H:M:S)" : "Temps Actif Total(H:M:S)",
-        "Temps Actif Total" : "Temps Actif Total",
-        "RAZ Tps Actif Total" : "RAZ Tps Actif Total",
-        "Actif à" : "Démarré",
-        "Inactif à" : "Arreté",
-        "Etat" : "Etat",
-        "Compteur" : "Compteur",
-        "RAZ Compteur" : "RAZ Compteur" 
+        "Temps Actif":"Temps Actif",
+        "Temps Actif Total(H:M:S)":"Temps Actif Total(H:M:S)",
+        "Temps Actif Total":"Temps Actif Total",
+        "RAZ Tps Actif Total":"RAZ Tps Actif Total",
+        "Actif à":"Démarré",
+        "Inactif à":"Arreté",
+        "Etat":"Etat",
+        "Compteur":"Compteur",
+        "RAZ Compteur":"RAZ Compteur" 
     }
 }

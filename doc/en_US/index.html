@@ -1079,18 +1079,18 @@ Si la commande <strong>Alarme</strong> est déja à ON , et qu&#8217;une nouvell
 <p><strong>Commande équipement</strong> : mettre la commande état de la prise qui commande votre télévision</p>
 </li>
 <li>
-<p><strong>Temps min de fonctionnement</strong> : laisser vide</p>
+<p><strong>Temps mini surveillance active</strong> : laisser vide</p>
 </li>
 <li>
-<p><strong>Temps max de fonctionnement</strong> (minutes) : mettre par exemple 400</p>
+<p><strong>Temps max surveillance active</strong> (minutes) : mettre par exemple 400</p>
 </li>
 <li>
-<p><strong>Heure prévue équipement en Arrêt (HHMM)</strong> : mettre par exemple 2300</p>
+<p><strong>Heure prévue surveillance inactive</strong> : mettre par exemple 0105</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Cela signifie que la commande <strong>Alarme</strong> passera à 1 au bout de 400 minutes (soit 6 heures et 40 minutes, cela commence à faire beaucoup ;)) ou à 23H00 si la commande <strong>Etat</strong> est toujours à ON (c&#8217;est à dire votre TV est toujours allumée).
+<p>Cela signifie que la commande <strong>Alarme</strong> passera à 1 au bout de 400 minutes (soit 6 heures et 40 minutes, cela commence à faire beaucoup ;)) ou à 01H05 si la commande <strong>Etat</strong> est toujours à ON (c&#8217;est à dire votre TV est toujours allumée).
 Le compteur sera incrémenté à chaque passage à ON de votre commande.</p>
 </div>
 <div class="paragraph">
@@ -1126,21 +1126,21 @@ Le compteur sera incrémenté à chaque passage à ON de votre commande.</p>
 <p><strong>Compteur général</strong> : coché</p>
 </li>
 <li>
-<p><strong>Heure de fonctionnement pévu</strong> : mettre l&#8217;heure prévue de mise en route de votre chauffe-eau (ex : 2330)</p>
+<p><strong>Heure de surveillance prévue</strong> : mettre l&#8217;heure prévue de mise en route de votre chauffe-eau (ex : 2330)</p>
 </li>
 <li>
-<p><strong>Puissance équipement</strong> : mettre une valeur légérement inférieur à la puissance de votre chauffe-eau (ex : si votre chauffe eau est un 2000W , mettre 1800)</p>
+<p><strong>Valeur surveillance active</strong> : mettre une valeur légérement inférieur à la puissance de votre chauffe-eau (ex : si votre chauffe eau est un 2000W , mettre 1800)</p>
 </li>
 <li>
-<p><strong>Temps min de fonctionnement</strong> (minutes) : mettre par exemple 20</p>
+<p><strong>Temps mini surveillance active</strong> (minutes) : mettre par exemple 20</p>
 </li>
 <li>
-<p><strong>Temps max de fonctionnement</strong> (minutes) : mettre par exemple 240</p>
+<p><strong>Temps max surveillance active</strong> (minutes) : mettre par exemple 360</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>cela signifie que la commande <strong>Alarme</strong> passera à ON à 00:10 (23h30+20 minutes) si l&#8217;équipement n&#8217;a pas demarré ou si son temps de fonctionnement est inférieur à 20 minutes ou supérieur à 4 heures.</p>
+<p>cela signifie que la commande <strong>Alarme</strong> passera à ON à 00:10 (23h30+20 minutes) si l&#8217;équipement n&#8217;a pas demarré ou si son temps de fonctionnement est inférieur à 20 minutes ou supérieur à 6 heures.</p>
 </div>
 <div class="paragraph">
 <p>Pour un widget personalisé à l&#8217;équipement, selectionnez les commandes comme ci-dessous :</p>
@@ -1175,28 +1175,26 @@ Le compteur sera incrémenté à chaque passage à ON de votre commande.</p>
 <p><strong>Compteur général</strong> : non coché</p>
 </li>
 <li>
-<p><strong>Puissance mini</strong> (Watt) : si votre lave-linge consomme environ 10W mini pendant un cyle, mettre 10</p>
+<p><strong>Valeur surveillance inactive</strong> : si votre lave-linge consomme environ 10W mini pendant un cyle, mettre 10</p>
 </li>
 <li>
-<p><strong>Délai Puissance mini</strong> (Watt) : il est possible que le lave-linge passe en dessous de la puissance mini pendant un cycle, dans ce cas mettre par exemple 12, il faudra alors que la valeur de la puissance mini soit à 10W pendant 12 min pour être prise en compte</p>
+<p><strong>Délai valeur surveillance inactive</strong> : il est possible que le lave-linge passe en dessous de la puissance mini pendant un cycle, dans ce cas mettre par exemple 12, il faudra alors que la valeur de la puissance mini soit à 10W pendant 12 min pour être prise en compte</p>
 </li>
 <li>
-<p><strong>Puissance maxi</strong> (Watt) : si votre lave-linge consomme environ 100W au démarrage d&#8217;un cyle, mettre 100</p>
+<p><strong>Valeur surveillance active</strong> : si votre lave-linge consomme environ 200W au démarrage d&#8217;un cyle, mettre 200</p>
 </li>
 <li>
-<p><strong>Temps min de fonctionnement</strong> : laisser vide ou non</p>
-</li>
-<li>
-<p><strong>Temps max de fonctionnement</strong> : laisser vide ou non</p>
+<p><strong>Valeur compteur haut</strong> : par exemple 40,</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>le compteur sera incrémenté de 1, la commande <strong>Etat</strong> passera à ON, si la valeur mesure de puissance est supérieure à 100W,
+<p>le compteur sera incrémenté de 1, la commande <strong>Etat</strong> passera à ON, si la valeur mesure de puissance est supérieure à 200W,
 le cycle sera considéré comme terminé si la mesure de puissance est inférieure à 10W , et que celle ci soit continuellement inférieur à 10W  pendant 12 min, la commande <strong>Etat</strong> passera alors à OFF.</p>
 </div>
 <div class="paragraph">
-<p>Si les champs <strong>Temps min de fonctionnement</strong> ou <strong>Temps max de fonctionnement</strong> ne sont pas vides, la commande <strong>Alarme</strong> passera à ON suivant la valeur de la commande <strong>Temps Fct</strong>.</p>
+<p>la commande <strong>Alarme</strong> passera à ON quand la valeur de la commande <strong>Compteur</strong> sera supérieur au paramètre <strong>Valeur compteur haut</strong>,
+c&#8217;est utile pour la maintenance du lave linge,</p>
 </div>
 <div class="paragraph">
 <p>Pour un widget personalisé à l&#8217;équipement, selectionner les commandes comme ci-dessous :</p>
@@ -1257,7 +1255,7 @@ le cycle sera considéré comme terminé si la mesure de puissance est inférieu
 </div>
 </li>
 <li>
-<p>Version 1.9 (en cours de developpement)</p>
+<p>Version 1.9 (version market : 2017-06-30)</p>
 <div class="ulist">
 <ul>
 <li>

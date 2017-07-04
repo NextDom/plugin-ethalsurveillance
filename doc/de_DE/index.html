@@ -1079,18 +1079,18 @@ Si la commande <strong>Alarme</strong> est déja à ON , et qu&#8217;une nouvell
 <p><strong>Geräte Befehl</strong> : Befehl, der den Zustand der Steckdose, ihres zu steuernden Fernseher festlegt</p>
 </li>
 <li>
-<p><strong>Minimale Betriebszeit (min)</strong> : leer lassen</p>
+<p><strong>Temps mini surveillance active</strong> : laisser vide</p>
 </li>
 <li>
-<p><strong>Maximale Betriebszeit (min)</strong> : zum Beispiel auf 400 setzen</p>
+<p><strong>Temps max surveillance active</strong> (minutes) : mettre par exemple 400</p>
 </li>
 <li>
-<p><strong>Zeit, der geplanten Geräte Abschaltung (HHMM)</strong> : zum Beispiel auf 2300 setzen</p>
+<p><strong>Heure prévue surveillance inactive</strong> : mettre par exemple 0105</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Cela signifie que la commande <strong>Alarme</strong> passera à 1 au bout de 400 minutes (soit 6 heures et 40 minutes, cela commence à faire beaucoup ;)) ou à 23H00 si la commande <strong>Etat</strong> est toujours à ON (c&#8217;est à dire votre TV est toujours allumée).
+<p>Cela signifie que la commande <strong>Alarme</strong> passera à 1 au bout de 400 minutes (soit 6 heures et 40 minutes, cela commence à faire beaucoup ;)) ou à 01H05 si la commande <strong>Etat</strong> est toujours à ON (c&#8217;est à dire votre TV est toujours allumée).
 Der Zähler wird bei jedem Wechsel auf AN, ihres Befehls, erhöht werden.</p>
 </div>
 <div class="paragraph">
@@ -1126,21 +1126,21 @@ Der Zähler wird bei jedem Wechsel auf AN, ihres Befehls, erhöht werden.</p>
 <p><strong>Allgemein Zähler</strong> : ankreuzen</p>
 </li>
 <li>
-<p><strong>Vorgesehene Betriebsstunden</strong> : die geplante Inbetriebnahme ihrer Wasser-Heizung festlegen (zB: 2330)</p>
+<p><strong>Heure de surveillance prévue</strong> : mettre l&#8217;heure prévue de mise en route de votre chauffe-eau (ex : 2330)</p>
 </li>
 <li>
-<p><strong>Puissance équipement</strong> : mettre une valeur légérement inférieur à la puissance de votre chauffe-eau (ex : si votre chauffe eau est un 2000W , mettre 1800)</p>
+<p><strong>Valeur surveillance active</strong> : mettre une valeur légérement inférieur à la puissance de votre chauffe-eau (ex : si votre chauffe eau est un 2000W , mettre 1800)</p>
 </li>
 <li>
-<p><strong>Minimale Betriebszeit (min)</strong> : zum Beispiel auf 20 setzen</p>
+<p><strong>Temps mini surveillance active</strong> (minutes) : mettre par exemple 20</p>
 </li>
 <li>
-<p><strong>Maximale Betriebszeit (min)</strong> : zum Beispiel auf 240 setzen</p>
+<p><strong>Temps max surveillance active</strong> (minutes) : mettre par exemple 360</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>cela signifie que la commande <strong>Alarme</strong> passera à ON à 00:10 (23h30+20 minutes) si l&#8217;équipement n&#8217;a pas demarré ou si son temps de fonctionnement est inférieur à 20 minutes ou supérieur à 4 heures.</p>
+<p>cela signifie que la commande <strong>Alarme</strong> passera à ON à 00:10 (23h30+20 minutes) si l&#8217;équipement n&#8217;a pas demarré ou si son temps de fonctionnement est inférieur à 20 minutes ou supérieur à 6 heures.</p>
 </div>
 <div class="paragraph">
 <p>Für ein eigenes Geräte Widget, wählen Sie die Befehle wie folgt :</p>
@@ -1175,28 +1175,26 @@ Der Zähler wird bei jedem Wechsel auf AN, ihres Befehls, erhöht werden.</p>
 <p><strong>Allgemein Zähler</strong> : nicht ankreuzen</p>
 </li>
 <li>
-<p><strong>Puissance mini</strong> (Watt) : si votre lave-linge consomme environ 10W mini pendant un cyle, mettre 10</p>
+<p><strong>Valeur surveillance inactive</strong> : si votre lave-linge consomme environ 10W mini pendant un cyle, mettre 10</p>
 </li>
 <li>
-<p><strong>Délai Puissance mini</strong> (Watt) : il est possible que le lave-linge passe en dessous de la puissance mini pendant un cycle, dans ce cas mettre par exemple 12, il faudra alors que la valeur de la puissance mini soit à 10W pendant 12 min pour être prise en compte</p>
+<p><strong>Délai valeur surveillance inactive</strong> : il est possible que le lave-linge passe en dessous de la puissance mini pendant un cycle, dans ce cas mettre par exemple 12, il faudra alors que la valeur de la puissance mini soit à 10W pendant 12 min pour être prise en compte</p>
 </li>
 <li>
-<p><strong>Puissance maxi</strong> (Watt) : si votre lave-linge consomme environ 100W au démarrage d&#8217;un cyle, mettre 100</p>
+<p><strong>Valeur surveillance active</strong> : si votre lave-linge consomme environ 200W au démarrage d&#8217;un cyle, mettre 200</p>
 </li>
 <li>
-<p><strong>Minimale Betriebszeit (min)</strong> : leer lassen oder nicht</p>
-</li>
-<li>
-<p><strong>Maximale Betriebszeit (min)</strong> : leer lassen oder nicht</p>
+<p><strong>Valeur compteur haut</strong> : par exemple 40,</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Der Zähler wird um 1 erhöht, der Befehl <strong>Zustand</strong> geht auf AN, wenn der gemessene Leistungswert größer 100W ist,
+<p>le compteur sera incrémenté de 1, la commande <strong>Etat</strong> passera à ON, si la valeur mesure de puissance est supérieure à 200W,
 le cycle sera considéré comme terminé si la mesure de puissance est inférieure à 10W , et que celle ci soit continuellement inférieur à 10W  pendant 12 min, la commande <strong>Etat</strong> passera alors à OFF.</p>
 </div>
 <div class="paragraph">
-<p>Wenn die Felder <strong>Minimale Betriebszeit</strong> oder <strong>Maximale Betriebszeit</strong> nicht leer sind, der Befehl <strong>Alarm</strong> auf AN geht  folgt der Wert des Befehls <strong>Betriebszeit</strong></p>
+<p>la commande <strong>Alarme</strong> passera à ON quand la valeur de la commande <strong>Compteur</strong> sera supérieur au paramètre <strong>Valeur compteur haut</strong>,
+c&#8217;est utile pour la maintenance du lave linge,</p>
 </div>
 <div class="paragraph">
 <p>Für ein eigenes Geräte Widget, wählen Sie die Befehle wie folgt :</p>
@@ -1257,7 +1255,7 @@ le cycle sera considéré comme terminé si la mesure de puissance est inférieu
 </div>
 </li>
 <li>
-<p>Version 1.9 (en cours de developpement)</p>
+<p>Version 1.9 (version market : 2017-06-30)</p>
 <div class="ulist">
 <ul>
 <li>

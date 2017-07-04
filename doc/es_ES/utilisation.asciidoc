@@ -4,11 +4,11 @@ image::../images/utilisation1-equipement.png[]
 
 * *Type de commande* : logique
 * *Commande équipement* : mettre la commande état de la prise qui commande votre télévision
-* *Temps min de fonctionnement* : laisser vide
-* *Temps max de fonctionnement* (minutes) : mettre par exemple 400
-* *Heure prévue équipement en Arrêt (HHMM)* : mettre par exemple 2300
+* *Temps mini surveillance active* : laisser vide
+* *Temps max surveillance active* (minutes) : mettre par exemple 400
+* *Heure prévue surveillance inactive* : mettre par exemple 0105
 
-Cela signifie que la commande *Alarme* passera à 1 au bout de 400 minutes (soit 6 heures et 40 minutes, cela commence à faire beaucoup ;)) ou à 23H00 si la commande *Etat* est toujours à ON (c'est à dire votre TV est toujours allumée).
+Cela signifie que la commande *Alarme* passera à 1 au bout de 400 minutes (soit 6 heures et 40 minutes, cela commence à faire beaucoup ;)) ou à 01H05 si la commande *Etat* est toujours à ON (c'est à dire votre TV est toujours allumée).
 Le compteur sera incrémenté à chaque passage à ON de votre commande.
 
 Pour un widget personnalisé à l'équipement, sélectionnez les commandes comme ci-dessous :
@@ -24,12 +24,12 @@ image::../images/utilisation2-equipement.png[]
 * *Type de commande* : analogique
 * *Commande équipement* : mettre la commande de mesure de puissance générale de votre logement
 * *Compteur général* : coché
-* *Heure de fonctionnement pévu* : mettre l'heure prévue de mise en route de votre chauffe-eau (ex : 2330) 
-* *Puissance équipement* : mettre une valeur légérement inférieur à la puissance de votre chauffe-eau (ex : si votre chauffe eau est un 2000W , mettre 1800)
-* *Temps min de fonctionnement* (minutes) : mettre par exemple 20
-* *Temps max de fonctionnement* (minutes) : mettre par exemple 240
+* *Heure de surveillance prévue* : mettre l'heure prévue de mise en route de votre chauffe-eau (ex : 2330) 
+* *Valeur surveillance active* : mettre une valeur légérement inférieur à la puissance de votre chauffe-eau (ex : si votre chauffe eau est un 2000W , mettre 1800)
+* *Temps mini surveillance active* (minutes) : mettre par exemple 20
+* *Temps max surveillance active* (minutes) : mettre par exemple 360
 
-cela signifie que la commande *Alarme* passera à ON à 00:10 (23h30+20 minutes) si l'équipement n'a pas demarré ou si son temps de fonctionnement est inférieur à 20 minutes ou supérieur à 4 heures.
+cela signifie que la commande *Alarme* passera à ON à 00:10 (23h30+20 minutes) si l'équipement n'a pas demarré ou si son temps de fonctionnement est inférieur à 20 minutes ou supérieur à 6 heures.
 
 Pour un widget personalisé à l'équipement, selectionnez les commandes comme ci-dessous :
 
@@ -44,16 +44,16 @@ image::../images/utilisation3-equipement.png[]
 * *Type de commande* : analogique
 * *Commande équipement* : mettre la commande de mesure de puissance du lave-linge
 * *Compteur général* : non coché
-* *Puissance mini* (Watt) : si votre lave-linge consomme environ 10W mini pendant un cyle, mettre 10
-* *Délai Puissance mini* (Watt) : il est possible que le lave-linge passe en dessous de la puissance mini pendant un cycle, dans ce cas mettre par exemple 12, il faudra alors que la valeur de la puissance mini soit à 10W pendant 12 min pour être prise en compte
-* *Puissance maxi* (Watt) : si votre lave-linge consomme environ 100W au démarrage d'un cyle, mettre 100
-* *Temps min de fonctionnement* : laisser vide ou non 
-* *Temps max de fonctionnement* : laisser vide ou non
+* *Valeur surveillance inactive* : si votre lave-linge consomme environ 10W mini pendant un cyle, mettre 10
+* *Délai valeur surveillance inactive* : il est possible que le lave-linge passe en dessous de la puissance mini pendant un cycle, dans ce cas mettre par exemple 12, il faudra alors que la valeur de la puissance mini soit à 10W pendant 12 min pour être prise en compte
+* *Valeur surveillance active* : si votre lave-linge consomme environ 200W au démarrage d'un cyle, mettre 200
+* *Valeur compteur haut* : par exemple 40, 
 
-le compteur sera incrémenté de 1, la commande *Etat* passera à ON, si la valeur mesure de puissance est supérieure à 100W, 
+le compteur sera incrémenté de 1, la commande *Etat* passera à ON, si la valeur mesure de puissance est supérieure à 200W, 
 le cycle sera considéré comme terminé si la mesure de puissance est inférieure à 10W , et que celle ci soit continuellement inférieur à 10W  pendant 12 min, la commande *Etat* passera alors à OFF.
 
-Si les champs *Temps min de fonctionnement* ou *Temps max de fonctionnement* ne sont pas vides, la commande *Alarme* passera à ON suivant la valeur de la commande *Temps Fct*.
+la commande *Alarme* passera à ON quand la valeur de la commande *Compteur* sera supérieur au paramètre *Valeur compteur haut*,
+c'est utile pour la maintenance du lave linge,
 
 Pour un widget personalisé à l'équipement, selectionner les commandes comme ci-dessous :
 
