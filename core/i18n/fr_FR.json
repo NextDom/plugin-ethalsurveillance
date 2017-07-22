@@ -59,6 +59,7 @@
         "Inactif à":"Arreté",
         "Etat":"Etat",
         "Compteur":"Compteur",
-        "RAZ Compteur":"RAZ Compteur" 
+        "Set Compteur":"Set Compteur",
+        "RAZ Compteur":"RAZ Compteur"
     }
 }
