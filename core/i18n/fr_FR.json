@@ -4,7 +4,7 @@
     },
     "plugins\/ethalsurveillance\/desktop\/php\/ethalsurveillance.php": {
         "Configuration": "Configuration",
-        "Ajouter un équipement à surveiller": "Ajouter un équipement à surveiller",
+        "Ajouter": "Ajouter",
         "Rechercher" : "Rechercher",
         "Sauvegarder": "Sauvegarder",
         "Supprimer": "Supprimer",
