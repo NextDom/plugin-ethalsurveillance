@@ -71,7 +71,7 @@ Utiliser la case à cocher *afficher*, si vous ne souhaitez pas voir certaines c
 * *RAZ Tps Actif Total* : remise à zero du temps de fonctionnement total (commande *Temps Fct Total(H:M:S)* et *Temps Fct Total*)
 * *Actif à* : heure à laquelle la commande *Etat* est passé à ON
 * *Inactif à* : heure à laquelle la commande *Etat* est passé à OFF	
-* *Etat* : statut de surveillance de l'équipement (1 = ON, 0 = OFF)
+* *Etat* : statut de surveillance de l'équipement (1 = ON(active), 0 = OFF(inactive))
 * *Compteur* : nombre de passage de la commande *Etat* de OFF à ON
 * *Compteur +* : incrémentation du compteur de 1
 * *Compteur -* : décrémentation du compteur de 1
