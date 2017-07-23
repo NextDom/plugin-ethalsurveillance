@@ -59,8 +59,6 @@ c'est à dire avec une mesure de puissance globale de votre logement.
 
 === Registerkarte Befehle
 
-image::../images/commandes.png[]
-
 Les commandes sont crées automatiquement à la sauvegarde de l'équipement, il n'est pas possible d'en ajouter, d'en supprimer.
 Utiliser la case à cocher *afficher*, si vous ne souhaitez pas voir certaines commandes sur le widget.
 
@@ -73,8 +71,10 @@ Utiliser la case à cocher *afficher*, si vous ne souhaitez pas voir certaines c
 * *RAZ Tps Actif Total* : remise à zero du temps de fonctionnement total (commande *Temps Fct Total(H:M:S)* et *Temps Fct Total*)
 * *Actif à* : heure à laquelle la commande *Etat* est passé à ON
 * *Inactif à* : heure à laquelle la commande *Etat* est passé à OFF	
-* *Etat* : statut de surveillance de l'équipement (1 = ON, 0 = OFF)
-* *Compteur* : nombre de passage de la commande *Etat* de OFF à ON  
+* *Etat* : statut de surveillance de l'équipement (1 = ON(active), 0 = OFF(inactive))
+* *Compteur* : nombre de passage de la commande *Etat* de OFF à ON
+* *Compteur +* : incrémentation du compteur de 1
+* *Compteur -* : décrémentation du compteur de 1
 * *RAZ Compteur* : remise à zéro de la commande *Compteur*
 
 === Registerkarte Daten

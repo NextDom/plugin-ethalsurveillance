@@ -4,7 +4,7 @@
     },
     "plugins\/ethalsurveillance\/desktop\/php\/ethalsurveillance.php": {
         "Configuration": "Konfiguration",
-        "Ajouter un équipement à surveiller": "Überwachungs Gerät hinzufügen",
+        "Ajouter": "Ajouter",
         "Rechercher" : "Suchen",
         "Sauvegarder": "Speichern",
         "Supprimer": "Löschen",
@@ -59,6 +59,8 @@
         "Inactif à":"Arreté",
         "Etat":"Zustand",
         "Compteur":"Zähler",
-        "RAZ Compteur":"Zähler zurücksetzen" 
+        "Compteur +":"Compteur +",
+        "Compteur -":"Compteur -",
+        "RAZ Compteur":"Zähler zurücksetzen"
     }
 }

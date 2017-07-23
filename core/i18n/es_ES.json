@@ -4,7 +4,7 @@
     },
     "plugins\/ethalsurveillance\/desktop\/php\/ethalsurveillance.php": {
         "Configuration": "Configuración",
-        "Ajouter un équipement à surveiller": "Agregar equipo a monitorizar",
+        "Ajouter": "Ajouter",
         "Rechercher" : "Buscar",
         "Sauvegarder": "Salvar",
         "Supprimer": "Borrar",
@@ -59,6 +59,8 @@
         "Inactif à":"Arreté",
         "Etat":"Estado",
         "Compteur":"Medidor",
-        "RAZ Compteur":"Medidor RAZ" 
+        "Compteur +":"Compteur +",
+        "Compteur -":"Compteur -",
+        "RAZ Compteur":"Medidor RAZ"
     }
 }
