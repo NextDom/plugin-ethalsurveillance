@@ -1,6 +1,10 @@
-* Version 2.0 (to do)		
+* Version 2.1 ()		
+** ??
+
+* Version 2.0 (In Progress)		
 ** Correction du bug lors de la remise à zéro	du temps de fonctionnement total
-** Amélioration du code
+** Ajout d'une commmande *Compteur +* et *Compteur -*
+** Données graphique disponible depuis un panel en lieu et place de l'onglet données
 ** mise à jour de la documentation
 
 * Version 1.9 (version market : 2017-06-30)		
