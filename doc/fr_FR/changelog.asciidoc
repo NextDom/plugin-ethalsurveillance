@@ -1,5 +1,5 @@
-* Version 2.1 ()		
-** ??
+* Version 2.1 (to do)		
+** correction de bug ??
 
 * Version 2.0 (In Progress)		
 ** Correction du bug lors de la remise à zéro	du temps de fonctionnement total
