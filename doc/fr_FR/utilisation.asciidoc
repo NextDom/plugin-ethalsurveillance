@@ -11,10 +11,6 @@ image::../images/utilisation1-equipement.png[]
 Cela signifie que la commande *Alarme* passera à 1 au bout de 400 minutes (soit 6 heures et 40 minutes, cela commence à faire beaucoup ;)) ou à 01H05 si la commande *Etat* est toujours à ON (c'est à dire votre TV est toujours allumée).
 Le compteur sera incrémenté à chaque passage à ON de votre commande.
 
-Pour un widget personnalisé à l'équipement, utiliser l'option *Afficher* disponible pour chaque commande :
-
-image::../images/utilisation1-widget.png[]
-
 === Surveiller son chauffe-eau avec la mesure de puissance de l'arrivée générale de votre logement
 
 image::../images/utilisation2-equipement.png[]
