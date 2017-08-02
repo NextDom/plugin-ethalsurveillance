@@ -1,7 +1,7 @@
 * Version 2.1 (to do)		
 ** correction de bug ??
 
-* Version 2.0 (version market : 2017-08-xx - En Cours)		
+* Version 2.0 (En Cours)		
 ** Correction du bug lors de la remise à zéro	du temps de fonctionnement total
 ** Historisation du temps où l'equipement est actif à partir de la commande *etat* en lieu et place la commande *Tps Fct Actif Total*
 ** Ajout d'une commmande *Compteur +* et *Compteur -*
