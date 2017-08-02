@@ -3,9 +3,9 @@ La surveillance de l'équipement est faite à partir d'une commande *logique* (i
 
 Il permet de connaître le temps où la commande de l'équipement est active, il gère une commande d'alarme, en fonction d'un temps minimun et/ou maximun où la commande de l'équipement est active, d'une heure prévue où la commande de l'équipement est inactif ou actif, d'une valeur haute sur un compteur,
 
-*Ces paramètres sont disponible pour une gestion hebdomadaire,
-*Un code d'alarme, permettant de connaître la cause de l'alarme,
-*Un compteur de cycle de fonctionnement,
+**Ces paramètres sont disponible pour une gestion hebdomadaire,
+**Un code d'alarme, permettant de connaître la cause de l'alarme,
+**Un compteur de cycle de fonctionnement,
 
 Ci dessous des exemples de widget.
 
