@@ -1,4 +1,3 @@
-Ce plugin permet la surveillance d'un équipement. 
 
 La surveillance de l'équipement est faite à partir d'une commande *logique* (ie etat,...) ou d'une commande de mesure de *analogique* (puissance,temperature,...)
 
@@ -18,4 +17,6 @@ image::../images/utilisation2-widget.png[]
 
 image::../images/utilisation3-widget.png[]
 
-image::../images/donnees.png[]
+Un panel pour la visualisation graphique du temps d'activité de l'equipement est disponible depuis le menu acceuil->Surveillance Equipement
+
+image::../images/panel.png[]
