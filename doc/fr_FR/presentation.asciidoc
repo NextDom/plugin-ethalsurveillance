@@ -9,7 +9,8 @@ Un code d'alarme, permettant de connaître la cause de l'alarme,
 
 Un compteur de cycle de fonctionnement,
 
-ci dessous des exemples de widget. 
+ci dessous des exemples de widget.
+
 image::../images/utilisation1-widget.png[]
 
 image::../images/utilisation2-widget.png[]
