@@ -9,14 +9,12 @@ Un code d'alarme, permettant de connaître la cause de l'alarme,
 
 Un compteur de cycle de fonctionnement,
 
-Un graphique repésentant le temps de fonctionnement, 
-
 image::../images/utilisation1-widget.png[]
 
 image::../images/utilisation2-widget.png[]
 
 image::../images/utilisation3-widget.png[]
 
-Un panel pour la visualisation graphique du temps d'activité de l'equipement est disponible depuis le menu acceuil->Surveillance Equipement
+Un panel pour la visualisation graphique du temps d'activité de l'equipement est disponible depuis le menu Acceuil->Surveillance Equipement
 
 image::../images/panel.png[]
