@@ -422,9 +422,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_registerkarte_geräte">3.1. Registerkarte Geräte</a></li>
 <li><a href="#_registerkarte_befehle">3.2. Registerkarte Befehle</a></li>
-<li><a href="#_registerkarte_daten">3.3. Registerkarte Daten</a></li>
-<li><a href="#_funktionsweise">3.4. Funktionsweise</a></li>
-<li><a href="#_codes_alarme">3.5. Codes alarme</a></li>
+<li><a href="#_funktionsweise">3.3. Funktionsweise</a></li>
+<li><a href="#_codes_alarme">3.4. Codes alarme</a></li>
 </ul>
 </li>
 <li><a href="#_anwendungsfall">4. Anwendungsfall</a>
@@ -452,10 +451,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_präsentation">2. Präsentation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Dieses Plugin ermöglicht die Überwachung von Geräten.</p>
-</div>
-<div class="paragraph">
-<p>La surveillance de l&#8217;équipement est faite à partir d&#8217;une commande <strong>logique</strong> (ie etat,&#8230;&#8203;) ou d&#8217;une commande de mesure de <strong>analogique</strong> (puissance,temperature,&#8230;&#8203;)</p>
+<p>La surveillance de l&#8217;équipement est faite à partir d&#8217;une commande <strong>logique</strong> (ie etat,&#8230;&#8203;) ou d&#8217;une commande de mesure <strong>analogique</strong> (puissance,temperature,&#8230;&#8203;)</p>
 </div>
 <div class="paragraph">
 <p>Il permet de connaître le temps où la commande de l&#8217;équipement est active, il gère une commande d&#8217;alarme, en fonction d&#8217;un temps minimun et/ou maximun où la commande de l&#8217;équipement est active, d&#8217;une heure prévue où la commande de l&#8217;équipement est inactif ou actif, d&#8217;une valeur haute sur un compteur,</p>
@@ -467,10 +463,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Ein Alarm-Code, um die Ursache des Alarms zu wissen,</p>
 </div>
 <div class="paragraph">
-<p>Un compteur de cycle de fonctionnement,</p>
+<p>Un compteur de cycle de d&#8217;activité de l&#8217;équipement.</p>
 </div>
 <div class="paragraph">
-<p>Ein Diagramm das die Betriebszeit darstellt,</p>
+<p>Ci dessous des exemples de widget.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -487,9 +483,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <img src="../images/utilisation3-widget.png" alt="utilisation3 widget">
 </div>
 </div>
+<div class="paragraph">
+<p>Un panel pour la visualisation graphique du temps d&#8217;activité de l&#8217;équipement est disponible depuis le menu Acceuil&#8594;Surveillance Equipement</p>
+</div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/donnees.png" alt="donnees">
+<img src="../images/panel.png" alt="panel">
 </div>
 </div>
 </div>
@@ -710,25 +709,22 @@ Utiliser la case à cocher <strong>afficher</strong>, si vous ne souhaitez pas v
 </li>
 </ul>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_registerkarte_daten">3.3. Registerkarte Daten</h3>
-<div class="imageblock">
-<div class="content">
-<img src="../images/donnees.png" alt="donnees">
-</div>
-</div>
-<div class="paragraph">
-<p>Cet onglet fournit une représentation grahique du temps de fonctionnement de l&#8217;équipement,
-il est possble de visualiser ce temps de fonctionnement par jour, semaine, mois (sélecteur cumul par jour, cumul par semaine, cumul par mois)</p>
-</div>
-<div class="paragraph">
-<p>Pour cela , la commande <strong>Temps Actif Total</strong> doit être historisée avec l&#8217;option <strong>Mode de lissage</strong> sur <strong>Aucun</strong>.
-Ces options sont disponible depuis la roue dentée en face de la commande dans l&#8217;onglet <strong>Commandes</strong>.  </p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Pour historiser le temps d&#8217;activité d&#8217;un équipément, la commande <strong>Etat</strong> doit être historisée avec l&#8217;option <strong>Mode de lissage</strong> sur <strong>Aucun</strong>.
+Ces options sont disponible depuis la roue dentée en face de la commande dans l&#8217;onglet <strong>Commandes</strong>.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_funktionsweise">3.4. Funktionsweise</h3>
+<h3 id="_funktionsweise">3.3. Funktionsweise</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1046,7 +1042,7 @@ Si la commande <strong>Alarme</strong> est déja à ON , et qu&#8217;une nouvell
 </div>
 </div>
 <div class="sect2">
-<h3 id="_codes_alarme">3.5. Codes alarme</h3>
+<h3 id="_codes_alarme">3.4. Codes alarme</h3>
 <div class="paragraph">
 <p>Ci dessous la liste des codes d&#8217;alarme en fonction du/des alarme(s),</p>
 </div>
@@ -1094,19 +1090,6 @@ Si la commande <strong>Alarme</strong> est déja à ON , et qu&#8217;une nouvell
 <p>Cela signifie que la commande <strong>Alarme</strong> passera à 1 au bout de 400 minutes (soit 6 heures et 40 minutes, cela commence à faire beaucoup ;)) ou à 01H05 si la commande <strong>Etat</strong> est toujours à ON (c&#8217;est à dire votre TV est toujours allumée).
 Der Zähler wird bei jedem Wechsel auf AN, ihres Befehls, erhöht werden.</p>
 </div>
-<div class="paragraph">
-<p>Für ein eigenes Geräte Widget, wählen Sie die Befehle wie folgt :</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/utilisation1-commandes.png" alt="utilisation1 commandes">
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/utilisation1-widget.png" alt="utilisation1 widget">
-</div>
-</div>
 </div>
 <div class="sect2">
 <h3 id="_surveiller_son_chauffe_eau_avec_la_mesure_de_puissance_de_l_arrivée_générale_de_votre_logement">4.2. Surveiller son chauffe-eau avec la mesure de puissance de l&#8217;arrivée générale de votre logement</h3>
@@ -1143,19 +1126,6 @@ Der Zähler wird bei jedem Wechsel auf AN, ihres Befehls, erhöht werden.</p>
 <div class="paragraph">
 <p>cela signifie que la commande <strong>Alarme</strong> passera à ON à 00:10 (23h30+20 minutes) si l&#8217;équipement n&#8217;a pas demarré ou si son temps de fonctionnement est inférieur à 20 minutes ou supérieur à 6 heures.</p>
 </div>
-<div class="paragraph">
-<p>Für ein eigenes Geräte Widget, wählen Sie die Befehle wie folgt :</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/utilisation2-commandes.png" alt="utilisation2 commandes">
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/utilisation2-widget.png" alt="utilisation2 widget">
-</div>
-</div>
 </div>
 <div class="sect2">
 <h3 id="_die_anzahl_ihrer_waschmaschinen_zyklen_zählen">4.3. Die Anzahl Ihrer Waschmaschinen Zyklen zählen</h3>
@@ -1176,13 +1146,13 @@ Der Zähler wird bei jedem Wechsel auf AN, ihres Befehls, erhöht werden.</p>
 <p><strong>Allgemein Zähler</strong> : nicht ankreuzen</p>
 </li>
 <li>
-<p><strong>Valeur surveillance inactive</strong> : si votre lave-linge consomme environ 10W mini pendant un cyle, mettre 10</p>
+<p><strong>Valeur surveillance inactive</strong> : si votre lave-linge consomme environ 4W mini pendant un cyle, mettre 4</p>
 </li>
 <li>
-<p><strong>Délai valeur surveillance inactive</strong> : il est possible que le lave-linge passe en dessous de la puissance mini pendant un cycle, dans ce cas mettre par exemple 12, il faudra alors que la valeur de la puissance mini soit à 10W pendant 12 min pour être prise en compte</p>
+<p><strong>Délai valeur surveillance inactive</strong> : il est possible que le lave-linge passe en dessous de la puissance mini pendant un cycle, dans ce cas mettre par exemple 8, il faudra alors que la valeur de la puissance mini soit à 4W pendant 8 min pour être prise en compte</p>
 </li>
 <li>
-<p><strong>Valeur surveillance active</strong> : si votre lave-linge consomme environ 200W au démarrage d&#8217;un cyle, mettre 200</p>
+<p><strong>Valeur surveillance active</strong> : si votre lave-linge consomme plus de 50W au démarrage d&#8217;un cyle, mettre 50</p>
 </li>
 <li>
 <p><strong>Valeur compteur haut</strong> : par exemple 40,</p>
@@ -1190,25 +1160,36 @@ Der Zähler wird bei jedem Wechsel auf AN, ihres Befehls, erhöht werden.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>le compteur sera incrémenté de 1, la commande <strong>Etat</strong> passera à ON, si la valeur mesure de puissance est supérieure à 200W,
-le cycle sera considéré comme terminé si la mesure de puissance est inférieure à 10W , et que celle ci soit continuellement inférieur à 10W  pendant 12 min, la commande <strong>Etat</strong> passera alors à OFF.</p>
+<p>le compteur sera incrémenté de 1, la commande <strong>Etat</strong> passera à ON, si la valeur mesure de puissance est supérieure à 50W,
+le cycle sera considéré comme terminé si la mesure de puissance est inférieure à 4W , et que celle ci soit continuellement inférieur à 4W  pendant 8 min, la commande <strong>Etat</strong> passera alors à OFF.</p>
 </div>
 <div class="paragraph">
 <p>la commande <strong>Alarme</strong> passera à ON quand la valeur de la commande <strong>Compteur</strong> sera supérieur au paramètre <strong>Valeur compteur haut</strong>,
-c&#8217;est utile pour la maintenance du lave linge,</p>
+c&#8217;est utile pour la maintenance(nettoyage,..) du lave linge,</p>
 </div>
-<div class="paragraph">
-<p>Für ein eigenes Geräte Widget, wählen Sie die Befehle wie folgt :</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Pour un widget personnalisé à l&#8217;équipement, utiliser l&#8217;option <strong>Afficher</strong> disponible pour chaque commande
+</td>
+</tr>
+</table>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/utilisation3-commandes.png" alt="utilisation3 commandes">
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/utilisation3-widget.png" alt="utilisation3 widget">
-</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Pour avoir un historique du temps d&#8217;activité de l&#8217;equipement , il faut historiser la commande <strong>Etat</strong>  avec l&#8217;option <strong>Aucun lissage</strong>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -1218,6 +1199,11 @@ c&#8217;est utile pour la maintenance du lave linge,</p>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
+<li>
+<p>le passage en version 2.00(2017-08-xx),modifie la gestion du temps d&#8217;activité de l&#8217;équipement à surveiller, il faut maintenant historiser la commande <strong>Etat</strong> ,et <strong>les historiques précedents seront plus disponible dans l&#8217;onglet "données"</strong>, pour activer le nouveau fonctionnement:
+depuis la roue cranté de la commande <strong>Etat</strong> , activiter l' historisation de la commande et sélectionner  mode de lissage sur "aucun".
+d&#8217;autre part, pour libérer de l&#8217;espace dans la base de données jeedom, je vous conseille depuis le menu historique de supprimer les données historisées de la commande "Temps Actif Total" et ensuite de désactiver l&#8217;historisation de cette commande pour chaque équipement.</p>
+</li>
 <li>
 <p>Nach der Aktualisierung des Plugins ist es am besten ein Backup jeder "Geräte Überwachung" zu machen</p>
 </li>
@@ -1250,11 +1236,14 @@ c&#8217;est utile pour la maintenance du lave linge,</p>
 </div>
 </li>
 <li>
-<p>Version 2.0 (In Progress)</p>
+<p>Version 2.0 (En Cours)</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Fehler behoben, beim zurücksetzen der gesamten Betriebszeit</p>
+</li>
+<li>
+<p>Historisation du temps où l&#8217;equipement est actif à partir de la commande <strong>etat</strong> en lieu et place la commande <strong>Tps Fct Actif Total</strong></p>
 </li>
 <li>
 <p>Ajout d&#8217;une commmande <strong>Compteur +</strong> et <strong>Compteur -</strong></p>

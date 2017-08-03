@@ -1,8 +1,9 @@
 * Version 2.1 (to do)		
 ** correction de bug ??
 
-* Version 2.0 (In Progress)		
+* Version 2.0 (En Cours)		
 ** Fehler behoben, beim zurücksetzen der gesamten Betriebszeit 
+** Historisation du temps où l'equipement est actif à partir de la commande *etat* en lieu et place la commande *Tps Fct Actif Total*
 ** Ajout d'une commmande *Compteur +* et *Compteur -*
 ** Données graphique disponible depuis un panel en lieu et place de l'onglet données
 ** Aktualisierung der Dokumentation
