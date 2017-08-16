@@ -64,11 +64,11 @@ Utiliser la case à cocher *afficher*, si vous ne souhaitez pas voir certaines c
 
 * *Alarme* : statut d'alarme de l'équipement (1 = ALARME = ON, 0 = OFF)
 * *Code Alarme* : somme des codes d'alarme ayant déclenchés l'alarme , voir ci-dessous les valeurs des codes d'alarme
-* *Temps Actif(H:M:S)* : Temps de fonctionnement de l'équipement au format Heure:Minute:Seconde
-* *Temps Actif* : Temps de fonctionnement de l'équipement en secondes
-* *Temps Actif Total(H:M:S)* : Temps de fonctionnement de l'équipement au format Heure:Minute:Seconde
-* *Temps Actif Total* : Temps de fonctionnement de l'équipement en secondes
-* *RAZ Tps Actif Total* : remise à zero du temps de fonctionnement total (commande *Temps Fct Total(H:M:S)* et *Temps Fct Total*)
+* *Temps Actif(H:M:S)* : Temps d'activité de l'équipement au format Heure:Minute:Seconde
+* *Temps Actif* : Temps d'activité de l'équipement en secondes
+* *Temps Actif Total(H:M:S)* : Temps d'activité de l'équipement au format Heure:Minute:Seconde
+* *Temps Actif Total* : Temps d'activité de l'équipement en secondes
+* *RAZ Tps Actif Total* : remise à zero du temps d'activité total (commande *Temps Actif Total(H:M:S)* et *Temps Actif Total*)
 * *Actif à* : heure à laquelle la commande *Etat* est passé à ON
 * *Inactif à* : heure à laquelle la commande *Etat* est passé à OFF	
 * *Etat* : statut de surveillance de l'équipement (1 = ON(active), 0 = OFF(inactive))
@@ -166,10 +166,10 @@ Si la commande *Alarme* est déja à ON , et qu'une nouvelle condition d'alarme 
 
 * *Alarme* : voir ci-dessus
 * *Code Alarme* : voir ci-dessus
-* *Tempts Fct* : heure courante moins heure de démarrage en secondes 
-* *Tempts Fct (H:M:S)* : heure courante moins heure de surveillance active au format Heure:Minute:Seconde  
-* *Tempts Fct Total(H:M:S)* : cumul heure surveillance active au format Heure:Minute:Seconde 
-* *Tempts Fct Total* : cumul heure surveillance active en seconde 
+* *Tempts Actif* : heure courante moins heure de démarrage en secondes 
+* *Tempts Actif (H:M:S)* : heure courante moins heure de surveillance active au format Heure:Minute:Seconde  
+* *Tempts Actif Total(H:M:S)* : cumul heure surveillance active au format Heure:Minute:Seconde 
+* *Tempts Actif Total* : cumul heure surveillance active en seconde 
 * *Actif à* : pas de changement
 * *Inactif à* : pas de changement
 * *Etat* : Pas de changement
