@@ -1,4 +1,4 @@
-* Le passage en version 2.00(2017-08),modifie la gestion du temps d'activité de l'équipement à surveiller, il faut maintenant historiser la commande *Etat* ,et *les historiques précedents seront plus disponible dans l'onglet "données"*, pour activer le nouveau fonctionnement: 
+* Le passage en version 2.00(2017-08),modifie la gestion du temps d'activité de l'équipement à surveiller, il faut maintenant historiser la commande *Etat* ,*les historiques précedents ne seront plus disponible dans l'onglet "données"*, pour activer le nouveau fonctionnement: 
 depuis la roue cranté de la commande *Etat* , activiter l' historisation de la commande et sélectionner  mode de lissage sur "aucun".
 d'autre part, pour libérer de l'espace dans la base de données jeedom, je vous conseille depuis le menu historique de supprimer les données historisées de la commande "Temps Actif Total" et ensuite de désactiver l'historisation de cette commande pour chaque équipement.
 * Après une mise à jour du plugin, il est préférable de faire une sauvegarde de chaque "Surveillance équipement"
