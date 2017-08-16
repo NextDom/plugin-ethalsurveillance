@@ -4,7 +4,7 @@ D'autre part, pour libérer de l'espace dans la base de données jeedom, je vous
 
 * Après une mise à jour du plugin, il est préférable de faire une sauvegarde de chaque "Surveillance équipement"
 
-* Pour avoir une représentation graphique du temps de fonctionnement, il faut historiser la commande *Temps Actif Total* avec l'option 
+* Pour avoir une représentation graphique du temps de fonctionnement, il faut historiser la commande *Etat* avec l'option 
 *Mode de lissage* sur *Aucun*
 
 * les valeurs des commandes *Valeur surveillance inactive* et *Valeur surveillance active* ne doivent pas être égales
