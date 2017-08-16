@@ -3,7 +3,7 @@
 
 * Version 2.0 (En Cours)		
 ** Correction du bug lors de la remise à zéro	du temps de fonctionnement total
-** Historisation du temps où l'equipement est actif à partir de la commande *Etat* en lieu et place la commande *Tps Fct Actif Total*
+** Historisation du temps où l'equipement est actif à partir de la commande *Etat* en lieu et place la commande *Tps Actif Total*
 [IMPORTANT]
 les données précédentes ne seront plus disponible
 
