@@ -23,7 +23,7 @@ image::../images/utilisation2-equipement.png[]
 * *Temps mini surveillance active* (minutes) : mettre par exemple 20
 * *Temps max surveillance active* (minutes) : mettre par exemple 360
 
-cela signifie que la commande *Alarme* passera à ON à 00:10 (23h30+20 minutes) si l'équipement n'a pas demarré ou si son temps de fonctionnement est inférieur à 20 minutes ou supérieur à 6 heures.
+Cela signifie que la commande *Alarme* passera à ON à 00:10 (23h30+20 minutes) si l'équipement n'a pas demarré ou si son temps de fonctionnement est inférieur à 20 minutes ou supérieur à 6 heures.
 
 === Compter le nombre de cycles de votre lave-linge
 
