@@ -68,10 +68,10 @@ class ethalsurveillance extends eqLogic {
         $expectedStoppedTimeMin = -1;
         $expectedStoppedTimeMax = -1;
  
-        $configExpectedStoppedTime = self::ethGetDayValue($ethalsurveillance,'expectedstoppedtime','');
-        $configExpectedStartedTime = self::ethGetDayValue($ethalsurveillance,'expectedstartedtime','');
-        $configTempsMini = self::ethGetDayValue($ethalsurveillance,'tempsmini',0);
-        $configTempsMax = self::ethGetDayValue($ethalsurveillance,'tempsmax',0);
+        $configExpectedStoppedTime = self::ethGetDayValue($ethalsurveillance,$currentTime,'expectedstoppedtime','');
+        $configExpectedStartedTime = self::ethGetDayValue($ethalsurveillance,$currentTime,'expectedstartedtime','');
+        $configTempsMini = self::ethGetDayValue($ethalsurveillance,$currentTime,'tempsmini',0);
+        $configTempsMax = self::ethGetDayValue($ethalsurveillance,$currentTime,'tempsmax',0);
 
         log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : cron5 : min temps set to->' . $configTempsMini);
         log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : cron5 : max temps set to->' . $configTempsMax);
@@ -269,11 +269,11 @@ class ethalsurveillance extends eqLogic {
         $memoCurrentTime =   $ethalsurveillance->getConfiguration('memocurrenttime',0);    
         $memoCurrentTimeStatus = $ethalsurveillance->getConfiguration('memocurrenttimestatus',0);
 
-        $configExpectedStoppedTime = self::ethGetDayValue($ethalsurveillance,'expectedstoppedtime','');
-        $configExpectedStartedTime = self::ethGetDayValue($ethalsurveillance,'expectedstartedtime','');
-        $configTempsMini = self::ethGetDayValue($ethalsurveillance,'tempsmini',0);
-        $configTempsMax = self::ethGetDayValue($ethalsurveillance,'tempsmax',0);
-        $configCptAlarmeHaute = self::ethGetDayValue($ethalsurveillance,'cptalarmehaute',0);
+        $configExpectedStoppedTime = self::ethGetDayValue($ethalsurveillance,$currentTime,'expectedstoppedtime','');
+        $configExpectedStartedTime = self::ethGetDayValue($ethalsurveillance,$currentTime,'expectedstartedtime','');
+        $configTempsMini = self::ethGetDayValue($ethalsurveillance,$currentTime,'tempsmini',0);
+        $configTempsMax = self::ethGetDayValue($ethalsurveillance,$currentTime,'tempsmax',0);
+        $configCptAlarmeHaute = self::ethGetDayValue($ethalsurveillance,$currentTime,'cptalarmehaute',0);
 
         log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : min temps set to ->' . $configTempsMini);
         log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : max temps set to ->' . $configTempsMax);
@@ -589,18 +589,12 @@ class ethalsurveillance extends eqLogic {
       return $value;      
     }
 
-    private static function ethGetDayValue($eq,$key,$default) {
+    private static function ethGetDayValue($eq,$currentTime,$key,$default) {
       $dayConfig = $eq->getConfiguration(date('N',$currentTime).$key,$default);        
       $return = $eq->getConfiguration($key,$default);
-      log::add('ethalsurveillance', 'debug', $eq->getName().' : ethGetDayValue : '.$key. ' Day value->' . $dayConfig);
-      log::add('ethalsurveillance', 'debug', $eq->getName().' : ethGetDayValue : '.$key. ' Default value->' . $return);
-
       if ($dayConfig != $default){
           $return = $dayConfig;
       }          
-
-      log::add('ethalsurveillance', 'debug', $eq->getName().' : ethGetDayValue : '.$key. ' return value->' . $return);
-
       return $return;
     }    
     
