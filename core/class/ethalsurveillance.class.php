@@ -45,13 +45,10 @@ class ethalsurveillance extends eqLogic {
         }
         
         $_option = array('equipement_id' => $ethalsurveillance->getId());
-        
         if ($etat == 1 and $equipementType == 'numeric' and $pGeneral != '1') {
           self::checkequipement($_option);
         }
-
       }
-      
     }
     
     
@@ -139,24 +136,12 @@ class ethalsurveillance extends eqLogic {
 
         $etat = self::ethCheckValue($ethalsurveillance,'etat');
         $alarme = self::ethCheckValue($ethalsurveillance,'alarme');
-
         $currentTempsFct = $currentTime- $ethalsurveillance->getConfiguration('startedtime');
         $currentTempsFctTotal = $ethalsurveillance->getConfiguration('previoustpsfct') + $currentTempsFct;
 
 
-        /* Alarme si pas demarré a l'heure prevu + temps mini de fonctionnement et debut heure non vide */
-        if ($currentTime >= ($debutHeure+($configTempsMini*60)) and $etat == 0 and $configTempsMini !=0) {
-          if ($alarme ==0){
-            $alarme = 1;
-            $ethalsurveillance->checkAndUpdateCmd('alarme',1);
-            log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : cron5 : Alarme debut heure->' . date('H:i:s',$debutHeure));
-          }
-          self::ethAlarmeCode($ethalsurveillance,1);
-        }
-        
-
-        if ($etat == 1) {      
-          
+        /*mise à jour des commandes de mesure de temps si l'équiepment est actif */ 
+        if ($etat == 1) {                
           $fmtCurrentTempsFct = self::ethFormatTpsFct($currentTempsFct);
           $fmtCurrentTempsFctTotal = self::ethFormatTpsFct($currentTempsFctTotal);
         
@@ -166,6 +151,16 @@ class ethalsurveillance extends eqLogic {
           $ethalsurveillance->checkAndUpdateCmd('tempsfcttotal_hms', $fmtCurrentTempsFctTotal);
         }
         
+        /* Alarme code 1 si pas demarré a l'heure prevu + temps mini de fonctionnement et debut heure non vide */
+        if ($currentTime >= ($debutHeure+($configTempsMini*60)) and $etat == 0 and $configTempsMini !=0) {
+          if ($alarme ==0){
+            $alarme = 1;
+            $ethalsurveillance->checkAndUpdateCmd('alarme',1);
+            log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : cron5 : Alarme debut heure->' . date('H:i:s',$debutHeure));
+          }
+          self::ethAlarmeCode($ethalsurveillance,1);
+        }
+        /* alarme code 4*/
         if ($currentTempsFct >= ($configTempsMax*60) and $etat == 1 and $configTempsMax !=0) {
           if ($alarme == 0){
             $alarme = 1;
@@ -175,6 +170,7 @@ class ethalsurveillance extends eqLogic {
           self::ethAlarmeCode($ethalsurveillance,4);
         }
 
+        /* alarme code 8*/
         if ($currentTime >= $expectedStoppedTimeMin and $currentTime <= $expectedStoppedTimeMax and $etat == 1 and $expectedStoppedTime !=-1) {
           if ($alarme == 0){
             $alarme = 1;
@@ -184,6 +180,7 @@ class ethalsurveillance extends eqLogic {
           self::ethAlarmeCode($ethalsurveillance,8);
         }
 
+        /* alarme code 16*/
         if ($currentTime >= $expectedStartedTimeMin and $currentTime <= $expectedStartedTimeMax and $etat == 0 and $expectedStartedTime !=-1) {
           if ($alarme == 0){
             $alarme = 1;
@@ -195,7 +192,6 @@ class ethalsurveillance extends eqLogic {
       }
     }
     
-
     /*
      * Fonction exécutée automatiquement toutes les heures par Jeedom
       public static function cronHourly() {
@@ -510,6 +506,7 @@ class ethalsurveillance extends eqLogic {
             $ethalsurveillance->checkAndUpdateCmd('tempsfcttotal',$currentTempsFctTotal);
             $ethalsurveillance->checkAndUpdateCmd('tempsfcttotal_hms', $fmtCurrentTempsFctTotal);
 
+            /* Alarme Code 2 */
             if ($currentTempsFct <= ($configTempsMini*60) and $configTempsMini !=0) {
               if ($alarme == 0){
                 $alarme = 1;
