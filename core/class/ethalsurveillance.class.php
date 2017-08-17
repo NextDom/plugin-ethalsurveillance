@@ -834,6 +834,8 @@ class ethalsurveillance extends eqLogic {
         $ethalsurveillanceCmd->setEqType('ethalsurveillance');
         $ethalsurveillanceCmd->setType('info');
         $ethalsurveillanceCmd->setSubType('binary');
+        $ethalsurveillanceCmd->setIsHistorized(1);
+        $ethalsurveillanceCmd->setConfiguration('historizeMode','none');
         $ethalsurveillanceCmd->setTemplate('mobile','line');
         $ethalsurveillanceCmd->setTemplate('dashboard','line');
         $ethalsurveillanceCmd->setOrder(9);
