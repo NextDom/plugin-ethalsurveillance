@@ -593,7 +593,7 @@ class ethalsurveillance extends eqLogic {
       $dayConfig = $eq->getConfiguration(date('N',$currentTime).$key,$default);        
       $return = $eq->getConfiguration($key,$default);
       if ($dayConfig != $default){
-          $return = $dayconfigExpectedStoppedTime;
+          $return = $dayConfig;
       }          
       return $return;
     }    
