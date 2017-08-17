@@ -592,9 +592,15 @@ class ethalsurveillance extends eqLogic {
     private static function ethGetDayValue($eq,$key,$default) {
       $dayConfig = $eq->getConfiguration(date('N',$currentTime).$key,$default);        
       $return = $eq->getConfiguration($key,$default);
+      log::add('ethalsurveillance', 'debug', $eq->getName().' : ethGetDayValue : '.$key. ' Day value->' . $dayConfig);
+      log::add('ethalsurveillance', 'debug', $eq->getName().' : ethGetDayValue : '.$key. ' Default value->' . $return);
+
       if ($dayConfig != $default){
           $return = $dayConfig;
       }          
+
+      log::add('ethalsurveillance', 'debug', $eq->getName().' : ethGetDayValue : '.$key. ' return value->' . $return);
+
       return $return;
     }    
     
