@@ -31,7 +31,7 @@ class ethalsurveillance extends eqLogic {
       foreach (eqLogic::byType('ethalsurveillance', true) as $ethalsurveillance) {
 
         $equipementType = '';
-        $etat = self::ethCheckValue($ethalsurveillance,'etat');
+        $etat = self::ethGetValue($ethalsurveillance,'etat');
         $pGeneral = $ethalsurveillance->getConfiguration('general','');
         $configCmdEquipement = $ethalsurveillance->getConfiguration('cmdequipement','');
 
@@ -134,8 +134,8 @@ class ethalsurveillance extends eqLogic {
           log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : cron5 : Marche prévu entre-> ' .date('H:i:s',$expectedStartedTimeMin).' et '.date('H:i:s',$expectedStartedTimeMax));
         }
 
-        $etat = self::ethCheckValue($ethalsurveillance,'etat');
-        $alarme = self::ethCheckValue($ethalsurveillance,'alarme');
+        $etat = self::ethGetValue($ethalsurveillance,'etat');
+        $alarme = self::ethGetValue($ethalsurveillance,'alarme');
         $currentTempsFct = $currentTime- $ethalsurveillance->getConfiguration('startedtime');
         $currentTempsFctTotal = $ethalsurveillance->getConfiguration('previoustpsfct') + $currentTempsFct;
 
@@ -379,8 +379,8 @@ class ethalsurveillance extends eqLogic {
           log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : Equipment cmd not found');
         }
         
-        $etat = self::ethCheckValue($ethalsurveillance,'etat');
-        $alarme = self::ethCheckValue($ethalsurveillance,'alarme');
+        $etat = self::ethGetValue($ethalsurveillance,'etat');
+        $alarme = self::ethGetValue($ethalsurveillance,'alarme');
                 
         $cmdValue = $cmdEquipement->execCmd();
         $compteur =  $ethalsurveillance->getCmd(null,'count')->execCmd();           
@@ -427,7 +427,7 @@ class ethalsurveillance extends eqLogic {
             $alCode32 = $ethalsurveillance->getCmd(null,'code_alarme')->getConfiguration('ethalarmecode32');
 
             self::ethResetAlarme($ethalsurveillance);
-            $alarme = self::ethCheckValue($ethalsurveillance,'alarme');
+            $alarme = self::ethGetValue($ethalsurveillance,'alarme');
 
             if (($compteur+1) >= $configCptAlarmeHaute and $configCptAlarmeHaute != 0) {
               if ($alarme == 0) {
@@ -629,18 +629,18 @@ class ethalsurveillance extends eqLogic {
       return $myValue;
     }
 
-    private function ethCheckValue($eq,$name) {
+    private function ethGetValue($eq,$name) {
       $value = $eq->getCmd(null,$name)->execCmd();
 
-      log::add('ethalsurveillance', 'debug', $eq->getName().' : ethCheckValue : '.$name. ' current Type value->' . gettype($value));
-      log::add('ethalsurveillance', 'debug', $eq->getName().' : ethCheckValue : '.$name. ' current value->' . $value);
+      log::add('ethalsurveillance', 'debug', $eq->getName().' : ethGetValue : '.$name. ' current Type value->' . gettype($value));
+      log::add('ethalsurveillance', 'debug', $eq->getName().' : ethGetValue : '.$name. ' current value->' . $value);
 
       if (strlen($value) == 0 or $value == '' or $value == null) {
         $eq->checkAndUpdateCmd($name,0);
         $value = 0; 
-        log::add('ethalsurveillance', 'debug', $eq->getName().' : ethCheckValue : '.$name. ' return init value->' . $value);
+        log::add('ethalsurveillance', 'debug', $eq->getName().' : ethGetValue : '.$name. ' return init value->' . $value);
       } else {
-        log::add('ethalsurveillance', 'debug', $eq->getName().' : ethCheckValue : '.$name. ' return value->' . $value);
+        log::add('ethalsurveillance', 'debug', $eq->getName().' : ethGetValue : '.$name. ' return value->' . $value);
       }
       return $value;      
     }
