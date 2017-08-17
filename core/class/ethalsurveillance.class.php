@@ -587,7 +587,7 @@ class ethalsurveillance extends eqLogic {
 
     /* private plugin function */
 
-    private function ethResetAlarme($eq) {
+    private static function ethResetAlarme($eq) {
       
         $eq->checkAndUpdateCmd('alarme',0);
         $eq->checkAndUpdateCmd('code_alarme',0);
@@ -603,7 +603,7 @@ class ethalsurveillance extends eqLogic {
 
     }
     
-    private function ethAlarmeCode($eq,$code) {
+    private static function ethAlarmeCode($eq,$code) {
 
       //$alCode = $eq->getConfiguration('alarmecode'.$code);
       $alCode = $eq->getCmd(null,'code_alarme')->getConfiguration('ethalarmecode'.$code);
@@ -617,7 +617,7 @@ class ethalsurveillance extends eqLogic {
       }
     }  
 
-    private function ethFormatTpsFct($myTime) {
+    private static function ethFormatTpsFct($myTime) {
       
       $myValue = '';
       if ((floor($myTime / (3600*24))) == 0) {
@@ -629,7 +629,7 @@ class ethalsurveillance extends eqLogic {
       return $myValue;
     }
 
-    private function ethGetValue($eq,$name) {
+    private static function ethGetValue($eq,$name) {
       $value = $eq->getCmd(null,$name)->execCmd();
 
       log::add('ethalsurveillance', 'debug', $eq->getName().' : ethGetValue : '.$name. ' current Type value->' . gettype($value));
