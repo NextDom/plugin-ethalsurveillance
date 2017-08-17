@@ -51,7 +51,6 @@ class ethalsurveillance extends eqLogic {
       }
     }
     
-    
     /*
     * Fonction exécutée automatiquement toutes les 5 minutes par Jeedom */
     public static function cron5() {
