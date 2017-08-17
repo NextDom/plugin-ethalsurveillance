@@ -68,31 +68,10 @@ class ethalsurveillance extends eqLogic {
         $expectedStoppedTimeMin = -1;
         $expectedStoppedTimeMax = -1;
  
-        $dayconfigTempsMini = $ethalsurveillance->getConfiguration(date('N',$currentTime).'tempsmini',0);
-        $dayconfigTempsMax = $ethalsurveillance->getConfiguration(date('N',$currentTime).'tempsmax',0);
-        $dayconfigExpectedStoppedTime = $ethalsurveillance->getConfiguration(date('N',$currentTime).'expectedstoppedtime','');
-        $dayconfigExpectedStartedTime = $ethalsurveillance->getConfiguration(date('N',$currentTime).'expectedstartedtime','');
-
-        $configTempsMini = $ethalsurveillance->getConfiguration('tempsmini',0);
-        $configTempsMax = $ethalsurveillance->getConfiguration('tempsmax',0);
-        $configExpectedStoppedTime = $ethalsurveillance->getConfiguration('expectedstoppedtime','');
-        $configExpectedStartedTime = $ethalsurveillance->getConfiguration('expectedstartedtime','');
-
-        if ($dayconfigExpectedStoppedTime != ''){
-          $configExpectedStoppedTime=$dayconfigExpectedStoppedTime;
-        }
-
-        if ($dayconfigExpectedStartedTime != ''){
-          $configExpectedStartedTime=$dayconfigExpectedStartedTime;
-        }
-
-        if ($dayconfigTempsMini != 0){
-          $configTempsMini=$dayconfigTempsMini;
-        }
-
-        if ($dayconfigTempsMax != 0){
-          $configTempsMax=$dayconfigTempsMax;
-        }
+        $configExpectedStoppedTime = self::ethGetDayValue($ethalsurveillance,$currentTime,'expectedstoppedtime','');
+        $configExpectedStartedTime = self::ethGetDayValue($ethalsurveillance,$currentTime,'expectedstartedtime','');
+        $configTempsMini = self::ethGetDayValue($ethalsurveillance,$currentTime,'tempsmini',0);
+        $configTempsMax = self::ethGetDayValue($ethalsurveillance,$currentTime,'tempsmax',0);
 
         log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : cron5 : min temps set to->' . $configTempsMini);
         log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : cron5 : max temps set to->' . $configTempsMax);
@@ -290,39 +269,11 @@ class ethalsurveillance extends eqLogic {
         $memoCurrentTime =   $ethalsurveillance->getConfiguration('memocurrenttime',0);    
         $memoCurrentTimeStatus = $ethalsurveillance->getConfiguration('memocurrenttimestatus',0);
 
-        $dayconfigTempsMini = $ethalsurveillance->getConfiguration(date('N',$currentTime).'tempsmini',0);
-        $dayconfigTempsMax = $ethalsurveillance->getConfiguration(date('N',$currentTime).'tempsmax',0);
-        $dayconfigExpectedStoppedTime = $ethalsurveillance->getConfiguration(date('N',$currentTime).'expectedstoppedtime','');
-        $dayconfigExpectedStartedTime = $ethalsurveillance->getConfiguration(date('N',$currentTime).'expectedstartedtime','');
-        $dayconfigCptAlarmeHaute = $ethalsurveillance->getConfiguration(date('N',$currentTime).'cptalarmehaute',0);
-
-        $configTempsMini = $ethalsurveillance->getConfiguration('tempsmini',0);
-        $configTempsMax = $ethalsurveillance->getConfiguration('tempsmax',0);
-        $configExpectedStoppedTime = $ethalsurveillance->getConfiguration('expectedstoppedtime','');
-        $configExpectedStartedTime = $ethalsurveillance->getConfiguration('expectedstartedtime','');
-        $configCptAlarmeHaute = $ethalsurveillance->getConfiguration('cptalarmehaute',0);
-
-
-        if ($dayconfigExpectedStoppedTime !='' ){
-          $configExpectedStoppedTime=$dayconfigExpectedStoppedTime;
-        }
-
-        if ($dayconfigExpectedStartedTime !=''){
-          $configExpectedStartedTime=$dayconfigExpectedStartedTime;
-        }
-
-        if ($dayconfigTempsMini !=0){
-          $configTempsMini=$dayconfigTempsMini;
-        }
-
-        if ($dayconfigTempsMax !=0){
-          $configTempsMax=$dayconfigTempsMax;
-        }
-
-        if ($dayconfigCptAlarmeHaute !=0){
-          $configCptAlarmeHaute=$dayconfigCptAlarmeHaute;
-        }
-
+        $configExpectedStoppedTime = self::ethGetDayValue($ethalsurveillance,$currentTime,'expectedstoppedtime','');
+        $configExpectedStartedTime = self::ethGetDayValue($ethalsurveillance,$currentTime,'expectedstartedtime','');
+        $configTempsMini = self::ethGetDayValue($ethalsurveillance,$currentTime,'tempsmini',0);
+        $configTempsMax = self::ethGetDayValue($ethalsurveillance,$currentTime,'tempsmax',0);
+        $configCptAlarmeHaute = self::ethGetDayValue($ethalsurveillance,$currentTime,'cptalarmehaute',0);
 
         log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : min temps set to ->' . $configTempsMini);
         log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : max temps set to ->' . $configTempsMax);
@@ -437,14 +388,7 @@ class ethalsurveillance extends eqLogic {
               }
               log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : value change etat->'.$etat. ' compteur->'.$ethalsurveillance->getCmd(null,'count')->execCmd());
               self::ethAlarmeCode($ethalsurveillance,32);
-            }else {
-              //self::ethResetAlarme($ethalsurveillance);
             }
-
-            if ($alCode32 !=1 )  {
-              //self::ethResetAlarme($ethalsurveillance);
-            }
-
           }
 
 
@@ -478,7 +422,7 @@ class ethalsurveillance extends eqLogic {
           log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : value change etat->'.$etat. ' compteur->'.$ethalsurveillance->getCmd(null,'count')->execCmd());
 
 
-          if (($cmdValue <= $minPuissance and ($equipementType == 'binary'  or $pGeneral == '1')  and $etat == 1) or ($minPuissanceDelaiReach == 1 and $etat == 1) ) {
+          if (($cmdValue <= $minPuissance and ($equipementType == 'binary'  or $pGeneral == '1')  and $etat == 1) or ($minPuissanceDelaiReach == 1 and $etat == 1)) {
 
             $etat = 0;
             $minPuissanceDelaiReach = 0;
@@ -585,7 +529,7 @@ class ethalsurveillance extends eqLogic {
 
     }
 
-    /* private plugin function */
+    /* plugin private static function */
 
     private static function ethResetAlarme($eq) {
       
@@ -645,288 +589,296 @@ class ethalsurveillance extends eqLogic {
       return $value;      
     }
 
-  private function EthcreateCmd() {
+    private static function ethGetDayValue($eq,$currentTime,$key,$default) {
+      $dayConfig = $eq->getConfiguration(date('N',$currentTime).$key,$default);        
+      $return = $eq->getConfiguration($key,$default);
+      if ($dayConfig != $default){
+          $return = $dayConfig;
+      }          
+      return $return;
+    }    
     
-        /* commande alarme fonctionnement */
-        $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'alarme');
-        if (!is_object($ethalsurveillanceCmd)) {
-          log::add('ethalsurveillance', 'debug', 'Création de la commande->alarme');        
-          $ethalsurveillanceCmd = new ethalsurveillanceCmd();
-          $ethalsurveillanceCmd->setLogicalId('alarme');
-          $ethalsurveillanceCmd->setName(__('Alarme', __FILE__));
-        }    
-        $ethalsurveillanceCmd->setEqLogic_id($this->getId());
-        $ethalsurveillanceCmd->setEqType('ethalsurveillance');
-        $ethalsurveillanceCmd->setType('info');
-        $ethalsurveillanceCmd->setSubType('binary');
-        $ethalsurveillanceCmd->setTemplate('mobile','line');
-        $ethalsurveillanceCmd->setTemplate('dashboard','line');
-        $ethalsurveillanceCmd->setOrder(0);
+    private function EthcreateCmd() {
+  
+      /* commande alarme fonctionnement */
+      $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'alarme');
+      if (!is_object($ethalsurveillanceCmd)) {
+        log::add('ethalsurveillance', 'debug', 'Création de la commande->alarme');        
+        $ethalsurveillanceCmd = new ethalsurveillanceCmd();
+        $ethalsurveillanceCmd->setLogicalId('alarme');
+        $ethalsurveillanceCmd->setName(__('Alarme', __FILE__));
+      }    
+      $ethalsurveillanceCmd->setEqLogic_id($this->getId());
+      $ethalsurveillanceCmd->setEqType('ethalsurveillance');
+      $ethalsurveillanceCmd->setType('info');
+      $ethalsurveillanceCmd->setSubType('binary');
+      $ethalsurveillanceCmd->setTemplate('mobile','line');
+      $ethalsurveillanceCmd->setTemplate('dashboard','line');
+      $ethalsurveillanceCmd->setOrder(0);
 
-        $ethalsurveillanceCmd->save();
-        log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->alarme');
+      $ethalsurveillanceCmd->save();
+      log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->alarme');
 
-        /* commande alarme code fonctionnement 
-        debut heure : 1
-        Temps mini : 2
-        Temps maxi : 4
-        Arret prevu : 8
-        Marche prevu : 16
-        Compteur haut : 32
-        */
-        $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'code_alarme');
-        if (!is_object($ethalsurveillanceCmd)) {
-          log::add('ethalsurveillance', 'debug', 'Création de la commande->code_alarme');        
-          $ethalsurveillanceCmd = new ethalsurveillanceCmd();
-          $ethalsurveillanceCmd->setLogicalId('code_alarme');
-        }    
-        $ethalsurveillanceCmd->setName(__('Code Alarme', __FILE__));
-        $ethalsurveillanceCmd->setEqLogic_id($this->getId());
-        $ethalsurveillanceCmd->setEqType('ethalsurveillance');
-        $ethalsurveillanceCmd->setType('info');
-        $ethalsurveillanceCmd->setSubType('numeric');
-        $ethalsurveillanceCmd->setTemplate('mobile','line');
-        $ethalsurveillanceCmd->setTemplate('dashboard','line');
-        $ethalsurveillanceCmd->setOrder(1);
+      /* commande alarme code fonctionnement 
+      debut heure : 1
+      Temps mini : 2
+      Temps maxi : 4
+      Arret prevu : 8
+      Marche prevu : 16
+      Compteur haut : 32
+      */
+      $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'code_alarme');
+      if (!is_object($ethalsurveillanceCmd)) {
+        log::add('ethalsurveillance', 'debug', 'Création de la commande->code_alarme');        
+        $ethalsurveillanceCmd = new ethalsurveillanceCmd();
+        $ethalsurveillanceCmd->setLogicalId('code_alarme');
+      }    
+      $ethalsurveillanceCmd->setName(__('Code Alarme', __FILE__));
+      $ethalsurveillanceCmd->setEqLogic_id($this->getId());
+      $ethalsurveillanceCmd->setEqType('ethalsurveillance');
+      $ethalsurveillanceCmd->setType('info');
+      $ethalsurveillanceCmd->setSubType('numeric');
+      $ethalsurveillanceCmd->setTemplate('mobile','line');
+      $ethalsurveillanceCmd->setTemplate('dashboard','line');
+      $ethalsurveillanceCmd->setOrder(1);
 
-        $ethalsurveillanceCmd->save();
-        log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->code_alarme');
+      $ethalsurveillanceCmd->save();
+      log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->code_alarme');
 
-        /* commande Temps de fonctionnement format heure:min:sec*/
-        $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'tempsfct_hms');
-        if (!is_object($ethalsurveillanceCmd)) {
-          log::add('ethalsurveillance', 'debug', 'Création de la commande->tempsfct_hms');
-          $ethalsurveillanceCmd = new ethalsurveillanceCmd();
-          $ethalsurveillanceCmd->setLogicalId('tempsfct_hms');
+      /* commande Temps de fonctionnement format heure:min:sec*/
+      $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'tempsfct_hms');
+      if (!is_object($ethalsurveillanceCmd)) {
+        log::add('ethalsurveillance', 'debug', 'Création de la commande->tempsfct_hms');
+        $ethalsurveillanceCmd = new ethalsurveillanceCmd();
+        $ethalsurveillanceCmd->setLogicalId('tempsfct_hms');
+      }
+      $ethalsurveillanceCmd->setName(__('Temps Actif(H:M:S)', __FILE__));
+      $ethalsurveillanceCmd->setEqLogic_id($this->getId());
+      $ethalsurveillanceCmd->setEqType('ethalsurveillance');
+      $ethalsurveillanceCmd->setType('info');
+      $ethalsurveillanceCmd->setSubType('string');
+      $ethalsurveillanceCmd->setOrder(2);
+      
+      $ethalsurveillanceCmd->save();
+      log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->tempsfct_hms');
+
+      /* commande Temps de fonctionnement en seconde*/
+      $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'tempsfct');
+      if (!is_object($ethalsurveillanceCmd)) {
+        log::add('ethalsurveillance', 'debug', 'Création de la commande->tempsfct');
+        $ethalsurveillanceCmd = new ethalsurveillanceCmd();
+        $ethalsurveillanceCmd->setLogicalId('tempsfct');
+      }
+      $ethalsurveillanceCmd->setName(__('Temps Actif', __FILE__));
+      $ethalsurveillanceCmd->setEqLogic_id($this->getId());
+      $ethalsurveillanceCmd->setEqType('ethalsurveillance');
+      $ethalsurveillanceCmd->setType('info');
+      $ethalsurveillanceCmd->setSubType('numeric');
+      $ethalsurveillanceCmd->setTemplate('mobile','line');
+      $ethalsurveillanceCmd->setTemplate('dashboard','line');
+      $ethalsurveillanceCmd->setUnite('s');
+      $ethalsurveillanceCmd->setOrder(3);
+      
+      $ethalsurveillanceCmd->save();
+      log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->tempsfct');
+
+
+      /* commande Temps de fonctionnement global format heure:min:sec*/
+      $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'tempsfcttotal_hms');
+      if (!is_object($ethalsurveillanceCmd)) {
+        log::add('ethalsurveillance', 'debug', 'Création de la commande->tempsfctglobal_hms');
+        $ethalsurveillanceCmd = new ethalsurveillanceCmd();
+        $ethalsurveillanceCmd->setLogicalId('tempsfcttotal_hms');
+      }
+      $ethalsurveillanceCmd->setName(__('Temps Actif Total(H:M:S)', __FILE__));
+      $ethalsurveillanceCmd->setEqLogic_id($this->getId());
+      $ethalsurveillanceCmd->setEqType('ethalsurveillance');
+      $ethalsurveillanceCmd->setType('info');
+      $ethalsurveillanceCmd->setSubType('string');
+      $ethalsurveillanceCmd->setOrder(4);
+      
+      $ethalsurveillanceCmd->save();
+      log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->tempsfcttotal_hms');
+
+      
+      /* commande Temps de fonctionnement global en seconde*/
+      $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'tempsfcttotal');
+      if (!is_object($ethalsurveillanceCmd)) {
+        log::add('ethalsurveillance', 'debug', 'Création de la commande->tempsfcttotal');
+        $ethalsurveillanceCmd = new ethalsurveillanceCmd();
+        $ethalsurveillanceCmd->setLogicalId('tempsfcttotal');
+      }
+      $ethalsurveillanceCmd->setName(__('Temps Actif Total', __FILE__));
+      $ethalsurveillanceCmd->setEqLogic_id($this->getId());
+      $ethalsurveillanceCmd->setEqType('ethalsurveillance');
+      $ethalsurveillanceCmd->setType('info');
+      $ethalsurveillanceCmd->setSubType('numeric');
+      $ethalsurveillanceCmd->setTemplate('mobile','line');
+      $ethalsurveillanceCmd->setTemplate('dashboard','line');
+      $ethalsurveillanceCmd->setUnite('s');
+      $ethalsurveillanceCmd->setOrder(5);
+      
+      $ethalsurveillanceCmd->save();
+      log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->tempsfcttotal');
+
+      /* commande RAZ Temps Fct Total */
+      $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'raztempsfcttotal');
+      if (!is_object($ethalsurveillanceCmd)) {
+        log::add('ethalsurveillance', 'debug', 'Création de la commande->raztempsfcttotal');
+        $ethalsurveillanceCmd = new ethalsurveillanceCmd();
+        $ethalsurveillanceCmd->setLogicalId('raztempsfcttotal');
+      }
+      $ethalsurveillanceCmd->setName(__('RAZ Tps Actif Total', __FILE__));
+      $ethalsurveillanceCmd->setEqLogic_id($this->getId());
+      $ethalsurveillanceCmd->setEqType('ethalsurveillance');
+      $ethalsurveillanceCmd->setType('action');
+      $ethalsurveillanceCmd->setSubType('other');
+      $ethalsurveillanceCmd->setOrder(6);
+      
+      $ethalsurveillanceCmd->save();
+      log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->raztempsfcttotal');
+
+      /* commande heure demarrage heure:min:sec*/
+      $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'startedtime');
+      if (!is_object($ethalsurveillanceCmd)) {
+        log::add('ethalsurveillance', 'debug', 'Création de la commande->startedtime');
+        $ethalsurveillanceCmd = new ethalsurveillanceCmd();
+        $ethalsurveillanceCmd->setLogicalId('startedtime');
+      }
+      $ethalsurveillanceCmd->setName(__('Actif à', __FILE__));
+      $ethalsurveillanceCmd->setEqLogic_id($this->getId());
+      $ethalsurveillanceCmd->setEqType('ethalsurveillance');
+      $ethalsurveillanceCmd->setType('info');
+      $ethalsurveillanceCmd->setSubType('string');
+      $ethalsurveillanceCmd->setOrder(7);
+      
+      $ethalsurveillanceCmd->save();
+      log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->startedtime');
+      
+      /* commande heure arret heure:min:sec*/
+      $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'stoppedtime');
+      if (!is_object($ethalsurveillanceCmd)) {
+        log::add('ethalsurveillance', 'debug', 'Création de la commande->stoppedtime');
+        $ethalsurveillanceCmd = new ethalsurveillanceCmd();
+        $ethalsurveillanceCmd->setLogicalId('stoppedtime');
+      }
+      $ethalsurveillanceCmd->setName(__('Inactif à', __FILE__));
+      $ethalsurveillanceCmd->setEqLogic_id($this->getId());
+      $ethalsurveillanceCmd->setEqType('ethalsurveillance');
+      $ethalsurveillanceCmd->setType('info');
+      $ethalsurveillanceCmd->setSubType('string');
+      $ethalsurveillanceCmd->setOrder(8);
+      
+      $ethalsurveillanceCmd->save();
+      log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->stoppedtime');
+      
+      /* commande etat fonctionnement */
+      $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'etat');
+      if (!is_object($ethalsurveillanceCmd)) {
+        log::add('ethalsurveillance', 'debug', 'Création de la commande->etat');
+        $ethalsurveillanceCmd = new ethalsurveillanceCmd();
+        $ethalsurveillanceCmd->setLogicalId('etat');
+      }
+      $ethalsurveillanceCmd->setName(__('Etat', __FILE__));
+      $ethalsurveillanceCmd->setEqLogic_id($this->getId());
+      $ethalsurveillanceCmd->setEqType('ethalsurveillance');
+      $ethalsurveillanceCmd->setType('info');
+      $ethalsurveillanceCmd->setSubType('binary');
+      $ethalsurveillanceCmd->setIsHistorized(1);
+      $ethalsurveillanceCmd->setConfiguration('historizeMode','none');
+      $ethalsurveillanceCmd->setTemplate('mobile','line');
+      $ethalsurveillanceCmd->setTemplate('dashboard','line');
+      $ethalsurveillanceCmd->setOrder(9);
+      $ethalsurveillanceCmd->save();
+
+      log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->etat');
+      
+      /* commande compteur */
+      $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'count');
+      if (!is_object($ethalsurveillanceCmd)) {
+        log::add('ethalsurveillance', 'debug', 'Création de la commande->count');
+        $ethalsurveillanceCmd = new ethalsurveillanceCmd();
+        $ethalsurveillanceCmd->setLogicalId('count');
+      }
+      $ethalsurveillanceCmd->setName(__('Compteur', __FILE__));
+      $ethalsurveillanceCmd->setEqLogic_id($this->getId());
+      $ethalsurveillanceCmd->setEqType('ethalsurveillance');
+      $ethalsurveillanceCmd->setType('info');
+      $ethalsurveillanceCmd->setSubType('numeric');
+      $ethalsurveillanceCmd->setTemplate('mobile','line');
+      $ethalsurveillanceCmd->setTemplate('dashboard','line');
+      $ethalsurveillanceCmd->setOrder(10);
+      
+      $ethalsurveillanceCmd->save();
+      log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->count');
+
+      /* commande Set compteur plus */
+      $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'setcountplus');
+      if (!is_object($ethalsurveillanceCmd)) {
+        log::add('ethalsurveillance', 'debug', 'Création de la commande->setcountplus');
+        $ethalsurveillanceCmd = new ethalsurveillanceCmd();
+      $ethalsurveillanceCmd->setLogicalId('setcountplus');
+      }
+      $ethalsurveillanceCmd->setName(__('Compteur +', __FILE__));
+      $ethalsurveillanceCmd->setEqLogic_id($this->getId());
+      $ethalsurveillanceCmd->setEqType('ethalsurveillance');
+      $ethalsurveillanceCmd->setType('action');
+      $ethalsurveillanceCmd->setSubType('other');
+      $ethalsurveillanceCmd->setOrder(11);
+      
+      $ethalsurveillanceCmd->save();
+      log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->setcountplus');
+
+      /* commande Set compteur moins */
+      $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'setcountmoins');
+      if (!is_object($ethalsurveillanceCmd)) {
+        log::add('ethalsurveillance', 'debug', 'Création de la commande->setcountmoins');
+        $ethalsurveillanceCmd = new ethalsurveillanceCmd();
+        $ethalsurveillanceCmd->setLogicalId('setcountmoins');
+      }
+      $ethalsurveillanceCmd->setName(__('Compteur -', __FILE__));
+      $ethalsurveillanceCmd->setEqLogic_id($this->getId());
+      $ethalsurveillanceCmd->setEqType('ethalsurveillance');
+      $ethalsurveillanceCmd->setType('action');
+      $ethalsurveillanceCmd->setSubType('other');
+      $ethalsurveillanceCmd->setOrder(12);
+      
+      $ethalsurveillanceCmd->save();
+      log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->setcountmoins');
+      
+      /* commande RAZ compteur  */
+      $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'razcount');
+      if (!is_object($ethalsurveillanceCmd)) {
+        log::add('ethalsurveillance', 'debug', 'Création de la commande->razcount');
+        $ethalsurveillanceCmd = new ethalsurveillanceCmd();
+        $ethalsurveillanceCmd->setLogicalId('razcount');
+      }
+      $ethalsurveillanceCmd->setName(__('RAZ Compteur', __FILE__));
+      $ethalsurveillanceCmd->setEqLogic_id($this->getId());
+      $ethalsurveillanceCmd->setEqType('ethalsurveillance');
+      $ethalsurveillanceCmd->setType('action');
+      $ethalsurveillanceCmd->setSubType('other');
+      $ethalsurveillanceCmd->setOrder(13);
+      
+      $ethalsurveillanceCmd->save();
+      log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->razcount');
+
+      /* listener de la mesure de puissance our de la commande d'etat*/
+      if ($this->getIsEnable() == 1 and $this->getConfiguration('cmdequipement') != null) {
+        $listener = listener::byClassAndFunction('ethalsurveillance', 'checkequipement', array('equipement_id' => $this->getId()));
+        if (!is_object($listener)) {
+          log::add('ethalsurveillance', 'debug', 'Création du listener->checkequipement');        
+          $listener = new listener();
         }
-        $ethalsurveillanceCmd->setName(__('Temps Actif(H:M:S)', __FILE__));
-        $ethalsurveillanceCmd->setEqLogic_id($this->getId());
-        $ethalsurveillanceCmd->setEqType('ethalsurveillance');
-        $ethalsurveillanceCmd->setType('info');
-        $ethalsurveillanceCmd->setSubType('string');
-        $ethalsurveillanceCmd->setOrder(2);
+        $listener->setClass('ethalsurveillance');
+        $listener->setFunction('checkequipement');
+        $listener->setOption(array('equipement_id' => $this->getId()));
+        $listener->emptyEvent();
+        $listener->addEvent($this->getConfiguration('cmdequipement'));
         
-        $ethalsurveillanceCmd->save();
-        log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->tempsfct_hms');
-
-        /* commande Temps de fonctionnement en seconde*/
-        $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'tempsfct');
-        if (!is_object($ethalsurveillanceCmd)) {
-          log::add('ethalsurveillance', 'debug', 'Création de la commande->tempsfct');
-          $ethalsurveillanceCmd = new ethalsurveillanceCmd();
-          $ethalsurveillanceCmd->setLogicalId('tempsfct');
-        }
-        $ethalsurveillanceCmd->setName(__('Temps Actif', __FILE__));
-        $ethalsurveillanceCmd->setEqLogic_id($this->getId());
-        $ethalsurveillanceCmd->setEqType('ethalsurveillance');
-        $ethalsurveillanceCmd->setType('info');
-        $ethalsurveillanceCmd->setSubType('numeric');
-        $ethalsurveillanceCmd->setTemplate('mobile','line');
-        $ethalsurveillanceCmd->setTemplate('dashboard','line');
-        $ethalsurveillanceCmd->setUnite('s');
-        $ethalsurveillanceCmd->setOrder(3);
-        
-        $ethalsurveillanceCmd->save();
-        log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->tempsfct');
-
-
-        /* commande Temps de fonctionnement global format heure:min:sec*/
-        $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'tempsfcttotal_hms');
-        if (!is_object($ethalsurveillanceCmd)) {
-          log::add('ethalsurveillance', 'debug', 'Création de la commande->tempsfctglobal_hms');
-          $ethalsurveillanceCmd = new ethalsurveillanceCmd();
-          $ethalsurveillanceCmd->setLogicalId('tempsfcttotal_hms');
-        }
-        $ethalsurveillanceCmd->setName(__('Temps Actif Total(H:M:S)', __FILE__));
-        $ethalsurveillanceCmd->setEqLogic_id($this->getId());
-        $ethalsurveillanceCmd->setEqType('ethalsurveillance');
-        $ethalsurveillanceCmd->setType('info');
-        $ethalsurveillanceCmd->setSubType('string');
-        $ethalsurveillanceCmd->setOrder(4);
-        
-        $ethalsurveillanceCmd->save();
-        log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->tempsfcttotal_hms');
-
-        
-        /* commande Temps de fonctionnement global en seconde*/
-        $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'tempsfcttotal');
-        if (!is_object($ethalsurveillanceCmd)) {
-          log::add('ethalsurveillance', 'debug', 'Création de la commande->tempsfcttotal');
-          $ethalsurveillanceCmd = new ethalsurveillanceCmd();
-          $ethalsurveillanceCmd->setLogicalId('tempsfcttotal');
-        }
-        $ethalsurveillanceCmd->setName(__('Temps Actif Total', __FILE__));
-        $ethalsurveillanceCmd->setEqLogic_id($this->getId());
-        $ethalsurveillanceCmd->setEqType('ethalsurveillance');
-        $ethalsurveillanceCmd->setType('info');
-        $ethalsurveillanceCmd->setSubType('numeric');
-        $ethalsurveillanceCmd->setTemplate('mobile','line');
-        $ethalsurveillanceCmd->setTemplate('dashboard','line');
-        $ethalsurveillanceCmd->setUnite('s');
-        $ethalsurveillanceCmd->setOrder(5);
-        
-        $ethalsurveillanceCmd->save();
-        log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->tempsfcttotal');
-
-        /* commande RAZ Temps Fct Total */
-        $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'raztempsfcttotal');
-        if (!is_object($ethalsurveillanceCmd)) {
-          log::add('ethalsurveillance', 'debug', 'Création de la commande->raztempsfcttotal');
-          $ethalsurveillanceCmd = new ethalsurveillanceCmd();
-          $ethalsurveillanceCmd->setLogicalId('raztempsfcttotal');
-        }
-        $ethalsurveillanceCmd->setName(__('RAZ Tps Actif Total', __FILE__));
-        $ethalsurveillanceCmd->setEqLogic_id($this->getId());
-        $ethalsurveillanceCmd->setEqType('ethalsurveillance');
-        $ethalsurveillanceCmd->setType('action');
-        $ethalsurveillanceCmd->setSubType('other');
-        $ethalsurveillanceCmd->setOrder(6);
-        
-        $ethalsurveillanceCmd->save();
-        log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->raztempsfcttotal');
-
-        /* commande heure demarrage heure:min:sec*/
-        $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'startedtime');
-        if (!is_object($ethalsurveillanceCmd)) {
-          log::add('ethalsurveillance', 'debug', 'Création de la commande->startedtime');
-          $ethalsurveillanceCmd = new ethalsurveillanceCmd();
-          $ethalsurveillanceCmd->setLogicalId('startedtime');
-        }
-        $ethalsurveillanceCmd->setName(__('Actif à', __FILE__));
-        $ethalsurveillanceCmd->setEqLogic_id($this->getId());
-        $ethalsurveillanceCmd->setEqType('ethalsurveillance');
-        $ethalsurveillanceCmd->setType('info');
-        $ethalsurveillanceCmd->setSubType('string');
-        $ethalsurveillanceCmd->setOrder(7);
-        
-        $ethalsurveillanceCmd->save();
-        log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->startedtime');
-        
-        /* commande heure arret heure:min:sec*/
-        $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'stoppedtime');
-        if (!is_object($ethalsurveillanceCmd)) {
-          log::add('ethalsurveillance', 'debug', 'Création de la commande->stoppedtime');
-          $ethalsurveillanceCmd = new ethalsurveillanceCmd();
-          $ethalsurveillanceCmd->setLogicalId('stoppedtime');
-        }
-        $ethalsurveillanceCmd->setName(__('Inactif à', __FILE__));
-        $ethalsurveillanceCmd->setEqLogic_id($this->getId());
-        $ethalsurveillanceCmd->setEqType('ethalsurveillance');
-        $ethalsurveillanceCmd->setType('info');
-        $ethalsurveillanceCmd->setSubType('string');
-        $ethalsurveillanceCmd->setOrder(8);
-        
-        $ethalsurveillanceCmd->save();
-        log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->stoppedtime');
-        
-        /* commande etat fonctionnement */
-        $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'etat');
-        if (!is_object($ethalsurveillanceCmd)) {
-          log::add('ethalsurveillance', 'debug', 'Création de la commande->etat');
-          $ethalsurveillanceCmd = new ethalsurveillanceCmd();
-          $ethalsurveillanceCmd->setLogicalId('etat');
-        }
-        $ethalsurveillanceCmd->setName(__('Etat', __FILE__));
-        $ethalsurveillanceCmd->setEqLogic_id($this->getId());
-        $ethalsurveillanceCmd->setEqType('ethalsurveillance');
-        $ethalsurveillanceCmd->setType('info');
-        $ethalsurveillanceCmd->setSubType('binary');
-        $ethalsurveillanceCmd->setIsHistorized(1);
-        $ethalsurveillanceCmd->setConfiguration('historizeMode','none');
-        $ethalsurveillanceCmd->setTemplate('mobile','line');
-        $ethalsurveillanceCmd->setTemplate('dashboard','line');
-        $ethalsurveillanceCmd->setOrder(9);
-        $ethalsurveillanceCmd->save();
-
-        log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->etat');
-        
-        /* commande compteur */
-        $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'count');
-        if (!is_object($ethalsurveillanceCmd)) {
-          log::add('ethalsurveillance', 'debug', 'Création de la commande->count');
-          $ethalsurveillanceCmd = new ethalsurveillanceCmd();
-          $ethalsurveillanceCmd->setLogicalId('count');
-        }
-        $ethalsurveillanceCmd->setName(__('Compteur', __FILE__));
-        $ethalsurveillanceCmd->setEqLogic_id($this->getId());
-        $ethalsurveillanceCmd->setEqType('ethalsurveillance');
-        $ethalsurveillanceCmd->setType('info');
-        $ethalsurveillanceCmd->setSubType('numeric');
-        $ethalsurveillanceCmd->setTemplate('mobile','line');
-        $ethalsurveillanceCmd->setTemplate('dashboard','line');
-        $ethalsurveillanceCmd->setOrder(10);
-        
-        $ethalsurveillanceCmd->save();
-        log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->count');
-
-        /* commande Set compteur plus */
-        $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'setcountplus');
-        if (!is_object($ethalsurveillanceCmd)) {
-          log::add('ethalsurveillance', 'debug', 'Création de la commande->setcountplus');
-          $ethalsurveillanceCmd = new ethalsurveillanceCmd();
-        $ethalsurveillanceCmd->setLogicalId('setcountplus');
-        }
-        $ethalsurveillanceCmd->setName(__('Compteur +', __FILE__));
-        $ethalsurveillanceCmd->setEqLogic_id($this->getId());
-        $ethalsurveillanceCmd->setEqType('ethalsurveillance');
-        $ethalsurveillanceCmd->setType('action');
-        $ethalsurveillanceCmd->setSubType('other');
-        $ethalsurveillanceCmd->setOrder(11);
-        
-        $ethalsurveillanceCmd->save();
-        log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->setcountplus');
-
-        /* commande Set compteur moins */
-        $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'setcountmoins');
-        if (!is_object($ethalsurveillanceCmd)) {
-          log::add('ethalsurveillance', 'debug', 'Création de la commande->setcountmoins');
-          $ethalsurveillanceCmd = new ethalsurveillanceCmd();
-          $ethalsurveillanceCmd->setLogicalId('setcountmoins');
-        }
-        $ethalsurveillanceCmd->setName(__('Compteur -', __FILE__));
-        $ethalsurveillanceCmd->setEqLogic_id($this->getId());
-        $ethalsurveillanceCmd->setEqType('ethalsurveillance');
-        $ethalsurveillanceCmd->setType('action');
-        $ethalsurveillanceCmd->setSubType('other');
-        $ethalsurveillanceCmd->setOrder(12);
-        
-        $ethalsurveillanceCmd->save();
-        log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->setcountmoins');
-        
-        /* commande RAZ compteur  */
-        $ethalsurveillanceCmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),'razcount');
-        if (!is_object($ethalsurveillanceCmd)) {
-          log::add('ethalsurveillance', 'debug', 'Création de la commande->razcount');
-          $ethalsurveillanceCmd = new ethalsurveillanceCmd();
-          $ethalsurveillanceCmd->setLogicalId('razcount');
-        }
-        $ethalsurveillanceCmd->setName(__('RAZ Compteur', __FILE__));
-        $ethalsurveillanceCmd->setEqLogic_id($this->getId());
-        $ethalsurveillanceCmd->setEqType('ethalsurveillance');
-        $ethalsurveillanceCmd->setType('action');
-        $ethalsurveillanceCmd->setSubType('other');
-        $ethalsurveillanceCmd->setOrder(13);
-        
-        $ethalsurveillanceCmd->save();
-        log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->razcount');
-
-        /* listener de la mesure de puissance our de la commande d'etat*/
-        if ($this->getIsEnable() == 1 and $this->getConfiguration('cmdequipement') != null) {
-          $listener = listener::byClassAndFunction('ethalsurveillance', 'checkequipement', array('equipement_id' => $this->getId()));
-          if (!is_object($listener)) {
-            log::add('ethalsurveillance', 'debug', 'Création du listener->checkequipement');        
-            $listener = new listener();
-          }
-          $listener->setClass('ethalsurveillance');
-          $listener->setFunction('checkequipement');
-          $listener->setOption(array('equipement_id' => $this->getId()));
-          $listener->emptyEvent();
-          $listener->addEvent($this->getConfiguration('cmdequipement'));
-          
-          $listener->save();
-          log::add('ethalsurveillance', 'debug', 'Mise à jour du listener->checkequipement');
-
-        }
+        $listener->save();
+        log::add('ethalsurveillance', 'debug', 'Mise à jour du listener->checkequipement');
+      }
     }      
 
     /* public plugin function */
