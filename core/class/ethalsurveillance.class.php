@@ -45,13 +45,10 @@ class ethalsurveillance extends eqLogic {
         }
         
         $_option = array('equipement_id' => $ethalsurveillance->getId());
-        
         if ($etat == 1 and $equipementType == 'numeric' and $pGeneral != '1') {
           self::checkequipement($_option);
         }
-
       }
-      
     }
     
     
