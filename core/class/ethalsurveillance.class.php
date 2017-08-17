@@ -29,7 +29,6 @@ class ethalsurveillance extends eqLogic {
      * Fonction exécutée automatiquement toutes les minutes par Jeedom */
     public static function cron() {
       foreach (eqLogic::byType('ethalsurveillance', true) as $ethalsurveillance) {
-
         $equipementType = '';
         $etat = self::ethGetValue($ethalsurveillance,'etat');
         $pGeneral = $ethalsurveillance->getConfiguration('general','');
@@ -54,12 +53,8 @@ class ethalsurveillance extends eqLogic {
     /*
     * Fonction exécutée automatiquement toutes les 5 minutes par Jeedom */
     public static function cron5() {
-      foreach (eqLogic::byType('ethalsurveillance', true) as $ethalsurveillance) {
-          
-        $configDebutheure = $ethalsurveillance->getConfiguration('debutheure','');
-        
+      foreach (eqLogic::byType('ethalsurveillance', true) as $ethalsurveillance) {         
         $currentTime = time();
-
         $expectedStoppedTime = -1;
         $expectedStartedTime = -1;
         $expectedStartedTimeMin = -1;
@@ -67,6 +62,8 @@ class ethalsurveillance extends eqLogic {
         $expectedStoppedTimeMin = -1;
         $expectedStoppedTimeMax = -1;
  
+        $configDebutheure = $ethalsurveillance->getConfiguration('debutheure','');
+
         $configExpectedStoppedTime = self::ethGetDayValue($ethalsurveillance,$currentTime,'expectedstoppedtime','');
         $configExpectedStartedTime = self::ethGetDayValue($ethalsurveillance,$currentTime,'expectedstartedtime','');
         $configTempsMini = self::ethGetDayValue($ethalsurveillance,$currentTime,'tempsmini',0);
@@ -207,13 +204,10 @@ class ethalsurveillance extends eqLogic {
     }
 
     public function postUpdate() {
-
       $this->EthcreateCmd();
-      
     }
 
     public function preRemove() {
-      
       $listener = listener::byClassAndFunction('ethalsurveillance', 'checkequipement', array('equipement_id' => $this->getId()));
       if (is_object($listener)) {
         log::add('ethalsurveillance', 'debug', 'Suppression du listener->checkequipement');        
@@ -334,7 +328,6 @@ class ethalsurveillance extends eqLogic {
                 
         $cmdValue = $cmdEquipement->execCmd();
         $compteur =  $ethalsurveillance->getCmd(null,'count')->execCmd();           
-
 
         if ($pGeneral == '1' and $equipementType == 'numeric') {
           $cmdValue = $cmdValue - $puissance;
