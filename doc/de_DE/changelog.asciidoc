@@ -3,7 +3,10 @@
 
 * Version 2.0 (En Cours)		
 ** Fehler behoben, beim zurücksetzen der gesamten Betriebszeit 
-** Historisation du temps où l'equipement est actif à partir de la commande *etat* en lieu et place la commande *Tps Fct Actif Total*
+** Historisation du temps où l'equipement est actif à partir de la commande *Etat* en lieu et place la commande *Tps Actif Total*
+[IMPORTANT]
+les données précédentes ne seront plus disponible
+
 ** Ajout d'une commmande *Compteur +* et *Compteur -*
 ** Données graphique disponible depuis un panel en lieu et place de l'onglet données
 ** Aktualisierung der Dokumentation

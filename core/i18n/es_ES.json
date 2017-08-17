@@ -8,7 +8,9 @@
         "Ok": "Ok",
         "Cumul par jour" : "Cumul par jour",
         "Cumul par semaine" : " Cumul par semaine",
-        "Cumul par mois" : "Cumul par mois"
+        "Cumul par mois" : "Cumul par mois",
+        "Information de surveillance" : "Information de surveillance",
+        "Equipement surveillé" : "Equipement surveillé"        
     },
     "plugins\/ethalsurveillance\/desktop\/php\/ethalsurveillance.php": {
         "Configuration": "Configuración",

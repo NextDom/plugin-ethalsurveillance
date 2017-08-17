@@ -672,19 +672,19 @@ Utiliser la case à cocher <strong>afficher</strong>, si vous ne souhaitez pas v
 <p><strong>Code Alarme</strong> : somme des codes d&#8217;alarme ayant déclenchés l&#8217;alarme , voir ci-dessous les valeurs des codes d&#8217;alarme</p>
 </li>
 <li>
-<p><strong>Temps Actif(H:M:S)</strong> : Temps de fonctionnement de l&#8217;équipement au format Heure:Minute:Seconde</p>
+<p><strong>Temps Actif(H:M:S)</strong> : Temps d&#8217;activité de l&#8217;équipement au format Heure:Minute:Seconde</p>
 </li>
 <li>
-<p><strong>Temps Actif</strong> : Temps de fonctionnement de l&#8217;équipement en secondes</p>
+<p><strong>Temps Actif</strong> : Temps d&#8217;activité de l&#8217;équipement en secondes</p>
 </li>
 <li>
-<p><strong>Temps Actif Total(H:M:S)</strong> : Temps de fonctionnement de l&#8217;équipement au format Heure:Minute:Seconde</p>
+<p><strong>Temps Actif Total(H:M:S)</strong> : Temps d&#8217;activité de l&#8217;équipement au format Heure:Minute:Seconde</p>
 </li>
 <li>
-<p><strong>Temps Actif Total</strong> : Temps de fonctionnement de l&#8217;équipement en secondes</p>
+<p><strong>Temps Actif Total</strong> : Temps d&#8217;activité de l&#8217;équipement en secondes</p>
 </li>
 <li>
-<p><strong>RAZ Tps Actif Total</strong> : remise à zero du temps de fonctionnement total (commande <strong>Temps Fct Total(H:M:S)</strong> et <strong>Temps Fct Total</strong>)</p>
+<p><strong>RAZ Tps Actif Total</strong> : remise à zero du temps d&#8217;activité total (commande <strong>Temps Actif Total(H:M:S)</strong> et <strong>Temps Actif Total</strong>)</p>
 </li>
 <li>
 <p><strong>Actif à</strong> : heure à laquelle la commande <strong>Etat</strong> est passé à ON</p>
@@ -717,7 +717,7 @@ Utiliser la case à cocher <strong>afficher</strong>, si vous ne souhaitez pas v
 </td>
 <td class="content">
 Pour historiser le temps d&#8217;activité d&#8217;un équipément, la commande <strong>Etat</strong> doit être historisée avec l&#8217;option <strong>Mode de lissage</strong> sur <strong>Aucun</strong>.
-Ces options sont disponible depuis la roue dentée en face de la commande dans l&#8217;onglet <strong>Commandes</strong>.
+Ces options sont disponible depuis la roue dentée en face de la commande de l&#8217;onglet <strong>Commandes</strong>.
 </td>
 </tr>
 </table>
@@ -1012,16 +1012,16 @@ Si la commande <strong>Alarme</strong> est déja à ON , et qu&#8217;une nouvell
 <p><strong>Alarm Code</strong> : siehe oben</p>
 </li>
 <li>
-<p><strong>Tempts Fct</strong> : heure courante moins heure de démarrage en secondes</p>
+<p><strong>Tempts Actif</strong> : heure courante moins heure de démarrage en secondes</p>
 </li>
 <li>
-<p><strong>Tempts Fct (H:M:S)</strong> : heure courante moins heure de surveillance active au format Heure:Minute:Seconde</p>
+<p><strong>Tempts Actif (H:M:S)</strong> : heure courante moins heure de surveillance active au format Heure:Minute:Seconde</p>
 </li>
 <li>
-<p><strong>Tempts Fct Total(H:M:S)</strong> : cumul heure surveillance active au format Heure:Minute:Seconde</p>
+<p><strong>Tempts Actif Total(H:M:S)</strong> : cumul heure surveillance active au format Heure:Minute:Seconde</p>
 </li>
 <li>
-<p><strong>Tempts Fct Total</strong> : cumul heure surveillance active en seconde</p>
+<p><strong>Tempts Actif Total</strong> : cumul heure surveillance active en seconde</p>
 </li>
 <li>
 <p><strong>Actif à</strong> : pas de changement</p>
@@ -1124,7 +1124,7 @@ Der Zähler wird bei jedem Wechsel auf AN, ihres Befehls, erhöht werden.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>cela signifie que la commande <strong>Alarme</strong> passera à ON à 00:10 (23h30+20 minutes) si l&#8217;équipement n&#8217;a pas demarré ou si son temps de fonctionnement est inférieur à 20 minutes ou supérieur à 6 heures.</p>
+<p>Cela signifie que la commande <strong>Alarme</strong> passera à ON à 00:10 (23h30+20 minutes) si l&#8217;équipement n&#8217;a pas demarré ou si son temps de fonctionnement est inférieur à 20 minutes ou supérieur à 6 heures.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1200,15 +1200,16 @@ Pour avoir un historique du temps d&#8217;activité de l&#8217;equipement , il f
 <div class="ulist">
 <ul>
 <li>
-<p>le passage en version 2.00(2017-08-xx),modifie la gestion du temps d&#8217;activité de l&#8217;équipement à surveiller, il faut maintenant historiser la commande <strong>Etat</strong> ,et <strong>les historiques précedents seront plus disponible dans l&#8217;onglet "données"</strong>, pour activer le nouveau fonctionnement:
-depuis la roue cranté de la commande <strong>Etat</strong> , activiter l' historisation de la commande et sélectionner  mode de lissage sur "aucun".
-d&#8217;autre part, pour libérer de l&#8217;espace dans la base de données jeedom, je vous conseille depuis le menu historique de supprimer les données historisées de la commande "Temps Actif Total" et ensuite de désactiver l&#8217;historisation de cette commande pour chaque équipement.</p>
+<p>Le passage en version 2.00(2017-08),modifie la gestion du temps d&#8217;activité de l&#8217;équipement à surveiller, il faut maintenant historiser la commande <strong>Etat</strong> ,<strong>les historiques précedents ne seront plus disponible</strong>, pour activer le nouveau fonctionnement:
+depuis la roue cranté de la commande <strong>Etat</strong>, activiter l&#8217;historisation de la commande et sélectionner mode de lissage sur "aucun".
+D&#8217;autre part, pour libérer de l&#8217;espace dans la base de données jeedom, je vous conseille depuis le menu historique de supprimer les données historisées de la commande "Temps Actif Total" et ensuite de désactiver l&#8217;historisation de cette commande pour chaque équipement.</p>
 </li>
 <li>
 <p>Nach der Aktualisierung des Plugins ist es am besten ein Backup jeder "Geräte Überwachung" zu machen</p>
 </li>
 <li>
-<p>Pour avoir une représentation graphique du temps de fonctionnement, il faut historiser la commande <strong>Temps Actif Total</strong> avec l&#8217;option <strong>Mode de lissage</strong> sur <strong>Aucun</strong></p>
+<p>Pour avoir une représentation graphique du temps de fonctionnement, il faut historiser la commande <strong>Etat</strong> avec l&#8217;option
+<strong>Mode de lissage</strong> sur <strong>Aucun</strong></p>
 </li>
 <li>
 <p>les valeurs des commandes <strong>Valeur surveillance inactive</strong> et <strong>Valeur surveillance active</strong> ne doivent pas être égales</p>
@@ -1243,7 +1244,19 @@ d&#8217;autre part, pour libérer de l&#8217;espace dans la base de données jee
 <p>Fehler behoben, beim zurücksetzen der gesamten Betriebszeit</p>
 </li>
 <li>
-<p>Historisation du temps où l&#8217;equipement est actif à partir de la commande <strong>etat</strong> en lieu et place la commande <strong>Tps Fct Actif Total</strong></p>
+<p>Historisation du temps où l&#8217;equipement est actif à partir de la commande <strong>Etat</strong> en lieu et place la commande <strong>Tps Actif Total</strong></p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+les données précédentes ne seront plus disponible
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
 <p>Ajout d&#8217;une commmande <strong>Compteur +</strong> et <strong>Compteur -</strong></p>
