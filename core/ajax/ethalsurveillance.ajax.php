@@ -48,7 +48,7 @@ try {
         $eqMaster = eqLogic::byId($eqMasterId);
         
         if (!is_object($eqMaster)) {
-            throw new Exception(__('Equipement Master introuvable pour la comamnde: ', __FILE__). $ethalsurveillance->getConfiguration('cmdequipement',''));
+            throw new Exception(__('Equipement Master introuvable pour la comamnde: ', __FILE__) . $cmdEquipement);
         }
         
 		if (!is_object($ethalsurveillance)) {
@@ -59,8 +59,6 @@ try {
 			$return['eq'] = array('eqName' => $ethalsurveillance->getName(), 'htmlMaster' => $eqMaster->toHtml('dashboard'), 'html' => $ethalsurveillance->toHtml('dashboard'), 'ethCumulTps' => array_values($ethalsurveillance->ethCumulTps($date['start'], $date['end'])));
 	
 		}
-		
-		//echo $return;
 		
 		ajax::success($return);
 	}
