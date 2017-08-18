@@ -601,20 +601,20 @@ class ethalsurveillance extends eqLogic {
       */
 
       if (!is_file(dirname(__FILE__) . '/../config/devices/' . $type . '.json')) {
-        log::add('ethalsurveillance', 'debug', 'fichier commande pas trouvé');
+        log::add('ethalsurveillance', 'error', 'fichier commande pas trouvé');
         return;
       }
       $content = file_get_contents(dirname(__FILE__) . '/../config/devices/' . $type . '.json');
       if (!is_json($content)) {
-        log::add('ethalsurveillance', 'debug', 'fichier commande impossible a lire');
+        log::add('ethalsurveillance', 'error', 'fichier commande impossible à lire');
         return;
       }
       $device = json_decode($content, true);
       if (!is_array($device) || !isset($device['commands'])) {
-        log::add('ethalsurveillance', 'debug', 'format fichier commande json mauvais');
+        log::add('ethalsurveillance', 'error', 'format fichier commande json mauvais');
         return;
       }
-      log::add('ethalsurveillance', 'debug', 'fichier commande ok');
+      log::add('ethalsurveillance', 'error', 'fichier commande ok');
       /*$this->import($device);*/
       foreach ($device['commands'] as $command) {
         $cmd = null;
