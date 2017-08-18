@@ -3,6 +3,11 @@ if (!isConnect()) {
 	throw new Exception('{{401 - Accès non autorisé}}');
 }
 
+$date = array(
+    'start' => init('startDate', date('Y-m-d', strtotime('-1 month ' . date('Y-m-d')))),
+    'end' => init('endDate', date('Y-m-d', strtotime('+1 days ' . date('Y-m-d')))),
+);
+
 if (init('object_id') == '') {
     $object = object::byId($_SESSION['user']->getOptions('defaultDashboardObject'));
 } else {
@@ -14,24 +19,9 @@ if (!is_object($object)) {
 if (!is_object($object)) {
     throw new Exception('{{Aucun objet racine trouvé. Pour en créer un, allez dans Générale -> Objet.<br/> Si vous ne savez pas quoi faire ou que c\'est la premiere fois que vous utilisez Jeedom n\'hésitez pas a consulter cette <a href="http://jeedom.fr/premier_pas.php" target="_blank">page</a>}}');
 }
-$child_object = object::buildTree($object);
 
 sendVarToJs('object_id', init('object_id'));
 
-?>
-
-
-
-
-
-$plugin = plugin::byId('ethalsurveillance');
-sendVarToJS('eqType', $plugin->getId());
-$eqLogics = eqLogic::byType($plugin->getId());
-
-$date = array(
-    'start' => init('startDate', date('Y-m-d', strtotime('-1 month ' . date('Y-m-d')))),
-    'end' => init('endDate', date('Y-m-d', strtotime('+1 days ' . date('Y-m-d')))),
-);
 ?>
 
 <div class="row row-overflow">
