@@ -1,1 +1,176 @@
+{
+    "name": "ethalsurveillance",
+	"commands": [
+        {
+            "logicalId": "alarme",
+            "name": "Alarme",
+            "type": "info",
+            "subtype": "binary",
+            "display": {
+				"generic_type": "DONT"
+            },
+            "template": {
+            	"dashboard":"line", 
+            	"mobile":"line", 
+        	}, 
+        	"order": 0  
+        },
+        {
+            "logicalId": "code_alarme",
+            "name": "Code Alarme",
+            "type": "info",
+            "subtype": "numeric",
+            "display": {
+                "generic_type": "DONT"
+            },
+            "template": {
+                "dashboard":"line", 
+                "mobile":"line", 
+            }, 
+            "order": 1
+        },
+        {
+            "logicalId": "tempsfct_hms",
+            "name": "Temps Actif(H:M:S)",
+            "type": "info",
+            "subtype": "string",
+            "display": {
+                "generic_type": "DONT"
+            },
+            "order": 2    
+        },
+        {
+            "logicalId": "tempsfct",
+            "name": "Temps Actif",
+            "type": "info",
+            "subtype": "numeric",
+            "display": {
+                "generic_type": "DONT"
+            },
+            "template": {
+                "dashboard":"line", 
+                "mobile":"line", 
+            }, 
+            "order": 3 
+        },
+        {
+            "logicalId": "tempsfcttotal_hms",
+            "name": "Temps Actif Total(H:M:S)",
+            "type": "info",
+            "subtype": "string",
+            "display": {
+                "generic_type": "DONT"
+            },
+            "order": 4   
+        },
+        {
+            "logicalId": "tempsfcttotal",
+            "name": "Temps Actif Total",
+            "type": "info",
+            "subtype": "numeric",
+            "display": {
+                "generic_type": "DONT"
+            },
+            "template": {
+                "dashboard":"line", 
+                "mobile":"line", 
+            }, 
+            "order": 5 
+        },
+        {
+            "logicalId": "raztempsfcttotal",
+            "name": "RAZ Tps Actif Total",
+            "type": "action",
+            "subtype": "other",
+            "display": {
+                "generic_type": "DONT"
+            },
+            "order": 6   
+        },
+        {
+            "logicalId": "startedtime",
+            "name": "Actif à",
+            "type": "info",
+            "subtype": "string",
+            "display": {
+                "generic_type": "DONT"
+            },
+            "order": 7 
+        },
+        {
+            "logicalId": "stoppedtime",
+            "name": "Inactif à",
+            "type": "info",
+            "subtype": "string",
+            "display": {
+                "generic_type": "DONT"
+            },
+            "order": 8 
+        },
+        {
+            "logicalId": "etat",
+            "name": "Etat",
+            "type": "info",
+            "subtype": "binary",
+            "IsHistorized": 1,
+            "display": {
+                "generic_type": "DONT"
+            },
+            "configuration": {
+                "historizeMode":"none" 
+            },             
+            "template": {
+                "dashboard":"line", 
+                "mobile":"line", 
+            }, 
+            "order": 9 
+        },
+                {
+            "logicalId": "count",
+            "name": "Compteur",
+            "type": "info",
+            "subtype": "numeric",
+            "display": {
+                "generic_type": "DONT"
+            },
+            "template": {
+                "dashboard":"line", 
+                "mobile":"line", 
+            }, 
+            "order": 10
+        },
+        {
+            "logicalId": "setcountplus",
+            "name": "Compteur +",
+            "type": "action",
+            "subtype": "other",
+            "display": {
+                "generic_type": "DONT"
+            },
+            "order": 11   
+        },
+        {
+            "logicalId": "setcountmoins",
+            "name": "Compteur -",
+            "type": "action",
+            "subtype": "other",
+            "display": {
+                "generic_type": "DONT"
+            },
+            "order": 12  
+        },
+        {
+            "logicalId": "razcount",
+            "name": "RAZ Compteur",
+            "type": "action",
+            "subtype": "other",
+            "display": {
+                "generic_type": "DONT"
+            },
+            "order": 13  
+        }
+   ]
+}
+
+
 
