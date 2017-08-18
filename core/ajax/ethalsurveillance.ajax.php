@@ -30,7 +30,8 @@ try {
 
 			if (init('eqid') == '') {
 				//$_GET['eq_id'] = $_SESSION['user']->getOptions('defaultDashboardObject');
-				die();
+				$return['eq'] = array();
+				ajax::success($return);	
 			}
 
 			$ethalsurveillance = ethalsurveillance::byId(init('eqid'));
@@ -41,7 +42,7 @@ try {
 			$date = array(
 				'start' => init('dateStart'),
 				'end' => init('dateEnd'),
-				);
+			);
 
 			if ($date['start'] == '') {
 				$date['start'] = date('Y-m-d', strtotime('-1 months ' . date('Y-m-d')));
