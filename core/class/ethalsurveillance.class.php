@@ -204,7 +204,7 @@ class ethalsurveillance extends eqLogic {
     }
 
     public function postUpdate() {
-      $this->EthcreateCmd('ethalsurveillance');
+      self::EthcreateCmd('ethalsurveillance');
     }
 
     public function preRemove() {
