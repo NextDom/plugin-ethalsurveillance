@@ -3,6 +3,27 @@ if (!isConnect()) {
 	throw new Exception('{{401 - Accès non autorisé}}');
 }
 
+if (init('object_id') == '') {
+    $object = object::byId($_SESSION['user']->getOptions('defaultDashboardObject'));
+} else {
+    $object = object::byId(init('object_id'));
+}
+if (!is_object($object)) {
+    $object = object::rootObject();
+}
+if (!is_object($object)) {
+    throw new Exception('{{Aucun objet racine trouvé. Pour en créer un, allez dans Générale -> Objet.<br/> Si vous ne savez pas quoi faire ou que c\'est la premiere fois que vous utilisez Jeedom n\'hésitez pas a consulter cette <a href="http://jeedom.fr/premier_pas.php" target="_blank">page</a>}}');
+}
+$child_object = object::buildTree($object);
+
+sendVarToJs('object_id', init('object_id'));
+
+?>
+
+
+
+
+
 $plugin = plugin::byId('ethalsurveillance');
 sendVarToJS('eqType', $plugin->getId());
 $eqLogics = eqLogic::byType($plugin->getId());
@@ -20,14 +41,18 @@ $date = array(
                 <li class="nav-header"><i class="fa fa-bar-chart"></i> {{Surv. Equipement}}</li>
                 <li class="filter" style="margin-bottom: 5px;"><input class="filter form-control input-sm" placeholder="{{Rechercher}}" style="width: 100%"/></li>
                 <?php
-                foreach ($eqLogics as $eqLogic) {
-                    $eqEnabled = $eqLogic->getIsEnable();
-                    $opacity = ($eqEnabled) ? '' : jeedom::getConfiguration('eqLogic:style:noactive');
-                    if ($eqEnabled) {
-                        echo '<li class="cursor li_eqLogic" data-eqLogic_id="' . $eqLogic->getId() . '"  style="' . $opacity . '"><a>' . $eqLogic->getHumanName(true) . '</a></li>';
-                    }    
+                $allObject = object::buildTree();
+                foreach ($allObject as $object_li) {
+                    if ($object_li->getIsVisible() == 1 && count($object_li->getEqLogic(true, true, 'ethalsurveillance')) > 0) {
+                        $margin = 15 * $object_li->parentNumber();
+                        if ($object_li->getId() == init('object_id')) {
+                            echo '<li class="cursor li_object active" ><a href="index.php?v=d&m=ethalsurveillance&p=panel&object_id=' . $object_li->getId() . '" style="position:relative;left:' . $margin . 'px;">' . $object_li->getHumanName(true) . '</a></li>';
+                        }else{
+                            echo '<li class="cursor li_object" ><a href="index.php?v=d&m=ethalsurveillance&p=panel&object_id=' . $object_li->getId() . '" style="position:relative;left:' . $margin . 'px;">' . $object_li->getHumanName(true) . '</a></li>';
+                        }
+                    }
                 }
-                ?>
+                ?>               
            </ul>
        </div>
     </div>

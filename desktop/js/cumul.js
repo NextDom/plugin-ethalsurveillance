@@ -17,29 +17,27 @@
 
 var ethchart;
 
-function printEqLogic(_eqLogic) {
-    ethGetDataAndDrawCurve($('#in_startDate').value(), $('#in_endDate').value(),$('#sel_groupingType').value());
-}
-
 $('.in_datepicker').datepicker();
 
 $('#bt_validChangeDate').on('click', function () {
-    ethGetDataAndDrawCurve($('#in_startDate').value(), $('#in_endDate').value(),$('#sel_groupingType').value());
+    ethGetDataAndDrawCurve(object_id, $('#in_startDate').value(), $('#in_endDate').value(), $('#sel_groupingType').value());
 });
 
 
 $('#sel_groupingType').change(function () {
-    ethGetDataAndDrawCurve($('#in_startDate').value(), $('#in_endDate').value(),$('#sel_groupingType').value());
+    ethGetDataAndDrawCurve(object_id, $('#in_startDate').value(), $('#in_endDate').value(), $('#sel_groupingType').value());
 });
 
+ethGetDataAndDrawCurve(object_id,'','','');
 
-function ethGetDataAndDrawCurve(_dateStart,_dateEnd,_grouping) {
+
+function ethGetDataAndDrawCurve(object_id,_dateStart,_dateEnd,_grouping) {
     $.ajax({
         type: 'POST',
         url: 'plugins/ethalsurveillance/core/ajax/ethalsurveillance.ajax.php',
         data: {
             action: 'ethGetData',
-            eqid: $('#ul_eqLogic .li_eqLogic.active').attr('data-eqLogic_id'),
+            eqid: object_id,
             dateStart : _dateStart,
             dateEnd : _dateEnd,
         },
