@@ -609,14 +609,13 @@ class ethalsurveillance extends eqLogic {
       }
       $device = json_decode($content, true);
       if (!is_array($device) || !isset($device['commands'])) {
-        return true;
+        return;
       }
       /*$this->import($device);*/
       foreach ($device['commands'] as $command) {
         $cmd = null;
         foreach ($this->getCmd() as $liste_cmd) {
-          if ((isset($command['logicalId']) && $liste_cmd->getLogicalId() == $command['logicalId'])
-          || (isset($command['name']) && $liste_cmd->getName() == $command['name'])) {
+          if ((isset($command['logicalId']) && $liste_cmd->getLogicalId() == $command['logicalId'])) {
             $cmd = $liste_cmd;
             break;
           }
@@ -626,8 +625,12 @@ class ethalsurveillance extends eqLogic {
           $cmd->setEqLogic_id($this->getId());
           utils::a2o($cmd, $command);
           $cmd->save();
+          log::add('ethalsurveillance', 'debug', 'Creation de la commande->'.$command['logicalId']);
+        }else{
+          $cmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(),$command['logicalId']);
+          utils::a2o($cmd, $command);
+          $cmd->save();
           log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->'.$command['logicalId']);
-        }
       }
 
       /* listener de la mesure de puissance our de la commande d'etat*/
