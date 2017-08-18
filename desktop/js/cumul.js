@@ -83,7 +83,7 @@ function ethGetDataAndDrawCurve(eq_id,_dateStart,_dateEnd,_grouping) {
                 type: 'column',
                 });
             
-            if (len(data.result.eq.ethCumulTps) !=0) { 
+            if (data.result.eq.ethCumulTps.length != 0) { 
                 drawCurve(el_tpsfct, series_tpsfct,tooltip_tpsfct);
             }
             
