@@ -30,7 +30,7 @@ try {
 
 			if (init('eqid') == '') {
 				//$_GET['eq_id'] = $_SESSION['user']->getOptions('defaultDashboardObject');
-				$return['eq'] = array();
+				$return['eq'] = array('ethCumulTps' =>'');
 				ajax::success($return);	
 			}
 
