@@ -1,4 +1,4 @@
-* Version 2.1 (in Progress)		
+* Version 2.1 (En cours)		
 ** correction de bug ??
 ** ???
 
