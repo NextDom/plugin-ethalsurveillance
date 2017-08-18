@@ -1,7 +1,8 @@
 <?php
-if (!isConnect('admin')) {
-    throw new Exception('{{401 - Accès non autorisé}}');
+if (!isConnect()) {
+	throw new Exception('{{401 - Accès non autorisé}}');
 }
+
 $plugin = plugin::byId('ethalsurveillance');
 sendVarToJS('eqType', $plugin->getId());
 $eqLogics = eqLogic::byType($plugin->getId());
@@ -10,7 +11,6 @@ $date = array(
     'start' => init('startDate', date('Y-m-d', strtotime('-1 month ' . date('Y-m-d')))),
     'end' => init('endDate', date('Y-m-d', strtotime('+1 days ' . date('Y-m-d')))),
 );
-
 ?>
 
 <div class="row row-overflow">
