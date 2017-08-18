@@ -35,13 +35,12 @@ sendVarToJs('eq_id', init('eq_id'));
                 foreach ($allObject as $object) {
                     if ($object->getIsVisible() == 1 && count($object->getEqLogic(true, true, 'ethalsurveillance')) > 0) {
                         foreach ($object->getEqLogic() as $eqLogic) {
-                            //$margin = 15 * $object_li->parentNumber();
                             $margin = 5 ;
-                            if ($eqLogic->getLogicalId() == 'ethalsurveillance')){
+                            if ($eqLogic->getEqType_name() == 'ethalsurveillance' && $eqLogic->getIsEnable()) {
                                 if ($eqLogic->getId() == init('eq_id')) {
-                                    echo '<li class="cursor li_object active" ><a href="index.php?v=d&m=ethalsurveillance&p=panel&eq_id=' . $eqLogic->getId() . '" style="position:relative;left:' . $margin . 'px;">' . $eqLogic->getHumanName(true) . '</a></li>';
+                                    echo '<li class="cursor li_object active" ><a href="index.php?v=d&m=ethalsurveillance&p=panel&eq_id=' . $eqLogic->getId() . '" style="position:relative;left:5 px;">' . $eqLogic->getHumanName(true) . '</a></li>';
                                 }else{
-                                    echo '<li class="cursor li_object" ><a href="index.php?v=d&m=ethalsurveillance&p=panel&eq_id=' . $eqLogic->getId() . '" style="position:relative;left:' . $margin . 'px;">' . $eqLogic->getHumanName(true) . '</a></li>';
+                                    echo '<li class="cursor li_object" ><a href="index.php?v=d&m=ethalsurveillance&p=panel&eq_id=' . $eqLogic->getId() . '" style="position:relative;left:5 px;">' . $eqLogic->getHumanName(true) . '</a></li>';
                                 }
                             }
                         }
@@ -51,7 +50,7 @@ sendVarToJs('eq_id', init('eq_id'));
            </ul>
        </div>
     </div>
-    <div class="col-lg-10 col-md-9 col-sm-8 eqLogic" style="border-left: solid 1px #EEE; padding-left: 25px;display: none;">
+    <div class="col-lg-10 col-md-9 col-sm-8" style="border-left: solid 1px #EEE; padding-left: 25px;display: none;">
         <div class="row">
             <legend>{{Information de Surveillance}}</legend>
             <div class="row">
