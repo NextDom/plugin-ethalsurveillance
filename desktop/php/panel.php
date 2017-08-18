@@ -32,14 +32,17 @@ sendVarToJs('eq_id', init('eq_id'));
                 <li class="filter" style="margin-bottom: 5px;"><input class="filter form-control input-sm" placeholder="{{Rechercher}}" style="width: 100%"/></li>
                 <?php
                 $allObject = object::buildTree();
-                foreach ($allObject as $object_li) {
-                    if ($object_li->getIsVisible() == 1 && count($object_li->getEqLogic(true, true, 'ethalsurveillance')) > 0) {
-                        foreach ($object_li->getEqLogic() as $eqLogic) {
-                            $margin = 15 * $object_li->parentNumber();
-                            if ($object_li->getId() == init('object_id')) {
-                                echo '<li class="cursor li_object active" ><a href="index.php?v=d&m=ethalsurveillance&p=panel&eq_id=' . $eqLogic->getId() . '" style="position:relative;left:' . $margin . 'px;">' . $eqLogic->getHumanName(true) . '</a></li>';
-                            }else{
-                                echo '<li class="cursor li_object" ><a href="index.php?v=d&m=ethalsurveillance&p=panel&eq_id=' . $eqLogic->getId() . '" style="position:relative;left:' . $margin . 'px;">' . $eqLogic->getHumanName(true) . '</a></li>';
+                foreach ($allObject as $object) {
+                    if ($object->getIsVisible() == 1 && count($object->getEqLogic(true, true, 'ethalsurveillance')) > 0) {
+                        foreach ($object->getEqLogic() as $eqLogic) {
+                            //$margin = 15 * $object_li->parentNumber();
+                            $margin = 5 ;
+                            if ($eqLogic->getLogicalId() == 'ethalsurveillance')){
+                                if ($eqLogic->getId() == init('eq_id')) {
+                                    echo '<li class="cursor li_object active" ><a href="index.php?v=d&m=ethalsurveillance&p=panel&eq_id=' . $eqLogic->getId() . '" style="position:relative;left:' . $margin . 'px;">' . $eqLogic->getHumanName(true) . '</a></li>';
+                                }else{
+                                    echo '<li class="cursor li_object" ><a href="index.php?v=d&m=ethalsurveillance&p=panel&eq_id=' . $eqLogic->getId() . '" style="position:relative;left:' . $margin . 'px;">' . $eqLogic->getHumanName(true) . '</a></li>';
+                                }
                             }
                         }
                     }
