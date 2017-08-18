@@ -599,7 +599,6 @@ class ethalsurveillance extends eqLogic {
         Marche prevu : 16
         Compteur haut : 32
       */
-
       if (!is_file(dirname(__FILE__) . '/../config/devices/' . $type . '.json')) {
         log::add('ethalsurveillance', 'error', 'fichier commande pas trouvé');
         return;
@@ -614,7 +613,7 @@ class ethalsurveillance extends eqLogic {
         log::add('ethalsurveillance', 'error', 'format fichier commande json mauvais');
         return;
       }
-      log::add('ethalsurveillance', 'error', 'fichier commande ok');
+      log::add('ethalsurveillance', 'debug', 'fichier commande ok');
       /*$this->import($device);*/
       foreach ($device['commands'] as $command) {
         $cmd = null;
