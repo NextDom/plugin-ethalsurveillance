@@ -82,7 +82,10 @@ function ethGetDataAndDrawCurve(eq_id,_dateStart,_dateEnd,_grouping) {
                 data: data.result.eq.ethCumulTps,
                 type: 'column',
                 });
-            drawCurve(el_tpsfct, series_tpsfct,tooltip_tpsfct);
+            
+            if (len(data.result.eq.ethCumulTps) !=0) { 
+                drawCurve(el_tpsfct, series_tpsfct,tooltip_tpsfct);
+            }
             
             $('#div_displayEquipement').append(data.result.eq.html);
             $('#div_displayEquipement').packery({
