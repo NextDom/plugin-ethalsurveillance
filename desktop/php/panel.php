@@ -51,18 +51,20 @@ sendVarToJs('eq_id', init('eq_id'));
        </div>
     </div>
     <div class="col-lg-10 col-md-9 col-sm-8">
-        <div class="row">
-            <legend>{{Information de Surveillance}}</legend>
-        </div>
-        <div class="row pull-right">
-            <input id="in_startDate" class="form-control input-sm in_datepicker" style="display : inline-block; width: 150px;" value="<?php echo $date['start'] ?>"/>
-            <input id="in_endDate" class="form-control input-sm in_datepicker" style="display : inline-block; width: 150px;" value="<?php echo $date['end'] ?>"/>
-            <a class="btn btn-success btn-sm" id='bt_validChangeDate'>{{Ok}}</a>
-            <select class="form-control" id="sel_groupingType" style="width: 200px;">
-                <option value="cumulday">{{Cumul par jour}}</option>
-                <option value="cumulweek">{{Cumul par semaine}}</option>
-                <option value="cumulmonth">{{Cumul par mois}}</option>
-            </select>
+        <div>
+            <legend>
+                <span>{{Information de Surveillance}}</span>
+                <span class="pull-right">
+                    <input id="in_startDate" class="form-control input-sm in_datepicker" style="display : inline-block; width: 150px;" value="<?php echo $date['start'] ?>"/>
+                    <input id="in_endDate" class="form-control input-sm in_datepicker" style="display : inline-block; width: 150px;" value="<?php echo $date['end'] ?>"/>
+                    <a class="btn btn-success btn-sm" id='bt_validChangeDate'>{{Ok}}</a>
+                    <select class="form-control" id="sel_groupingType" style="width: 150px;">
+                        <option value="cumulday">{{Cumul par jour}}</option>
+                        <option value="cumulweek">{{Cumul par semaine}}</option>
+                        <option value="cumulmonth">{{Cumul par mois}}</option>
+                    </select>
+                </span>
+            </legend>
         </div>
         <div class="row">
             <div class="col-lg-3" id="div_displayEquipement"></div>
