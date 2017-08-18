@@ -65,14 +65,14 @@ foreach ($eqLogics as $eqLogic) {
     <form class="form-horizontal">
         <fieldset>
             <div class="form-group">
-                <label class="col-sm-3 control-label">{{Nom de l'équipement}}</label>
+                <label class="col-sm-2 control-label">{{Nom de l'équipement}}</label>
                 <div class="col-sm-3">
                     <input type="text" class="eqLogicAttr form-control" data-l1key="id" style="display : none;" />
                     <input type="text" class="eqLogicAttr form-control" data-l1key="name" placeholder="{{Nom de l'équipement}}"/>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-3 control-label" >{{Objet parent}}</label>
+                <label class="col-sm-2 control-label" >{{Objet parent}}</label>
                 <div class="col-sm-3">
                     <select id="sel_object" class="eqLogicAttr form-control" data-l1key="object_id">
                         <option value="">{{Aucun}}</option>
@@ -85,8 +85,8 @@ foreach (object::all() as $object) {
                </div>
            </div>
 	           <div class="form-group">
-                <label class="col-sm-3 control-label">{{Catégorie}}</label>
-                <div class="col-sm-8">
+                <label class="col-sm-2 control-label">{{Catégorie}}</label>
+                <div class="col-sm-10">
                     <?php
                     foreach (jeedom::getConfiguration('eqLogic:category') as $key => $value) {
                     echo '<label class="checkbox-inline">';
@@ -98,15 +98,15 @@ foreach (object::all() as $object) {
            </div>
 
   <div class="form-group">
-		<label class="col-sm-3 control-label"></label>
-		<div class="col-sm-9">
+		<label class="col-sm-2 control-label"></label>
+		<div class="col-sm-10">
 			<label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isEnable" />{{Activer}}</label>
 			<label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isVisible" />{{Visible}}</label>
 		</div>
 	</div>
   <hr>
         <div class="form-group">
-            <label class="col-sm-3 control-label">{{Type de commande}}</label>
+            <label class="col-sm-2 control-label">{{Type de commande}}</label>
             <div class="col-sm-4">
                 <select class="eqLogicAttr form-control" data-l1key='configuration' data-l2key='cmdequipementtype'>
                     <option value='logique'>Logique</option>
@@ -115,7 +115,7 @@ foreach (object::all() as $object) {
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-3 control-label">{{Commande équipement}}</label>
+            <label class="col-sm-2 control-label">{{Commande équipement}}</label>
             <div class="col-sm-4">
                 <div class="input-group">
                     <input type="text" class="eqLogicAttr form-control tooltips" data-l1key="configuration" data-l2key="cmdequipement"/>
@@ -132,13 +132,13 @@ foreach (object::all() as $object) {
         </div>
         <div class="cmdequipementtype analogique general" style="display: none;">
             <div class="form-group">
-                <label class="col-sm-3 control-label">{{Heure de surveillance prévue +/- 2 min (HHMM)}}<span> (1<upper>*</upper>)</label>
+                <label class="col-sm-2 control-label">{{Heure de surveillance prévue +/- 2 min (HHMM)}}<span> (1<upper>*</upper>)</label>
                 <div class="col-sm-2">
                     <div class="input-group">
                         <input type="text" class="eqLogicAttr form-control tooltips" data-l1key="configuration" data-l2key="debutheure" />
                     </div>
                 </div>
-                <label class="col-sm-3 control-label">{{Valeur surveillance active}}</label>
+                <label class="col-sm-2 control-label">{{Valeur surveillance active}}</label>
                 <div class="col-sm-2">
                     <div class="input-group">
                         <input type="text" class="eqLogicAttr form-control tooltips" data-l1key="configuration" data-l2key="puissance" />
@@ -148,7 +148,7 @@ foreach (object::all() as $object) {
         </div>
         <div class="cmdequipementtype analogique not_general" style="display: none;">
             <div class="form-group">
-                <label class="col-sm-3 control-label">{{Valeur surveillance inactive}}</label>
+                <label class="col-sm-2 control-label">{{Valeur surveillance inactive}}</label>
                 <div class="col-sm-1">
                     <div class="input-group">
                         <input type="text" class="eqLogicAttr form-control tooltips" data-l1key="configuration" data-l2key="minpuissance" />
