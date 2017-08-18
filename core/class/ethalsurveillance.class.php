@@ -204,7 +204,7 @@ class ethalsurveillance extends eqLogic {
     }
 
     public function postUpdate() {
-      self::EthcreateCmd('ethalsurveillance');
+      this->ethCreateCmd('ethalsurveillance');
     }
 
     public function preRemove() {
@@ -590,7 +590,7 @@ class ethalsurveillance extends eqLogic {
       return $return;
     }    
     
-    private function EthcreateCmd($type) {
+    private function ethCreateCmd($type) {
       /* commande alarme code fonctionnement 
         debut heure : 1
         Temps mini : 2
