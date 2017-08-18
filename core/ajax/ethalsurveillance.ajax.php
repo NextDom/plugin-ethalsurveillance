@@ -29,7 +29,8 @@ try {
 		if (init('action') == 'ethGetData') {
 
 			if (init('eqid') == '') {
-				$_GET['eq_id'] = $_SESSION['user']->getOptions('defaultDashboardObject');
+				//$_GET['eq_id'] = $_SESSION['user']->getOptions('defaultDashboardObject');
+				die();
 			}
 
 			$ethalsurveillance = ethalsurveillance::byId(init('eqid'));

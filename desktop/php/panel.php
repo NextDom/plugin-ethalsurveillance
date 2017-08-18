@@ -50,11 +50,11 @@ sendVarToJs('eq_id', init('eq_id'));
            </ul>
        </div>
     </div>
-    <div class="col-lg-10 col-md-9 col-sm-8" style="border-left: solid 1px #EEE; padding-left: 25px;display: none;">
+    <div class="col-lg-10 col-md-9 col-sm-8" style="border-left: solid 1px #EEE; padding-left: 25px;">
         <div class="row">
             <legend>{{Information de Surveillance}}</legend>
             <div class="row">
-            <div class="col-lg-12">          
+            <div class="col-lg-11">          
                 <input id="in_startDate" class="form-control input-sm in_datepicker" style="display : inline-block; width: 150px;" value="<?php echo $date['start'] ?>"/>
                 <input id="in_endDate" class="form-control input-sm in_datepicker" style="display : inline-block; width: 150px;" value="<?php echo $date['end'] ?>"/>
                 <a class="btn btn-success btn-sm" id='bt_validChangeDate' title="{{Attention une trop grande plage de dates peut mettre très longtemps à être calculée ou même ne pas s'afficher}}">{{Ok}}</a>
@@ -69,13 +69,13 @@ sendVarToJs('eq_id', init('eq_id'));
             <br/>
             <div class="row">
                 <div class="col-lg-3" id="div_displayEquipement"></div>
-                <div class="col-lg-9" id="div_graphic_tpsfct"></div>
+                <div class="col-lg-8" id="div_graphic_tpsfct"></div>
             </div>
         </div>
         <div class="row">
             </br>
             <legend>{{Equipement surveillé}}</legend>
-            <div class="col-lg-12" id="div_displayEquipementMaster"></div>
+            <div class="col-lg-11" id="div_displayEquipementMaster"></div>
         </div>
     </div>
 
