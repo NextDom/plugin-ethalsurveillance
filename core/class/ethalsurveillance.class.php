@@ -611,6 +611,7 @@ class ethalsurveillance extends eqLogic {
       if (!is_array($device) || !isset($device['commands'])) {
         return;
       }
+      log::add('ethalsurveillance', 'debug', 'fichier commande ok');
       /*$this->import($device);*/
       foreach ($device['commands'] as $command) {
         $cmd = null;
