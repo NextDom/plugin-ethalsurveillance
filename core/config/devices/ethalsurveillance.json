@@ -11,9 +11,9 @@
             },
             "template": {
             	"dashboard":"line", 
-            	"mobile":"line", 
+            	"mobile":"line"
         	}, 
-        	"order": "0"  
+        	"order": 0
         },
         {
             "logicalId": "code_alarme",
@@ -25,9 +25,9 @@
             },
             "template": {
                 "dashboard":"line", 
-                "mobile":"line", 
+                "mobile":"line" 
             }, 
-            "order": "1"
+            "order": 1
         },
         {
             "logicalId": "tempsfct_hms",
@@ -49,9 +49,9 @@
             },
             "template": {
                 "dashboard":"line", 
-                "mobile":"line", 
+                "mobile":"line"
             }, 
-            "order": "3" 
+            "order": 3
         },
         {
             "logicalId": "tempsfcttotal_hms",
@@ -73,9 +73,9 @@
             },
             "template": {
                 "dashboard":"line", 
-                "mobile":"line", 
+                "mobile":"line"
             }, 
-            "order": "5" 
+            "order": 5
         },
         {
             "logicalId": "raztempsfcttotal",
@@ -85,7 +85,7 @@
             "display": {
                 "generic_type": "DONT"
             },
-            "order": "6"   
+            "order": 6   
         },
         {
             "logicalId": "startedtime",
@@ -95,7 +95,7 @@
             "display": {
                 "generic_type": "DONT"
             },
-            "order": "7" 
+            "order": 7
         },
         {
             "logicalId": "stoppedtime",
@@ -105,7 +105,7 @@
             "display": {
                 "generic_type": "DONT"
             },
-            "order": "8" 
+            "order": 8
         },
         {
             "logicalId": "etat",
@@ -121,9 +121,9 @@
             },             
             "template": {
                 "dashboard":"line", 
-                "mobile":"line", 
+                "mobile":"line"
             }, 
-            "order": "9" 
+            "order": 9 
         },
                 {
             "logicalId": "count",
@@ -135,9 +135,9 @@
             },
             "template": {
                 "dashboard":"line", 
-                "mobile":"line", 
+                "mobile":"line"
             }, 
-            "order": "10"
+            "order": 10
         },
         {
             "logicalId": "setcountplus",
@@ -147,7 +147,7 @@
             "display": {
                 "generic_type": "DONT"
             },
-            "order": "11"   
+            "order": 11   
         },
         {
             "logicalId": "setcountmoins",
@@ -157,7 +157,7 @@
             "display": {
                 "generic_type": "DONT"
             },
-            "order": "12"  
+            "order": 12 
         },
         {
             "logicalId": "razcount",
@@ -167,7 +167,7 @@
             "display": {
                 "generic_type": "DONT"
             },
-            "order": "13"  
+            "order": 13
         }
    ]
 }
