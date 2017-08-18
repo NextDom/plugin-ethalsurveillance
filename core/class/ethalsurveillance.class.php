@@ -635,6 +635,7 @@ class ethalsurveillance extends eqLogic {
           utils::a2o($cmd, $command);
           $cmd->save();
           log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->'.$command['logicalId']);
+        }
       }
 
       /* listener de la mesure de puissance our de la commande d'etat*/
