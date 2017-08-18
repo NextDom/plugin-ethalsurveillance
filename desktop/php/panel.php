@@ -20,7 +20,7 @@ if (!is_object($object)) {
     throw new Exception('{{Aucun objet racine trouvé. Pour en créer un, allez dans Générale -> Objet.<br/> Si vous ne savez pas quoi faire ou que c\'est la premiere fois que vous utilisez Jeedom n\'hésitez pas a consulter cette <a href="http://jeedom.fr/premier_pas.php" target="_blank">page</a>}}');
 }
 
-sendVarToJs('object_id', init('object_id'));
+sendVarToJs('eq_id', init('eq_id'));
 
 ?>
 
@@ -34,11 +34,13 @@ sendVarToJs('object_id', init('object_id'));
                 $allObject = object::buildTree();
                 foreach ($allObject as $object_li) {
                     if ($object_li->getIsVisible() == 1 && count($object_li->getEqLogic(true, true, 'ethalsurveillance')) > 0) {
-                        $margin = 15 * $object_li->parentNumber();
-                        if ($object_li->getId() == init('object_id')) {
-                            echo '<li class="cursor li_object active" ><a href="index.php?v=d&m=ethalsurveillance&p=panel&object_id=' . $object_li->getId() . '" style="position:relative;left:' . $margin . 'px;">' . $object_li->getHumanName(true) . '</a></li>';
-                        }else{
-                            echo '<li class="cursor li_object" ><a href="index.php?v=d&m=ethalsurveillance&p=panel&object_id=' . $object_li->getId() . '" style="position:relative;left:' . $margin . 'px;">' . $object_li->getHumanName(true) . '</a></li>';
+                        foreach ($object_li->getEqLogic() as $eqLogic) {
+                            $margin = 15 * $object_li->parentNumber();
+                            if ($object_li->getId() == init('object_id')) {
+                                echo '<li class="cursor li_object active" ><a href="index.php?v=d&m=ethalsurveillance&p=panel&eq_id=' . $eqLogic->getId() . '" style="position:relative;left:' . $margin . 'px;">' . $eqLogic->getHumanName(true) . '</a></li>';
+                            }else{
+                                echo '<li class="cursor li_object" ><a href="index.php?v=d&m=ethalsurveillance&p=panel&eq_id=' . $eqLogic->getId() . '" style="position:relative;left:' . $margin . 'px;">' . $eqLogic->getHumanName(true) . '</a></li>';
+                            }
                         }
                     }
                 }
@@ -78,4 +80,3 @@ sendVarToJs('object_id', init('object_id'));
 </div>
 
 <?php include_file('desktop', 'cumul', 'js', 'ethalsurveillance');?>
-<?php include_file('core', 'plugin.template', 'js');?>

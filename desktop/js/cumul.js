@@ -20,24 +20,24 @@ var ethchart;
 $('.in_datepicker').datepicker();
 
 $('#bt_validChangeDate').on('click', function () {
-    ethGetDataAndDrawCurve(object_id, $('#in_startDate').value(), $('#in_endDate').value(), $('#sel_groupingType').value());
+    ethGetDataAndDrawCurve(eq_id, $('#in_startDate').value(), $('#in_endDate').value(), $('#sel_groupingType').value());
 });
 
 
 $('#sel_groupingType').change(function () {
-    ethGetDataAndDrawCurve(object_id, $('#in_startDate').value(), $('#in_endDate').value(), $('#sel_groupingType').value());
+    ethGetDataAndDrawCurve(eq_id, $('#in_startDate').value(), $('#in_endDate').value(), $('#sel_groupingType').value());
 });
 
-ethGetDataAndDrawCurve(object_id,'','','');
+ethGetDataAndDrawCurve(eq_id,'','','');
 
 
-function ethGetDataAndDrawCurve(object_id,_dateStart,_dateEnd,_grouping) {
+function ethGetDataAndDrawCurve(eq_id,_dateStart,_dateEnd,_grouping) {
     $.ajax({
         type: 'POST',
         url: 'plugins/ethalsurveillance/core/ajax/ethalsurveillance.ajax.php',
         data: {
             action: 'ethGetData',
-            eqid: object_id,
+            eqid: eq_id,
             dateStart : _dateStart,
             dateEnd : _dateEnd,
         },
