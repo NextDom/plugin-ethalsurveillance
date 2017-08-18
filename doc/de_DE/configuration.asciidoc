@@ -78,8 +78,7 @@ Utiliser la case à cocher *afficher*, si vous ne souhaitez pas voir certaines c
 * *RAZ Compteur* : remise à zéro de la commande *Compteur*
 
 [NOTE]
-Pour historiser le temps d'activité d'un équipément, la commande *Etat* doit être historisée avec l'option *Mode de lissage* sur *Aucun*.
-Ces options sont disponible depuis la roue dentée en face de la commande de l'onglet *Commandes*.
+Pour historiser le temps d'activité d'un équipément, la commande *Etat* est historisée par défaut avec l'option *Mode de lissage* sur *Aucun*. Ces options sont disponible depuis le menu historique.
 
 === Funktionsweise
 
