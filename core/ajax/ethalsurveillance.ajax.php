@@ -28,7 +28,15 @@ try {
 
 		if (init('action') == 'ethGetData') {
 
+			if (init('eqid') == '') {
+				$_GET['eq_id'] = $_SESSION['user']->getOptions('defaultDashboardObject');
+			}
 
+			$ethalsurveillance = ethalsurveillance::byId(init('eqid'));
+
+			if (!is_object($ethalsurveillance)) {
+				throw new Exception(__('Aucun equipement trouvé', __FILE__));
+			}
 			$date = array(
 				'start' => init('dateStart'),
 				'end' => init('dateEnd'),
@@ -41,25 +49,23 @@ try {
 				$date['end'] = date('Y-m-d', strtotime('+1 days ' . date('Y-m-d')));
 			}
 
-			$ethalsurveillance = ethalsurveillance::byId(init('eqid'));
-			
 			$cmdEquipement = $ethalsurveillance->getConfiguration('cmdequipement','');
 			$eqMasterId = cmd::byString($cmdEquipement)->getEqLogic_id();
 			$eqMaster = eqLogic::byId($eqMasterId);
-			
+
 			if (!is_object($eqMaster)) {
 				throw new Exception(__('Equipement Master introuvable pour la comamnde: ', __FILE__) . $cmdEquipement);
 			}
-			
+
 			if (!is_object($ethalsurveillance)) {
 				throw new Exception(__('Equipement ethalsurveillance introuvable : ', __FILE__) . init('eqid'));
 			}
 
 			if ($ethalsurveillance->getIsEnable() == 1 && $ethalsurveillance->getEqType_name() == 'ethalsurveillance') {
 				$return['eq'] = array('eqName' => $ethalsurveillance->getName(), 'htmlMaster' => $eqMaster->toHtml('dashboard'), 'html' => $ethalsurveillance->toHtml('dashboard'), 'ethCumulTps' => array_values($ethalsurveillance->ethCumulTps($date['start'], $date['end'])));
-				
+
 			}
-			
+
 			ajax::success($return);
 		}
 
