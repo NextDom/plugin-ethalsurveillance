@@ -1,5 +1,4 @@
 * Le passage en version 2.00(2017-08),modifie la gestion du temps d'activité de l'équipement à surveiller, celle-ci se gère maintenant  par l' historisation de la commande *Etat*, et est activé par défaut. La représentation graphique du temps d'activité ne sera plus dispo pour les données historisés par la commande "Temps Actif Total".
-
 D'autre part, pour libérer de l'espace dans la base de données jeedom, je vous conseille depuis le menu historique de supprimer les données historisées de la commande "Temps Actif Total" et ensuite de désactiver l'historisation de cette commande pour chaque équipement sauf si vous souhaitez les conserver.
 
 * Après une mise à jour du plugin, il est préférable de faire une sauvegarde de chaque "Surveillance équipement".
