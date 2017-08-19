@@ -6,6 +6,6 @@ D'autre part, pour libérer de l'espace dans la base de données jeedom, je vous
 * Pour avoir une représentation graphique du temps de fonctionnement, il faut historiser la commande *Etat* avec l'option 
 *Mode de lissage* sur *Aucun*.
 
-* les valeurs des commandes *Valeur surveillance inactive* et *Valeur surveillance active* ne doivent pas être égales.
+* Les valeurs des commandes *Valeur surveillance inactive* et *Valeur surveillance active* ne doivent pas être égales.
 
 S'il y a lieu, la FAQ est alimentée par les échanges dans le sujet link:https://www.jeedom.com/forum/viewtopic.php?f=28&t=24637[Sujet officiel Surveillance Equipement] du forum Jeedom.
