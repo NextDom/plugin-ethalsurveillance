@@ -22,6 +22,10 @@ function ethalsurveillance_install() {
 
 function ethalsurveillance_update() {
 
+	foreach (eqLogic::byType('ethalsurveillance') as $ethalsurveillance) {
+		$ethalsurveillance->save();
+	}
+
 }
 
 function ethalsurveillance_remove() {
