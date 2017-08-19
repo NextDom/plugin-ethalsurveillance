@@ -29,7 +29,6 @@ try {
 		if (init('action') == 'ethGetData') {
 
 			if (init('eqid') == '') {
-				//$_GET['eq_id'] = $_SESSION['user']->getOptions('defaultDashboardObject');
 				$return['eq'] = array('eqName' => '', 'htmlMaster' => '', 'html' => '', 'ethCumulTps' => '');
 				ajax::success($return);	
 			}
