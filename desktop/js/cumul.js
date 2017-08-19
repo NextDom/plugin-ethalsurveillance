@@ -50,7 +50,7 @@ function ethGetDataAndDrawCurve(eq_id,_dateStart,_dateEnd,_grouping) {
                 $('#div_alert').showAlert({message: data.result, level: 'danger'});
                 return;
             }
-            if (data.result.eq.ethCumulTps.length != 0) { 
+            if (data.result.eq.ethCumulTps.length == 0) { 
                 return;
             }   
             $('#div_displayEquipement').empty();
