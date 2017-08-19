@@ -50,10 +50,13 @@ function ethGetDataAndDrawCurve(eq_id,_dateStart,_dateEnd,_grouping) {
                 $('#div_alert').showAlert({message: data.result, level: 'danger'});
                 return;
             }
+            if (data.result.eq.ethCumulTps.length != 0) { 
+                return;
+            }   
             $('#div_displayEquipement').empty();
             $('#div_displayEquipementMaster').empty();
             $('#div_graphics_tpsfct').empty();
-            el_tpsfct ='div_graphic_tpsfct'
+
             tooltip_tpsfct = {pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y} {{heure(s)}}</b><br/>',
                 valueDecimals: 2,
             }
@@ -83,10 +86,9 @@ function ethGetDataAndDrawCurve(eq_id,_dateStart,_dateEnd,_grouping) {
                 type: 'column',
                 });
             
-            if (data.result.eq.ethCumulTps.length != 0) { 
-                drawCurve(el_tpsfct, series_tpsfct,tooltip_tpsfct);
-            }
             
+            drawCurve('div_graphic_tpsfct', series_tpsfct,tooltip_tpsfct);
+
             $('#div_displayEquipement').append(data.result.eq.html);
             $('#div_displayEquipement').packery({
                 itemSelector: ".eqLogic-widget",
@@ -94,8 +96,8 @@ function ethGetDataAndDrawCurve(eq_id,_dateStart,_dateEnd,_grouping) {
                 rowHeight: 50,
                 gutter : 2,
             });
-            $('#div_displayEquipementMaster').append(data.result.eq.htmlMaster);
             
+            $('#div_displayEquipementMaster').append(data.result.eq.htmlMaster);          
             positionEqLogic();            
             $('#div_displayEquipementMaster').packery({
                 itemSelector: ".eqLogic-widget",
