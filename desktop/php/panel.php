@@ -57,11 +57,11 @@ sendVarToJs('eq_id', init('eq_id'));
                 <span>
                     <form class="form-inline pull-right">
                         <div class = "form-group">
-                            <label for = "in_startDate">Du</label>
+                            <label for = "in_startDate" style="font-weight: normal;">{{Du}}</label>
                             <input id="in_startDate" class="form-control input-sm in_datepicker" style="width: 150px;" value="<?php echo $date['start'] ?>"/>
                         </div>
                         <div class = "form-group">
-                            <label for = "in_endDate" style="font-weight: normal;">Au</label> 
+                            <label for = "in_endDate" style="font-weight: normal;">{{Au}}</label> 
                             <input id="in_endDate" class="form-control input-sm in_datepicker" style="width: 150px;" value="<?php echo $date['end'] ?>"/>
                         </div>
                         <div class = "form-group">
