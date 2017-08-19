@@ -51,19 +51,31 @@ sendVarToJs('eq_id', init('eq_id'));
        </div>
     </div>
     <div class="col-lg-10 col-md-9 col-sm-8">
-        <div>
-            <legend>
+        <div class="row">
+            <legend style="height: 40px;">
                 <span>{{Information de Surveillance}}</span>
-                <span class="pull-right">
-                    <input id="in_startDate" class="form-control input-sm in_datepicker" style="display : inline-block; width: 150px;" value="<?php echo $date['start'] ?>"/>
-                    <input id="in_endDate" class="form-control input-sm in_datepicker" style="display : inline-block; width: 150px;" value="<?php echo $date['end'] ?>"/>
-                    <a class="btn btn-success btn-sm" id='bt_validChangeDate'>{{Ok}}</a>
-                    <select class="form-control" id="sel_groupingType" style="width: 150px;">
-                        <option value="cumulday">{{Cumul par jour}}</option>
-                        <option value="cumulweek">{{Cumul par semaine}}</option>
-                        <option value="cumulmonth">{{Cumul par mois}}</option>
-                    </select>
-                </span>
+                <span>
+                    <form class="form-inline pull-right">
+                        <div class = "form-group">
+                            <label for = "in_startDate" style="font-weight: normal;">{{Du}}</label>
+                            <input id="in_startDate" class="form-control input-sm in_datepicker" style="width: 150px;" value="<?php echo $date['start'] ?>"/>
+                        </div>
+                        <div class = "form-group">
+                            <label for = "in_endDate" style="font-weight: normal;">{{Au}}</label> 
+                            <input id="in_endDate" class="form-control input-sm in_datepicker" style="width: 150px;" value="<?php echo $date['end'] ?>"/>
+                        </div>
+                        <div class = "form-group">
+                            <a class="btn btn-success btn-sm" id='bt_validChangeDate'>{{Ok}}</a>
+                        </div>
+                        <div class = "form-group">
+                            <select class="form-control" id="sel_groupingType" style="width: 200px;">
+                                <option value="cumulday">{{Cumul par jour}}</option>
+                                <option value="cumulweek">{{Cumul par semaine}}</option>
+                                <option value="cumulmonth">{{Cumul par mois}}</option>
+                            </select>
+                        </div>
+                    </form>
+                </span> 
             </legend>
         </div>
         <div class="row">
