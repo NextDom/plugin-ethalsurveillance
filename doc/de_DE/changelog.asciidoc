@@ -1,8 +1,8 @@
-* Version 2.1 (???)		
+* Version 2.1 (En cours)		
 ** correction de bug ??
 ** ???
 
-* Version 2.0 (Version market : 2017-08-18)		
+* Version 2.0 (Current Version)		
 ** Fehler behoben, beim zurücksetzen der gesamten Betriebszeit 
 ** Historisation du temps où l'equipement est actif à partir de la commande *Etat* en lieu et place la commande *Tps Actif Total*
 [IMPORTANT]
