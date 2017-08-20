@@ -1199,18 +1199,18 @@ Pour avoir un historique du temps d&#8217;activité de l&#8217;equipement , il f
 <div class="ulist">
 <ul>
 <li>
-<p>Le passage en version 2.00(2017-08),modifie la gestion du temps d&#8217;activité de l&#8217;équipement à surveiller, il faut maintenant historiser la commande <strong>Etat</strong> ,<strong>les historiques précedents ne seront plus disponible</strong>, pour activer le nouveau fonctionnement: Activiter l&#8217;historisation de la commande <strong>Etat</strong> et sélectionner mode de lissage sur "aucun".
-D&#8217;autre part, pour libérer de l&#8217;espace dans la base de données jeedom, je vous conseille depuis le menu historique de supprimer les données historisées de la commande "Temps Actif Total" et ensuite de désactiver l&#8217;historisation de cette commande pour chaque équipement.</p>
+<p>Le passage en version 2.00(2017-08),modifie la gestion du temps d&#8217;activité de l&#8217;équipement à surveiller, celle-ci se gère maintenant  par l' historisation de la commande <strong>Etat</strong>, et est activé par défaut. La représentation graphique du temps d&#8217;activité ne sera plus dispo pour les données historisés par la commande "Temps Actif Total".
+D&#8217;autre part, pour libérer de l&#8217;espace dans la base de données jeedom, je vous conseille depuis le menu historique de supprimer les données historisées de la commande "Temps Actif Total" et ensuite de désactiver l&#8217;historisation de cette commande pour chaque équipement sauf si vous souhaitez les conserver.</p>
 </li>
 <li>
-<p>Après une mise à jour du plugin, il est préférable de faire une sauvegarde de chaque "Surveillance équipement"</p>
+<p>Après une mise à jour du plugin, il est préférable de faire une sauvegarde de chaque "Surveillance équipement".</p>
 </li>
 <li>
 <p>Pour avoir une représentation graphique du temps de fonctionnement, il faut historiser la commande <strong>Etat</strong> avec l&#8217;option
-<strong>Mode de lissage</strong> sur <strong>Aucun</strong></p>
+<strong>Mode de lissage</strong> sur <strong>Aucun</strong>.</p>
 </li>
 <li>
-<p>les valeurs des commandes <strong>Valeur surveillance inactive</strong> et <strong>Valeur surveillance active</strong> ne doivent pas être égales</p>
+<p>Pour un <strong>type de commande</strong> <strong>Analogique</strong>, les valeurs <strong>Valeur surveillance inactive</strong> et <strong>Valeur surveillance active</strong> ne doivent pas être égales.</p>
 </li>
 </ul>
 </div>
@@ -1253,7 +1253,7 @@ D&#8217;autre part, pour libérer de l&#8217;espace dans la base de données jee
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-les données précédentes ne seront plus disponible
+La représentation graphique du temps d’activité ne sera plus dispo pour les données historisés par la commande "Temps Actif Total".
 </td>
 </tr>
 </table>
