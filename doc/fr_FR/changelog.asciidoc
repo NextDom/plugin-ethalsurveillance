@@ -1,5 +1,6 @@
 * Version 2.1 (En cours)		
-** correction de bug ??
+** Ajout de la gestion des commandes mortes sur le plugin (dispo dans la prochaine mise à jour du core)
+** correction de bug
 ** ???
 
 * Version 2.0 (Current Version)		
