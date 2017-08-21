@@ -15,29 +15,34 @@
  * along with Jeedom. If not, see <http://www.gnu.org/licenses/>.
  */
 
-var ethchart;
 
 $('.in_datepicker').datepicker();
 
 $('#bt_validChangeDate').on('click', function () {
-    ethGetDataAndDrawCurve(eq_id, $('#in_startDate').value(), $('#in_endDate').value(), $('#sel_groupingType').value());
+    ethGetDataAndDrawCurve($('#in_startDate').value(), $('#in_endDate').value(),$('#sel_groupingType').value());
 });
 
+
+$('a[data-toggle="tab"]').on('shown.bs.tab',function (e) {
+    if (e.target.getAttribute('href') == "#cumultab") {
+        $('#sel_groupingType').value = 'cumulday';
+        ethGetDataAndDrawCurve($('#in_startDate').value(), $('#in_endDate').value(),$('#sel_groupingType').value());
+    }
+});
 
 $('#sel_groupingType').change(function () {
-    ethGetDataAndDrawCurve(eq_id, $('#in_startDate').value(), $('#in_endDate').value(), $('#sel_groupingType').value());
+    ethGetDataAndDrawCurve($('#in_startDate').value(), $('#in_endDate').value(),$('#sel_groupingType').value());
 });
 
-ethGetDataAndDrawCurve(eq_id,'','','');
 
 
-function ethGetDataAndDrawCurve(eq_id,_dateStart,_dateEnd,_grouping) {
+function ethGetDataAndDrawCurve(_dateStart,_dateEnd,_grouping) {
     $.ajax({
         type: 'POST',
         url: 'plugins/ethalsurveillance/core/ajax/ethalsurveillance.ajax.php',
         data: {
             action: 'ethGetData',
-            eqid: eq_id,
+            eqid: $('#ul_eqLogic .li_eqLogic.active').attr('data-eqLogic_id'),
             dateStart : _dateStart,
             dateEnd : _dateEnd,
         },
@@ -50,18 +55,20 @@ function ethGetDataAndDrawCurve(eq_id,_dateStart,_dateEnd,_grouping) {
                 $('#div_alert').showAlert({message: data.result, level: 'danger'});
                 return;
             }
-            if (data.result.eq.eqName.length == 0) { 
-                return;
-            }   
-            $('#div_displayEquipement').empty();
-            $('#div_displayEquipementMaster').empty();
             $('#div_graphics_tpsfct').empty();
-
+            $('#div_graphics_cpt').empty();
+            el_tpsfct ='div_graphic_tpsfct'
+            el_cpt = 'div_graphic_cpt'
             tooltip_tpsfct = {pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y} {{heure(s)}}</b><br/>',
-                valueDecimals: 2,
+                valueDecimals: 1,
+            }
+            tooltip_cpt = {pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b><br/>',
+                valueDecimals: 0,
             }
 
+
             var series_tpsfct = []
+            var series_cpt = []
             dataGrouping = {}
             if (_grouping == 'cumulweek') {
                 dataGrouping =  {
@@ -79,34 +86,22 @@ function ethGetDataAndDrawCurve(eq_id,_dateStart,_dateEnd,_grouping) {
                     units: [['month',[1]]]
                 }
             }
+            //console.log(data.result.eq.ethCumulData[0].tpsFct)
             series_tpsfct.push({
                 dataGrouping : dataGrouping,
-                name: data.result.eq.eqName,
-                data: data.result.eq.ethCumulTps,
+                name: data.result.eq.ethCumulData[0].tpsFctName,
+                data: data.result.eq.ethCumulData[0].tpsFct,
                 type: 'column',
-                });
-            
-            
-            drawCurve('div_graphic_tpsfct', series_tpsfct,tooltip_tpsfct);
-
-            $('#div_displayEquipement').append(data.result.eq.html);
-            $('#div_displayEquipement').packery({
-                itemSelector: ".eqLogic-widget",
-                columnWidth: 40,
-                rowHeight: 50,
-                gutter : 2,
             });
-            
-            $('#div_displayEquipementMaster').append(data.result.eq.htmlMaster);          
-            positionEqLogic();            
-            $('#div_displayEquipementMaster').packery({
-                itemSelector: ".eqLogic-widget",
-                columnWidth: 40,
-                rowHeight: 50,
-                gutter : 2,
+            series_cpt.push({
+                dataGrouping : dataGrouping,
+                name: data.result.eq.ethCumulData[0].cptName,
+                data: data.result.eq.ethCumulData[0].cpt,
+                type: 'column',
             });
 
-
+            drawCurve(el_tpsfct, series_tpsfct,tooltip_tpsfct);
+            //drawCurve(el_cpt, series_cpt,tooltip_cpt);
         }
     });
 }
@@ -119,7 +114,7 @@ function drawCurve(_el, _serie,_tooltip) {
         shadow: true
     };
 
-    ethchart = new Highcharts.StockChart({
+    new Highcharts.StockChart({
         chart: {
             zoomType: 'x',
             renderTo: _el,
@@ -131,7 +126,7 @@ function drawCurve(_el, _serie,_tooltip) {
         },
         credits: {
             text: 'Ethal',
-            href: 'https://ethal.fr',
+            href: 'http://ethal.fr',
         },
         navigator: {
             enabled: false

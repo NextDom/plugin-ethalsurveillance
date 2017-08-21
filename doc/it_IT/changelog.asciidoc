@@ -1,19 +1,9 @@
-* Version 2.1 (En cours)		
-** Ajout de la gestion des commandes mortes sur le plugin (dispo dans la prochaine mise à jour du core)
-** correction de bug
-** ???
-
-* Version 2.0 (Current Version)		
+* Version 2.0 (to do)		
 ** Correction du bug lors de la remise à zéro	du temps de fonctionnement total
-** Historisation du temps où l'equipement est actif à partir de la commande *Etat* en lieu et place la commande *Tps Actif Total*
-[IMPORTANT]
-La représentation graphique du temps d’activité ne sera plus dispo pour les données historisés par la commande "Temps Actif Total".
-
-** Ajout d'une commmande *Compteur +* et *Compteur -*
-** Données graphique disponible depuis un panel en lieu et place de l'onglet données de l'équipement
+** Amélioration du code
 ** mise à jour de la documentation
 
-* Version 1.9 (version market : 2017-06-30)		
+* Version 1.9 (en cours de developpement)		
 ** Ajout du code d'alarme 32 sur une valeur haute du compteur
 ** mise à jour de la documentation
 

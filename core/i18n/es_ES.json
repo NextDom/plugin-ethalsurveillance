@@ -2,26 +2,15 @@
     "plugins\/ethalsurveillance\/plugin_info\/info.json": {
         "Surveillance du fonctionnement d'un equipement": "Motorización de funcionamiento de un dispositivo"
     },
-    "plugins\/ethalsurveillance\/desktop\/php\/panel.php": {
-        "Surv. Equipement": "Surv. Equipement",
-        "Rechercher" : "Rechercher",
-        "Ok": "Ok",
-        "Cumul par jour" : "Cumul par jour",
-        "Cumul par semaine" : " Cumul par semaine",
-        "Cumul par mois" : "Cumul par mois",
-        "Information de surveillance" : "Information de surveillance",
-        "Equipement surveillé" : "Equipement surveillé"        
-    },
     "plugins\/ethalsurveillance\/desktop\/php\/ethalsurveillance.php": {
         "Configuration": "Configuración",
-        "Ajouter": "Ajouter",
+        "Ajouter un équipement à surveiller": "Agregar equipo a monitorizar",
         "Rechercher" : "Buscar",
         "Sauvegarder": "Salvar",
         "Supprimer": "Borrar",
         "Configuration avancée": "Configuración avanzada",
         "Equipement": "Dispositivo",
         "Commandes": "Comandos",
-        "Données": "Données",
         "Nom de l'equipement": "Nombre del dispositivo",
         "Activer": "Activar",
         "Visible": "Visible",
@@ -30,7 +19,7 @@
         "Catégorie": "Categoría",
         "Type de commande": "Tipo de comando",
         "Commande equipement": "Comando dispositivo",
-        "Heure de surveillance prévue +/- 2 min (HHMM)":"Heure de surveillance prévue +/- 2 min (HHMM)",
+        "Heure de fonctionnement prévu +/- 2 min (HHMM)":"Tiempo de funcionamiento previo +/- 2 min (HHMM)",
         "Valeur surveillance inactive" : "Valeur surveillance inactive",
         "Délai valeur surveillance inactive (min)" : "Délai valeur surveillance inactive (min)",
         "Valeur surveillance active" : "Valeur surveillance active",
@@ -62,16 +51,14 @@
         "Défaut": "Default",
         "Alarme": "Alarma",
         "Temps Actif(H:M:S)":"Temps Actif(H:M:S)",
-        "Temps Actif":"Temps Actif",
-        "Temps Actif Total(H:M:S)":"Temps Actif Total(H:M:S)",
-        "Temps Actif Total":"Temps Actif Total",
-        "RAZ Tps Actif Total":"RAZ Tps Actif Total",
-        "Actif à":"Démarré",
-        "Inactif à":"Arreté",
-        "Etat":"Estado",
-        "Compteur":"Medidor",
-        "Compteur +":"Compteur +",
-        "Compteur -":"Compteur -",
-        "RAZ Compteur":"Medidor RAZ"
+        "Temps Actif" : "Temps Actif",
+        "Temps Actif Total(H:M:S)" : "Temps Actif Total(H:M:S)",
+        "Temps Actif Total" : "Temps Actif Total",
+        "RAZ Tps Actif Total" : "RAZ Tps Actif Total",
+        "Actif à" : "Démarré",
+        "Inactif à" : "Arreté",
+        "Etat" : "Estado",
+        "Compteur" : "Medidor",
+        "RAZ Compteur" : "Medidor RAZ" 
     }
 }

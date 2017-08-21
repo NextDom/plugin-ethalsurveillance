@@ -4,12 +4,18 @@ image::../images/utilisation1-equipement.png[]
 
 * *Befehlstyp* : logisch
 * *Geräte Befehl* : Befehl, der den Zustand der Steckdose, ihres zu steuernden Fernseher festlegt
-* *Temps mini surveillance active* : laisser vide
-* *Temps max surveillance active* (minutes) : mettre par exemple 400
-* *Heure prévue surveillance inactive* : mettre par exemple 0105
+* *Minimale Betriebszeit (min)* : leer lassen
+* *Maximale Betriebszeit (min)* : zum Beispiel auf 400 setzen
+* *Zeit, der geplanten Geräte Abschaltung (HHMM)* : zum Beispiel auf 2300 setzen
 
-Cela signifie que la commande *Alarme* passera à 1 au bout de 400 minutes (soit 6 heures et 40 minutes, cela commence à faire beaucoup ;)) ou à 01H05 si la commande *Etat* est toujours à ON (c'est à dire votre TV est toujours allumée).
+Cela signifie que la commande *Alarme* passera à 1 au bout de 400 minutes (soit 6 heures et 40 minutes, cela commence à faire beaucoup ;)) ou à 23H00 si la commande *Etat* est toujours à ON (c'est à dire votre TV est toujours allumée).
 Der Zähler wird bei jedem Wechsel auf AN, ihres Befehls, erhöht werden.
+
+Für ein eigenes Geräte Widget, wählen Sie die Befehle wie folgt :
+
+image::../images/utilisation1-commandes.png[]
+
+image::../images/utilisation1-widget.png[]
 
 === Surveiller son chauffe-eau avec la mesure de puissance de l'arrivée générale de votre logement
 
@@ -18,12 +24,18 @@ image::../images/utilisation2-equipement.png[]
 * *Befehlstyp* : analog
 * *Geräte Befehl* : Befehl, der die allgemeine Leistung ihrer Wohnung misst
 * *Allgemein Zähler* : ankreuzen
-* *Heure de surveillance prévue* : mettre l'heure prévue de mise en route de votre chauffe-eau (ex : 2330) 
-* *Valeur surveillance active* : mettre une valeur légérement inférieur à la puissance de votre chauffe-eau (ex : si votre chauffe eau est un 2000W , mettre 1800)
-* *Temps mini surveillance active* (minutes) : mettre par exemple 20
-* *Temps max surveillance active* (minutes) : mettre par exemple 360
+* *Vorgesehene Betriebsstunden* : die geplante Inbetriebnahme ihrer Wasser-Heizung festlegen (zB: 2330) 
+* *Puissance équipement* : mettre une valeur légérement inférieur à la puissance de votre chauffe-eau (ex : si votre chauffe eau est un 2000W , mettre 1800)
+* *Minimale Betriebszeit (min)* : zum Beispiel auf 20 setzen
+* *Maximale Betriebszeit (min)* : zum Beispiel auf 240 setzen
 
-Cela signifie que la commande *Alarme* passera à ON à 00:10 (23h30+20 minutes) si l'équipement n'a pas demarré ou si son temps de fonctionnement est inférieur à 20 minutes ou supérieur à 6 heures.
+cela signifie que la commande *Alarme* passera à ON à 00:10 (23h30+20 minutes) si l'équipement n'a pas demarré ou si son temps de fonctionnement est inférieur à 20 minutes ou supérieur à 4 heures.
+
+Für ein eigenes Geräte Widget, wählen Sie die Befehle wie folgt :
+
+image::../images/utilisation2-commandes.png[]
+
+image::../images/utilisation2-widget.png[]
 
 === Die Anzahl Ihrer Waschmaschinen Zyklen zählen
 
@@ -32,20 +44,19 @@ image::../images/utilisation3-equipement.png[]
 * *Befehlstyp* : analog
 * *Geräte Befehl* : Befehl, der die Leistung ihrer Waschmaschiene misst
 * *Allgemein Zähler* : nicht ankreuzen
-* *Valeur surveillance inactive* : si votre lave-linge consomme environ 4W mini pendant un cyle, mettre 4
-* *Délai valeur surveillance inactive* : il est possible que le lave-linge passe en dessous de la puissance mini pendant un cycle, dans ce cas mettre par exemple 8, il faudra alors que la valeur de la puissance mini soit à 4W pendant 8 min pour être prise en compte
-* *Valeur surveillance active* : si votre lave-linge consomme plus de 50W au démarrage d'un cyle, mettre 50
-* *Valeur compteur haut* : par exemple 40, 
+* *Puissance mini* (Watt) : si votre lave-linge consomme environ 10W mini pendant un cyle, mettre 10
+* *Délai Puissance mini* (Watt) : il est possible que le lave-linge passe en dessous de la puissance mini pendant un cycle, dans ce cas mettre par exemple 12, il faudra alors que la valeur de la puissance mini soit à 10W pendant 12 min pour être prise en compte
+* *Puissance maxi* (Watt) : si votre lave-linge consomme environ 100W au démarrage d'un cyle, mettre 100
+* *Minimale Betriebszeit (min)* : leer lassen oder nicht 
+* *Maximale Betriebszeit (min)* : leer lassen oder nicht
 
-le compteur sera incrémenté de 1, la commande *Etat* passera à ON, si la valeur mesure de puissance est supérieure à 50W, 
-le cycle sera considéré comme terminé si la mesure de puissance est inférieure à 4W , et que celle ci soit continuellement inférieur à 4W  pendant 8 min, la commande *Etat* passera alors à OFF.
+Der Zähler wird um 1 erhöht, der Befehl *Zustand* geht auf AN, wenn der gemessene Leistungswert größer 100W ist, 
+le cycle sera considéré comme terminé si la mesure de puissance est inférieure à 10W , et que celle ci soit continuellement inférieur à 10W  pendant 12 min, la commande *Etat* passera alors à OFF.
 
-la commande *Alarme* passera à ON quand la valeur de la commande *Compteur* sera supérieur au paramètre *Valeur compteur haut*,
-c'est utile pour la maintenance(nettoyage,..) du lave linge,
+Wenn die Felder *Minimale Betriebszeit* oder *Maximale Betriebszeit* nicht leer sind, der Befehl *Alarm* auf AN geht  folgt der Wert des Befehls *Betriebszeit*
 
-[NOTE]
-Pour un widget personnalisé à l'équipement, utiliser l'option *Afficher* disponible pour chaque commande
+Für ein eigenes Geräte Widget, wählen Sie die Befehle wie folgt :
 
-[NOTE]
-Pour avoir un historique du temps d'activité de l'equipement , il faut historiser la commande *Etat*  avec l'option *Aucun lissage*
+image::../images/utilisation3-commandes.png[]
 
+image::../images/utilisation3-widget.png[]

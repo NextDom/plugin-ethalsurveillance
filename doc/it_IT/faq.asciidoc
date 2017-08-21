@@ -1,11 +1,5 @@
-* Le passage en version 2.00(2017-08),modifie la gestion du temps d'activité de l'équipement à surveiller, celle-ci se gère maintenant  par l' historisation de la commande *Etat*, et est activé par défaut. La représentation graphique du temps d'activité ne sera plus dispo pour les données historisés par la commande "Temps Actif Total".
-D'autre part, pour libérer de l'espace dans la base de données jeedom, je vous conseille depuis le menu historique de supprimer les données historisées de la commande "Temps Actif Total" et ensuite de désactiver l'historisation de cette commande pour chaque équipement sauf si vous souhaitez les conserver.
-
-* Après une mise à jour du plugin, il est préférable de faire une sauvegarde de chaque "Surveillance équipement".
-
-* Pour avoir une représentation graphique du temps de fonctionnement, il faut historiser la commande *Etat* avec l'option 
-*Mode de lissage* sur *Aucun*.
-
-* Pour un *type de commande* *Analogique*, les valeurs *Valeur surveillance inactive* et *Valeur surveillance active* ne doivent pas être égales.
+* Après une mise à jour du plugin, il est préférable de faire une sauvegarde de chaque "Surveillance équipement"
+* Pour avoir une représentation graphique du temps de fonctionnement, il faut historiser la commande *Temps Fct Total* avec l'option *Mode de lissage* sur *Aucun*
+* les valeurs des commandes *Puissance Mini* et *Puissance Max* ne doivent pas être égales
 
 S'il y a lieu, la FAQ est alimentée par les échanges dans le sujet link:https://www.jeedom.com/forum/viewtopic.php?f=28&t=24637[Sujet officiel Surveillance Equipement] du forum Jeedom.

@@ -422,8 +422,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_onglet_equipement">3.1. Onglet Equipement</a></li>
 <li><a href="#_onglet_commandes">3.2. Onglet Commandes</a></li>
-<li><a href="#_fonctionnement">3.3. Fonctionnement</a></li>
-<li><a href="#_codes_alarme">3.4. Codes alarme</a></li>
+<li><a href="#_onglet_données">3.3. Onglet Données</a></li>
+<li><a href="#_fonctionnement">3.4. Fonctionnement</a></li>
+<li><a href="#_codes_alarme">3.5. Codes alarme</a></li>
 </ul>
 </li>
 <li><a href="#_cas_d_utilisation">4. Cas d&#8217;utilisation</a>
@@ -451,7 +452,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_présentation">2. Présentation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>La surveillance de l&#8217;équipement est faite à partir d&#8217;une commande <strong>logique</strong> (ie etat,&#8230;&#8203;) ou d&#8217;une commande de mesure <strong>analogique</strong> (puissance,temperature,&#8230;&#8203;)</p>
+<p>Ce plugin permet la surveillance d&#8217;un équipement.</p>
+</div>
+<div class="paragraph">
+<p>La surveillance de l&#8217;équipement est faite à partir d&#8217;une commande <strong>logique</strong> (ie etat,&#8230;&#8203;) ou d&#8217;une commande de mesure de <strong>analogique</strong> (puissance,temperature,&#8230;&#8203;)</p>
 </div>
 <div class="paragraph">
 <p>Il permet de connaître le temps où la commande de l&#8217;équipement est active, il gère une commande d&#8217;alarme, en fonction d&#8217;un temps minimun et/ou maximun où la commande de l&#8217;équipement est active, d&#8217;une heure prévue où la commande de l&#8217;équipement est inactif ou actif, d&#8217;une valeur haute sur un compteur,</p>
@@ -463,10 +467,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Un code d&#8217;alarme, permettant de connaître la cause de l&#8217;alarme,</p>
 </div>
 <div class="paragraph">
-<p>Un compteur de cycle de d&#8217;activité de l&#8217;équipement.</p>
+<p>Un compteur de cycle de fonctionnement,</p>
 </div>
 <div class="paragraph">
-<p>Ci dessous des exemples de widget.</p>
+<p>Un graphique repésentant le temps de fonctionnement,</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -483,12 +487,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <img src="../images/utilisation3-widget.png" alt="utilisation3 widget">
 </div>
 </div>
-<div class="paragraph">
-<p>Un panel pour la visualisation graphique du temps d&#8217;activité de l&#8217;équipement est disponible depuis le menu Acceuil&#8594;Surveillance Equipement</p>
-</div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/panel.png" alt="panel">
+<img src="../images/donnees.png" alt="donnees">
 </div>
 </div>
 </div>
@@ -659,6 +660,11 @@ c&#8217;est à dire avec une mesure de puissance globale de votre logement.
 </div>
 <div class="sect2">
 <h3 id="_onglet_commandes">3.2. Onglet Commandes</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/commandes.png" alt="commandes">
+</div>
+</div>
 <div class="paragraph">
 <p>Les commandes sont crées automatiquement à la sauvegarde de l&#8217;équipement, il n&#8217;est pas possible d&#8217;en ajouter, d&#8217;en supprimer.
 Utiliser la case à cocher <strong>afficher</strong>, si vous ne souhaitez pas voir certaines commandes sur le widget.</p>
@@ -672,19 +678,19 @@ Utiliser la case à cocher <strong>afficher</strong>, si vous ne souhaitez pas v
 <p><strong>Code Alarme</strong> : somme des codes d&#8217;alarme ayant déclenchés l&#8217;alarme , voir ci-dessous les valeurs des codes d&#8217;alarme</p>
 </li>
 <li>
-<p><strong>Temps Actif(H:M:S)</strong> : Temps d&#8217;activité de l&#8217;équipement au format Heure:Minute:Seconde</p>
+<p><strong>Temps Actif(H:M:S)</strong> : Temps de fonctionnement de l&#8217;équipement au format Heure:Minute:Seconde</p>
 </li>
 <li>
-<p><strong>Temps Actif</strong> : Temps d&#8217;activité de l&#8217;équipement en secondes</p>
+<p><strong>Temps Actif</strong> : Temps de fonctionnement de l&#8217;équipement en secondes</p>
 </li>
 <li>
-<p><strong>Temps Actif Total(H:M:S)</strong> : Temps d&#8217;activité de l&#8217;équipement au format Heure:Minute:Seconde</p>
+<p><strong>Temps Actif Total(H:M:S)</strong> : Temps de fonctionnement de l&#8217;équipement au format Heure:Minute:Seconde</p>
 </li>
 <li>
-<p><strong>Temps Actif Total</strong> : Temps d&#8217;activité de l&#8217;équipement en secondes</p>
+<p><strong>Temps Actif Total</strong> : Temps de fonctionnement de l&#8217;équipement en secondes</p>
 </li>
 <li>
-<p><strong>RAZ Tps Actif Total</strong> : remise à zero du temps d&#8217;activité total (commande <strong>Temps Actif Total(H:M:S)</strong> et <strong>Temps Actif Total</strong>)</p>
+<p><strong>RAZ Tps Actif Total</strong> : remise à zero du temps de fonctionnement total (commande <strong>Temps Fct Total(H:M:S)</strong> et <strong>Temps Fct Total</strong>)</p>
 </li>
 <li>
 <p><strong>Actif à</strong> : heure à laquelle la commande <strong>Etat</strong> est passé à ON</p>
@@ -693,37 +699,35 @@ Utiliser la case à cocher <strong>afficher</strong>, si vous ne souhaitez pas v
 <p><strong>Inactif à</strong> : heure à laquelle la commande <strong>Etat</strong> est passé à OFF</p>
 </li>
 <li>
-<p><strong>Etat</strong> : statut de surveillance de l&#8217;équipement (1 = ON(active), 0 = OFF(inactive))</p>
+<p><strong>Etat</strong> : statut de surveillance de l&#8217;équipement (1 = ON, 0 = OFF)</p>
 </li>
 <li>
 <p><strong>Compteur</strong> : nombre de passage de la commande <strong>Etat</strong> de OFF à ON</p>
-</li>
-<li>
-<p><strong>Compteur +</strong> : incrémentation du compteur de 1</p>
-</li>
-<li>
-<p><strong>Compteur -</strong> : décrémentation du compteur de 1</p>
 </li>
 <li>
 <p><strong>RAZ Compteur</strong> : remise à zéro de la commande <strong>Compteur</strong></p>
 </li>
 </ul>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Pour historiser le temps d&#8217;activité d&#8217;un équipément, la commande <strong>Etat</strong> est historisée par défaut avec l&#8217;option <strong>Mode de lissage</strong> sur <strong>Aucun</strong>. Ces options sont disponible depuis le menu historique.
-</td>
-</tr>
-</table>
+</div>
+<div class="sect2">
+<h3 id="_onglet_données">3.3. Onglet Données</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/donnees.png" alt="donnees">
+</div>
+</div>
+<div class="paragraph">
+<p>Cet onglet fournit une représentation grahique du temps de fonctionnement de l&#8217;équipement,
+il est possble de visualiser ce temps de fonctionnement par jour, semaine, mois (sélecteur cumul par jour, cumul par semaine, cumul par mois)</p>
+</div>
+<div class="paragraph">
+<p>Pour cela , la commande <strong>Temps Actif Total</strong> doit être historisée avec l&#8217;option <strong>Mode de lissage</strong> sur <strong>Aucun</strong>.
+Ces options sont disponible depuis la roue dentée en face de la commande dans l&#8217;onglet <strong>Commandes</strong>.  </p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_fonctionnement">3.3. Fonctionnement</h3>
+<h3 id="_fonctionnement">3.4. Fonctionnement</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1011,16 +1015,16 @@ Si la commande <strong>Alarme</strong> est déja à ON , et qu&#8217;une nouvell
 <p><strong>Code Alarme</strong> : voir ci-dessus</p>
 </li>
 <li>
-<p><strong>Tempts Actif</strong> : heure courante moins heure de démarrage en secondes</p>
+<p><strong>Tempts Fct</strong> : heure courante moins heure de démarrage en secondes</p>
 </li>
 <li>
-<p><strong>Tempts Actif (H:M:S)</strong> : heure courante moins heure de surveillance active au format Heure:Minute:Seconde</p>
+<p><strong>Tempts Fct (H:M:S)</strong> : heure courante moins heure de surveillance active au format Heure:Minute:Seconde</p>
 </li>
 <li>
-<p><strong>Tempts Actif Total(H:M:S)</strong> : cumul heure surveillance active au format Heure:Minute:Seconde</p>
+<p><strong>Tempts Fct Total(H:M:S)</strong> : cumul heure surveillance active au format Heure:Minute:Seconde</p>
 </li>
 <li>
-<p><strong>Tempts Actif Total</strong> : cumul heure surveillance active en seconde</p>
+<p><strong>Tempts Fct Total</strong> : cumul heure surveillance active en seconde</p>
 </li>
 <li>
 <p><strong>Actif à</strong> : pas de changement</p>
@@ -1041,7 +1045,7 @@ Si la commande <strong>Alarme</strong> est déja à ON , et qu&#8217;une nouvell
 </div>
 </div>
 <div class="sect2">
-<h3 id="_codes_alarme">3.4. Codes alarme</h3>
+<h3 id="_codes_alarme">3.5. Codes alarme</h3>
 <div class="paragraph">
 <p>Ci dessous la liste des codes d&#8217;alarme en fonction du/des alarme(s),</p>
 </div>
@@ -1075,19 +1079,32 @@ Si la commande <strong>Alarme</strong> est déja à ON , et qu&#8217;une nouvell
 <p><strong>Commande équipement</strong> : mettre la commande état de la prise qui commande votre télévision</p>
 </li>
 <li>
-<p><strong>Temps mini surveillance active</strong> : laisser vide</p>
+<p><strong>Temps min de fonctionnement</strong> : laisser vide</p>
 </li>
 <li>
-<p><strong>Temps max surveillance active</strong> (minutes) : mettre par exemple 400</p>
+<p><strong>Temps max de fonctionnement</strong> (minutes) : mettre par exemple 400</p>
 </li>
 <li>
-<p><strong>Heure prévue surveillance inactive</strong> : mettre par exemple 0105</p>
+<p><strong>Heure prévue équipement en Arrêt (HHMM)</strong> : mettre par exemple 2300</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Cela signifie que la commande <strong>Alarme</strong> passera à 1 au bout de 400 minutes (soit 6 heures et 40 minutes, cela commence à faire beaucoup ;)) ou à 01H05 si la commande <strong>Etat</strong> est toujours à ON (c&#8217;est à dire votre TV est toujours allumée).
+<p>Cela signifie que la commande <strong>Alarme</strong> passera à 1 au bout de 400 minutes (soit 6 heures et 40 minutes, cela commence à faire beaucoup ;)) ou à 23H00 si la commande <strong>Etat</strong> est toujours à ON (c&#8217;est à dire votre TV est toujours allumée).
 Le compteur sera incrémenté à chaque passage à ON de votre commande.</p>
+</div>
+<div class="paragraph">
+<p>Pour un widget personnalisé à l&#8217;équipement, sélectionnez les commandes comme ci-dessous :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/utilisation1-commandes.png" alt="utilisation1 commandes">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/utilisation1-widget.png" alt="utilisation1 widget">
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1109,21 +1126,34 @@ Le compteur sera incrémenté à chaque passage à ON de votre commande.</p>
 <p><strong>Compteur général</strong> : coché</p>
 </li>
 <li>
-<p><strong>Heure de surveillance prévue</strong> : mettre l&#8217;heure prévue de mise en route de votre chauffe-eau (ex : 2330)</p>
+<p><strong>Heure de fonctionnement pévu</strong> : mettre l&#8217;heure prévue de mise en route de votre chauffe-eau (ex : 2330)</p>
 </li>
 <li>
-<p><strong>Valeur surveillance active</strong> : mettre une valeur légérement inférieur à la puissance de votre chauffe-eau (ex : si votre chauffe eau est un 2000W , mettre 1800)</p>
+<p><strong>Puissance équipement</strong> : mettre une valeur légérement inférieur à la puissance de votre chauffe-eau (ex : si votre chauffe eau est un 2000W , mettre 1800)</p>
 </li>
 <li>
-<p><strong>Temps mini surveillance active</strong> (minutes) : mettre par exemple 20</p>
+<p><strong>Temps min de fonctionnement</strong> (minutes) : mettre par exemple 20</p>
 </li>
 <li>
-<p><strong>Temps max surveillance active</strong> (minutes) : mettre par exemple 360</p>
+<p><strong>Temps max de fonctionnement</strong> (minutes) : mettre par exemple 240</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Cela signifie que la commande <strong>Alarme</strong> passera à ON à 00:10 (23h30+20 minutes) si l&#8217;équipement n&#8217;a pas demarré ou si son temps de fonctionnement est inférieur à 20 minutes ou supérieur à 6 heures.</p>
+<p>cela signifie que la commande <strong>Alarme</strong> passera à ON à 00:10 (23h30+20 minutes) si l&#8217;équipement n&#8217;a pas demarré ou si son temps de fonctionnement est inférieur à 20 minutes ou supérieur à 4 heures.</p>
+</div>
+<div class="paragraph">
+<p>Pour un widget personalisé à l&#8217;équipement, selectionnez les commandes comme ci-dessous :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/utilisation2-commandes.png" alt="utilisation2 commandes">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/utilisation2-widget.png" alt="utilisation2 widget">
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1145,50 +1175,41 @@ Le compteur sera incrémenté à chaque passage à ON de votre commande.</p>
 <p><strong>Compteur général</strong> : non coché</p>
 </li>
 <li>
-<p><strong>Valeur surveillance inactive</strong> : si votre lave-linge consomme environ 4W mini pendant un cyle, mettre 4</p>
+<p><strong>Puissance mini</strong> (Watt) : si votre lave-linge consomme environ 10W mini pendant un cyle, mettre 10</p>
 </li>
 <li>
-<p><strong>Délai valeur surveillance inactive</strong> : il est possible que le lave-linge passe en dessous de la puissance mini pendant un cycle, dans ce cas mettre par exemple 8, il faudra alors que la valeur de la puissance mini soit à 4W pendant 8 min pour être prise en compte</p>
+<p><strong>Délai Puissance mini</strong> (Watt) : il est possible que le lave-linge passe en dessous de la puissance mini pendant un cycle, dans ce cas mettre par exemple 12, il faudra alors que la valeur de la puissance mini soit à 10W pendant 12 min pour être prise en compte</p>
 </li>
 <li>
-<p><strong>Valeur surveillance active</strong> : si votre lave-linge consomme plus de 50W au démarrage d&#8217;un cyle, mettre 50</p>
+<p><strong>Puissance maxi</strong> (Watt) : si votre lave-linge consomme environ 100W au démarrage d&#8217;un cyle, mettre 100</p>
 </li>
 <li>
-<p><strong>Valeur compteur haut</strong> : par exemple 40,</p>
+<p><strong>Temps min de fonctionnement</strong> : laisser vide ou non</p>
+</li>
+<li>
+<p><strong>Temps max de fonctionnement</strong> : laisser vide ou non</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>le compteur sera incrémenté de 1, la commande <strong>Etat</strong> passera à ON, si la valeur mesure de puissance est supérieure à 50W,
-le cycle sera considéré comme terminé si la mesure de puissance est inférieure à 4W , et que celle ci soit continuellement inférieur à 4W  pendant 8 min, la commande <strong>Etat</strong> passera alors à OFF.</p>
+<p>le compteur sera incrémenté de 1, la commande <strong>Etat</strong> passera à ON, si la valeur mesure de puissance est supérieure à 100W,
+le cycle sera considéré comme terminé si la mesure de puissance est inférieure à 10W , et que celle ci soit continuellement inférieur à 10W  pendant 12 min, la commande <strong>Etat</strong> passera alors à OFF.</p>
 </div>
 <div class="paragraph">
-<p>la commande <strong>Alarme</strong> passera à ON quand la valeur de la commande <strong>Compteur</strong> sera supérieur au paramètre <strong>Valeur compteur haut</strong>,
-c&#8217;est utile pour la maintenance(nettoyage,..) du lave linge,</p>
+<p>Si les champs <strong>Temps min de fonctionnement</strong> ou <strong>Temps max de fonctionnement</strong> ne sont pas vides, la commande <strong>Alarme</strong> passera à ON suivant la valeur de la commande <strong>Temps Fct</strong>.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Pour un widget personnalisé à l&#8217;équipement, utiliser l&#8217;option <strong>Afficher</strong> disponible pour chaque commande
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Pour un widget personalisé à l&#8217;équipement, selectionner les commandes comme ci-dessous :</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Pour avoir un historique du temps d&#8217;activité de l&#8217;equipement , il faut historiser la commande <strong>Etat</strong>  avec l&#8217;option <strong>Aucun lissage</strong>
-</td>
-</tr>
-</table>
+<div class="imageblock">
+<div class="content">
+<img src="../images/utilisation3-commandes.png" alt="utilisation3 commandes">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/utilisation3-widget.png" alt="utilisation3 widget">
+</div>
 </div>
 </div>
 </div>
@@ -1199,18 +1220,13 @@ Pour avoir un historique du temps d&#8217;activité de l&#8217;equipement , il f
 <div class="ulist">
 <ul>
 <li>
-<p>Le passage en version 2.00(2017-08),modifie la gestion du temps d&#8217;activité de l&#8217;équipement à surveiller, celle-ci se gère maintenant  par l' historisation de la commande <strong>Etat</strong>, et est activé par défaut. La représentation graphique du temps d&#8217;activité ne sera plus dispo pour les données historisés par la commande "Temps Actif Total".
-D&#8217;autre part, pour libérer de l&#8217;espace dans la base de données jeedom, je vous conseille depuis le menu historique de supprimer les données historisées de la commande "Temps Actif Total" et ensuite de désactiver l&#8217;historisation de cette commande pour chaque équipement sauf si vous souhaitez les conserver.</p>
+<p>Après une mise à jour du plugin, il est préférable de faire une sauvegarde de chaque "Surveillance équipement"</p>
 </li>
 <li>
-<p>Après une mise à jour du plugin, il est préférable de faire une sauvegarde de chaque "Surveillance équipement".</p>
+<p>Pour avoir une représentation graphique du temps de fonctionnement, il faut historiser la commande <strong>Temps Fct Total</strong> avec l&#8217;option <strong>Mode de lissage</strong> sur <strong>Aucun</strong></p>
 </li>
 <li>
-<p>Pour avoir une représentation graphique du temps de fonctionnement, il faut historiser la commande <strong>Etat</strong> avec l&#8217;option
-<strong>Mode de lissage</strong> sur <strong>Aucun</strong>.</p>
-</li>
-<li>
-<p>Pour un <strong>type de commande</strong> <strong>Analogique</strong>, les valeurs <strong>Valeur surveillance inactive</strong> et <strong>Valeur surveillance active</strong> ne doivent pas être égales.</p>
+<p>les valeurs des commandes <strong>Puissance Mini</strong> et <strong>Puissance Max</strong> ne doivent pas être égales</p>
 </li>
 </ul>
 </div>
@@ -1225,48 +1241,14 @@ D&#8217;autre part, pour libérer de l&#8217;espace dans la base de données jee
 <div class="ulist">
 <ul>
 <li>
-<p>Version 2.1 (En cours)</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Ajout de la gestion des commandes mortes sur le plugin (dispo dans la prochaine mise à jour du core)</p>
-</li>
-<li>
-<p>correction de bug</p>
-</li>
-<li>
-<p>???</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Version 2.0 (Current Version)</p>
+<p>Version 2.0 (to do)</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Correction du bug lors de la remise à zéro	du temps de fonctionnement total</p>
 </li>
 <li>
-<p>Historisation du temps où l&#8217;equipement est actif à partir de la commande <strong>Etat</strong> en lieu et place la commande <strong>Tps Actif Total</strong></p>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-La représentation graphique du temps d’activité ne sera plus dispo pour les données historisés par la commande "Temps Actif Total".
-</td>
-</tr>
-</table>
-</div>
-</li>
-<li>
-<p>Ajout d&#8217;une commmande <strong>Compteur +</strong> et <strong>Compteur -</strong></p>
-</li>
-<li>
-<p>Données graphique disponible depuis un panel en lieu et place de l&#8217;onglet données de l&#8217;équipement</p>
+<p>Amélioration du code</p>
 </li>
 <li>
 <p>mise à jour de la documentation</p>
@@ -1275,7 +1257,7 @@ La représentation graphique du temps d’activité ne sera plus dispo pour les 
 </div>
 </li>
 <li>
-<p>Version 1.9 (version market : 2017-06-30)</p>
+<p>Version 1.9 (en cours de developpement)</p>
 <div class="ulist">
 <ul>
 <li>

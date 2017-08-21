@@ -63,6 +63,8 @@ $('.eqLogicAttr[data-l1key=configuration][data-l2key=general]').on('change',func
     }
 });
 
+
+
 function addCmdToTable(_cmd) {
     if (!isset(_cmd)) {
         var _cmd = {configuration: {}};

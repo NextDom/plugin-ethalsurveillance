@@ -4,10 +4,6 @@
 	"description" : "Surveillance du fonctionnement d'un equipement",
 	"licence" : "AGPL",
 	"author" : "ethal",
-	"require" : "3.0",
-	"category" : "monitoring",
-	"display" : "panel",
-	"installation" : "version 2.0",
-	"issue" : "https://github.com/ethal/jeedom-ethalsurveillance/issues",
-	"documentation" : "https://github.com/ethal/jeedom-ethalsurveillance/blob/master/doc/fr_FR/index.asciidoc"
+	"require" : "2.4",
+	"category" : "monitoring"
 }

@@ -17,7 +17,7 @@ $date = array(
     <div class="col-lg-2 col-md-3 col-sm-4">
         <div class="bs-sidebar">
             <ul id="ul_eqLogic" class="nav nav-list bs-sidenav">
-                <a class="btn btn-default eqLogicAction" style="width : 100%;margin-top : 5px;margin-bottom: 5px;" data-action="add"><i class="fa fa-plus-circle"></i> {{Ajouter}}</a>
+                <a class="btn btn-default eqLogicAction" style="width : 100%;margin-top : 5px;margin-bottom: 5px;" data-action="add"><i class="fa fa-plus-circle"></i> {{Ajouter un équipement à surveiller}}</a>
                 <li class="filter" style="margin-bottom: 5px;"><input class="filter form-control input-sm" placeholder="{{Rechercher}}" style="width: 100%"/></li>
                 <?php
 foreach ($eqLogics as $eqLogic) {
@@ -55,9 +55,10 @@ foreach ($eqLogics as $eqLogic) {
   <a class="btn btn-danger eqLogicAction pull-right" data-action="remove"><i class="fa fa-minus-circle"></i> {{Supprimer}}</a>
   <a class="btn btn-default eqLogicAction pull-right" data-action="configure"><i class="fa fa-cogs"></i> {{Configuration avancée}}</a>
   <ul class="nav nav-tabs" role="tablist" id='etheqtab'>
-    <li role="presentation"><a class="eqLogicAction cursor" aria-controls="tab" role="tab" data-action="returnToThumbnailDisplay"><i class="fa fa-arrow-circle-left"></i></a></li>
+    <li role="presentation"><a href="" class="eqLogicAction" aria-controls="tab" role="tab" data-toggle="tab" data-action="returnToThumbnailDisplay"><i class="fa fa-arrow-circle-left"></i></a></li>
     <li role="presentation" class="active"><a href="#eqlogictab" aria-controls="tab" role="tab" data-toggle="tab"><i class="fa fa-tachometer"></i> {{Equipement}}</a></li>
     <li role="presentation"><a href="#commandtab" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-list-alt"></i> {{Commandes}}</a></li>
+    <li role="presentation"><a href="#cumultab" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-list-alt"></i> {{Données}}</a></li>
   </ul>
   <div class="tab-content" style="height:calc(100% - 50px);overflow:auto;overflow-x: hidden;">
     <div role="tabpanel" class="tab-pane active" id="eqlogictab">
@@ -86,7 +87,7 @@ foreach (object::all() as $object) {
            </div>
 	           <div class="form-group">
                 <label class="col-sm-3 control-label">{{Catégorie}}</label>
-                <div class="col-sm-9">
+                <div class="col-sm-8">
                     <?php
                     foreach (jeedom::getConfiguration('eqLogic:category') as $key => $value) {
                     echo '<label class="checkbox-inline">';
@@ -559,7 +560,30 @@ foreach (object::all() as $object) {
     </tbody>
 </table>
 </div>
+<div role="tabpanel" class="tab-pane" id="cumultab">
+    <br/>
+    <div class="col-lg-12">          
+            <input id="in_startDate" class="form-control input-sm in_datepicker" style="display : inline-block; width: 150px;" value="<?php echo $date['start'] ?>"/>
+            <input id="in_endDate" class="form-control input-sm in_datepicker" style="display : inline-block; width: 150px;" value="<?php echo $date['end'] ?>"/>
+            <a class="btn btn-success btn-sm" id='bt_validChangeDate' title="{{Attention une trop grande plage de dates peut mettre très longtemps à être calculée ou même ne pas s'afficher}}">{{Ok}}</a>
 
+            <select class="form-control pull-right" id="sel_groupingType" style="width: 200px;">
+                <option value="cumulday">{{Cumul par jour}}</option>
+                <option value="cumulweek">{{Cumul par semaine}}</option>
+                <option value="cumulmonth">{{Cumul par mois}}</option>
+            </select>
+
+        <div class="row">
+        <div class="col-lg-12" id="div_graphic_tpsfct"></div>
+        </div>
+
+    </div>
+    <div class="col-lg-12">          
+        <div class="row">
+        <div class="col-lg-12" id="div_graphic_cpt"></div>
+        </div>
+    </div>
+    </div>
 </div>
 
 </div>
@@ -571,4 +595,5 @@ foreach (object::all() as $object) {
 
 
 <?php include_file('desktop', 'ethalsurveillance', 'js', 'ethalsurveillance');?>
+<?php include_file('desktop', 'cumul', 'js', 'ethalsurveillance');?>
 <?php include_file('core', 'plugin.template', 'js');?>
