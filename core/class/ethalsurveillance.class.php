@@ -187,7 +187,7 @@ class ethalsurveillance extends eqLogic {
         preg_match_all("/#([0-9]*)#/", $ethalsurveillance->getConfiguration('cmdequipement',''), $matches);
         foreach ($matches[1] as $cmd_id) {  
           if (!cmd::byId(str_replace('#','',$cmd_id))){
-              $return[]= array('detail' => 'Ethal Surveillance ' . $ethalsurveillance->getHumanName(),'help' => 'Type de commande','who'=>'Who');
+              $return[]= array('detail' => 'Ethal Surveillance ' . $ethalsurveillance->getHumanName(),'help' => 'Type de commande','who'=>'#' . $cmd_id . '#');
           }
         }
       }
