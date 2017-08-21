@@ -181,6 +181,20 @@ class ethalsurveillance extends eqLogic {
     }
     */
 
+    public static function deadCmd() {
+      $return = array();
+      foreach (eqLogic::byType('ethalsurveillance') as $ethalsurveillance){
+        preg_match_all("/#([0-9]*)#/", $ethalsurveillance->getConfiguration('cmdequipement',''), $matches);
+        foreach ($matches[1] as $cmd_id) {  
+          if (!cmd::byId(str_replace('#','',$cmd_id))){
+              $return[]= array('detail' => 'Ethal Surveillance ' . $ethalsurveillance->getHumanName(),'help' => 'Type de commande','who'=>'#' . $cmd_id . '#');
+          }
+        }
+      }
+      return $return;
+    }
+ 
+
     /*     * *********************Méthodes d'instance************************* */
 
     public function preInsert() {
