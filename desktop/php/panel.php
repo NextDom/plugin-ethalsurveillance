@@ -31,11 +31,6 @@ sendVarToJs('eq_id', init('eq_id'));
                 <li class="nav-header"><i class="fa fa-bar-chart"></i> {{Surv. Equipement}}</li>
                 <li class="filter" style="margin-bottom: 5px;"><input class="filter form-control input-sm" placeholder="{{Rechercher}}" style="width: 100%"/></li>
                 <?php
-                if (init('eq_id') == 'ALL') {
-                    echo '<li class="cursor li_object active" ><a href="index.php?v=d&m=ethalsurveillance&p=panel&eq_id=ALL style="position:relative;left:5 px;">' . 'Résumé' . '</a></li>';
-                }else{
-                    echo '<li class="cursor li_object" ><a href="index.php?v=d&m=ethalsurveillance&p=panel&eq_id=ALL style="position:relative;left:5 px;">' . 'Résumé' . '</a></li>';
-                }   
                 $allObject = object::buildTree();
                 foreach ($allObject as $object) {
                     if ($object->getIsVisible() == 1 && count($object->getEqLogic(true, true, 'ethalsurveillance')) > 0) {
