@@ -1,9 +1,13 @@
-* Version 2.1 (En cours)		
-** Ajout de la gestion des commandes mortes sur le plugin (dispo dans la prochaine mise à jour du core)
+* Version 2.2 (En cours de dev)		
+** Disponibilité du graphique du temps d'activité sur un design ???
 ** correction de bug
 ** ???
 
-* Version 2.0 (Current Version)		
+* Version 2.1 (Version en cours)		
+** Ajout de la gestion des commandes mortes sur le plugin
+** correction de bug
+
+* Version 2.0 (version market : 2017-09-24 01:01:52)		
 ** Correction du bug lors de la remise à zéro	du temps de fonctionnement total
 ** Historisation du temps où l'equipement est actif à partir de la commande *Etat* en lieu et place la commande *Tps Actif Total*
 [IMPORTANT]
