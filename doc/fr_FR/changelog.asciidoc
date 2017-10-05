@@ -1,6 +1,5 @@
 * Version 2.2 (En cours de dev)		
 ** Disponibilité du graphique du temps d'activité sur un design ???
-** correction de bug
 ** ???
 
 * Version 2.1 (Version en cours)		
