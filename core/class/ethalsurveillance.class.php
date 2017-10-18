@@ -355,12 +355,12 @@ class ethalsurveillance extends eqLogic {
           $minPuissance = 0;
           $maxPuissance = 1;
           $minPuissanceDelai = 0;
-          $inverse = $ethalsurveillance->getConfiguration('inverse',0);
+          $inverse = $ethalsurveillance->getConfiguration('inverse','0');
           if ($inverse == '0') {
             $cmdValue = $cmdValue;
           }
           if ($inverse == '1') {
-            $cmdValue = not $cmdValue;
+            $cmdValue = !$cmdValue;
           }
           log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : binary cmd, max cmd set to->1 min cmd set to->0 inverse->'.$inverse);
         }
