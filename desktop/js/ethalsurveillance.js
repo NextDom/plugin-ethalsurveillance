@@ -42,16 +42,14 @@ $('.eqLogicAttr[data-l1key=configuration][data-l2key=cmdequipementtype]').on('ch
             $('.cmdequipementtype.' + $(this).value()+'.general').hide();
             $('.cmdequipementtype.logique.not_general').show();            
             $('.cmdequipementtype.' + $(this).value()+'.not_general').show();
-        }
+        } 
     }
-
 });
 
 $('.eqLogicAttr[data-l1key=configuration][data-l2key=general]').on('change',function () {
     $('.cmdequipementtype').hide();    
     $('.cmdequipementtype.' + $('.eqLogicAttr[data-l1key=configuration][data-l2key=cmdequipementtype]').value()).show();
     
-
     if(this.checked) {
         $('.cmdequipementtype.logique.not_general').hide();            
         $('.cmdequipementtype.' + $('.eqLogicAttr[data-l1key=configuration][data-l2key=cmdequipementtype]').value()+'.not_general').hide();
