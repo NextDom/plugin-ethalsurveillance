@@ -6,7 +6,7 @@
 * *Temps max surveillance active* (minutes) : mettre par exemple 400
 * *Heure prévue surveillance inactive* : mettre par exemple 0105
 
-Cela signifie que la commande *Alarme* passera à 1 au bout de 400 minutes (soit 6 heures et 40 minutes, cela commence à faire beaucoup ;)) ou à 01H05 si la commande *Etat* est toujours à ON (c'est à dire votre TV est toujours allumée).
+Cela signifie que la commande *Alarme* passera à ON au bout de 400 minutes (soit 6 heures et 40 minutes, cela commence à faire beaucoup ;)) ou à 01H05 si la commande *Etat* est toujours à ON (c'est à dire votre TV est toujours allumée).
 Le compteur sera incrémenté à chaque passage à ON de votre commande.
 
 === Surveiller son chauffe-eau avec la mesure de puissance de l'arrivée générale de votre logement
