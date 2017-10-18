@@ -354,10 +354,16 @@ class ethalsurveillance extends eqLogic {
         if ($equipementType == 'binary') {
           $minPuissance = 0;
           $maxPuissance = 1;
-          $minPuissanceDelai = 0;          
-          log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : binary cmd, max cmd set to->1 min cmd set to->0');
+          $minPuissanceDelai = 0;
+          $inverse = $ethalsurveillance->getConfiguration('inverse',0);
+          if ($inverse == '0' {
+            $cmdValue = $cmdValue;
+          }
+          if ($inverse == '1' {
+            $cmdValue = not $cmdValue;
+          }
+          log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : binary cmd, max cmd set to->1 min cmd set to->0 inverse->'.$inverse);
         }
-
         log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : value etat->'.$etat. ' value cmd ->'.$cmdValue. ' min cmd->'.$minPuissance . ' max cmd->'.$maxPuissance);        
         /*
             0903 < 2330 < 0907

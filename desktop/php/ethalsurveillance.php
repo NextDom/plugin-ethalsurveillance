@@ -129,6 +129,11 @@ foreach (object::all() as $object) {
                     <label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="configuration" data-l2key="general" />{{Compteur Général}}</label>
                 </div> 
             </div> 
+            <div class="cmdequipementtype logique not_general" style="display: none;">
+                <div class="col-sm-4" >
+                    <label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="configuration" data-l2key="inverse" />{{Inverser}}</label>
+                </div> 
+            </div> 
         </div>
         <div class="cmdequipementtype analogique general" style="display: none;">
             <div class="form-group">
