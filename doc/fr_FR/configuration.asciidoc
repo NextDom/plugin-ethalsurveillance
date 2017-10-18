@@ -83,7 +83,7 @@ Pour historiser le temps d'activité d'un équipément, la commande *Etat* est h
 . Passage de la commande *Etat* à ON :
 
 * *Type de commande* : "Logique"
-** lors du passage de *Commande équipment* à ON
+** lors du passage de *Commande équipment* à ON et *Inverser* non coché ou lors du passage de *Commande équipment* à OFF et *Inverser* coché
 
 * *Type de commande* : "Analogique"
 ** Si *Compteur Général* est coché,
