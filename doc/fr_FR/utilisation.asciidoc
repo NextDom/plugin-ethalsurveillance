@@ -1,7 +1,5 @@
 === Surveiller la durée de fonctionnement de votre télévison
 
-image::../images/equipement-logique.png[]
-
 * *Type de commande* : logique
 * *Commande équipement* : mettre la commande état de la prise qui commande votre télévision
 * *Temps mini surveillance active* : laisser vide
@@ -12,8 +10,6 @@ Cela signifie que la commande *Alarme* passera à 1 au bout de 400 minutes (soit
 Le compteur sera incrémenté à chaque passage à ON de votre commande.
 
 === Surveiller son chauffe-eau avec la mesure de puissance de l'arrivée générale de votre logement
-
-image::../images/equipement-analogique-1.png[]
 
 * *Type de commande* : analogique
 * *Commande équipement* : mettre la commande de mesure de puissance générale de votre logement
@@ -26,8 +22,6 @@ image::../images/equipement-analogique-1.png[]
 Cela signifie que la commande *Alarme* passera à ON à 00:10 (23h30+20 minutes) si l'équipement n'a pas demarré ou si son temps de fonctionnement est inférieur à 20 minutes ou supérieur à 6 heures.
 
 === Compter le nombre de cycles de votre lave-linge
-
-image::../images/equipement-analogique-2.png[]
 
 * *Type de commande* : analogique
 * *Commande équipement* : mettre la commande de mesure de puissance du lave-linge
