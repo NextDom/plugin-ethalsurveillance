@@ -32,7 +32,7 @@ image::../images/equipement-analogique-2.png[]
 
 ** *Commande équipement* : Commande de mesure analogique de l'équipement à surveiller
 ** *Compteur Général* : NON coché 
-** *Valeur surveillance inactive* : obligatoire si *Compteur Général* NON coché, valeur analogique en dessous de laquelle l'équipement à surveiller est considéré inactif(voir egalement la description de *Délai valeur surveillance inactive (min)* ci dessous
+** *Valeur surveillance inactive* : obligatoire si *Compteur Général* NON coché, valeur analogique en dessous de laquelle l'équipement à surveiller est considéré inactif(voir également la description de *Délai valeur surveillance inactive (min)* ci dessous
 ** *Délai valeur surveillance inactive (min)* : Delai en minute pour lequel la *valeur surveillance inactive* est considéré comme valide
 ** *Valeur surveillance active* : obligatoire si *Compteur Général* NON coché, valeur analogique au dessus de laquelle l'équipement à surveiller est considéré actif
 ** *Temps mini surveillance active (min)* : Temps de surveillance minimun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme
