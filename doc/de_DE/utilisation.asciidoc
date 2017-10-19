@@ -1,19 +1,15 @@
 === Überwachung der Betriebsdauer ihres Fernsehers
 
-image::../images/utilisation1-equipement.png[]
-
 * *Befehlstyp* : logisch
 * *Geräte Befehl* : Befehl, der den Zustand der Steckdose, ihres zu steuernden Fernseher festlegt
 * *Temps mini surveillance active* : laisser vide
 * *Temps max surveillance active* (minutes) : mettre par exemple 400
 * *Heure prévue surveillance inactive* : mettre par exemple 0105
 
-Cela signifie que la commande *Alarme* passera à 1 au bout de 400 minutes (soit 6 heures et 40 minutes, cela commence à faire beaucoup ;)) ou à 01H05 si la commande *Etat* est toujours à ON (c'est à dire votre TV est toujours allumée).
+Cela signifie que la commande *Alarme* passera à ON au bout de 400 minutes (soit 6 heures et 40 minutes, cela commence à faire beaucoup ;)) ou à 01H05 si la commande *Etat* est toujours à ON (c'est à dire votre TV est toujours allumée).
 Der Zähler wird bei jedem Wechsel auf AN, ihres Befehls, erhöht werden.
 
 === Surveiller son chauffe-eau avec la mesure de puissance de l'arrivée générale de votre logement
-
-image::../images/utilisation2-equipement.png[]
 
 * *Befehlstyp* : analog
 * *Geräte Befehl* : Befehl, der die allgemeine Leistung ihrer Wohnung misst
@@ -26,8 +22,6 @@ image::../images/utilisation2-equipement.png[]
 Cela signifie que la commande *Alarme* passera à ON à 00:10 (23h30+20 minutes) si l'équipement n'a pas demarré ou si son temps de fonctionnement est inférieur à 20 minutes ou supérieur à 6 heures.
 
 === Die Anzahl Ihrer Waschmaschinen Zyklen zählen
-
-image::../images/utilisation3-equipement.png[]
 
 * *Befehlstyp* : analog
 * *Geräte Befehl* : Befehl, der die Leistung ihrer Waschmaschiene misst

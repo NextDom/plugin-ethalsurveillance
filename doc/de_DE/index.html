@@ -519,22 +519,22 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><strong>Geräte Befehl</strong> : Befehl des Zustands, des zu überwachenden Gerätes</p>
 </li>
 <li>
+<p><strong>Inverser</strong> : Inversion de la commande d&#8217;état de l&#8217;équipement à surveiller</p>
+</li>
+<li>
 <p><strong>Temps mini surveillance active (min)</strong> : Temps de surveillance minimun de l&#8217;équipement pour générer une alarme, laisser vide pour ne pas générer d&#8217;alarme</p>
 </li>
 <li>
 <p><strong>Temps max surveillance active (min)</strong> : Temps de surveillancet maximun de l&#8217;équipement pour générer une alarme, laisser vide pour ne pas générer d&#8217;alarme</p>
 </li>
 <li>
-<p><strong>Heure prévue surveillance inactive (HHMM)</strong> : heure à laquelle l&#8217;équipement (ie la <strong>Commande equipement</strong>) est prévu d&#8217;être à OFF, laisser vide pour ne pas générer d&#8217;alarme</p>
+<p><strong>Heure prévue surveillance inactive (HHMM)</strong> : heure à laquelle l&#8217;équipement (ie la commande <strong>Etat</strong>) est prévu d&#8217;être à OFF, laisser vide pour ne pas générer d&#8217;alarme</p>
 </li>
 <li>
-<p><strong>Heure prévue surveillance active (HHMM)</strong> : heure à laquelle l&#8217;équipement (ie <strong>Commande equipement</strong>) est prévu d&#8217;être à ON, laisser vide pour ne pas générer d&#8217;alarme</p>
+<p><strong>Heure prévue surveillance active (HHMM)</strong> : heure à laquelle l&#8217;équipement (ie la commande <strong>Etat</strong>) est prévu d&#8217;être à ON, laisser vide pour ne pas générer d&#8217;alarme</p>
 </li>
 <li>
 <p><strong>Valeur compteur haut</strong> : Valeur haute du compteur pour générer une alarme, laisser vide pour ne pas générer d&#8217;alarme</p>
-</li>
-<li>
-<p>les valeurs definit dans les onglets des jours de la semaine sont prioritaires à celles définit dans l&#8217;onglet défaut</p>
 </li>
 </ul>
 </div>
@@ -549,10 +549,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Commande équipement</strong> : Commande de mesure de puissance de l&#8217;équipement à surveiller ou Commande de mesure de puissance générale</p>
+<p><strong>Commande équipement</strong> : Commande de mesure analogique de l&#8217;équipement à surveiller</p>
 </li>
 <li>
-<p><strong>Compteur Général</strong> : coché si la <strong>Commande équipement</strong> est une mesure de puissance globale de votre logement</p>
+<p><strong>Compteur Général</strong> : coché si la <strong>Commande équipement</strong> est une mesure analogique globale (ie mesure de puissance globale de votre logement)</p>
 </li>
 <li>
 <p><strong>Heure de surveillance prévue +/- 2 min (HHMM)</strong> : obligatoire si <strong>Compteur Général</strong> coché</p>
@@ -569,9 +569,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li>
 <p><strong>Valeur compteur haut</strong> : Valeur haute du compteur pour générer une alarme, laisser vide pour ne pas générer d&#8217;alarme</p>
 </li>
-<li>
-<p>les valeurs definit dans les onglets des jours de la semaine sont prioritaires à celles définit dans l&#8217;onglet défaut</p>
-</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -585,19 +582,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Commande équipement</strong> : Commande de mesure de puissance de l&#8217;équipement à surveiller ou Commande de mesure de puissance générale</p>
+<p><strong>Commande équipement</strong> : Commande de mesure analogique de l&#8217;équipement à surveiller</p>
 </li>
 <li>
 <p><strong>Allgemein Zähler</strong> : nicht ankreuzen</p>
 </li>
 <li>
-<p><strong>Valeur surveillance inactive</strong> : obligatoire si <strong>Compteur Général</strong> NON coché, Puissance mini à l&#8217;arrêt de l&#8217;équipement à surveiller</p>
+<p><strong>Valeur surveillance inactive</strong> : obligatoire si <strong>Compteur Général</strong> NON coché, valeur analogique en dessous de laquelle l&#8217;équipement à surveiller est considéré inactif(voir également la description de <strong>Délai valeur surveillance inactive (min)</strong> ci dessous</p>
 </li>
 <li>
-<p><strong>Délai valeur surveillance inactive (min)</strong> : Delai en minute pour lequel la <strong>Puisssance mini</strong> est considéré comme valide</p>
+<p><strong>Délai valeur surveillance inactive (min)</strong> : Delai en minute pour lequel la <strong>valeur surveillance inactive</strong> est considéré comme valide</p>
 </li>
 <li>
-<p><strong>Valeur surveillance active</strong> : obligatoire si <strong>Compteur Général</strong> NON coché, Puissance de votre équipement à surveiller au démarrage</p>
+<p><strong>Valeur surveillance active</strong> : obligatoire si <strong>Compteur Général</strong> NON coché, valeur analogique au dessus de laquelle l&#8217;équipement à surveiller est considéré actif</p>
 </li>
 <li>
 <p><strong>Temps mini surveillance active (min)</strong> : Temps de surveillance minimun de l&#8217;équipement pour générer une alarme, laisser vide pour ne pas générer d&#8217;alarme</p>
@@ -606,18 +603,27 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><strong>Temps max surveillance active (min)</strong> : Temps de surveillance maximun de l&#8217;équipement pour générer une alarme, laisser vide pour ne pas générer d&#8217;alarme</p>
 </li>
 <li>
-<p><strong>Heure prévue surveillance inactive (HHMM)</strong> : heure à laquelle l&#8217;équipement (ie <strong>Commande équipement</strong>) est prévu d&#8217;être à OFF, laisser vide pour ne pas générer d&#8217;alarme</p>
+<p><strong>Heure prévue surveillance inactive (HHMM)</strong> : heure à laquelle l&#8217;équipement (ie commande <strong>Etat</strong>) est prévu d&#8217;être à OFF, laisser vide pour ne pas générer d&#8217;alarme</p>
 </li>
 <li>
-<p><strong>Heure prévue surveillance active (HHMM)</strong> : heure à laquelle l&#8217;équipement (ie <strong>Commande équipement</strong>) est prévu d&#8217;être à ON,laisser vide pour ne pas générer d&#8217;alarme</p>
+<p><strong>Heure prévue surveillance active (HHMM)</strong> : heure à laquelle l&#8217;équipement (ie commande <strong>Etat</strong>) est prévu d&#8217;être à ON,laisser vide pour ne pas générer d&#8217;alarme</p>
 </li>
 <li>
 <p><strong>Valeur compteur haut</strong> : Valeur haute du compteur pour générer une alarme, laisser vide pour ne pas générer d&#8217;alarme</p>
 </li>
-<li>
-<p>les valeurs definit dans les onglets des jours de la semaine sont prioritaires à celles définit dans l&#8217;onglet défaut</p>
-</li>
 </ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+les valeurs definit dans les onglets des jours de la semaine sont prioritaires à celles définit dans l&#8217;onglet défaut
+</td>
+</tr>
+</table>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -651,7 +657,7 @@ la <strong>commande équipement</strong> doit être de type "info et de sous typ
 </td>
 <td class="content">
 Vous ne pouvez créer qu&#8217;un seul équipement à surveiller avec l&#8217;option <strong>Compteur Général</strong>,
-c&#8217;est à dire avec une mesure de puissance globale de votre logement.
+(ie une mesure de puissance globale de votre logement).
 </td>
 </tr>
 </table>
@@ -735,7 +741,7 @@ Pour historiser le temps d&#8217;activité d&#8217;un équipément, la commande 
 <div class="ulist">
 <ul>
 <li>
-<p>lors du passage de <strong>Commande équipment</strong> à ON</p>
+<p>lors du passage de <strong>Commande équipment</strong> à ON si <strong>Inverser</strong> non coché ou lors du passage de <strong>Commande équipment</strong> à OFF si <strong>Inverser</strong> coché</p>
 </li>
 </ul>
 </div>
@@ -779,7 +785,7 @@ Pour historiser le temps d&#8217;activité d&#8217;un équipément, la commande 
 <div class="ulist">
 <ul>
 <li>
-<p>lors du passage de <strong>Commande équipment</strong> à OFF</p>
+<p>lors du passage de <strong>Commande équipment</strong> à OFF si <strong>Inverser</strong> non coché ou lors du passage de <strong>Commande équipment</strong> à ON si <strong>Inverser</strong> coché</p>
 </li>
 </ul>
 </div>
@@ -1061,11 +1067,6 @@ Si la commande <strong>Alarme</strong> est déja à ON , et qu&#8217;une nouvell
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_Überwachung_der_betriebsdauer_ihres_fernsehers">4.1. Überwachung der Betriebsdauer ihres Fernsehers</h3>
-<div class="imageblock">
-<div class="content">
-<img src="../images/utilisation1-equipement.png" alt="utilisation1 equipement">
-</div>
-</div>
 <div class="ulist">
 <ul>
 <li>
@@ -1086,17 +1087,12 @@ Si la commande <strong>Alarme</strong> est déja à ON , et qu&#8217;une nouvell
 </ul>
 </div>
 <div class="paragraph">
-<p>Cela signifie que la commande <strong>Alarme</strong> passera à 1 au bout de 400 minutes (soit 6 heures et 40 minutes, cela commence à faire beaucoup ;)) ou à 01H05 si la commande <strong>Etat</strong> est toujours à ON (c&#8217;est à dire votre TV est toujours allumée).
+<p>Cela signifie que la commande <strong>Alarme</strong> passera à ON au bout de 400 minutes (soit 6 heures et 40 minutes, cela commence à faire beaucoup ;)) ou à 01H05 si la commande <strong>Etat</strong> est toujours à ON (c&#8217;est à dire votre TV est toujours allumée).
 Der Zähler wird bei jedem Wechsel auf AN, ihres Befehls, erhöht werden.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_surveiller_son_chauffe_eau_avec_la_mesure_de_puissance_de_l_arrivée_générale_de_votre_logement">4.2. Surveiller son chauffe-eau avec la mesure de puissance de l&#8217;arrivée générale de votre logement</h3>
-<div class="imageblock">
-<div class="content">
-<img src="../images/utilisation2-equipement.png" alt="utilisation2 equipement">
-</div>
-</div>
 <div class="ulist">
 <ul>
 <li>
@@ -1128,11 +1124,6 @@ Der Zähler wird bei jedem Wechsel auf AN, ihres Befehls, erhöht werden.</p>
 </div>
 <div class="sect2">
 <h3 id="_die_anzahl_ihrer_waschmaschinen_zyklen_zählen">4.3. Die Anzahl Ihrer Waschmaschinen Zyklen zählen</h3>
-<div class="imageblock">
-<div class="content">
-<img src="../images/utilisation3-equipement.png" alt="utilisation3 equipement">
-</div>
-</div>
 <div class="ulist">
 <ul>
 <li>
@@ -1225,7 +1216,7 @@ D&#8217;autre part, pour libérer de l&#8217;espace dans la base de données jee
 <div class="ulist">
 <ul>
 <li>
-<p>Version 2.2 (En cours de dev)</p>
+<p>Version 2.3 (En cours de dev)</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1238,7 +1229,17 @@ D&#8217;autre part, pour libérer de l&#8217;espace dans la base de données jee
 </div>
 </li>
 <li>
-<p>Version 2.1 (Version en cours)</p>
+<p>Version 2.2 (Version en cours)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Ajout de la possibilité d&#8217;inverser l&#8217;etat de la surveillance d&#8217;une commande de type logique.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Version 2.1 (2017-10-06 01:01:50)</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1255,7 +1256,7 @@ D&#8217;autre part, pour libérer de l&#8217;espace dans la base de données jee
 <div class="ulist">
 <ul>
 <li>
-<p>Fehler behoben, beim zurücksetzen der gesamten Betriebszeit</p>
+<p>Correction du bug lors de la remise à zéro	du temps de fonctionnement total.</p>
 </li>
 <li>
 <p>Historisation du temps où l&#8217;equipement est actif à partir de la commande <strong>Etat</strong> en lieu et place la commande <strong>Tps Actif Total</strong></p>

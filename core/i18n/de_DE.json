@@ -40,6 +40,7 @@
         "Heure prévue surveillance active (HHMM)" : "Heure prévue équipement en Marche (HHMM)",
         "Valeur compteur haut" : "hoher Zählerwert",
         "Compteur Général":"Allgemein Zähler",
+        "Inverser":"Inverser",
         "Nom":"Name",
         "Type":"Typ",
         "Options":"Optionen",

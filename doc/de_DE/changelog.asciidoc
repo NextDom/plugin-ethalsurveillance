@@ -1,13 +1,16 @@
-* Version 2.2 (En cours de dev)		
+* Version 2.3 (En cours de dev)		
 ** Disponibilité du graphique du temps d'activité sur un design ???
 ** ???
 
-* Version 2.1 (Version en cours)		
+* Version 2.2 (Version en cours)		
+** Ajout de la possibilité d'inverser l'etat de la surveillance d'une commande de type logique. 
+
+* Version 2.1 (2017-10-06 01:01:50)		
 ** Ajout de la gestion des commandes mortes sur le plugin
 ** correction de bug
 
 * Version 2.0 (version market : 2017-09-24 01:01:52)		
-** Fehler behoben, beim zurücksetzen der gesamten Betriebszeit 
+** Correction du bug lors de la remise à zéro	du temps de fonctionnement total.
 ** Historisation du temps où l'equipement est actif à partir de la commande *Etat* en lieu et place la commande *Tps Actif Total*
 [IMPORTANT]
 La représentation graphique du temps d’activité ne sera plus dispo pour les données historisés par la commande "Temps Actif Total".
