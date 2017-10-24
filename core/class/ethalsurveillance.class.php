@@ -128,31 +128,34 @@ class ethalsurveillance extends eqLogic {
         
         /* Alarme code 1 si pas demarré a l'heure prevu + temps mini de fonctionnement et debut heure non vide */
         if ($currentTime >= ($debutHeure+($configTempsMini*60)) and $etat == 0 and $configTempsMini !=0) {
-          if ($alarme ==0){
-            $alarme = 1;
-            $ethalsurveillance->checkAndUpdateCmd('alarme',1);
-            log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : cron5 : Alarme debut heure->' . date('H:i:s',$debutHeure));
-          }
-          self::ethAlarmeCode($ethalsurveillance,1);
+			self::ethAlarmeCode($ethalsurveillance,1);
+			if ($alarme ==0){
+				$alarme = 1;
+				$ethalsurveillance->checkAndUpdateCmd('alarme',1);
+				self::doAction('ethalEqAction','alarme',0,$ethalsurveillance);
+				log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : cron5 : Alarme debut heure->' . date('H:i:s',$debutHeure));
+			}
         }
         /* alarme code 4*/
         if ($currentTempsFct >= ($configTempsMax*60) and $etat == 1 and $configTempsMax !=0) {
-          if ($alarme == 0){
-            $alarme = 1;
-            $ethalsurveillance->checkAndUpdateCmd('alarme',1);
-            log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : cron5 : Alarme Temps Max->' . $currentTempsFct);
-          }
-          self::ethAlarmeCode($ethalsurveillance,4);
+			self::ethAlarmeCode($ethalsurveillance,4);
+			if ($alarme == 0){
+				$alarme = 1;
+				$ethalsurveillance->checkAndUpdateCmd('alarme',1);
+				self::doAction('ethalEqAction','alarme',0,$ethalsurveillance);
+				log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : cron5 : Alarme Temps Max->' . $currentTempsFct);
+			}
         }
 
         /* alarme code 8*/
         if ($currentTime >= $expectedStoppedTimeMin and $currentTime <= $expectedStoppedTimeMax and $etat == 1 and $expectedStoppedTime !=-1) {
-          if ($alarme == 0){
-            $alarme = 1;
-            $ethalsurveillance->checkAndUpdateCmd('alarme',1);
-            log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : cron5 : Alarme Expected Stopped Time->' .date('H:i:s',$expectedStoppedTimeMin).'<' .date('H:i:s',$currentTime) .'>'.date('H:i:s',$expectedStoppedTimeMax));
+			self::ethAlarmeCode($ethalsurveillance,8);
+			if ($alarme == 0){
+				$alarme = 1;
+				$ethalsurveillance->checkAndUpdateCmd('alarme',1);
+				self::doAction('ethalEqAction','alarme',0,$ethalsurveillance);
+				log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : cron5 : Alarme Expected Stopped Time->' .date('H:i:s',$expectedStoppedTimeMin).'<' .date('H:i:s',$currentTime) .'>'.date('H:i:s',$expectedStoppedTimeMax));
           }
-          self::ethAlarmeCode($ethalsurveillance,8);
         }
 
         /* alarme code 16*/
@@ -160,6 +163,7 @@ class ethalsurveillance extends eqLogic {
           if ($alarme == 0){
             $alarme = 1;
             $ethalsurveillance->checkAndUpdateCmd('alarme',1);
+			self::doAction('ethalEqAction','alarme',0,$ethalsurveillance);
             log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : cron5 : Alarme Expected Started Time->' .date('H:i:s',$expectedStartedTimeMin).'<' .date('H:i:s',$currentTime) .'>'.date('H:i:s',$expectedStartedTimeMax));
           }
           self::ethAlarmeCode($ethalsurveillance,16);
@@ -388,19 +392,24 @@ class ethalsurveillance extends eqLogic {
             $ethalsurveillance->save();
 
             $alCode32 = $ethalsurveillance->getCmd(null,'code_alarme')->getConfiguration('ethalarmecode32');
-
-            self::ethResetAlarme($ethalsurveillance);
-            $alarme = self::ethGetValue($ethalsurveillance,'alarme');
+			
+			$alarme = self::ethGetValue($ethalsurveillance,'alarme');
+            if ($alarme == 1) {
+				self::ethResetAlarme($ethalsurveillance);
+            }
+			$alarme = 0;
 
             if (($compteur+1) >= $configCptAlarmeHaute and $configCptAlarmeHaute != 0) {
-              if ($alarme == 0) {
-                $alarme = 1;
-                $ethalsurveillance->checkAndUpdateCmd('alarme',1);
-                log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : Valeur compteur haute->' . $ethalsurveillance->getCmd(null,'count')->execCmd());
+				self::ethAlarmeCode($ethalsurveillance,32);
+				if ($alarme == 0) {
+					$alarme = 1;
+					$ethalsurveillance->checkAndUpdateCmd('alarme',1);
+					self::doAction('ethalEqAction','alarme',0,$ethalsurveillance);
+					log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : Valeur compteur haute->' . $ethalsurveillance->getCmd(null,'count')->execCmd());
               }
               log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : value change etat->'.$etat. ' compteur->'.$ethalsurveillance->getCmd(null,'count')->execCmd());
-              self::ethAlarmeCode($ethalsurveillance,32);
             }
+            self::doAction('ethalEqAction','etat',0,$ethalsurveillance);
           }
 
 
@@ -429,7 +438,6 @@ class ethalsurveillance extends eqLogic {
             $minPuissanceDelaiReach = 1; 
           }
           
-
           log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : value memoCurrentTimeStatus->'.$memoCurrentTimeStatus. ' value minPuissanceDelaiReach->'.$minPuissanceDelaiReach. ' value memoCurrentTime+minPuissanceDelai->'.($memoCurrentTime+($minPuissanceDelai*60)));
           log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : value change etat->'.$etat. ' compteur->'.$ethalsurveillance->getCmd(null,'count')->execCmd());
 
@@ -464,23 +472,27 @@ class ethalsurveillance extends eqLogic {
 
             /* Alarme Code 2 */
             if ($currentTempsFct <= ($configTempsMini*60) and $configTempsMini !=0) {
-              if ($alarme == 0){
-                $alarme = 1;
-                $ethalsurveillance->checkAndUpdateCmd('alarme',1);
-                log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : Temps min, alarme set to->1');
-              }
-              self::ethAlarmeCode($ethalsurveillance,2);
+				self::ethAlarmeCode($ethalsurveillance,2);
+				if ($alarme == 0){
+					$alarme = 1;
+					$ethalsurveillance->checkAndUpdateCmd('alarme',1);
+					self::doAction('ethalEqAction','alarme',0,$ethalsurveillance);
+					log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : Temps min, alarme set to->1');
+				}
             }
 
             if ($currentTempsFct >= ($configTempsMax*60) and $configTempsMax !=0) {
-              if ($alarme == 0){
-                $alarme = 1;
-                $ethalsurveillance->checkAndUpdateCmd('alarme',1);
-                log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : Temps max, alarme set to->1');
-              }
-              self::ethAlarmeCode($ethalsurveillance,4);
+				self::ethAlarmeCode($ethalsurveillance,4);
+				if ($alarme == 0){
+					$alarme = 1;
+					$ethalsurveillance->checkAndUpdateCmd('alarme',1);
+					self::doAction('ethalEqAction','alarme',0,$ethalsurveillance);
+					log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : Temps max, alarme set to->1');
+				}
             }
-
+			
+			self::doAction('ethalEqAction','etat',1,$ethalsurveillance);
+			
             log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : Started Time->'.$ethalsurveillance->getConfiguration('startedtime').' Stopped Time->'. $currentTime);
             log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : value Temps mini(sec)->'.($configTempsMini*60).' Valeur Current Temps de fct->'. $currentTempsFct);
             log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : value Temps max(sec)->'.($configTempsMax*60).' Valeur Current Temps de fct->'. $currentTempsFct);
@@ -493,38 +505,42 @@ class ethalsurveillance extends eqLogic {
 
         /* Alarme si pas demarré a l'heure prevu + temps mini de fonctionnement et debut heure non vide */
         if ($currentTime >= ($debutHeure+($configTempsMini*60)) and $etat == 0 and $configTempsMini !=0) {
-          if ($alarme == 0){
-            $alarme = 1;
-            $ethalsurveillance->checkAndUpdateCmd('alarme',1);
-            log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : Alarme debut heure->' . $debutHeure);
-          }
-          self::ethAlarmeCode($ethalsurveillance,1);
+			self::ethAlarmeCode($ethalsurveillance,1);
+			if ($alarme == 0){
+				$alarme = 1;
+				$ethalsurveillance->checkAndUpdateCmd('alarme',1);
+				self::doAction('ethalEqAction','alarme',0,$ethalsurveillance);
+				log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : Alarme debut heure->' . $debutHeure);
+			}
         }
         if ($currentTempsFct >= ($configTempsMax*60) and $etat == 1 and $configTempsMax !=0) {
-          if ($alarme == 0){
-            $alarme = 1;
-            $ethalsurveillance->checkAndUpdateCmd('alarme',1);
-            log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : Alarme Temps max->' . $currentTempsFct);
-          }
-          self::ethAlarmeCode($ethalsurveillance,4);
+			self::ethAlarmeCode($ethalsurveillance,4);
+			if ($alarme == 0){
+				$alarme = 1;
+				$ethalsurveillance->checkAndUpdateCmd('alarme',1);
+				self::doAction('ethalEqAction','alarme',0,$ethalsurveillance);
+				log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : Alarme Temps max->' . $currentTempsFct);
+			}
         }
 
         if ($currentTime >= $expectedStoppedTimeMin and $currentTime <= $expectedStoppedTimeMax and $etat ==1  and $expectedStoppedTime !=-1) {
-          if ($alarme == 0){
-            $alarme = 1;
-            $ethalsurveillance->checkAndUpdateCmd('alarme',1);
-            log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : Alarme Expected Stopped Time->' .date('H:i:s',$expectedStoppedTimeMin).'<' .date('H:i:s',$currentTime) .'>'.date('H:i:s',$expectedStoppedTimeMax));
-          }
-          self::ethAlarmeCode($ethalsurveillance,8);
+			self::ethAlarmeCode($ethalsurveillance,8);
+			if ($alarme == 0){
+				$alarme = 1;
+				$ethalsurveillance->checkAndUpdateCmd('alarme',1);
+				self::doAction('ethalEqAction','alarme',0,$ethalsurveillance);
+				log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : Alarme Expected Stopped Time->' .date('H:i:s',$expectedStoppedTimeMin).'<' .date('H:i:s',$currentTime) .'>'.date('H:i:s',$expectedStoppedTimeMax));
+			}
         }
 
         if ($currentTime >= $expectedStartedTimeMin and $currentTime <= $expectedStartedTimeMax and $etat == 0 and $expectedStartedTime !=-1) {
-          if ($alarme == 0){
-            $alarme = 1;
-            $ethalsurveillance->checkAndUpdateCmd('alarme',1);
-            log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : Alarme Expected Started Time->' .date('H:i:s',$expectedStartedTimeMin).'<' .date('H:i:s',$currentTime) .'>'.date('H:i:s',$expectedStartedTimeMax));
-          }
-          self::ethAlarmeCode($ethalsurveillance,16);
+			self::ethAlarmeCode($ethalsurveillance,16);
+			if ($alarme == 0){
+				$alarme = 1;
+				$ethalsurveillance->checkAndUpdateCmd('alarme',1);
+				self::doAction('ethalEqAction','alarme',0,$ethalsurveillance);
+				log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : Alarme Expected Started Time->' .date('H:i:s',$expectedStartedTimeMin).'<' .date('H:i:s',$currentTime) .'>'.date('H:i:s',$expectedStartedTimeMax));
+			}
         }
 
         if ($etat == 1) {
@@ -554,8 +570,9 @@ class ethalsurveillance extends eqLogic {
         $eq->getCmd(null,'code_alarme')->setConfiguration('ethalarmecode16',0);
         $eq->getCmd(null,'code_alarme')->setConfiguration('ethalarmecode32',0);
  
-      $eq->getCmd(null,'code_alarme')->save();
-      log::add('ethalsurveillance', 'debug', $eq->getName().' : ethResetAlarme : Alarme Reset');
+		$eq->getCmd(null,'code_alarme')->save();
+		self::doAction('ethalEqAction','alarme',1,$eq);
+		log::add('ethalsurveillance', 'debug', $eq->getName().' : ethResetAlarme : Alarme Reset');
 
     }
     
@@ -591,7 +608,7 @@ class ethalsurveillance extends eqLogic {
       log::add('ethalsurveillance', 'debug', $eq->getName().' : ethGetValue : '.$name. ' current Type value->' . gettype($value));
       log::add('ethalsurveillance', 'debug', $eq->getName().' : ethGetValue : '.$name. ' current value->' . $value);
 
-      if (strlen($value) == 0 or $value == '' or $value == null) {
+      if ($value == '' or $value == null) {
         $eq->checkAndUpdateCmd($name,0);
         $value = 0; 
         log::add('ethalsurveillance', 'debug', $eq->getName().' : ethGetValue : '.$name. ' return init value->' . $value);
@@ -610,6 +627,32 @@ class ethalsurveillance extends eqLogic {
       return $return;
     }    
     
+
+    private static function doAction($_action, $_type, $_sens,$eq) {
+
+      foreach ($eq->getConfiguration($_action) as $action) {
+        $cmd = cmd::byId(str_replace('#', '', $action['cmd']));
+		    log::add('ethalsurveillance', 'debug', 'Liste Action->'.$action['cmd']. ' type->'.$action['actionType'].'/'.$_type. ' Sens->'.$action['actionSens'].'/'.$_sens);
+	      if (is_object($cmd) && $this->getId() == $cmd->getEqLogic_id()) {
+			   log::add('ethalsurveillance', 'debug', 'Action-> Oups Cmd probleme');
+			   continue;
+        }
+      // IF a revoir pas terrible  
+		  if ($action['actionSens'] == $_sens &&  $action['actionType'] == $_type) {
+        try {
+          $options = array();
+          if (isset($action['options'])) {
+            $options = $action['options'];
+          }
+          log::add('ethalsurveillance', 'debug', 'Done Action->'.$action['cmd']. ' type->'.$action['actionType'].'/'.$_type. ' Sens->'.$action['actionSens'].'/'.$_sens);
+          scenarioExpression::createAndExec('action', $action['cmd'], $options);
+          } catch (Exception $e) {
+            log::add('ethalsurveillance', 'error', __('Erreur lors de l\'éxecution de ', __FILE__) . $action['cmd'] . __('. Détails : ', __FILE__) . $e->getMessage());
+        }
+		  }
+	   }
+    }
+        
     private function ethCreateCmd($type) {
       /* commande alarme code fonctionnement 
         debut heure : 1

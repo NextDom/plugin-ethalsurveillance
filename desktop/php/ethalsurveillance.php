@@ -58,6 +58,7 @@ foreach ($eqLogics as $eqLogic) {
     <li role="presentation"><a class="eqLogicAction cursor" aria-controls="tab" role="tab" data-action="returnToThumbnailDisplay"><i class="fa fa-arrow-circle-left"></i></a></li>
     <li role="presentation" class="active"><a href="#eqlogictab" aria-controls="tab" role="tab" data-toggle="tab"><i class="fa fa-tachometer"></i> {{Equipement}}</a></li>
     <li role="presentation"><a href="#commandtab" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-list-alt"></i> {{Commandes}}</a></li>
+    <li role="presentation"><a href="#actiontab" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-cogs"></i> {{Actions}}</a></li>
   </ul>
   <div class="tab-content" style="height:calc(100% - 50px);overflow:auto;overflow-x: hidden;">
     <div role="tabpanel" class="tab-pane active" id="eqlogictab">
@@ -564,6 +565,16 @@ foreach (object::all() as $object) {
     </tbody>
 </table>
 </div>
+
+<div class="tab-pane" id="actiontab">
+    <br/>
+    <a class='btn btn-success btn-xs pull-right' id="btn_addethalEqAction"><i class="fa fa-plus-circle"></i> {{Ajouter une action}}</a>
+    <br/><br/>    
+    <form class="form-horizontal">
+        <div id="div_ethalEqAction"></div>
+    </form>
+</div>
+
 
 </div>
 
