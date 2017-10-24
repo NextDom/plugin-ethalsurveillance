@@ -81,6 +81,11 @@ Pour historiser le temps d'activité d'un équipément, la commande *Etat* est h
 === Onglet Actions
 
 Cet onglet permet la configuration d'action en fonction de la valeur de la commande *Etat* et *Alarme*. +
+La case à cocher *inverser*, inverse le sens de la commande *Etat* ou *Alarme* +
+Exemple: +
+Sélection *Etat* et case *Inverser* non cocher, l'action est effectué si la commande *Etat* passe de OFF à ON, +
+Sélection *Etat* et case *Inverser* cocher, l'action est effectué si la commande *Etat* passe de ON à OFF, +
+Idem pour la sélection *Alarme*  
 
 image::../images/actions.png[]
 
@@ -147,7 +152,7 @@ Si la commande *Alarme* est déja à ON , et qu'une nouvelle condition d'alarme 
 * *Tempts Actif* : 0 seconde 
 * *Tempts Actif Total(H:M:S)* : pas de changement
 * *Tempts Actif Total* : pas de changement 
-* *Actif à* : heure courante du démarrage
+* *Actif à* : heure courante de passage de l'équipement à actif
 * *Inactif à* : '-'
 * *Etat* : Passage à ON
 * *Compteur* : Incrémenter de 1
@@ -161,7 +166,7 @@ Si la commande *Alarme* est déja à ON , et qu'une nouvelle condition d'alarme 
 * *Tempts Actif Total(H:M:S)* : cumul heure surveillance active au format Heure:Minute:Seconde
 * *Tempts Actif Total* : cumul heure surveillance active en seconde 
 * *Actif à* : pas de changement
-* *Inactif à* : heure courante de l'arrêt
+* *Inactif à* : heure courante de passage de l'equipement à inactif
 * *Etat* : Passage à OFF
 * *Compteur* : pas de changement
 
