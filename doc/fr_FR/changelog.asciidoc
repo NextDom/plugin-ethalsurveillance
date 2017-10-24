@@ -6,6 +6,7 @@
 ** Ajout d'un onglet *Actions*
 ** bugfix
 ** optimisation
+** mise à jour de la documentation
 
 * Version 2.2 (2017-10-20 01:01:49)		
 ** Ajout de la possibilité d'inverser l'etat de la surveillance d'une commande de type logique. 
