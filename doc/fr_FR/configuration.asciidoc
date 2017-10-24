@@ -45,7 +45,7 @@ image::../images/equipement-analogique-2.png[]
 les valeurs definit dans les onglets des jours de la semaine sont prioritaires à celles définit dans l'onglet défaut 
 
 [NOTE]
-il peut y avoir une latence de 5 minutes au déclenchement de l'alarme sur les paramètres *Heure prévue équipement en Arrêt (HHMM)* et *Heure prévue équipement en Marche (HHMM)*
+il peut y avoir une latence de 5 minutes au déclenchement de l'alarme sur les paramètres *Heure prévue surveillance Inactif (HHMM)* et *Heure prévue surveillance Actif (HHMM)*
 
 [IMPORTANT]
 la *commande équipement* doit être de type "info et de sous type "numeric" pour un *Type de commande* analogique, la *commande équipement* doit être de type "info et de sous type "binary" pour un *Type de commande* logique
@@ -77,6 +77,12 @@ Utiliser la case à cocher *afficher*, si vous ne souhaitez pas voir certaines c
 
 [NOTE]
 Pour historiser le temps d'activité d'un équipément, la commande *Etat* est historisée par défaut avec l'option *Mode de lissage* sur *Aucun*. Ces options sont disponible depuis le menu historique.
+
+=== Onglet Actions
+
+Cet onglet permet la configuration d'action en fonction de la valeur de la commande *Etat* et *Alarme*. +
+
+image::../images/actions.png[]
 
 === Fonctionnement
 

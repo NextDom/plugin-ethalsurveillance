@@ -1,8 +1,13 @@
-* Version 2.3 (En cours de dev)		
+* Version 2.4 (next dev)		
 ** Disponibilité du graphique du temps d'activité sur un design ???
 ** ???
 
-* Version 2.2 (Version en cours)		
+* Version 2.3 (En cours de dev)		
+** Ajout d'un onglet *Actions*
+** bugfix
+** optimisation
+
+* Version 2.2 (2017-10-20 01:01:49)		
 ** Ajout de la possibilité d'inverser l'etat de la surveillance d'une commande de type logique. 
 
 * Version 2.1 (2017-10-06 01:01:50)		
