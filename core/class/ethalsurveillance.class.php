@@ -633,10 +633,12 @@ class ethalsurveillance extends eqLogic {
       foreach ($eq->getConfiguration($_action) as $action) {
         $cmd = cmd::byId(str_replace('#', '', $action['cmd']));
 		    log::add('ethalsurveillance', 'debug', 'Liste Action->'.$action['cmd']. ' type->'.$action['actionType'].'/'.$_type. ' Sens->'.$action['actionSens'].'/'.$_sens);
-	      if (is_object($cmd) && $this->getId() == $cmd->getEqLogic_id()) {
+	      /* A revoir
+        if (is_object($cmd) && $this->getId() == $cmd->getEqLogic_id()) {
 			   log::add('ethalsurveillance', 'debug', 'Action-> Oups Cmd probleme');
 			   continue;
         }
+        */
       // IF a revoir pas terrible  
 		  if ($action['actionSens'] == $_sens &&  $action['actionType'] == $_type) {
         try {
