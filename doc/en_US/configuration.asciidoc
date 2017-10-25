@@ -45,7 +45,7 @@ image::../images/equipement-analogique-2.png[]
 les valeurs definit dans les onglets des jours de la semaine sont prioritaires à celles définit dans l'onglet défaut 
 
 [NOTE]
-il peut y avoir une latence de 5 minutes au déclenchement de l'alarme sur les paramètres *Heure prévue équipement en Arrêt (HHMM)* et *Heure prévue équipement en Marche (HHMM)*
+il peut y avoir une latence de 5 minutes au déclenchement de l'alarme sur les paramètres *Heure prévue surveillance Inactif (HHMM)* et *Heure prévue surveillance Actif (HHMM)*
 
 [IMPORTANT]
 la *commande équipement* doit être de type "info et de sous type "numeric" pour un *Type de commande* analogique, la *commande équipement* doit être de type "info et de sous type "binary" pour un *Type de commande* logique
@@ -77,6 +77,17 @@ Utiliser la case à cocher *afficher*, si vous ne souhaitez pas voir certaines c
 
 [NOTE]
 Pour historiser le temps d'activité d'un équipément, la commande *Etat* est historisée par défaut avec l'option *Mode de lissage* sur *Aucun*. Ces options sont disponible depuis le menu historique.
+
+=== Onglet Actions
+
+Cet onglet permet la configuration d'action en fonction de la valeur de la commande *Etat* et *Alarme*. +
+La case à cocher *inverser*, inverse le sens de la commande *Etat* ou *Alarme* +
+Exemple: +
+Sélection *Etat* et case *Inverser* non cocher, l'action est effectué si la commande *Etat* passe de OFF à ON, +
+Sélection *Etat* et case *Inverser* cocher, l'action est effectué si la commande *Etat* passe de ON à OFF, +
+Idem pour la sélection *Alarme*  
+
+image::../images/actions.png[]
 
 === Fonctionnement
 
@@ -141,7 +152,7 @@ Si la commande *Alarme* est déja à ON , et qu'une nouvelle condition d'alarme 
 * *Tempts Actif* : 0 seconde 
 * *Tempts Actif Total(H:M:S)* : pas de changement
 * *Tempts Actif Total* : pas de changement 
-* *Actif à* : heure courante du démarrage
+* *Actif à* : heure courante de passage de l'équipement à actif
 * *Inactif à* : '-'
 * *Etat* : Passage à ON
 * *Compteur* : Incrémenter de 1
@@ -155,7 +166,7 @@ Si la commande *Alarme* est déja à ON , et qu'une nouvelle condition d'alarme 
 * *Tempts Actif Total(H:M:S)* : cumul heure surveillance active au format Heure:Minute:Seconde
 * *Tempts Actif Total* : cumul heure surveillance active en seconde 
 * *Actif à* : pas de changement
-* *Inactif à* : heure courante de l'arrêt
+* *Inactif à* : heure courante de passage de l'equipement à inactif
 * *Etat* : Passage à OFF
 * *Compteur* : pas de changement
 

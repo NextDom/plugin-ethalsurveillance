@@ -21,7 +21,7 @@
         "Configuration avancée": "Configuración avanzada",
         "Equipement": "Dispositivo",
         "Commandes": "Comandos",
-        "Données": "Datos",
+        "Actions": "Actions",
         "Nom de l'equipement": "Nombre del dispositivo",
         "Activer": "Activar",
         "Visible": "Visible",
@@ -52,7 +52,7 @@
         "Vendredi":"Viernes",
         "Samedi":"Sabado",
         "Dimanche":"Domingo",
-        "code d'alarme":"Código alarma"
+        "Code Alarme":"Code Alarme"
     },
     "plugins\/ethalsurveillance\/desktop\/js\/ethalsurveillance.js": {
         "Tester": "Prueba",

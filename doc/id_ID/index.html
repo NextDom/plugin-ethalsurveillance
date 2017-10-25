@@ -422,8 +422,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_onglet_equipement">3.1. Onglet Equipement</a></li>
 <li><a href="#_onglet_commandes">3.2. Onglet Commandes</a></li>
-<li><a href="#_fonctionnement">3.3. Fonctionnement</a></li>
-<li><a href="#_codes_alarme">3.4. Codes alarme</a></li>
+<li><a href="#_onglet_actions">3.3. Onglet Actions</a></li>
+<li><a href="#_fonctionnement">3.4. Fonctionnement</a></li>
+<li><a href="#_codes_alarme">3.5. Codes alarme</a></li>
 </ul>
 </li>
 <li><a href="#_cas_d_utilisation">4. Cas d&#8217;utilisation</a>
@@ -454,16 +455,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>La surveillance de l&#8217;équipement est faite à partir d&#8217;une commande <strong>logique</strong> (ie etat,&#8230;&#8203;) ou d&#8217;une commande de mesure <strong>analogique</strong> (puissance,temperature,&#8230;&#8203;)</p>
 </div>
 <div class="paragraph">
-<p>Il permet de connaître le temps où la commande de l&#8217;équipement est active, il gère une commande d&#8217;alarme, en fonction d&#8217;un temps minimun et/ou maximun où la commande de l&#8217;équipement est active, d&#8217;une heure prévue où la commande de l&#8217;équipement est inactif ou actif, d&#8217;une valeur haute sur un compteur,</p>
+<p>Il permet de connaître le temps où la commande de l&#8217;équipement est active,+
+il gère une commande d&#8217;alarme, en fonction d&#8217;un temps minimun et/ou maximun où la commande de l&#8217;équipement est active, d&#8217;une heure prévue où la commande de l&#8217;équipement est inactif ou actif, d&#8217;une valeur haute sur un compteur,ces paramètres sont disponible pour une gestion hebdomadaire.</p>
 </div>
 <div class="paragraph">
-<p>Ces paramètres sont disponible pour une gestion hebdomadaire,</p>
-</div>
-<div class="paragraph">
-<p>Un code d&#8217;alarme, permettant de connaître la cause de l&#8217;alarme,</p>
-</div>
-<div class="paragraph">
-<p>Un compteur de cycle de d&#8217;activité de l&#8217;équipement.</p>
+<p>Un code d&#8217;alarme, permet de connaître la cause de l&#8217;alarme,<br>
+Un compteur de cycle d&#8217;activité de l&#8217;équipement,<br>
+Des actions peuvent etre configurer en fonction de la valeur des commandes <strong>Etat</strong> et <strong>Alarme</strong>.</p>
 </div>
 <div class="paragraph">
 <p>Ci dessous des exemples de widget.</p>
@@ -632,7 +630,7 @@ les valeurs definit dans les onglets des jours de la semaine sont prioritaires �
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-il peut y avoir une latence de 5 minutes au déclenchement de l&#8217;alarme sur les paramètres <strong>Heure prévue équipement en Arrêt (HHMM)</strong> et <strong>Heure prévue équipement en Marche (HHMM)</strong>
+il peut y avoir une latence de 5 minutes au déclenchement de l&#8217;alarme sur les paramètres <strong>Heure prévue surveillance Inactif (HHMM)</strong> et <strong>Heure prévue surveillance Actif (HHMM)</strong>
 </td>
 </tr>
 </table>
@@ -729,7 +727,23 @@ Pour historiser le temps d&#8217;activité d&#8217;un équipément, la commande 
 </div>
 </div>
 <div class="sect2">
-<h3 id="_fonctionnement">3.3. Fonctionnement</h3>
+<h3 id="_onglet_actions">3.3. Onglet Actions</h3>
+<div class="paragraph">
+<p>Cet onglet permet la configuration d&#8217;action en fonction de la valeur de la commande <strong>Etat</strong> et <strong>Alarme</strong>.<br>
+La case à cocher <strong>inverser</strong>, inverse le sens de la commande <strong>Etat</strong> ou <strong>Alarme</strong><br>
+Exemple:<br>
+Sélection <strong>Etat</strong> et case <strong>Inverser</strong> non cocher, l&#8217;action est effectué si la commande <strong>Etat</strong> passe de OFF à ON,<br>
+Sélection <strong>Etat</strong> et case <strong>Inverser</strong> cocher, l&#8217;action est effectué si la commande <strong>Etat</strong> passe de ON à OFF,<br>
+Idem pour la sélection <strong>Alarme</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/actions.png" alt="actions">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_fonctionnement">3.4. Fonctionnement</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -955,7 +969,7 @@ Si la commande <strong>Alarme</strong> est déja à ON , et qu&#8217;une nouvell
 <p><strong>Tempts Actif Total</strong> : pas de changement</p>
 </li>
 <li>
-<p><strong>Actif à</strong> : heure courante du démarrage</p>
+<p><strong>Actif à</strong> : heure courante de passage de l&#8217;équipement à actif</p>
 </li>
 <li>
 <p><strong>Inactif à</strong> : '-'</p>
@@ -995,7 +1009,7 @@ Si la commande <strong>Alarme</strong> est déja à ON , et qu&#8217;une nouvell
 <p><strong>Actif à</strong> : pas de changement</p>
 </li>
 <li>
-<p><strong>Inactif à</strong> : heure courante de l&#8217;arrêt</p>
+<p><strong>Inactif à</strong> : heure courante de passage de l&#8217;equipement à inactif</p>
 </li>
 <li>
 <p><strong>Etat</strong> : Passage à OFF</p>
@@ -1047,7 +1061,7 @@ Si la commande <strong>Alarme</strong> est déja à ON , et qu&#8217;une nouvell
 </div>
 </div>
 <div class="sect2">
-<h3 id="_codes_alarme">3.4. Codes alarme</h3>
+<h3 id="_codes_alarme">3.5. Codes alarme</h3>
 <div class="paragraph">
 <p>Ci dessous la liste des codes d&#8217;alarme en fonction du/des alarme(s),</p>
 </div>
@@ -1216,11 +1230,14 @@ D&#8217;autre part, pour libérer de l&#8217;espace dans la base de données jee
 <div class="ulist">
 <ul>
 <li>
-<p>Version 2.3 (En cours de dev)</p>
+<p>Version 2.4 (En cours de dev)</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Disponibilité du graphique du temps d&#8217;activité sur un design ???</p>
+</li>
+<li>
+<p>Actions sur <strong>Code Alarme</strong></p>
 </li>
 <li>
 <p>???</p>
@@ -1229,7 +1246,26 @@ D&#8217;autre part, pour libérer de l&#8217;espace dans la base de données jee
 </div>
 </li>
 <li>
-<p>Version 2.2 (Version en cours)</p>
+<p>Version 2.3 (En cours)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Ajout d&#8217;un onglet <strong>Actions</strong></p>
+</li>
+<li>
+<p>Bugfix</p>
+</li>
+<li>
+<p>Optimisation</p>
+</li>
+<li>
+<p>Mise à jour de la documentation</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Version 2.2 (2017-10-20 01:01:49)</p>
 <div class="ulist">
 <ul>
 <li>

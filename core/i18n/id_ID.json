@@ -21,7 +21,7 @@
         "Configuration avancée": "Configuration avancée",
         "Equipement": "Peralatan",
         "Commandes": "Commandes",
-        "Données": "Données",
+        "Actions": "Actions",
         "Nom de l'equipement": "Nom de l'equipement",
         "Activer": "Mengaktifkan",
         "Visible": "Terlihat",
@@ -52,7 +52,7 @@
         "Vendredi":"Jumat",
         "Samedi":"Sabtu",
         "Dimanche":"Minggu",
-        "code d'alarme":"code d'alarme"
+        "Code Alarme":"Code Alarme"
     },
     "plugins\/ethalsurveillance\/desktop\/js\/ethalsurveillance.js": {
         "Tester": "Tester",
