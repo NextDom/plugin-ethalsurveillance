@@ -600,7 +600,7 @@ class ethalsurveillance extends eqLogic {
       return $myValue;
     }
 
-    public function ethGetValue($name) {
+    private function ethGetValue($name) {
       $value = $this->getCmd(null,$name)->execCmd();
       if ($value === null or !is_int($value)) {
         $this->checkAndUpdateCmd($name,0);
