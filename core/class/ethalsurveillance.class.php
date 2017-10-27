@@ -612,7 +612,7 @@ class ethalsurveillance extends eqLogic {
       return $value;      
     }
 
-    public function ethGetDayValue($currentTime,$key,$default) {
+    private function ethGetDayValue($currentTime,$key,$default) {
       $dayConfig = $this->getConfiguration(date('N',$currentTime).$key,$default);        
       $return = $this->getConfiguration($key,$default);
       if ($dayConfig != $default){
