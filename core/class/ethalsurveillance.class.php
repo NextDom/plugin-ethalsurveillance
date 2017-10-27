@@ -116,8 +116,8 @@ class ethalsurveillance extends eqLogic {
 
         /*mise à jour des commandes de mesure de temps si l'équiepment est actif */ 
         if ($etat == 1) {                
-          $fmtCurrentTempsFct = self::ethFormatTpsFct($currentTempsFct);
-          $fmtCurrentTempsFctTotal = self::ethFormatTpsFct($currentTempsFctTotal);
+          $fmtCurrentTempsFct = $ethalsurveillance->ethFormatTpsFct($currentTempsFct);
+          $fmtCurrentTempsFctTotal = $ethalsurveillance->ethFormatTpsFct($currentTempsFctTotal);
         
           $ethalsurveillance->checkAndUpdateCmd('tempsfct',$currentTempsFct);
           $ethalsurveillance->checkAndUpdateCmd('tempsfct_hms',$fmtCurrentTempsFct);
@@ -460,8 +460,8 @@ class ethalsurveillance extends eqLogic {
             $ethalsurveillance->setConfiguration('previoustpsfct',$currentTempsFctTotal);
             $ethalsurveillance->save();
 
-            $fmtCurrentTempsFct = self::ethFormatTpsFct($currentTempsFct);
-            $fmtCurrentTempsFctTotal = self::ethFormatTpsFct($currentTempsFctTotal);
+            $fmtCurrentTempsFct = $ethalsurveillance->ethFormatTpsFct($currentTempsFct);
+            $fmtCurrentTempsFctTotal = $ethalsurveillance->ethFormatTpsFct($currentTempsFctTotal);
 
             $ethalsurveillance->checkAndUpdateCmd('tempsfct',$currentTempsFct);
             $ethalsurveillance->checkAndUpdateCmd('tempsfct_hms', $fmtCurrentTempsFct);
@@ -542,8 +542,8 @@ class ethalsurveillance extends eqLogic {
         }
 
         if ($etat == 1) {
-          $fmtCurrentTempsFct = self::ethFormatTpsFct($currentTempsFct);
-          $fmtCurrentTempsFctTotal = self::ethFormatTpsFct($currentTempsFctTotal);
+          $fmtCurrentTempsFct = $ethalsurveillance->ethFormatTpsFct($currentTempsFct);
+          $fmtCurrentTempsFctTotal = $ethalsurveillance->ethFormatTpsFct($currentTempsFctTotal);
 
           $ethalsurveillance->checkAndUpdateCmd('tempsfct',$currentTempsFct);
           $ethalsurveillance->checkAndUpdateCmd('tempsfct_hms',$fmtCurrentTempsFct);
@@ -587,7 +587,7 @@ class ethalsurveillance extends eqLogic {
       }
     }  
 
-    private static function ethFormatTpsFct($myTime) {
+    private function ethFormatTpsFct($myTime) {
       
       $myValue = '';
       if ((floor($myTime / (3600*24))) == 0) {
