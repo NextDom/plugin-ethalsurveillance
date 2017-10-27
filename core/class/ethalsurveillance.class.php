@@ -587,16 +587,16 @@ class ethalsurveillance extends eqLogic {
       }
     }  
 
-    private function ethFormatTpsFct($myTime) {
+    private function ethFormatTpsFct($val) {
       
-      $myValue = '';
-      if ((floor($myTime / (3600*24))) == 0) {
-        $myValue = gmdate('H:i:s',$myTime);
+      $return = '';
+      if ((floor($val / (3600*24))) == 0) {
+        $return = gmdate('H:i:s',$val);
       } else {
-        $myValue = strval(floor($myTime / (3600*24))).'j '.gmdate('H:i:s',$myTime);
+        $return = strval(floor($val / (3600*24))).'j '.gmdate('H:i:s',$val);
       }
-      log::add('ethalsurveillance', 'debug', 'Function : ethFormatTpsFct : Temps Fct->' .$myValue);
-      return $myValue;
+      log::add('ethalsurveillance', 'debug', 'Function : ethFormatTpsFct : Temps Fct->' .$return);
+      return $return;
     }
 
     private function ethGetValue($name) {
