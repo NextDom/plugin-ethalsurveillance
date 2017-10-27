@@ -286,11 +286,11 @@ class ethalsurveillance extends eqLogic {
         $configTempsMax = self::ethGetDayValue($ethalsurveillance,$currentTime,'tempsmax',0);
         $configCptAlarmeHaute = self::ethGetDayValue($ethalsurveillance,$currentTime,'cptalarmehaute',0);
 
-        log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : min temps set to ->' . $configTempsMini);
-        log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : max temps set to ->' . $configTempsMax);
-        log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : min puissance set to->' . $minPuissance);
-        log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : max puissance set to->' . $maxPuissance);
-        log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : puissance set to ->' . $puissance);
+        log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : min temps set to ->' . $configTempsMini.
+          ' max temps set to ->' . $configTempsMax.
+          ' min puissance set to->' .$minPuissance.
+          ' max puissance set to->' . $maxPuissance.
+          ' puissance set to ->' . $puissance);
      
         /* verification debut heure */
         if ($configDebutheure != ''){
@@ -554,7 +554,6 @@ class ethalsurveillance extends eqLogic {
         }           
       
       }
-
     }
 
     /* plugin private static function */
