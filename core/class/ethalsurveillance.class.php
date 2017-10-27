@@ -69,8 +69,8 @@ class ethalsurveillance extends eqLogic {
         $configTempsMini = self::ethGetDayValue($ethalsurveillance,$currentTime,'tempsmini',0);
         $configTempsMax = self::ethGetDayValue($ethalsurveillance,$currentTime,'tempsmax',0);
 
-        log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : cron5 : min temps set to->' . $configTempsMini);
-        log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : cron5 : max temps set to->' . $configTempsMax);
+        log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : cron5 : min temps set to->' . $configTempsMini.
+          'max temps set to->' . $configTempsMax);
 
         /* verification debut heure */
         if ($configDebutheure != ''){
