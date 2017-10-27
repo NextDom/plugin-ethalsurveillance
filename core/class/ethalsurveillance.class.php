@@ -604,14 +604,10 @@ class ethalsurveillance extends eqLogic {
 
     private static function ethGetValue($eq,$name) {
       $value = $eq->getCmd(null,$name)->execCmd();
-
-      log::add('ethalsurveillance', 'debug', $eq->getName().' : ethGetValue : '.$name. ' current Type value->' . gettype($value));
-      log::add('ethalsurveillance', 'debug', $eq->getName().' : ethGetValue : '.$name. ' current value->' . $value);
-
-      if ($value == '' or $value == null) {
+      if ($value === null or !is_int($value)) {
         $eq->checkAndUpdateCmd($name,0);
         $value = 0; 
-        log::add('ethalsurveillance', 'debug', $eq->getName().' : ethGetValue : '.$name. ' return init value->' . $value);
+        log::add('ethalsurveillance', 'debug', $eq->getName().' : ethGetValue : '.$name. ' current Type value->' . gettype($value).' return init value->' . $value);
       } else {
         log::add('ethalsurveillance', 'debug', $eq->getName().' : ethGetValue : '.$name. ' return value->' . $value);
       }
@@ -688,7 +684,7 @@ class ethalsurveillance extends eqLogic {
             break;
           }
         }
-        if ($cmd == null || !is_object($cmd)) {
+        if ($cmd === null or !is_object($cmd)) {
           $cmd = new ethalsurveillanceCmd();
           $cmd->setEqLogic_id($this->getId());
           utils::a2o($cmd, $command);
