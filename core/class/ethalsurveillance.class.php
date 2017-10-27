@@ -28,11 +28,11 @@ class ethalsurveillance extends eqLogic {
     /*
      * Fonction exécutée automatiquement toutes les minutes par Jeedom */
     public static function cron() {
-      foreach (eqLogic::byType('ethalsurveillance', true) as $ethalsurveillance) {
+      foreach (eqLogic::byType('ethalsurveillance', true) as $eq) {
         $equipementType = '';
-        $etat = $ethalsurveillance->ethGetValue($ethalsurveillance,'etat');
-        $pGeneral = $ethalsurveillance->getConfiguration('general','');
-        $configCmdEquipement = $ethalsurveillance->getConfiguration('cmdequipement','');
+        $etat = $eq->ethGetValue('etat');
+        $pGeneral = $eq->getConfiguration('general','');
+        $configCmdEquipement = $eq->getConfiguration('cmdequipement','');
 
         $cmdEquipement = cmd::byString($configCmdEquipement);
         if (is_object($cmdEquipement)) {
@@ -41,9 +41,8 @@ class ethalsurveillance extends eqLogic {
           }  elseif ($cmdEquipement->getSubType() == 'binary') {
             $equipementType = 'binary';
           }     
-        }
-        
-        $_option = array('equipement_id' => $ethalsurveillance->getId());
+        }        
+        $_option = array('equipement_id' => $eq->getId());
         if ($etat == 1 and $equipementType == 'numeric' and $pGeneral != '1') {
           self::checkequipement($_option);
         }
@@ -109,8 +108,8 @@ class ethalsurveillance extends eqLogic {
           log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : cron5 : Marche prévu entre-> ' .date('H:i:s',$expectedStartedTimeMin).' et '.date('H:i:s',$expectedStartedTimeMax));
         }
 
-        $etat = $ethalsurveillance->ethGetValue($ethalsurveillance,'etat');
-        $alarme = $ethalsurveillance->ethGetValue($ethalsurveillance,'alarme');
+        $etat = $ethalsurveillance->ethGetValue('etat');
+        $alarme = $ethalsurveillance->ethGetValue('alarme');
         $currentTempsFct = $currentTime- $ethalsurveillance->getConfiguration('startedtime');
         $currentTempsFctTotal = $ethalsurveillance->getConfiguration('previoustpsfct') + $currentTempsFct;
 
@@ -341,8 +340,8 @@ class ethalsurveillance extends eqLogic {
           log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName().' : checkequipement : Equipment cmd not found');
         }
         
-        $etat = $ethalsurveillance->ethGetValue($ethalsurveillance,'etat');
-        $alarme = $ethalsurveillance->ethGetValue($ethalsurveillance,'alarme');
+        $etat = $ethalsurveillance->ethGetValue('etat');
+        $alarme = $ethalsurveillance->ethGetValue('alarme');
                 
         $cmdValue = $cmdEquipement->execCmd();
         $compteur =  $ethalsurveillance->getCmd(null,'count')->execCmd();           
@@ -393,7 +392,7 @@ class ethalsurveillance extends eqLogic {
 
             $alCode32 = $ethalsurveillance->getCmd(null,'code_alarme')->getConfiguration('ethalarmecode32');
 			
-			$alarme = $ethalsurveillance->ethGetValue($ethalsurveillance,'alarme');
+			$alarme = $ethalsurveillance->ethGetValue('alarme');
             if ($alarme == 1) {
 				self::ethResetAlarme($ethalsurveillance);
             }
@@ -601,7 +600,7 @@ class ethalsurveillance extends eqLogic {
       return $myValue;
     }
 
-    public function ethGetValue($eq,$name) {
+    public function ethGetValue($name) {
       $value = $this->getCmd(null,$name)->execCmd();
       if ($value === null or !is_int($value)) {
         $this->checkAndUpdateCmd($name,0);
