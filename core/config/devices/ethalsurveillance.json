@@ -168,7 +168,7 @@
                 "generic_type": "DONT"
             },
             "order": 13
-        }
+        },
 	{
             "logicalId": "razall",
             "name": "RAZ Tout",
@@ -178,8 +178,8 @@
                 "generic_type": "DONT"
             },
             "order": 14
-        }
-		{
+        },
+	{
             "logicalId": "tpsraztps",
             "name": "Heure RAZ Temps Actif Total",
             "type": "info",
@@ -192,8 +192,8 @@
                 "mobile":"line"
             },
             "order": 15
-        }
-		{
+        },
+	{
             "logicalId": "tpsrazcpt",
             "name": "Heure RAZ Compteur",
             "type": "info",
