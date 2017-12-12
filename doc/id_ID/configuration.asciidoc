@@ -74,6 +74,10 @@ Utiliser la case à cocher *afficher*, si vous ne souhaitez pas voir certaines c
 * *Compteur +* : incrémentation du compteur de 1
 * *Compteur -* : décrémentation du compteur de 1
 * *RAZ Compteur* : remise à zéro de la commande *Compteur*
+* *RAZ Tout* : remise à zéro de la commande *Compteur* et du temps d'activité total (commande *Temps Actif Total(H:M:S)* et *Temps Actif Total*) 
+* *Heure RAZ Temps Actif Total* : Date et heure de la remise à zéro du temps d'activité total (commande *Temps Actif Total(H:M:S)* et *Temps Actif Total*) 
+* *Heure RAZ Compteur* : Date et heure de la remise à zéro de la commande *Compteur*
+
 
 [NOTE]
 Pour historiser le temps d'activité d'un équipément, la commande *Etat* est historisée par défaut avec l'option *Mode de lissage* sur *Aucun*. Ces options sont disponible depuis le menu historique.
