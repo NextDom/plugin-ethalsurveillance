@@ -7,5 +7,5 @@
 	"require" : "3.0",
 	"category" : "monitoring",
 	"display" : "panel",
-	"installation" : "version 2.3"
+	"installation" : "version 2.4"
 }
