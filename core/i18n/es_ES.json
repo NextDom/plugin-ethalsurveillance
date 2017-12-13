@@ -73,6 +73,9 @@
         "Compteur":"Medidor",
         "Compteur +":"Compteur +",
         "Compteur -":"Compteur -",
-        "RAZ Compteur":"Medidor RAZ"
+        "RAZ Compteur":"Medidor RAZ",
+        "RAZ Tout":"RAZ Tout",
+        "Heure RAZ Temps Actif Total":"Heure RAZ Temps Actif Total",
+        "Heure RAZ Compteur":"Heure RAZ Compteur"
     }
 }

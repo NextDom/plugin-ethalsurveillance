@@ -73,6 +73,9 @@
         "Compteur":"Compteur",
         "Compteur +":"Compteur +",
         "Compteur -":"Compteur -",
-        "RAZ Compteur":"RAZ Compteur"
+        "RAZ Compteur":"RAZ Compteur",
+        "RAZ Tout":"RAZ Tout",
+        "Heure RAZ Temps Actif Total":"Heure RAZ Temps Actif Total",
+        "Heure RAZ Compteur":"Heure RAZ Compteur"
     }
 }

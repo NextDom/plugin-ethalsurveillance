@@ -73,6 +73,9 @@
         "Compteur":"Zähler",
         "Compteur +":"Compteur +",
         "Compteur -":"Compteur -",
-        "RAZ Compteur":"Zähler zurücksetzen"
+        "RAZ Compteur":"Zähler zurücksetzen",
+        "RAZ Tout":"RAZ Tout",
+        "Heure RAZ Temps Actif Total":"Heure RAZ Temps Actif Total",
+        "Heure RAZ Compteur":"Heure RAZ Compteur"
     }
 }
