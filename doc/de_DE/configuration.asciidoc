@@ -7,7 +7,7 @@ Geräte Befehl mit dem Überwachungs Typ "Logik"
 image::../images/equipement-logique.png[]
 
 ** *Geräte Befehl* : Befehl des Zustands, des zu überwachenden Gerätes
-** *Inverser* : Inversion de la commande d'état de l'équipement à surveiller 
+** *Invertieren * : invertieren des Statusbefehls des zu überwachenden Gerätes 
 ** *Temps mini surveillance active (min)* : Temps de surveillance minimun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme 
 ** *Temps max surveillance active (min)* : Temps de surveillancet maximun de l'équipement pour générer une alarme, laisser vide pour ne pas générer d'alarme
 ** *Heure prévue surveillance inactive (HHMM)* : heure à laquelle l'équipement (ie la commande *Etat*) est prévu d'être à OFF, laisser vide pour ne pas générer d'alarme
