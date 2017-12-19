@@ -4,7 +4,7 @@
     },
     "plugins\/ethalsurveillance\/desktop\/php\/panel.php": {
         "Surv. Equipement": "Surv. Equipement",
-        "Rechercher" : "Rechercher",
+        "Rechercher" : "Suchen",
         "Ok": "Ok",
         "Cumul par jour" : "Cumul par jour",
         "Cumul par semaine" : " Cumul par semaine",
