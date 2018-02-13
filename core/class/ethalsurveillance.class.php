@@ -808,7 +808,6 @@ class ethalsurveillanceCmd extends cmd {
 
     public function execute($_options = array()) {
       $ethalsurveillance = $this->getEqLogic();
-      $val = date('d/m/Y H:i:s',time());
 	  
       log::add('ethalsurveillance', 'debug', 'action->' . $this->getLogicalId());
       
@@ -824,15 +823,12 @@ class ethalsurveillanceCmd extends cmd {
       }
       if ($this->getLogicalId() == 'razcount') {
         $ethalsurveillance->checkAndUpdateCmd('count',0);
-		$ethalsurveillance->checkAndUpdateCmd('tpsrazcpt',$val);		
         log::add('ethalsurveillance', 'debug', 'RAZ Compteurs');
-
       }        
       if ($this->getLogicalId() == 'raztempsfcttotal') {
         $ethalsurveillance->checkAndUpdateCmd('tempsfcttotal',0);
         $ethalsurveillance->checkAndUpdateCmd('tempsfcttotal_hms','-');
         $ethalsurveillance->setConfiguration('previoustpsfct',0);
-	$ethalsurveillance->checkAndUpdateCmd('tpsraztps',$val);
         $ethalsurveillance->save();
         log::add('ethalsurveillance', 'debug', 'RAZ Temps Fct Total');
       }
@@ -841,8 +837,6 @@ class ethalsurveillanceCmd extends cmd {
         $ethalsurveillance->checkAndUpdateCmd('tempsfcttotal_hms','-');
         $ethalsurveillance->setConfiguration('previoustpsfct',0);
 	$ethalsurveillance->checkAndUpdateCmd('count',0);
-	$ethalsurveillance->checkAndUpdateCmd('tpsraztps',$val);
-	$ethalsurveillance->checkAndUpdateCmd('tpsrazcpt',$val);		
         $ethalsurveillance->save();
         log::add('ethalsurveillance', 'debug', 'RAZ All');
       }
