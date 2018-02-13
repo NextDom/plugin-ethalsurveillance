@@ -178,34 +178,6 @@
                 "generic_type": "DONT"
             },
             "order": 14
-        },
-	{
-            "logicalId": "tpsraztps",
-            "name": "Heure RAZ Temps Actif Total",
-            "type": "info",
-            "subtype": "string",
-            "display": {
-                "generic_type": "DONT"
-            },
-            "template": {
-                "dashboard":"line", 
-                "mobile":"line"
-            },
-            "order": 15
-        },
-	{
-            "logicalId": "tpsrazcpt",
-            "name": "Heure RAZ Compteur",
-            "type": "info",
-            "subtype": "string",
-            "display": {
-                "generic_type": "DONT"
-            },
-            "template": {
-                "dashboard":"line", 
-                "mobile":"line"
-            },
-            "order": 16
         }
    ]
 }
