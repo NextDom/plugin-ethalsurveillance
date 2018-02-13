@@ -1,1 +1,1 @@
-# jeedom-ethalsurveillance
+# plugin-ethalsurveillance
