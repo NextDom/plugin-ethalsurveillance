@@ -1,7 +1,4 @@
-Plugin Surveillance Equipement (id : ethalsurveillance)
-===
-
-Description
+Plugin Surveillance Equipement (id : ethalsurveillance) Description
 ===
 Plugin servant à la surveillance d’un équipement.
 
@@ -23,3 +20,6 @@ Ci dessous des exemples de widget.
 
 ![utilisation3-widget](../images/utilisation3-widget.png)
 
+Un panel pour la visualisation graphique du temps d’activité de l’équipement est disponible depuis le menu Acceuil→Surveillance Equipement
+
+![panel](../images/panel.png)
