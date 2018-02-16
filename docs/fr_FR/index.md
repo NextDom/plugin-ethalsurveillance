@@ -23,3 +23,27 @@ Ci dessous des exemples de widget.
 Un panel pour la visualisation graphique du temps d’activité de l’équipement est disponible depuis le menu Acceuil→Surveillance Equipement
 
 ![panel](../images/panel.png)
+
+Configuration
+===
+
+Onglet Equipement
+====
+  - Type de commande : Type de la commande qui servira à surveiller l’équipement , Logique ou Analogique,
+
+  - Commande de l’équipement à surveiller de type "Logique"
+  ![equipement logique](../images/equipement-logique.png)
+  
+  - ***Commande équipement*** : Commande d’état de l’équipement à surveiller
+
+Inverser : Inversion de la commande d’état de l’équipement à surveiller
+
+Temps mini surveillance active (min) : Temps de surveillance minimun de l’équipement pour générer une alarme, laisser vide pour ne pas générer d’alarme
+
+Temps max surveillance active (min) : Temps de surveillancet maximun de l’équipement pour générer une alarme, laisser vide pour ne pas générer d’alarme
+
+Heure prévue surveillance inactive (HHMM) : heure à laquelle l’équipement (ie la commande Etat) est prévu d’être à OFF, laisser vide pour ne pas générer d’alarme
+
+Heure prévue surveillance active (HHMM) : heure à laquelle l’équipement (ie la commande Etat) est prévu d’être à ON, laisser vide pour ne pas générer d’alarme
+
+Valeur compteur haut : Valeur haute du compteur pour générer une alarme, laisser vide pour ne pas générer d’alarme
