@@ -89,7 +89,67 @@ Un panel pour la visualisation graphique du temps d’activité de l’équipeme
 
  * ***Valeur compteur haut*** : Valeur haute du compteur pour générer une alarme, laisser vide pour ne pas générer d’alarme
 
+> **Note**
+>
+> Les valeurs definit dans les onglets des jours de la semaine sont prioritaires à celles définit dans l’onglet défaut
 
+> **Note**
+>
+> Il peut y avoir une latence de 5 minutes au déclenchement de l’alarme sur les paramètres ***Heure prévue surveillance Inactif (HHMM)*** et ***Heure prévue surveillance Actif (HHMM)***
+
+> **Important**
+>
+> La commande équipement doit être de type "info et de sous type "numeric" pour un ***Type de commande*** analogique, la commande équipement doit être de type "info et de sous type "binary" pour un ***Type de commande*** logique
+
+> **Important**
+>
+> Vous ne pouvez créer qu’un seul équipement à surveiller avec l’option ***Compteur Général***, (ie une mesure de puissance globale de votre logement par exemple).
    
-   
-   
+## Onglet Commande
+
+Les commandes sont crées automatiquement à la sauvegarde de l’équipement, il n’est pas possible d’en ajouter, d’en supprimer. Utiliser la case à cocher ***afficher***, si vous ne souhaitez pas voir certaines commandes sur le widget.
+
+ * ***Alarme*** : statut d’alarme de l’équipement (1 = ALARME = ON, 0 = OFF)
+
+ * ***Code Alarme*** : somme des codes d’alarme ayant déclenchés l’alarme , voir ci-dessous les valeurs des codes d’alarme
+
+ * ***Temps Actif(H:M:S)*** : Temps d’activité de l’équipement au format Heure:Minute:Seconde
+
+ * ***Temps Actif*** : Temps d’activité de l’équipement en secondes
+
+ * ***Temps Actif Total(H:M:S)*** : Temps d’activité de l’équipement au format Heure:Minute:Seconde
+
+ * ***Temps Actif Total*** : Temps d’activité de l’équipement en secondes
+
+ * ***RAZ Tps Actif Total*** : remise à zero du temps d’activité total (commande ***Temps Actif Total(H:M:S)*** et ***Temps Actif Total***)
+
+ * ***Actif à*** : heure à laquelle la commande Etat est passé à ON
+
+ * ***Inactif à*** : heure à laquelle la commande Etat est passé à OFF
+
+ * ***Etat*** : statut de surveillance de l’équipement (1 = ON(active), 0 = OFF(inactive))
+
+ * ***Compteur*** : nombre de passage de la commande Etat de OFF à ON
+
+ * ***Compteur +*** : incrémentation du compteur de 1
+
+ * ***Compteur -*** : décrémentation du compteur de 1
+
+ * ***RAZ Compteur*** : remise à zéro de la commande Compteur
+
+ * ***RAZ Tout*** : remise à zéro de la commande ***Compteur*** et du temps d’activité total (commande ****Temps Actif Total(H:M:S)*** et ***Temps Actif Total***)
+ 
+> **Note**
+>
+>Pour historiser le temps d’activité d’un équipément, la commande ***Etat*** est historisée par défaut avec l’option Mode de lissage sur Aucun. Ces options sont disponible depuis le menu historique.
+
+## Onglet Actions
+
+![actions](../images/actions.png)
+
+Cet onglet permet la configuration d’action en fonction de la valeur de la commande ***Etat*** et ***Alarme***.
+La case à cocher ***Inverser***, inverse le sens de la commande ***Etat*** ou ***Alarme***
+Exemple:
+Sélection ***Etat*** et case ***Inverser*** non cocher, l’action est effectué si la commande ***Etat*** passe de OFF à ON,
+Sélection ***Etat*** et case ***Inverser*** cocher, l’action est effectué si la commande ***Etat*** passe de ON à OFF,
+Idem pour la sélection Alarme
