@@ -27,22 +27,69 @@ Un panel pour la visualisation graphique du temps d’activité de l’équipeme
 # Configuration
 
 ## Onglet Equipement
-  * Type de commande : Type de la commande qui servira à surveiller l’équipement , Logique ou Analogique,
+ * Type de commande : Type de la commande qui servira à surveiller l’équipement , Logique ou Analogique,
 
-    * Commande de l’équipement à surveiller de type "Logique"
+  * Commande de l’équipement à surveiller de type "Logique"
   
   ![equipement logique](../images/equipement-logique.png)
   
-  * ***Commande équipement*** : Commande d’état de l’équipement à surveiller
+ * ***Commande équipement*** : Commande d’état de l’équipement à surveiller
 
-  * ***Inverser*** : Inversion de la commande d’état de l’équipement à surveiller
+ * ***Inverser*** : Inversion de la commande d’état de l’équipement à surveiller
 
-Temps mini surveillance active (min) : Temps de surveillance minimun de l’équipement pour générer une alarme, laisser vide pour ne pas générer d’alarme
+ * ***Temps mini surveillance active (min)*** : Temps de surveillance minimun de l’équipement pour générer une alarme, laisser vide pour ne pas générer d’alarme
 
-Temps max surveillance active (min) : Temps de surveillancet maximun de l’équipement pour générer une alarme, laisser vide pour ne pas générer d’alarme
+ * ***Temps max surveillance active (min)*** : Temps de surveillancet maximun de l’équipement pour générer une alarme, laisser vide pour ne pas générer d’alarme
 
-Heure prévue surveillance inactive (HHMM) : heure à laquelle l’équipement (ie la commande Etat) est prévu d’être à OFF, laisser vide pour ne pas générer d’alarme
+ * ***Heure prévue surveillance inactive (HHMM)*** : heure à laquelle l’équipement (ie la commande ***Etat***) est prévu d’être à OFF, laisser vide pour ne pas générer d’alarme
 
-Heure prévue surveillance active (HHMM) : heure à laquelle l’équipement (ie la commande Etat) est prévu d’être à ON, laisser vide pour ne pas générer d’alarme
+ * ***Heure prévue surveillance active (HHMM)*** : heure à laquelle l’équipement (ie la commande ***Etat***) est prévu d’être à ON, laisser vide pour ne pas générer d’alarme
 
-Valeur compteur haut : Valeur haute du compteur pour générer une alarme, laisser vide pour ne pas générer d’alarme
+ * ***Valeur compteur haut*** : Valeur haute du compteur pour générer une alarme, laisser vide pour ne pas générer d’alarme
+
+  * Commande de l’équipement à surveiller de type "Analogique" avec Compteur Général coché
+  
+  ![equipement analogique 1](../images/equipement-analogique-1.png)
+  
+ * ***Commande équipement*** : Commande de mesure analogique de l’équipement à surveiller
+ 
+ * ***Compteur Général*** : coché si la Commande équipement est une mesure analogique globale (ie mesure de puissance globale de votre logement)
+
+ * ***Heure de surveillance prévue +/- 2 min (HHMM)*** : obligatoire si ***Compteur Général*** coché
+
+ * ***Valeur surveillance active*** : obligatoire si ***Compteur Général*** coché, doit être vide dans le cas contraire
+
+ * ***Temps mini surveillance active (min)*** : Temps de surveillance minimun de l’équipement pour générer une alarme, laisser vide pour ne pas générer d’alarme
+
+ * ***Temps max surveillance active (min)*** : Temps de surveillance maximun de l’équipement pour générer une alarme, laisser vide pour ne pas générer d’alarme
+
+ * ***Valeur compteur haut*** : Valeur haute du compteur pour générer une alarme, laisser vide pour ne pas générer d’alarme
+ 
+   * Commande de l’équipement à surveiller de type "Analogique" avec Compteur Général NON coché
+   
+   ![equipement analogique 2](../images/equipement-analogique-2.png)
+
+ * ***Commande équipement*** : Commande de mesure analogique de l’équipement à surveiller
+
+ * ***Compteur Général*** : NON coché
+
+ * ***Valeur surveillance inactive*** : obligatoire si ***Compteur Général*** NON coché, valeur analogique en dessous de laquelle l’équipement à surveiller est considéré inactif (voir également la description de Délai valeur surveillance inactive (min) ci dessous
+
+ * ***Délai valeur surveillance inactive (min)*** : Delai en minute pour lequel la ***valeur surveillance inactive*** est considéré comme valide
+
+ * ***Valeur surveillance active*** : obligatoire si ***Compteur Général*** NON coché, valeur analogique au dessus de laquelle l’équipement à surveiller est considéré actif
+
+ * ***Temps mini surveillance active (min)*** : Temps de surveillance minimun de l’équipement pour générer une alarme, laisser vide pour ne pas générer d’alarme
+
+ * ***Temps max surveillance active (min)*** : Temps de surveillance maximun de l’équipement pour générer une alarme, laisser vide pour ne pas générer d’alarme
+
+ * ***Heure prévue surveillance inactive (HHMM)*** : heure à laquelle l’équipement (ie commande ***Etat***) est prévu d’être à OFF, laisser vide pour ne pas générer d’alarme
+
+ * ***Heure prévue surveillance active (HHMM)*** : heure à laquelle l’équipement (ie commande ***Etat***) est prévu d’être à ON,laisser vide pour ne pas générer d’alarme
+
+ * ***Valeur compteur haut*** : Valeur haute du compteur pour générer une alarme, laisser vide pour ne pas générer d’alarme
+
+
+   
+   
+   
