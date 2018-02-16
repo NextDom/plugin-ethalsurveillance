@@ -27,14 +27,15 @@ Un panel pour la visualisation graphique du temps d’activité de l’équipeme
 # Configuration
 
 ## Onglet Equipement
-  > Type de commande : Type de la commande qui servira à surveiller l’équipement , Logique ou Analogique,
+  * Type de commande : Type de la commande qui servira à surveiller l’équipement , Logique ou Analogique,
 
-    > Commande de l’équipement à surveiller de type "Logique"
+    * Commande de l’équipement à surveiller de type "Logique"
+  
   ![equipement logique](../images/equipement-logique.png)
   
-  > ***Commande équipement*** : Commande d’état de l’équipement à surveiller
+  * ***Commande équipement*** : Commande d’état de l’équipement à surveiller
 
-  > Inverser : Inversion de la commande d’état de l’équipement à surveiller
+  * ***Inverser*** : Inversion de la commande d’état de l’équipement à surveiller
 
 Temps mini surveillance active (min) : Temps de surveillance minimun de l’équipement pour générer une alarme, laisser vide pour ne pas générer d’alarme
 
