@@ -147,14 +147,22 @@ Les commandes sont crées automatiquement à la sauvegarde de l’équipement, i
 
 ![actions](../images/actions.png)
 
-Cet onglet permet la configuration d’action en fonction de la valeur de la commande ***Etat*** et ***Alarme***.
-
-La case à cocher ***Inverser***, inverse le sens de la commande ***Etat*** ou ***Alarme***
-
-Exemple:
-
-Sélection ***Etat*** et case ***Inverser*** non cocher, l’action est effectué si la commande ***Etat*** passe de OFF à ON,
-
-Sélection ***Etat*** et case ***Inverser*** cocher, l’action est effectué si la commande ***Etat*** passe de ON à OFF,
-
+Cet onglet permet la configuration d’action en fonction de la valeur de la commande ***Etat*** et ***Alarme***.  
+La case à cocher ***Inverser***, inverse le sens de la commande ***Etat*** ou ***Alarme***  
+Exemple:  
+Sélection ***Etat*** et case ***Inverser*** non cocher, l’action est effectué si la commande ***Etat*** passe de OFF à ON,  
+Sélection ***Etat*** et case ***Inverser*** cocher, l’action est effectué si la commande ***Etat*** passe de ON à OFF,  
 Idem pour la sélection Alarme
+
+# Fonctionnement
+
+## Passage de la commande Etat à ON :
+
+* Type de commande : "Logique"
+  * lors du passage de Commande équipment à ON si Inverser non coché ou lors du passage de Commande équipment à OFF si Inverser coché
+
+* Type de commande : "Analogique"
+  * Si Compteur Général est coché,
+    * Si la Commande équipement est supérieure ou égale à Valeur surveillance active ET dans l’heure prévue de surveillance défini dans le paramètre Heure de surveillance prévue +/- 2 min (HHMM) ET que la commande Etat est à OFF
+  * Si Compteur Général n’est pas coché,
+    * Si la Commande équipement est supérieur ou égal à Valeur surveillance active ET que la commande Etat est à OFF
