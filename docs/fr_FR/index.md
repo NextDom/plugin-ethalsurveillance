@@ -156,13 +156,46 @@ Idem pour la sélection Alarme
 
 # Fonctionnement
 
-## Passage de la commande Etat à ON :
+## Passage de la commande ***Etat*** à ON :
 
 * Type de commande : "Logique"
-  * lors du passage de Commande équipment à ON si Inverser non coché ou lors du passage de Commande équipment à OFF si Inverser coché
+  * lors du passage de ***Commande équipement*** à ON si ***Inverser*** non coché ou lors du passage de ***Commande équipement*** à OFF si ***Inverser*** coché
+* Type de commande : "Analogique"
+  * Si ***Compteur Général*** est coché,
+    * Si la ***Commande équipement*** est supérieure ou égale à ***Valeur surveillance active*** ET dans l’heure prévue de surveillance défini dans le paramètre ***Heure de surveillance prévue +/- 2 min (HHMM)*** ET que la commande ***Etat*** est à OFF
+  * Si ***Compteur Général*** n’est pas coché,
+    * Si la ***Commande équipement*** est supérieur ou égal à ***Valeur surveillance active*** ET que la commande ***Etat*** est à OFF
+    
+## Passage de la commande ***Etat*** à OFF :
+
+* Type de commande : "Logique"
+  * lors du passage de ***Commande équipement*** à OFF si ***Inverser*** non coché ou lors du passage de ***Commande équipement*** à ON si ***Inverser*** coché
+* Type de commande : "Analogique"
+  * Si ***Compteur Général*** est coché,
+    * Si la ***Commande équipement*** est inférieure ou égale à ***Valeur surveillance active*** ET que la commande ***Etat*** est à ON
+  * Si ***Compteur Général*** n’est pas coché,
+    * Si la ***Commande équipement*** est inferieure ou égale à ***Valeur surveillance inactive*** ET que ***Délai valeur surveillance inactive*** est atteint ET que la commande ***Etat*** est à ON
+
+![commande etat fct analogique](../images/commande-etat-fct-analogique.png)
+
+## Passage de la commande Alarme à ON :
+* Type de commande : "Logique"
+  * Si la durée de la commande ***Etat*** lors du passage de ON à OFF est inférieure ou égale au ***Temps mini surveillance active*** (code alarme 2)
+  * Si la durée de la commande ***Etat*** à ON est supérieure ou égale au ***Temps max surveillance active*** (code alarme 4)
+  * Si la commande ***Etat*** à ON et l’heure du système est comprise entre ***Heure prévue surveillance inactive*** et ***Heure prévue surveillance active*** plus 5 min  (code alarme 8)
+  * Si la commande ***Etat*** à OFF et l’heure du système est comprise entre ***Heure prévue surveillance active*** et ***Heure prévue surveillance active*** plus 5 min (code alarme 16)
 
 * Type de commande : "Analogique"
-  * Si Compteur Général est coché,
-    * Si la Commande équipement est supérieure ou égale à Valeur surveillance active ET dans l’heure prévue de surveillance défini dans le paramètre Heure de surveillance prévue +/- 2 min (HHMM) ET que la commande Etat est à OFF
-  * Si Compteur Général n’est pas coché,
-    * Si la Commande équipement est supérieur ou égal à Valeur surveillance active ET que la commande Etat est à OFF
+  * Si ***Compteur Général*** est coché,
+    * Si la commande ***Etat*** est a OFF depuis ***Heure de surveillance prévue*** plus ***Temps min surveillance active*** (code alarme 1)
+    * Si la durée de la commande ***Etat***, lors du passage de ON à OFF, est inférieure ou égale au ***Temps min surveillance active*** (code alarme 2)
+    * Si la durée de la commande ***Etat*** à ON est supérieure ou égale au ***Temps max surveillance active*** (code alarme 4)
+  * Si ***Compteur Général*** n’est pas coché,
+      * Si la durée de la commande ***Etat***, lors du passage de ON à OFF, est inférieure ou égale au ***Temps min surveillance active*** (code alarme 2)
+      * Si la durée de la commande ***Etat*** à ON est supérieure ou égale au ***Temps max surveillance active*** (code alarme 4)
+      * Si la commande ***Etat*** à ON et l’heure du système est comprise entre ***Heure prévue surveillance inactive*** et ***Heure prévue surveillance inactive*** plus 5 min  (code alarme 8)
+      * Si la commande ***Etat*** à OFF et l’heure du système est comprise entre ***Heure prévue surveillance active*** et ***Heure prévue surveillance active*** plus 5 min (code alarme 16)
+* Lors du passage de la commande ***Etat*** de OFF à ON et que ***Valeur compteur haut*** est supérieur ou égale à la commande ***Compteur*** (code alarme 32)
+
+
+
