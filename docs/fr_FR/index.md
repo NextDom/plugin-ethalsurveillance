@@ -1,9 +1,9 @@
-Plugin Surveillance Equipement (id : ethalsurveillance) Description
-===
+# Plugin Surveillance Equipement (id : ethalsurveillance) Description
+
 Plugin servant à la surveillance d’un équipement.
 
-Présentation
-===
+# Présentation
+
 La surveillance de l’équipement est faite à partir d’une commande ***Lo*** (ie etat,…) ou d’une commande de mesure ***analogique*** (puissance,temperature,…)
 
 Il permet de connaître le temps où la commande de l’équipement est active,+ il gère une commande d’alarme, en fonction d’un temps minimun et/ou maximun où la commande de l’équipement est active, d’une heure prévue où la commande de l’équipement est inactif ou actif, d’une valeur haute sur un compteur,ces paramètres sont disponible pour une gestion hebdomadaire.
@@ -24,19 +24,17 @@ Un panel pour la visualisation graphique du temps d’activité de l’équipeme
 
 ![panel](../images/panel.png)
 
-Configuration
-===
+# Configuration
 
-Onglet Equipement
-====
-  - Type de commande : Type de la commande qui servira à surveiller l’équipement , Logique ou Analogique,
+## Onglet Equipement
+  > Type de commande : Type de la commande qui servira à surveiller l’équipement , Logique ou Analogique,
 
-  - Commande de l’équipement à surveiller de type "Logique"
+    > Commande de l’équipement à surveiller de type "Logique"
   ![equipement logique](../images/equipement-logique.png)
   
-  - ***Commande équipement*** : Commande d’état de l’équipement à surveiller
+  > ***Commande équipement*** : Commande d’état de l’équipement à surveiller
 
-Inverser : Inversion de la commande d’état de l’équipement à surveiller
+  > Inverser : Inversion de la commande d’état de l’équipement à surveiller
 
 Temps mini surveillance active (min) : Temps de surveillance minimun de l’équipement pour générer une alarme, laisser vide pour ne pas générer d’alarme
 
