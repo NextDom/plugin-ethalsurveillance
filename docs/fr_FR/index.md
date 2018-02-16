@@ -1,5 +1,6 @@
 Plugin Surveillance Equipement (id : ethalsurveillance)
 ===
+
 Description
 ===
 Plugin servant à la surveillance d’un équipement.
