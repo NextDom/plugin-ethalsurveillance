@@ -29,7 +29,7 @@ Un panel pour la visualisation graphique du temps d’activité de l’équipeme
 ## Onglet Equipement
  * Type de commande : Type de la commande qui servira à surveiller l’équipement , Logique ou Analogique,
 
-  * Commande de l’équipement à surveiller de type "Logique"
+   * Commande de l’équipement à surveiller de type "Logique"
   
   ![equipement logique](../images/equipement-logique.png)
   
@@ -47,7 +47,7 @@ Un panel pour la visualisation graphique du temps d’activité de l’équipeme
 
  * ***Valeur compteur haut*** : Valeur haute du compteur pour générer une alarme, laisser vide pour ne pas générer d’alarme
 
-  * Commande de l’équipement à surveiller de type "Analogique" avec Compteur Général coché
+   * Commande de l’équipement à surveiller de type "Analogique" avec Compteur Général coché
   
   ![equipement analogique 1](../images/equipement-analogique-1.png)
   
@@ -148,8 +148,13 @@ Les commandes sont crées automatiquement à la sauvegarde de l’équipement, i
 ![actions](../images/actions.png)
 
 Cet onglet permet la configuration d’action en fonction de la valeur de la commande ***Etat*** et ***Alarme***.
+
 La case à cocher ***Inverser***, inverse le sens de la commande ***Etat*** ou ***Alarme***
+
 Exemple:
+
 Sélection ***Etat*** et case ***Inverser*** non cocher, l’action est effectué si la commande ***Etat*** passe de OFF à ON,
+
 Sélection ***Etat*** et case ***Inverser*** cocher, l’action est effectué si la commande ***Etat*** passe de ON à OFF,
+
 Idem pour la sélection Alarme
