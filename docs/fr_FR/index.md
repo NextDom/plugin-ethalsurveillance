@@ -304,4 +304,4 @@ la commande ***Alarme*** passera à ON quand la valeur de la commande Compteur s
 * Après une mise à jour du plugin, il est préférable de faire une sauvegarde de chaque ***Surveillance équipement***.
 * Pour avoir une représentation graphique du temps de fonctionnement, il faut historiser la commande ***Etat*** avec l’option ***Mode de lissage*** sur ***Aucun***.
 * Pour un type de commande Analogique, les valeurs ***Valeur surveillance inactive*** et ***Valeur surveillance active*** ne doivent pas être égales.
-* S’il y a lieu, la FAQ est alimentée par les échanges dans le sujet Sujet officiel Surveillance Equipement du forum Jeedom.
+* S’il y a lieu, la FAQ est alimentée par les échanges dans le sujet Sujet officiel [Surveillance Equipement] (https://www.jeedom.com/forum/viewtopic.php?f=28&t=24637) du forum Jeedom.
