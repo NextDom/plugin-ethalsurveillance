@@ -30,9 +30,9 @@ Un panel pour la visualisation graphique du temps d’activité de l’équipeme
  * Type de commande : Type de la commande qui servira à surveiller l’équipement , Logique ou Analogique,
 
    * Commande de l’équipement à surveiller de type "Logique"
-  
+
   ![equipement logique](../images/equipement-logique.png)
-  
+
  * ***Commande équipement*** : Commande d’état de l’équipement à surveiller
 
  * ***Inverser*** : Inversion de la commande d’état de l’équipement à surveiller
@@ -48,11 +48,11 @@ Un panel pour la visualisation graphique du temps d’activité de l’équipeme
  * ***Valeur compteur haut*** : Valeur haute du compteur pour générer une alarme, laisser vide pour ne pas générer d’alarme
 
    * Commande de l’équipement à surveiller de type "Analogique" avec Compteur Général coché
-  
+
   ![equipement analogique 1](../images/equipement-analogique-1.png)
-  
+
  * ***Commande équipement*** : Commande de mesure analogique de l’équipement à surveiller
- 
+
  * ***Compteur Général*** : coché si la Commande équipement est une mesure analogique globale (ie mesure de puissance globale de votre logement)
 
  * ***Heure de surveillance prévue +/- 2 min (HHMM)*** : obligatoire si ***Compteur Général*** coché
@@ -64,9 +64,9 @@ Un panel pour la visualisation graphique du temps d’activité de l’équipeme
  * ***Temps max surveillance active (min)*** : Temps de surveillance maximun de l’équipement pour générer une alarme, laisser vide pour ne pas générer d’alarme
 
  * ***Valeur compteur haut*** : Valeur haute du compteur pour générer une alarme, laisser vide pour ne pas générer d’alarme
- 
+
    * Commande de l’équipement à surveiller de type "Analogique" avec Compteur Général NON coché
-   
+
    ![equipement analogique 2](../images/equipement-analogique-2.png)
 
  * ***Commande équipement*** : Commande de mesure analogique de l’équipement à surveiller
@@ -104,7 +104,7 @@ Un panel pour la visualisation graphique du temps d’activité de l’équipeme
 > **Important**
 >
 > Vous ne pouvez créer qu’un seul équipement à surveiller avec l’option ***Compteur Général***, (ie une mesure de puissance globale de votre logement par exemple).
-   
+
 ## Onglet Commande
 
 Les commandes sont crées automatiquement à la sauvegarde de l’équipement, il n’est pas possible d’en ajouter, d’en supprimer. Utiliser la case à cocher ***afficher***, si vous ne souhaitez pas voir certaines commandes sur le widget.
@@ -138,7 +138,7 @@ Les commandes sont crées automatiquement à la sauvegarde de l’équipement, i
  * ***RAZ Compteur*** : remise à zéro de la commande Compteur
 
  * ***RAZ Tout*** : remise à zéro de la commande ***Compteur*** et du temps d’activité total (commande ****Temps Actif Total(H:M:S)*** et ***Temps Actif Total***)
- 
+
 > **Note**
 >
 >Pour historiser le temps d’activité d’un équipément, la commande ***Etat*** est historisée par défaut avec l’option Mode de lissage sur Aucun. Ces options sont disponible depuis le menu historique.
@@ -165,7 +165,7 @@ Idem pour la sélection Alarme
     * Si la ***Commande équipement*** est supérieure ou égale à ***Valeur surveillance active*** ET dans l’heure prévue de surveillance défini dans le paramètre ***Heure de surveillance prévue +/- 2 min (HHMM)*** ET que la commande ***Etat*** est à OFF
   * Si ***Compteur Général*** n’est pas coché,
     * Si la ***Commande équipement*** est supérieur ou égal à ***Valeur surveillance active*** ET que la commande ***Etat*** est à OFF
-    
+
 ## Passage de la commande ***Etat*** à OFF :
 
 * Type de commande : "Logique"
@@ -197,5 +197,6 @@ Idem pour la sélection Alarme
       * Si la commande ***Etat*** à OFF et l’heure du système est comprise entre ***Heure prévue surveillance active*** et ***Heure prévue surveillance active*** plus 5 min (code alarme 16)
 * Lors du passage de la commande ***Etat*** de OFF à ON et que ***Valeur compteur haut*** est supérieur ou égale à la commande ***Compteur*** (code alarme 32)
 
-
-
+> **Note**
+>
+>Si la commande Alarme est déja à ON , et qu’une nouvelle condition d’alarme est présente , celle-ci n’est pas remise à jour, seule la commande Code Alarme est mise à jour.
