@@ -1,10 +1,14 @@
+* Version 3( Nouvelle branche, En cours de dev)  
+  * refonte du plugin  
+
 * Version 2.5(En cours de dev)  
   * Disponibilité du graphique du temps d'activité sur un design ???  
   * Actions sur **Code Alarme**
   * ???
 
-* Version 2.4(En cours)		
-  * Ajout de 3 nouvelles commandes **RAZ Tout**, **Heure RAZ Temps Actif Total**, **Heure RAZ Compteur**
+* Version 2.4 (En cours)
+  * passage sous la team jeedom-plugins-extra
+  * Ajout d'une nouvelle commande **RAZ Tout**
   * Mise à jour de la documentation
 
 * Version 2.3 (2017-10-29 01:01:43)		
@@ -14,7 +18,7 @@
   * Mise à jour de la documentation
 
 * Version 2.2 (2017-10-20 01:01:49)		
-  * Ajout de la possibilité d'inverser l'etat de la surveillance d'une commande de type logique. 
+  * Ajout de la possibilité d'inverser l'etat de la surveillance d'une commande de type logique.
 
 * Version 2.1 (2017-10-06 01:01:50)		
   * Ajout de la gestion des commandes mortes sur le plugin
@@ -27,7 +31,7 @@
   >
   > La représentation graphique du temps d’activité ne sera plus dispo pour les données historisés par la commande **Temps Actif Total**.
 
-  * Ajout d'une commmande **Compteur +** et **Compteur -** 
+  * Ajout d'une commmande **Compteur +** et **Compteur -**
   * Données graphique disponible depuis un panel en lieu et place de l'onglet données de l'équipement
   * mise à jour de la documentation
 
@@ -66,11 +70,11 @@
   * mise à jour de la documentation
 
 * Version 1.2 (version market : 2017-02-03 22:25:59)
-  * Correction d'un bug sur la génération de la commande **Alarme** 
-  * Amélioration sur la génération de la commande **Alarme** 
+  * Correction d'un bug sur la génération de la commande **Alarme**
+  * Amélioration sur la génération de la commande **Alarme**
 
 * Version 1.1 (version market : 2017-02-02 22:24:32)
-  * Ajout des commandes **Temps Fct Total(H:M:S)**, **Temps Fct Total** et **RAZ Tps Fct Total** 
+  * Ajout des commandes **Temps Fct Total(H:M:S)**, **Temps Fct Total** et **RAZ Tps Fct Total**
   * mise à jour de la documentation
 
 

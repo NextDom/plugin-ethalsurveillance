@@ -200,3 +200,112 @@ Idem pour la sélection Alarme
 > **Note**
 >
 >Si la commande Alarme est déja à ON , et qu’une nouvelle condition d’alarme est présente , celle-ci n’est pas remise à jour, seule la commande Code Alarme est mise à jour.
+
+## Passage de la commande Alarme à OFF et remise à zéro de Code Alarme:
+
+* Lors du passage de la commande ***Etat*** de OFF à ON
+
+## Mise à jour des commandes, lors du passage de la commande Etat de OFF à ON :
+
+* ***Alarme*** : passage à OFF
+* ***Code Alarme*** : passage à zéro
+* ***Tempts Actif(H:M:S)*** : '00:00:00'
+* ***Tempts Actif*** : 0 seconde
+* ***Tempts Actif Total(H:M:S)*** : pas de changement
+* ***Tempts Actif Total*** : pas de changement
+* ***Actif à*** : heure courante de passage de l’équipement à actif
+* ***Inactif à*** : '-'
+* ***Etat*** : Passage à ON
+* ***Compteur*** : Incrémenter de 1
+
+## Mise à jour des commandes, lors du passage de la commande Etat de ON à OFF :
+
+* ***Alarme*** : voir ci-dessus
+* ***Code Alarme*** : voir ci-dessus
+* ***Tempts Actif(H:M:S)*** : heure du passage à surveillance inactive moins heure du passage à surveillance * active au format Heure:Minute:Seconde
+* ***Tempts Actif*** : heure du passage à surveillance inactive moins heure du passage à surveillance active en secondes
+* ***Tempts Actif Total(H:M:S)*** : cumul heure surveillance active au format Heure:Minute:Seconde
+* ***Tempts Actif Total*** : cumul heure surveillance active en seconde
+* ***Actif à*** : pas de changement
+* ***Inactif à*** : heure courante de passage de l’equipement à inactif
+* ***Etat*** : Passage à OFF
+* ***Compteur*** : pas de changement
+
+## Mise à jour des commandes toutes les 5 min :
+
+* ***Alarme*** : voir ci-dessus
+* ***Code Alarme*** : voir ci-dessus
+* ***Tempts Actif*** : heure courante moins heure de démarrage en secondes
+* ***Tempts Actif (H:M:S)*** : heure courante moins heure de surveillance active au format Heure:Minute:Seconde
+* ***Tempts Actif Total(H:M:S)*** : cumul heure surveillance active au format Heure:Minute:Seconde
+* ***Tempts Actif Total*** : cumul heure surveillance active en seconde
+* ***Actif à*** : pas de changement
+* ***Inactif à*** : pas de changement
+* ***Etat*** : Pas de changement
+* ***Compteur*** : pas de changement
+
+## Codes alarme
+
+Ci dessous la liste des codes d’alarme en fonction du/des alarme(s),  
+Les lignes grisées indique que la combinaison n’est pas possible, il n’y a donc pas d’alarme n’y de code d’alarme généré.  
+
+![codes alarme](../images/codes_alarme.png)
+
+# Cas d’utilisation
+## Surveiller la durée de fonctionnement de votre télévison
+* ***Type de commande*** : logique
+* ***Commande équipement*** : mettre la commande état de la prise qui commande votre télévision
+* ***Temps mini surveillance active*** : laisser vide
+* ***Temps max surveillance active (minutes)*** : mettre par exemple 400
+* ***Heure prévue surveillance inactive*** : mettre par exemple 0105
+
+Cela signifie que la commande ***Alarme*** passera à ON au bout de 400 minutes (soit 6 heures et 40 minutes, cela commence à faire beaucoup ;)) ou à 01H05 si la commande ***Etat*** est toujours à ON (c’est à dire votre TV est toujours allumée). Le compteur sera incrémenté à chaque passage à ON de votre commande.
+
+# Surveiller son chauffe-eau avec la mesure de puissance de l’arrivée générale de votre logement
+* ***Type de commande*** : analogique
+* ***Commande équipement*** : mettre la commande de mesure de puissance générale de votre logement
+* ***Compteur général*** : coché
+* ***Heure de surveillance prévue*** : mettre l’heure prévue de mise en route de votre chauffe-eau (ex : 2330)
+* ***Valeur surveillance active*** : mettre une valeur légérement inférieur à la puissance de votre chauffe-eau (ex : si votre chauffe eau est un 2000W , mettre 1800)
+* ***Temps mini surveillance active(min)*** : mettre par exemple 20
+* ***Temps max surveillance active(min)*** : mettre par exemple 360
+
+Cela signifie que la commande ***Alarme*** passera à ON à 00:10 (23h30+20 minutes) si l’équipement n’a pas demarré ou si son temps de fonctionnement est inférieur à 20 minutes ou supérieur à 6 heures.
+
+# Compter le nombre de cycles de votre lave-linge
+* ***Type de commande*** : analogique
+
+* ***Commande équipement*** : mettre la commande de mesure de puissance du lave-linge
+
+* ***Compteur général*** : non coché
+
+* ***Valeur surveillance inactive*** : si votre lave-linge consomme environ 4W mini pendant un cyle, mettre 4
+
+* ***Délai valeur surveillance inactive*** : il est possible que le lave-linge passe en dessous de la puissance mini pendant un cycle, dans ce cas mettre par exemple 8, il faudra alors que la valeur de la puissance mini soit à 4W pendant 8 min pour être prise en compte
+
+* ***Valeur surveillance active*** : si votre lave-linge consomme plus de 50W au démarrage d’un cyle, mettre 50
+
+* ***Valeur compteur haut*** : par exemple 40
+
+le compteur sera incrémenté de 1, la commande ***Etat*** passera à ON, si la valeur mesure de puissance est supérieure à 50W, le cycle sera considéré comme terminé si la mesure de puissance est inférieure à 4W , et que celle ci soit continuellement inférieur à 4W pendant 8 min, la commande ***Etat*** passera alors à OFF.
+
+la commande ***Alarme*** passera à ON quand la valeur de la commande Compteur sera supérieur au paramètre Valeur compteur haut, c’est utile pour la maintenance(nettoyage,..) du lave linge,
+
+> **Note**
+>
+>Pour un widget personnalisé à l’équipement, utiliser l’option ***Afficher*** disponible pour chaque commande
+
+> **Note**
+>
+>Pour avoir un historique du temps d’activité de l’equipement , il faut historiser la commande ***Etat*** avec l’option ***Mode de lissage*** sur ***Aucun***.
+
+# FAQ
+* Le passage en version 2.00(2017-08),modifie la gestion du temps d’activité de l’équipement à surveiller, celle-ci se gère maintenant par l' historisation de la commande ***Etat***, et est activé par défaut. La représentation graphique du temps d’activité ne sera plus dispo pour les données historisés par la commande "Temps Actif Total". D’autre part, pour libérer de l’espace dans la base de données jeedom, je vous conseille depuis le menu historique de supprimer les données historisées de la commande ***Temps Actif Total*** et ensuite de désactiver l’historisation de cette commande pour chaque équipement sauf si vous souhaitez les conserver.
+
+* Après une mise à jour du plugin, il est préférable de faire une sauvegarde de chaque ***Surveillance équipement***.
+
+* Pour avoir une représentation graphique du temps de fonctionnement, il faut historiser la commande ***Etat*** avec l’option ***Mode de lissage*** sur ***Aucun***.
+
+* Pour un type de commande Analogique, les valeurs ***Valeur surveillance inactive*** et ***Valeur surveillance active*** ne doivent pas être égales.
+
+* S’il y a lieu, la FAQ est alimentée par les échanges dans le sujet Sujet officiel Surveillance Equipement du forum Jeedom.
