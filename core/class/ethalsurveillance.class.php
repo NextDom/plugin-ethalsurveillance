@@ -845,5 +845,4 @@ class ethalsurveillanceCmd extends cmd {
 
     /*     * **********************Getteur Setteur*************************** */
 }
-
-?>
+ 
