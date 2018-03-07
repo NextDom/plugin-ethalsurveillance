@@ -7,7 +7,7 @@
   * ???
 
 * Version 2.4 (En cours)
-  * passage sous la team jeedom-plugins-extra
+  * Modification du nom de la commande possible
   * Ajout d'une nouvelle commande **RAZ Tout**
   * Mise à jour de la documentation
 
