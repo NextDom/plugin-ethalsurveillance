@@ -7,7 +7,7 @@
   * ???
 
 * Version 2.4 (En cours)
-  * Modification du nom de la commande possible
+  * Possibilité de modifier le nom des commandes
   * Ajout d'une nouvelle commande **RAZ Tout**
   * Mise à jour de la documentation
 
