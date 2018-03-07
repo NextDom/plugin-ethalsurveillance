@@ -21,7 +21,7 @@ try {
     include_file('core', 'authentification', 'php');
 
     if (!isConnect()) {
-        throw new Exception(__('401 - Accès non autorisé', __FILE__));
+        throw new \Exception(__('401 - Accès non autorisé', __FILE__));
     }
 
     ajax::init();
@@ -36,7 +36,7 @@ try {
 			$ethalsurveillance = ethalsurveillance::byId(init('eqid'));
 
 			if (!is_object($ethalsurveillance)) {
-				throw new Exception(__('Aucun equipement trouvé', __FILE__));
+				throw new \Exception(__('Aucun equipement trouvé', __FILE__));
 			}
 			$date = array(
 				'start' => init('dateStart'),
@@ -55,11 +55,11 @@ try {
 			$eqMaster = eqLogic::byId($eqMasterId);
 
 			if (!is_object($eqMaster)) {
-				throw new Exception(__('Equipement Master introuvable pour la comamnde: ', __FILE__) . $cmdEquipement);
+				throw new \Exception(__('Equipement Master introuvable pour la comamnde: ', __FILE__) . $cmdEquipement);
 			}
 
 			if (!is_object($ethalsurveillance)) {
-				throw new Exception(__('Equipement ethalsurveillance introuvable : ', __FILE__) . init('eqid'));
+				throw new \Exception(__('Equipement ethalsurveillance introuvable : ', __FILE__) . init('eqid'));
 			}
 
 			if ($ethalsurveillance->getIsEnable() == 1 && $ethalsurveillance->getEqType_name() == 'ethalsurveillance') {
@@ -73,7 +73,7 @@ try {
 
     throw new Exception(__('Aucune méthode correspondante à : ', __FILE__) . init('action'));
     /*     * *********Catch exeption*************** */
-} catch (Exception $e) {
+} catch (\Exception $e) {
     ajax::error(displayExeption($e), $e->getCode());
 }
-?>
+ 

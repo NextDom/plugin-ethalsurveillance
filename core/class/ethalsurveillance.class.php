@@ -21,14 +21,8 @@ require_once dirname(__FILE__) . '/../../../../core/php/core.inc.php';
 
 class ethalsurveillance extends eqLogic
 {
-    /*     * *************************Attributs****************************** */
-
-
-    /*     * ***********************Methode static*************************** */
-
     /*
      * Fonction exécutée automatiquement toutes les minutes par Jeedom */
-
     public static function cron()
     {
         foreach (eqLogic::byType('ethalsurveillance', true) as $eq) {
@@ -57,7 +51,8 @@ class ethalsurveillance extends eqLogic
 
     public static function cron5()
     {
-        foreach (eqLogic::byType('ethalsurveillance', true) as $ethalsurveillance) {
+        $ethal = eqLogic::byType('ethalsurveillance', true);
+        foreach ($ethal as $ethalsurveillance) {
             $currentTime            = time();
             $expectedStoppedTime    = -1;
             $expectedStartedTime    = -1;
@@ -107,7 +102,7 @@ class ethalsurveillance extends eqLogic
                 $expectedStartedTimeMax = -1;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : cron5 : Marche prévu set to->' . $expectedStartedTime);
             } else {
-                $expectedStartedTime    = DateTime::createFromFormat('Gi', $configExpectedStartedTime)->getTimestamp();
+                $expectedStartedTime    = \DateTime::createFromFormat('Gi', $configExpectedStartedTime)->getTimestamp();
                 $expectedStartedTimeMin = $expectedStartedTime;
                 $expectedStartedTimeMax = $expectedStartedTime + 310;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : cron5 : Marche prévu entre-> ' . date('H:i:s', $expectedStartedTimeMin) . ' et ' . date('H:i:s', $expectedStartedTimeMax));
@@ -249,10 +244,8 @@ class ethalsurveillance extends eqLogic
      */
 
     /* public Ethal Surveillance plugin function */
-
     public function checkequipement($_option)
     {
-
         log::add('ethalsurveillance', 'debug', 'checkequipement started');
 
         $ethalsurveillance = ethalsurveillance::byId($_option['equipement_id']);
