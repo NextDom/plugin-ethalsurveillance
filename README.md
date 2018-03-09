@@ -17,7 +17,7 @@ Vous trouverez la documentation [ici](https://Jeedom-Plugins-Extra.github.io/plu
 
 ### Prévisualisation
 
-|<img src="docs/images/utilisation3-widget.png" width="50" height="50">|<img src="docs/images/panel.png" width="50" height="50">|
+|<img src="docs/images/utilisation3-widget.png"/>|<img src="docs/images/panel.png"/>|
 
 ### Forum
 
