@@ -1,4 +1,4 @@
-# Plugin ethalsurveillance template pour Jeedom
+# Plugin ethalsurveillance pour Jeedom
 
 <img src="plugin_info/ethalsurveillance_icon.png" align="right" height="160" width="150">
 
