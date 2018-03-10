@@ -274,17 +274,11 @@ Cela signifie que la commande ***Alarme*** passera à ON à 00:10 (23h30+20 minu
 
 ## Compter le nombre de cycles de votre lave-linge
 * ***Type de commande*** : analogique
-
 * ***Commande équipement*** : mettre la commande de mesure de puissance du lave-linge
-
 * ***Compteur général*** : non coché
-
 * ***Valeur surveillance inactive*** : si votre lave-linge consomme environ 4W mini pendant un cyle, mettre 4
-
 * ***Délai valeur surveillance inactive*** : il est possible que le lave-linge passe en dessous de la puissance mini pendant un cycle, dans ce cas mettre par exemple 8, il faudra alors que la valeur de la puissance mini soit à 4W pendant 8 min pour être prise en compte
-
 * ***Valeur surveillance active*** : si votre lave-linge consomme plus de 50W au démarrage d’un cyle, mettre 50
-
 * ***Valeur compteur haut*** : par exemple 40
 
 le compteur sera incrémenté de 1, la commande ***Etat***passera à ON, si la valeur mesure de puissance est supérieure à 50W, le cycle sera considéré comme terminé si la mesure de puissance est inférieure à 4W , et que celle ci soit continuellement inférieur à 4W pendant 8 min, la commande***Etat*** passera alors à OFF.
