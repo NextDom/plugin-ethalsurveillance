@@ -197,7 +197,7 @@ class ethalsurveillance extends eqLogic
         }
         return $return;
     }
- 
+
     /* public function preInsert() {
 
       }
@@ -388,7 +388,7 @@ class ethalsurveillance extends eqLogic
                     $ethalsurveillance->setConfiguration('startedtime', $currentTime);
                     $ethalsurveillance->setConfiguration('memopuissance', $cmdValue);
                     $ethalsurveillance->save();
-                    
+
                     //$alCode32 n'est pas utilsé, à supprimer ?
                     $alCode32 = $ethalsurveillance->getCmd(null, 'code_alarme')->getConfiguration('ethalarmecode32');
                     $alarme   = $ethalsurveillance->ethGetValue('alarme');
@@ -690,12 +690,15 @@ class ethalsurveillance extends eqLogic
                 utils::a2o($cmd, $command);
                 $cmd->save();
                 log::add('ethalsurveillance', 'debug', 'Creation de la commande->' . $command['logicalId']);
+            /*
             } else {
                 $cmd = ethalsurveillanceCmd::byEqLogicIdAndLogicalId($this->getId(), $command['logicalId']);
                 utils::a2o($cmd, $command);
                 $cmd->save();
                 log::add('ethalsurveillance', 'debug', 'Mise à jour de la commande->' . $command['logicalId']);
+            */
             }
+
         }
 
         /* listener de la mesure de puissance our de la commande d'etat */
@@ -790,7 +793,7 @@ class ethalsurveillance extends eqLogic
 
         return $return;
     }
- 
+
 }
 
 class ethalsurveillanceCmd extends cmd
