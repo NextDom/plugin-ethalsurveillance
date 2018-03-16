@@ -1,3 +1,4 @@
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/Jeedom-Plugins-Extra/plugin-ethalsurveillance.svg?columns=all)](https://waffle.io/Jeedom-Plugins-Extra/plugin-ethalsurveillance)
 # Plugin ethalsurveillance pour Jeedom
 
 <img src="plugin_info/ethalsurveillance_icon.png" align="right" height="160" width="150">
