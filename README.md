@@ -1,3 +1,5 @@
+[![license](https://img.shields.io/github/license/Jeedom-Plugins-Extra/plugin-ethalsurveillance.svg)](./LICENSE)
+
 # Plugin ethalsurveillance pour Jeedom
 
 <img src="plugin_info/ethalsurveillance_icon.png" align="right" height="160" width="150">
