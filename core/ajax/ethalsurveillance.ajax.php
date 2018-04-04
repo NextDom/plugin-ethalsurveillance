@@ -30,7 +30,7 @@ try {
 
 			if (init('eqid') == '') {
 				$return['eq'] = array('eqName' => '', 'htmlMaster' => '', 'html' => '', 'ethCumulTps' => '');
-				ajax::success($return);	
+				ajax::success($return);
 			}
 
 			$ethalsurveillance = ethalsurveillance::byId(init('eqid'));
@@ -74,6 +74,5 @@ try {
     throw new Exception(__('Aucune méthode correspondante à : ', __FILE__) . init('action'));
     /*     * *********Catch exeption*************** */
 } catch (\Exception $e) {
-    ajax::error(displayExeption($e), $e->getCode());
+    ajax::error(displayException($e), $e->getCode());
 }
- 
