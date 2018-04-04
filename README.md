@@ -1,6 +1,6 @@
 [![license](https://img.shields.io/github/license/Jeedom-Plugins-Extra/plugin-ethalsurveillance.svg)](./LICENSE)
 
-### Develop: [![Build Status](https://travis-ci.org/Jeedom-Plugins-Extra/plugin-ethalsurveillance.svg?branch=develop)](https://travis-ci.org/Jeedom-Plugins-Extra/plugin-ethalsurveillance)  [![Coverage Status](https://coveralls.io/repos/github/Jeedom-Plugins-Extra/plugin-ethalsurveillance/badge.svg?branch=develop)](https://coveralls.io/github/Jeedom-Plugins-Extra/plugin-ethalsurveillance?branch=master)
+### Develop: [![Build Status](https://travis-ci.org/Jeedom-Plugins-Extra/plugin-ethalsurveillance.svg?branch=develop)](https://travis-ci.org/Jeedom-Plugins-Extra/plugin-ethalsurveillance)  [![Coverage Status](https://coveralls.io/repos/github/Jeedom-Plugins-Extra/plugin-ethalsurveillance/badge.svg?branch=develop)](https://coveralls.io/github/Jeedom-Plugins-Extra/plugin-ethalsurveillance?branch=develop)
 
 
 # Plugin ethalsurveillance pour Jeedom
