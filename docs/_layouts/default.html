@@ -11,7 +11,7 @@
   <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper container">
-        <a id="logo-container" href="https://jeedom-plugins-extra.github.io/" class="brand-logo center"><img src="/{{site.github.project_title}}/assets/images/logo.png" style="height:50px;margin-top:5px"></a>
+        <a id="logo-container" href="https://jeedom-plugins-extra.github.io/" class="brand-logo center"><img src="href=https://jeedom-plugins-extra.github.io/Jeedom-Plugins-Extra/plugins/assets/images/logo.png" style="height:50px;margin-top:5px"></a>
         <ul class="left hide-on-med-and-down">
           <li><a href="https://jeedom-plugins-extra.github.io">jeedom-plugins-Extra Documentation</a></li>
         </ul>
@@ -76,12 +76,14 @@
 <script type="text/javascript" src="https://jeedom-plugins-extra.github.io/Jeedom-Plugins-Extra/plugins/assets/js/jquery.inview.min.js"></script>
 <script type="text/javascript" src="https://jeedom-plugins-extra.github.io/Jeedom-Plugins-Extra/plugins/assets/js/jquery.toc.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() {
+$(document).ready(function() {
    var title = '{{site.github.project_title}}';
    title = title.replace('plugin-','');
    $('#doc_title').append(title[0].toUpperCase() + title.substring(1))
-      document.title = 'Documentation '+ title[0].toUpperCase() + title.substring(1)
+   document.title = 'Documentation Jeedom-Plugins-Extra | '+ title[0].toUpperCase() + title.substring(1)
    $(".button-collapse").sideNav();
+   $('meta[name=description]').remove();
+   $('head').append( '<meta name="description" content="Ceci est la documentation du plugin "'+ title[0].toUpperCase() + title.substring(1)+'", lier à la solution domotique Jeedom.">' );
    $('img').addClass('responsive-img');
    $('#div_content table').addClass('striped');
    init();
@@ -94,7 +96,11 @@
   $('.sel_lang').on('change',function(){
     var regex = /\/([a-z]{2}_[A-Z]{2})\//g;
     var corresp  = regex.exec(window.location.href);
-    window.location.href =  window.location.href.replace(corresp[1], $(this).find('option:selected').attr('value'));
+    var url = window.location.href.replace(corresp[1], $(this).find('option:selected').attr('value'));
+    if(url.endsWith('/')){
+      url += 'index';
+    }
+    window.location.href = url;
   })
   $('#bt_up').on('click',function(){
     window.scrollTo(0, 0);
@@ -124,21 +130,7 @@
    $('#toctitle').html('<h2 style="padding-left:5px !important;">'+titlePlugin+'</h2>');
    $('.toclevel-2').parent().css('color', 'blue');
  }
- var i = 1, j = 1;
- $('h1, h2', $('#div_content')).each(function(){
-  if($(this)[0].tagName.toLowerCase() == 'h1'){
-    $('#'+$(this).attr('id')).text(i + ') ' + $(this).text());
-    i++;
-  }
-  if($(this)[0].tagName.toLowerCase() == 'h2'){
-    $('#'+$(this).attr('id')).text( (i-1) + '.' + j + ') ' + $(this).text());
-    j++;
-  }else{
-    j = 1;
-  }
 });
-});
-
   var idChapitre = null, nbrChapitre = 0, idAncre = null;
   $('#div_content h1, #div_content h2').on('inview',function(event, isInView){
     nbrChapitre = $('a.active').length;
