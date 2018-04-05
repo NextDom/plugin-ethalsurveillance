@@ -26,7 +26,7 @@ Un panel pour la visualisation graphique du temps d’activité de l’équipeme
 
 # Configuration
 
-## Onglet Equipement
+### Onglet Equipement
  * Type de commande : Type de la commande qui servira à surveiller l’équipement , Logique ou Analogique,
 
    * Commande de l’équipement à surveiller de type "Logique"
@@ -105,7 +105,7 @@ Un panel pour la visualisation graphique du temps d’activité de l’équipeme
 >
 > Vous ne pouvez créer qu’un seul équipement à surveiller avec l’option ***Compteur Général***, (ie une mesure de puissance globale de votre logement par exemple).
 
-## Onglet Commande
+### Onglet Commande
 
 Les commandes sont crées automatiquement à la sauvegarde de l’équipement, il n’est pas possible d’en ajouter, d’en supprimer. Utiliser la case à cocher ***afficher***, si vous ne souhaitez pas voir certaines commandes sur le widget.
 
@@ -143,7 +143,7 @@ Les commandes sont crées automatiquement à la sauvegarde de l’équipement, i
 >
 >Pour historiser le temps d’activité d’un équipément, la commande ***Etat*** est historisée par défaut avec l’option Mode de lissage sur Aucun. Ces options sont disponible depuis le menu historique.
 
-## Onglet Actions
+### Onglet Actions
 
 ![actions](../images/actions.png)
 
@@ -156,7 +156,7 @@ Idem pour la sélection Alarme
 
 # Fonctionnement
 
-## Passage de la commande ***Etat*** à ON :
+### Passage de la commande ***Etat*** à ON :
 
 * Type de commande : "Logique"
   * lors du passage de ***Commande équipement***à ON si***Inverser***non coché ou lors du passage de***Commande équipement***à OFF si***Inverser*** coché
@@ -166,7 +166,7 @@ Idem pour la sélection Alarme
   * Si ***Compteur Général*** n’est pas coché,
     * Si la ***Commande équipement***est supérieur ou égal à***Valeur surveillance active***ET que la commande***Etat*** est à OFF
 
-## Passage de la commande ***Etat*** à OFF :
+### Passage de la commande ***Etat*** à OFF :
 
 * Type de commande : "Logique"
   * lors du passage de ***Commande équipement***à OFF si***Inverser***non coché ou lors du passage de***Commande équipement***à ON si***Inverser*** coché
@@ -178,7 +178,7 @@ Idem pour la sélection Alarme
 
 ![commande etat fct analogique](../images/commande-etat-fct-analogique.png)
 
-## Passage de la commande Alarme à ON :
+### Passage de la commande Alarme à ON :
 * Type de commande : "Logique"
   * Si la durée de la commande ***Etat***lors du passage de ON à OFF est inférieure ou égale au***Temps mini surveillance active*** (code alarme 2)
   * Si la durée de la commande ***Etat***à ON est supérieure ou égale au***Temps max surveillance active*** (code alarme 4)
@@ -201,11 +201,11 @@ Idem pour la sélection Alarme
 >
 >Si la commande Alarme est déja à ON , et qu’une nouvelle condition d’alarme est présente , celle-ci n’est pas remise à jour, seule la commande Code Alarme est mise à jour.
 
-## Passage de la commande Alarme à OFF et remise à zéro de Code Alarme:
+### Passage de la commande Alarme à OFF et remise à zéro de Code Alarme:
 
 * Lors du passage de la commande ***Etat*** de OFF à ON
 
-## Mise à jour des commandes, lors du passage de la commande Etat de OFF à ON :
+### Mise à jour des commandes, lors du passage de la commande Etat de OFF à ON :
 
 * ***Alarme*** : passage à OFF
 * ***Code Alarme*** : passage à zéro
@@ -218,7 +218,7 @@ Idem pour la sélection Alarme
 * ***Etat*** : Passage à ON
 * ***Compteur*** : Incrémenter de 1
 
-## Mise à jour des commandes, lors du passage de la commande Etat de ON à OFF :
+### Mise à jour des commandes, lors du passage de la commande Etat de ON à OFF :
 
 * ***Alarme*** : voir ci-dessus
 * ***Code Alarme*** : voir ci-dessus
@@ -231,7 +231,7 @@ Idem pour la sélection Alarme
 * ***Etat*** : Passage à OFF
 * ***Compteur*** : pas de changement
 
-## Mise à jour des commandes toutes les 5 min :
+### Mise à jour des commandes toutes les 5 min :
 
 * ***Alarme*** : voir ci-dessus
 * ***Code Alarme*** : voir ci-dessus
@@ -244,7 +244,7 @@ Idem pour la sélection Alarme
 * ***Etat*** : Pas de changement
 * ***Compteur*** : pas de changement
 
-## Codes alarme
+### Codes alarme
 
 Ci dessous la liste des codes d’alarme en fonction du/des alarme(s),  
 Les lignes grisées indique que la combinaison n’est pas possible, il n’y a donc pas d’alarme n’y de code d’alarme généré.  
@@ -252,7 +252,7 @@ Les lignes grisées indique que la combinaison n’est pas possible, il n’y a 
 ![codes alarme](../images/codes_alarme.png)
 
 # Cas d’utilisation
-## Surveiller la durée de fonctionnement de votre télévison
+### Surveiller la durée de fonctionnement de votre télévison
 * ***Type de commande*** : logique
 * ***Commande équipement*** : mettre la commande état de la prise qui commande votre télévision
 * ***Temps mini surveillance active*** : laisser vide
@@ -261,7 +261,7 @@ Les lignes grisées indique que la combinaison n’est pas possible, il n’y a 
 
 Cela signifie que la commande ***Alarme***passera à ON au bout de 400 minutes (soit 6 heures et 40 minutes, cela commence à faire beaucoup ;)) ou à 01H05 si la commande***Etat*** est toujours à ON (c’est à dire votre TV est toujours allumée). Le compteur sera incrémenté à chaque passage à ON de votre commande.
 
-## Surveiller son chauffe-eau avec la mesure de puissance de l’arrivée générale de votre logement
+### Surveiller son chauffe-eau avec la mesure de puissance de l’arrivée générale de votre logement
 * ***Type de commande*** : analogique
 * ***Commande équipement*** : mettre la commande de mesure de puissance générale de votre logement
 * ***Compteur général*** : coché
@@ -272,7 +272,7 @@ Cela signifie que la commande ***Alarme***passera à ON au bout de 400 minutes (
 
 Cela signifie que la commande ***Alarme*** passera à ON à 00:10 (23h30+20 minutes) si l’équipement n’a pas demarré ou si son temps de fonctionnement est inférieur à 20 minutes ou supérieur à 6 heures.
 
-## Compter le nombre de cycles de votre lave-linge
+### Compter le nombre de cycles de votre lave-linge
 * ***Type de commande*** : analogique
 * ***Commande équipement*** : mettre la commande de mesure de puissance du lave-linge
 * ***Compteur général*** : non coché
