@@ -346,7 +346,7 @@ class ethalsurveillance extends eqLogic
             $cmdValue = $cmdEquipement->execCmd();
             $compteur = $ethalsurveillance->getCmd(null, 'count')->execCmd();
 
-            if ($pGeneral == '1' and $equipementType == 'numeric') {
+            if ($pGeneral == '1' && $equipementType == 'numeric') {
                 $cmdValue          = $cmdValue - $puissance;
                 $minPuissance      = 0;
                 $maxPuissance      = 0;
