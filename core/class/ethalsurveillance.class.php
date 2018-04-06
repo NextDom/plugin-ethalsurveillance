@@ -186,8 +186,11 @@ class ethalsurveillance extends eqLogic
 
     public static function deadCmd()
     {
+        /* @var $matches array */
         $return = [];
         foreach (eqLogic::byType('ethalsurveillance') as $ethalsurveillance) {
+            /* @var $matches array */
+            $matches = [];
             preg_match_all("/#([0-9]*)#/", $ethalsurveillance->getConfiguration('cmdequipement', ''), $matches);
             foreach ($matches[1] as $cmd_id) {
                 if (!cmd::byId(str_replace('#', '', $cmd_id))) {
@@ -257,7 +260,6 @@ class ethalsurveillance extends eqLogic
             $alarme                 = 0;
             $equipementType         = '';
             $currentTime            = time();
-            $memoCurrentTimeStatus  = 0;
             $minPuissanceDelaiReach = 0;
 
             $expectedStoppedTime    = -1;
@@ -327,10 +329,10 @@ class ethalsurveillance extends eqLogic
             /* Verification de la commande de mesure de l'equipement */
             $cmdEquipement = cmd::byString($configCmdEquipement);
             if (is_object($cmdEquipement)) {
-                if ($cmdEquipement->getSubType() == 'numeric') {
+                if ($cmdEquipement->getSubType() === 'numeric') {
                     $equipementType = 'numeric';
                     log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : checkequipement : Numeric : Power measurement name->' . $cmdEquipement->getHumanName() . ' Power measurement value->' . $cmdEquipement->execCmd());
-                } elseif ($cmdEquipement->getSubType() == 'binary') {
+                } elseif ($cmdEquipement->getSubType() === 'binary') {
                     $equipementType = 'binary';
                     log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : checkequipement : Binary : Equipement Cmd name->' . $cmdEquipement->getHumanName() . ' Cmd equipement state->' . $cmdEquipement->execCmd());
                 } else {
