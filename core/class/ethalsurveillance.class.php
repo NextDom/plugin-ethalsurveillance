@@ -256,8 +256,6 @@ class ethalsurveillance extends eqLogic
 
             log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : checkequipement : equipement trouvé et actif');
 
-            $etat                   = 0;
-            $alarme                 = 0;
             $equipementType         = '';
             $currentTime            = time();
             $minPuissanceDelaiReach = 0;
@@ -268,6 +266,9 @@ class ethalsurveillance extends eqLogic
             $expectedStartedTimeMax = -1;
             $expectedStoppedTimeMin = -1;
             $expectedStoppedTimeMax = -1;
+
+            $etat   = $ethalsurveillance->ethGetValue('etat');
+            $alarme = $ethalsurveillance->ethGetValue('alarme');
 
             $configCmdEquipement = $ethalsurveillance->getConfiguration('cmdequipement', '');
             $puissance           = $ethalsurveillance->getConfiguration('puissance', -100000);
@@ -341,9 +342,6 @@ class ethalsurveillance extends eqLogic
             } else {
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : checkequipement : Equipment cmd not found');
             }
-
-            $etat   = $ethalsurveillance->ethGetValue('etat');
-            $alarme = $ethalsurveillance->ethGetValue('alarme');
 
             $cmdValue = $cmdEquipement->execCmd();
             $compteur = $ethalsurveillance->getCmd(null, 'count')->execCmd();
@@ -588,46 +586,45 @@ class ethalsurveillance extends eqLogic
         }
     }
 
-    private function ethFormatTpsFct($val)
+    private function ethFormatTpsFct($_val)
     {
-
         $return = '';
-        if ((floor($val / (3600 * 24))) == 0) {
-            $return = gmdate('H:i:s', $val);
+        if ((floor($_val / (3600 * 24))) == 0) {
+            $return = gmdate('H:i:s', $_val);
         } else {
-            $return = strval(floor($val / (3600 * 24))) . 'j ' . gmdate('H:i:s', $val);
+            $return = strval(floor($_val / (3600 * 24))) . 'j ' . gmdate('H:i:s', $_val);
         }
         log::add('ethalsurveillance', 'debug', 'Function : ethFormatTpsFct : Temps Fct->' . $return);
         return $return;
     }
 
-    private function ethGetValue($name)
+    private function ethGetValue($_name,$_default = 0)
     {
-        $value = $this->getCmd(null, $name)->execCmd();
-        if ($value === null || !is_int($value)) {
-            $this->checkAndUpdateCmd($name, 0);
-            $value = 0;
-            log::add('ethalsurveillance', 'debug', $this->getName() . ' : ethGetValue : ' . $name . ' current Type value->' . gettype($value) . ' return init value->' . $value);
+        $return = $this->getCmd(null, $_name)->execCmd();
+        if ($return === null || !is_int($return)) {
+            $this->checkAndUpdateCmd($_name, $_default);
+            $return = $_default;
+            log::add('ethalsurveillance', 'debug', $this->getName() . ' : ethGetValue : ' . $_name . ' current Type value->' . gettype($return) . ' return init value->' . $return);
         } else {
-            log::add('ethalsurveillance', 'debug', $this->getName() . ' : ethGetValue : ' . $name . ' return value->' . $value);
+            log::add('ethalsurveillance', 'debug', $this->getName() . ' : ethGetValue : ' . $_name . ' return value->' . $return);
         }
-        return $value;
+        return $return;
     }
 
-    private function ethGetDayValue($currentTime, $key, $default)
+    private function ethGetDayValue($_currentTime, $_key, $_default)
     {
-        $dayConfig = $this->getConfiguration(date('N', $currentTime) . $key, $default);
-        $return    = $this->getConfiguration($key, $default);
-        if ($dayConfig != $default) {
+        $dayConfig = $this->getConfiguration(date('N', $_currentTime) . $_key, $_default);
+        $return    = $this->getConfiguration($_key, $_default);
+        if ($dayConfig != $_default) {
             $return = $dayConfig;
         }
         return $return;
     }
 
-    private static function doAction($_action, $_type, $_sens, $eq)
+    private static function doAction($_action, $_type, $_sens, $_eq)
     {
 
-        foreach ($eq->getConfiguration($_action) as $action) {
+        foreach ($_eq->getConfiguration($_action) as $action) {
             $cmd = cmd::byId(str_replace('#', '', $action['cmd']));
             log::add('ethalsurveillance', 'debug', 'Liste Action->' . $action['cmd'] . ' type->' . $action['actionType'] . '/' . $_type . ' Sens->' . $action['actionSens'] . '/' . $_sens);
             /* A revoir pas tres clair
@@ -807,7 +804,7 @@ class ethalsurveillanceCmd extends cmd
       }
      */
 
-    public function execute($_options = array())
+    public function execute($_options = [])
     {
         $ethalsurveillance = $this->getEqLogic();
 
