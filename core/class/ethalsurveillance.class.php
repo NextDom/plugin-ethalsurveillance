@@ -680,7 +680,7 @@ class ethalsurveillance extends eqLogic
         }
         log::add('ethalsurveillance', 'debug', 'fichier commande ok');
         /* create command */
-        $commands = $device['commands']
+        $commands = $device['commands'];
         foreach ($commands as $command) {
             $cmd            = null;
             $existingCmds   = $this->getCmd();
