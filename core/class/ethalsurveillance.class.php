@@ -685,9 +685,9 @@ class ethalsurveillance extends eqLogic
             $cmd            = null;
             $existingCmds   = $this->getCmd();
             /* locate existing command */
-            foreach ($existingCmds as $liste_cmd) {
-                if ((isset($command['logicalId']) && $liste_cmd->getLogicalId() == $command['logicalId'])) {
-                    $cmd = $liste_cmd;
+            foreach ($existingCmds as $existingCmd) {
+                if ((isset($command['logicalId']) && $existingCmd->getLogicalId() == $command['logicalId'])) {
+                    $cmd = $existingCmd;
                     break;
                 }
             }
