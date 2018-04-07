@@ -627,7 +627,6 @@ class ethalsurveillance extends eqLogic
 
         foreach ($_eq->getConfiguration($_action) as $action) {
             $cmd = cmd::byId(str_replace('#', '', $action['cmd']));
-            log::add('ethalsurveillance', 'debug', 'Prepare for Action->' . $action['cmd'] . ' type->' . $action['actionType'] . '/' . $_type . ' Sens->' . $action['actionSens'] . '/' . $_sens);
             /* A revoir pas tres clair
               if (is_object($cmd) && $this->getId() == $cmd->getEqLogic_id()) {
               log::add('ethalsurveillance', 'debug', 'Action-> Oups Cmd probleme');
@@ -641,6 +640,7 @@ class ethalsurveillance extends eqLogic
                     if (isset($action['options'])) {
                         $options = $action['options'];
                     }
+                    log::add('ethalsurveillance', 'debug', 'Prepare for Action->' . $action['cmd'] . ' type->' . $action['actionType'] . '/' . $_type . ' Sens->' . $action['actionSens'] . '/' . $_sens);
                     if ($options['enable'] == '1') {
                         log::add('ethalsurveillance', 'debug', 'Done Action->' . $action['cmd'] . ' type->' . $action['actionType'] . '/' . $_type . ' Sens->' . $action['actionSens'] . '/' . $_sens);
                         scenarioExpression::createAndExec('action', $action['cmd'], $options);
