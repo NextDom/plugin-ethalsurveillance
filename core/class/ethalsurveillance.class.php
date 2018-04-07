@@ -641,7 +641,7 @@ class ethalsurveillance extends eqLogic
                     if (isset($action['options'])) {
                         $options = $action['options'];
                     }
-                    if ($options['enable'] == '1' {
+                    if ($options['enable'] == '1') {
                         log::add('ethalsurveillance', 'debug', 'Done Action->' . $action['cmd'] . ' type->' . $action['actionType'] . '/' . $_type . ' Sens->' . $action['actionSens'] . '/' . $_sens);
                         scenarioExpression::createAndExec('action', $action['cmd'], $options);
                     }    
