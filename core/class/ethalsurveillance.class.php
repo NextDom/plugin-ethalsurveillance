@@ -643,7 +643,7 @@ class ethalsurveillance extends eqLogic
                     if ($options['enable'] == '1') {
                         log::add('ethalsurveillance', 'debug', 'Done Action->' . $action['cmd'] . ' type->' . $action['actionType'] . '/' . $_type . ' Sens->' . $action['actionSens'] . '/' . $_sens);
                         scenarioExpression::createAndExec('action', $action['cmd'], $options);
-                    }    
+                    }
                 } catch (Exception $e) {
                     log::add('ethalsurveillance', 'error', __('Erreur lors de l\'éxecution de ', __FILE__) . $action['cmd'] . __('. Détails : ', __FILE__) . $e->getMessage());
                 }
@@ -651,7 +651,7 @@ class ethalsurveillance extends eqLogic
         }
     }
 
-    private function ethCreateCmd($type)
+    private function ethCreateCmd($_name)
     {
         /* commande alarme code fonctionnement
           debut heure : 1
@@ -661,30 +661,37 @@ class ethalsurveillance extends eqLogic
           Marche prevu : 16
           Compteur haut : 32
          */
-        if (!is_file(dirname(__FILE__) . '/../config/devices/' . $type . '.json')) {
+        /* verify if the file existe */
+        if (!is_file(dirname(__FILE__) . '/../config/devices/' . $_name . '.json')) {
             log::add('ethalsurveillance', 'error', 'fichier commande pas trouvé');
             return;
         }
-        $content = file_get_contents(dirname(__FILE__) . '/../config/devices/' . $type . '.json');
+        /* verify if the content is json type */
+        $content = file_get_contents(dirname(__FILE__) . '/../config/devices/' . $_name . '.json');
         if (!is_json($content)) {
             log::add('ethalsurveillance', 'error', 'fichier commande impossible à lire');
             return;
         }
+        /* verify if the content is well formated */
         $device = json_decode($content, true);
         if (!is_array($device) || !isset($device['commands'])) {
             log::add('ethalsurveillance', 'error', 'format fichier commande json mauvais');
             return;
         }
         log::add('ethalsurveillance', 'debug', 'fichier commande ok');
-        /* $this->import($device); */
-        foreach ($device['commands'] as $command) {
-            $cmd = null;
-            foreach ($this->getCmd() as $liste_cmd) {
+        /* create command */
+        $commands = $device['commands']
+        foreach ($commands as $command) {
+            $cmd            = null;
+            $existingCmds   = $this->getCmd();
+            /* locate existing command */
+            foreach ($existingCmds as $liste_cmd) {
                 if ((isset($command['logicalId']) && $liste_cmd->getLogicalId() == $command['logicalId'])) {
                     $cmd = $liste_cmd;
                     break;
                 }
             }
+            // if not exist create the command
             if ($cmd === null || !is_object($cmd)) {
                 $cmd = new ethalsurveillanceCmd();
                 $cmd->setEqLogic_id($this->getId());
