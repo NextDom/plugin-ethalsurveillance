@@ -1,7 +1,7 @@
 * Version 3( Nouvelle branche, En cours de dev)  
   * refonte du plugin  
 
-* Version 2.5(En cours de dev)  
+* Version 2.6(En cours de dev)  
   * Disponibilité du graphique du temps d'activité sur un design ???  
   * Actions sur **Code Alarme**
   * ???
