@@ -6,7 +6,10 @@
   * Actions sur **Code Alarme**
   * ???
 
-* Version 2.4 (Stable)
+* Version 2.5(Stable)  
+  * Amelioration du code
+
+* Version 2.4 (2018-03-25 05:00:01)
   * Possibilité de modifier le nom des commandes
   * Ajout d'une nouvelle commande **RAZ Tout**
   * Mise à jour de la documentation
