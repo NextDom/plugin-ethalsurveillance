@@ -567,8 +567,7 @@ class ethalsurveillance extends eqLogic
         $eq->getCmd(null, 'code_alarme')->setConfiguration('ethalarmecode32', 0);
 
         $eq->getCmd(null, 'code_alarme')->save();
-        // try bugfix
-        //self::doAction('ethalEqAction', 'alarme', 1, $eq);
+        self::doAction('ethalEqAction', 'alarme', 1, $eq);
         log::add('ethalsurveillance', 'debug', $eq->getName() . ' : ethResetAlarme : Alarme Reset');
     }
 
