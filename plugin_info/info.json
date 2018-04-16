@@ -1,7 +1,7 @@
 {
 	"id" : "ethalsurveillance",
 	"name" : "Surveillance Equipement",
-	"description" : "Surveillance du fonctionnement d'un equipement",
+	"description" : "Surveillance de l'activitée d'un equipement par une commande d'état ou une commande analogique (puissance,température,..).il remonte (ie commande) : une alarme fonction d'un temps min ou max, ou d'une heure prévu de d'activité, un code d'alarme, le temps de d'activité, l'heure ou l'équipement est passé actif ou inactif, un compteur, un état, une représentation graphique du temps de d'activité disponible depuis un panel",
 	"licence" : "AGPL",
 	"author" : "ethal",
 	"require" : "3.0",
