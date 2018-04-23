@@ -73,7 +73,7 @@ class ethalsurveillance extends eqLogic
 
             /* verification debut heure */
             if ($configDebutheure != '') {
-                $debutHeure    = DateTime::createFromFormat('Gi', $configDebutheure)->getTimestamp();
+                $debutHeure    = \DateTime::createFromFormat('Gi', $configDebutheure)->getTimestamp();
                 $debutHeureMin = $debutHeure - 120;
                 $debutHeureMax = $debutHeure + 120;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : cron5 : debut heures set to->' . date('H:i:s', $debutHeureMin) . '/' . date('H:i:s', $debutHeure) . '/' . date('H:i:s', $debutHeureMax));
@@ -90,7 +90,7 @@ class ethalsurveillance extends eqLogic
                 $expectedStoppedTimeMax = -1;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : cron5 : Arret prévu set to->' . $expectedStoppedTime);
             } else {
-                $expectedStoppedTime    = DateTime::createFromFormat('Gi', $configExpectedStoppedTime)->getTimestamp();
+                $expectedStoppedTime    = \DateTime::createFromFormat('Gi', $configExpectedStoppedTime)->getTimestamp();
                 $expectedStoppedTimeMin = $expectedStoppedTime;
                 $expectedStoppedTimeMax = $expectedStoppedTime + 310;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : cron5 : Arret prévu entre-> ' . date('H:i:s', $expectedStoppedTimeMin) . ' et ' . date('H:i:s', $expectedStoppedTimeMax));
@@ -102,7 +102,7 @@ class ethalsurveillance extends eqLogic
                 $expectedStartedTimeMax = -1;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : cron5 : Marche prévu set to->' . $expectedStartedTime);
             } else {
-                $expectedStartedTime    = DateTime::createFromFormat('Gi', $configExpectedStartedTime)->getTimestamp();
+                $expectedStartedTime    = \DateTime::createFromFormat('Gi', $configExpectedStartedTime)->getTimestamp();
                 $expectedStartedTimeMin = $expectedStartedTime;
                 $expectedStartedTimeMax = $expectedStartedTime + 310;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : cron5 : Marche prévu entre-> ' . date('H:i:s', $expectedStartedTimeMin) . ' et ' . date('H:i:s', $expectedStartedTimeMax));
@@ -296,7 +296,7 @@ class ethalsurveillance extends eqLogic
 
             /* verification debut heure */
             if ($configDebutheure != '') {
-                $debutHeure    = DateTime::createFromFormat('Gi', $configDebutheure)->getTimestamp();
+                $debutHeure    = \DateTime::createFromFormat('Gi', $configDebutheure)->getTimestamp();
                 $debutHeureMin = $debutHeure - 120;
                 $debutHeureMax = $debutHeure + 120;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : checkequipement : debut heures set to->' . date('H:i:s', $debutHeureMin) . '/' . date('H:i:s', $debutHeure) . '/' . date('H:i:s', $debutHeureMax));
@@ -311,7 +311,7 @@ class ethalsurveillance extends eqLogic
                 $expectedStoppedTime = -1;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : checkequipement : Arret prévu set to->' . $expectedStoppedTime);
             } else {
-                $expectedStoppedTime    = DateTime::createFromFormat('Gi', $configExpectedStoppedTime)->getTimestamp();
+                $expectedStoppedTime    = \DateTime::createFromFormat('Gi', $configExpectedStoppedTime)->getTimestamp();
                 $expectedStoppedTimeMin = $expectedStoppedTime;
                 $expectedStoppedTimeMax = $expectedStoppedTime + 310;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : checkequipement : Arret prévu entre ->' . date('H:i:s', $expectedStoppedTimeMin) . ' et ' . date('H:i:s', $expectedStoppedTimeMax));
@@ -321,7 +321,7 @@ class ethalsurveillance extends eqLogic
                 $expectedStartedTime = -1;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : checkequipement : Marche prévu set to->' . $expectedStartedTime);
             } else {
-                $expectedStartedTime    = DateTime::createFromFormat('Gi', $configExpectedStartedTime)->getTimestamp();
+                $expectedStartedTime    = \DateTime::createFromFormat('Gi', $configExpectedStartedTime)->getTimestamp();
                 $expectedStartedTimeMin = $expectedStartedTime;
                 $expectedStartedTimeMax = $expectedStartedTime + 310;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : checkequipement : Marche prévu entre ->' . date('H:i:s', $expectedStartedTimeMin) . ' et ' . date('H:i:s', $expectedStartedTimeMax));
