@@ -73,7 +73,7 @@ class ethalsurveillance extends eqLogic
 
             /* verification debut heure */
             if ($configDebutheure != '') {
-                $debutHeure    = DateTime::createFromFormat('Gi', $configDebutheure)->getTimestamp();
+                $debutHeure    = \DateTime::createFromFormat('Gi', $configDebutheure)->getTimestamp();
                 $debutHeureMin = $debutHeure - 120;
                 $debutHeureMax = $debutHeure + 120;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : cron5 : debut heures set to->' . date('H:i:s', $debutHeureMin) . '/' . date('H:i:s', $debutHeure) . '/' . date('H:i:s', $debutHeureMax));
@@ -90,7 +90,7 @@ class ethalsurveillance extends eqLogic
                 $expectedStoppedTimeMax = -1;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : cron5 : Arret prévu set to->' . $expectedStoppedTime);
             } else {
-                $expectedStoppedTime    = DateTime::createFromFormat('Gi', $configExpectedStoppedTime)->getTimestamp();
+                $expectedStoppedTime    = \DateTime::createFromFormat('Gi', $configExpectedStoppedTime)->getTimestamp();
                 $expectedStoppedTimeMin = $expectedStoppedTime;
                 $expectedStoppedTimeMax = $expectedStoppedTime + 310;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : cron5 : Arret prévu entre-> ' . date('H:i:s', $expectedStoppedTimeMin) . ' et ' . date('H:i:s', $expectedStoppedTimeMax));
@@ -102,7 +102,7 @@ class ethalsurveillance extends eqLogic
                 $expectedStartedTimeMax = -1;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : cron5 : Marche prévu set to->' . $expectedStartedTime);
             } else {
-                $expectedStartedTime    = DateTime::createFromFormat('Gi', $configExpectedStartedTime)->getTimestamp();
+                $expectedStartedTime    = \DateTime::createFromFormat('Gi', $configExpectedStartedTime)->getTimestamp();
                 $expectedStartedTimeMin = $expectedStartedTime;
                 $expectedStartedTimeMax = $expectedStartedTime + 310;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : cron5 : Marche prévu entre-> ' . date('H:i:s', $expectedStartedTimeMin) . ' et ' . date('H:i:s', $expectedStartedTimeMax));
@@ -187,18 +187,18 @@ class ethalsurveillance extends eqLogic
     public static function deadCmd()
     {
         /* @var $matches array */
-        $return = [];
+        $result = [];
         foreach (eqLogic::byType('ethalsurveillance') as $ethalsurveillance) {
             /* @var $matches array */
             $matches = [];
             preg_match_all("/#([0-9]*)#/", $ethalsurveillance->getConfiguration('cmdequipement', ''), $matches);
             foreach ($matches[1] as $cmd_id) {
                 if (!cmd::byId(str_replace('#', '', $cmd_id))) {
-                    $return[] = array('detail' => 'Ethal Surveillance ' . $ethalsurveillance->getHumanName(), 'help' => 'Type de commande', 'who' => '#' . $cmd_id . '#');
+                    $result[] = array('detail' => 'Ethal Surveillance ' . $ethalsurveillance->getHumanName(), 'help' => 'Type de commande', 'who' => '#' . $cmd_id . '#');
                 }
             }
         }
-        return $return;
+        return $result;
     }
 
     /* public function preInsert() {
@@ -296,7 +296,7 @@ class ethalsurveillance extends eqLogic
 
             /* verification debut heure */
             if ($configDebutheure != '') {
-                $debutHeure    = DateTime::createFromFormat('Gi', $configDebutheure)->getTimestamp();
+                $debutHeure    = \DateTime::createFromFormat('Gi', $configDebutheure)->getTimestamp();
                 $debutHeureMin = $debutHeure - 120;
                 $debutHeureMax = $debutHeure + 120;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : checkequipement : debut heures set to->' . date('H:i:s', $debutHeureMin) . '/' . date('H:i:s', $debutHeure) . '/' . date('H:i:s', $debutHeureMax));
@@ -311,7 +311,7 @@ class ethalsurveillance extends eqLogic
                 $expectedStoppedTime = -1;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : checkequipement : Arret prévu set to->' . $expectedStoppedTime);
             } else {
-                $expectedStoppedTime    = DateTime::createFromFormat('Gi', $configExpectedStoppedTime)->getTimestamp();
+                $expectedStoppedTime    = \DateTime::createFromFormat('Gi', $configExpectedStoppedTime)->getTimestamp();
                 $expectedStoppedTimeMin = $expectedStoppedTime;
                 $expectedStoppedTimeMax = $expectedStoppedTime + 310;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : checkequipement : Arret prévu entre ->' . date('H:i:s', $expectedStoppedTimeMin) . ' et ' . date('H:i:s', $expectedStoppedTimeMax));
@@ -321,7 +321,7 @@ class ethalsurveillance extends eqLogic
                 $expectedStartedTime = -1;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : checkequipement : Marche prévu set to->' . $expectedStartedTime);
             } else {
-                $expectedStartedTime    = DateTime::createFromFormat('Gi', $configExpectedStartedTime)->getTimestamp();
+                $expectedStartedTime    = \DateTime::createFromFormat('Gi', $configExpectedStartedTime)->getTimestamp();
                 $expectedStartedTimeMin = $expectedStartedTime;
                 $expectedStartedTimeMax = $expectedStartedTime + 310;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : checkequipement : Marche prévu entre ->' . date('H:i:s', $expectedStartedTimeMin) . ' et ' . date('H:i:s', $expectedStartedTimeMax));
@@ -588,37 +588,37 @@ class ethalsurveillance extends eqLogic
 
     private function ethFormatTpsFct($_val)
     {
-        $return = '';
+        $result = '';
         if ((floor($_val / (3600 * 24))) == 0) {
-            $return = gmdate('H:i:s', $_val);
+            $result = gmdate('H:i:s', $_val);
         } else {
-            $return = strval(floor($_val / (3600 * 24))) . 'j ' . gmdate('H:i:s', $_val);
+            $result = strval(floor($_val / (3600 * 24))) . 'j ' . gmdate('H:i:s', $_val);
         }
-        log::add('ethalsurveillance', 'debug', 'Function : ethFormatTpsFct : Temps Fct->' . $return);
-        return $return;
+        log::add('ethalsurveillance', 'debug', 'Function : ethFormatTpsFct : Temps Fct->' . $result);
+        return $result;
     }
 
     private function ethGetValue($_name,$_default = 0)
     {
-        $return = $this->getCmd(null, $_name)->execCmd();
-        if ($return === null || !is_int($return)) {
+        $result = $this->getCmd(null, $_name)->execCmd();
+        if ($result === null || !is_int($result)) {
             $this->checkAndUpdateCmd($_name, $_default);
-            $return = $_default;
-            log::add('ethalsurveillance', 'debug', $this->getName() . ' : ethGetValue : ' . $_name . ' current Type value->' . gettype($return) . ' return init value->' . $return);
+            $result = $_default;
+            log::add('ethalsurveillance', 'debug', $this->getName() . ' : ethGetValue : ' . $_name . ' current Type value->' . gettype($result) . ' return init value->' . $result);
         } else {
-            log::add('ethalsurveillance', 'debug', $this->getName() . ' : ethGetValue : ' . $_name . ' return value->' . $return);
+            log::add('ethalsurveillance', 'debug', $this->getName() . ' : ethGetValue : ' . $_name . ' return value->' . $result);
         }
-        return $return;
+        return $result;
     }
 
     private function ethGetDayValue($_currentTime, $_key, $_default)
     {
         $dayConfig = $this->getConfiguration(date('N', $_currentTime) . $_key, $_default);
-        $return    = $this->getConfiguration($_key, $_default);
+        $result    = $this->getConfiguration($_key, $_default);
         if ($dayConfig != $_default) {
-            $return = $dayConfig;
+            $result = $dayConfig;
         }
-        return $return;
+        return $result;
     }
 
     private static function doAction($_action, $_type, $_sens, $_eq)
@@ -635,7 +635,7 @@ class ethalsurveillance extends eqLogic
             // IF a revoir pas terrible
             if ($action['actionSens'] == $_sens && $action['actionType'] == $_type) {
                 try {
-                    $options = array();
+                    $options = [];
                     if (isset($action['options'])) {
                         $options = $action['options'];
                     }
@@ -731,24 +731,25 @@ class ethalsurveillance extends eqLogic
 
     public function ethCumulTps($_startDate = null, $_endDate = null)
     {
-        $etatCmd = $this->getCmd(null, 'etat');
-        if (!is_object($etatCmd)) {
-            return array();
-        }
-        $return       = array();
+        $result       = [];
         $prevValue    = 0;
         $prevDatetime = 0;
         $day          = null;
+
+        $etatCmd      = $this->getCmd(null, 'etat');
+        if (!is_object($etatCmd)) {
+            return $result;
+        }
         foreach ($etatCmd->getHistory($_startDate, $_endDate) as $history) {
             if (date('Y-m-d', strtotime($history->getDatetime())) != $day && $prevValue == 1 && $day != null) {
                 if (strtotime($day . ' 23:59:59') > $prevDatetime) {
-                    $return[$day][1] += (strtotime($day . ' 23:59:59') - $prevDatetime) / 3600;
+                    $result[$day][1] += (strtotime($day . ' 23:59:59') - $prevDatetime) / 3600;
                 }
                 $prevDatetime = strtotime(date('Y-m-d 00:00:00', strtotime($history->getDatetime())));
             }
             $day = date('Y-m-d', strtotime($history->getDatetime()));
-            if (!isset($return[$day])) {
-                $return[$day] = array(strtotime($day . ' 00:00:00 UTC') * 1000, 0);
+            if (!isset($result[$day])) {
+                $result[$day] = array(strtotime($day . ' 00:00:00 UTC') * 1000, 0);
             }
             if ($history->getValue() == 1 && $prevValue == 0) {
                 $prevDatetime = strtotime($history->getDatetime());
@@ -756,36 +757,37 @@ class ethalsurveillance extends eqLogic
             }
             if ($history->getValue() == 0 && $prevValue == 1) {
                 if ($prevDatetime > 0 && strtotime($history->getDatetime()) > $prevDatetime) {
-                    $return[$day][1] += (strtotime($history->getDatetime()) - $prevDatetime) / 3600;
+                    $result[$day][1] += (strtotime($history->getDatetime()) - $prevDatetime) / 3600;
                 }
                 $prevValue = 0;
             }
         }
 
-        return $return;
+        return $result;
     }
 
     // Not used , work in progress
     public function ethCumulCpt($startDate = null, $endDate = null)
     {
-        $cptCmd = $this->getCmd(null, 'count');
-        if (!is_object($cptCmd)) {
-            return array();
-        }
-        $return       = array();
+        $result       = [];
         $prevValue    = 0;
         $prevDatetime = 0;
         $day          = null;
+
+        $cptCmd       = $this->getCmd(null, 'count');
+        if (!is_object($cptCmd)) {
+            return $result;
+        }
         foreach ($ctpCmd->getHistory($startDate, $endDate) as $history) {
             if (date('Y-m-d', strtotime($history->getDatetime())) != $day && $prevValue == 1 && $day !== null) {
                 if (strtotime($day . ' 23:59:59') > $prevDatetime) {
-                    $return[$day][1] += (strtotime($day . ' 23:59:59') - $prevDatetime) / 3600;
+                    $result[$day][1] += (strtotime($day . ' 23:59:59') - $prevDatetime) / 3600;
                 }
                 $prevDatetime = strtotime(date('Y-m-d 00:00:00', strtotime($history->getDatetime())));
             }
             $day = date('Y-m-d', strtotime($history->getDatetime()));
-            if (!isset($return[$day])) {
-                $return[$day] = array(strtotime($day . ' 00:00:00 UTC') * 1000, 0);
+            if (!isset($result[$day])) {
+                $result[$day] = array(strtotime($day . ' 00:00:00 UTC') * 1000, 0);
             }
             if ($history->getValue() == 1 && $prevValue == 0) {
                 $prevDatetime = strtotime($history->getDatetime());
@@ -793,13 +795,13 @@ class ethalsurveillance extends eqLogic
             }
             if ($history->getValue() == 0 && $prevValue == 1) {
                 if ($prevDatetime > 0 && strtotime($history->getDatetime()) > $prevDatetime) {
-                    $return[$day][1] += (strtotime($history->getDatetime()) - $prevDatetime) / 3600;
+                    $result[$day][1] += (strtotime($history->getDatetime()) - $prevDatetime) / 3600;
                 }
                 $prevValue = 0;
             }
         }
 
-        return $return;
+        return $result;
     }
 
 }
