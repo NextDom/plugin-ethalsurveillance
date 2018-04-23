@@ -33,14 +33,14 @@ class ethalsurveillance extends eqLogic
 
             $cmdEquipement = cmd::byString($configCmdEquipement);
             if (is_object($cmdEquipement)) {
-                if ($cmdEquipement->getSubType() == 'numeric') {
+                if ($cmdEquipement->getSubType() === 'numeric') {
                     $equipementType = 'numeric';
-                } elseif ($cmdEquipement->getSubType() == 'binary') {
+                } elseif ($cmdEquipement->getSubType() === 'binary') {
                     $equipementType = 'binary';
                 }
             }
             $_option = array('equipement_id' => $eq->getId());
-            if ($etat == 1 && $equipementType == 'numeric' && $pGeneral != '1') {
+            if ($etat == 1 && $equipementType === 'numeric' && $pGeneral != '1') {
                 self::checkequipement($_option);
             }
         }
@@ -73,7 +73,7 @@ class ethalsurveillance extends eqLogic
 
             /* verification debut heure */
             if ($configDebutheure != '') {
-                $debutHeure    = \DateTime::createFromFormat('Gi', $configDebutheure)->getTimestamp();
+                $debutHeure    = DateTime::createFromFormat('Gi', $configDebutheure)->getTimestamp();
                 $debutHeureMin = $debutHeure - 120;
                 $debutHeureMax = $debutHeure + 120;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : cron5 : debut heures set to->' . date('H:i:s', $debutHeureMin) . '/' . date('H:i:s', $debutHeure) . '/' . date('H:i:s', $debutHeureMax));
@@ -90,7 +90,7 @@ class ethalsurveillance extends eqLogic
                 $expectedStoppedTimeMax = -1;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : cron5 : Arret prévu set to->' . $expectedStoppedTime);
             } else {
-                $expectedStoppedTime    = \DateTime::createFromFormat('Gi', $configExpectedStoppedTime)->getTimestamp();
+                $expectedStoppedTime    = DateTime::createFromFormat('Gi', $configExpectedStoppedTime)->getTimestamp();
                 $expectedStoppedTimeMin = $expectedStoppedTime;
                 $expectedStoppedTimeMax = $expectedStoppedTime + 310;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : cron5 : Arret prévu entre-> ' . date('H:i:s', $expectedStoppedTimeMin) . ' et ' . date('H:i:s', $expectedStoppedTimeMax));
@@ -102,7 +102,7 @@ class ethalsurveillance extends eqLogic
                 $expectedStartedTimeMax = -1;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : cron5 : Marche prévu set to->' . $expectedStartedTime);
             } else {
-                $expectedStartedTime    = \DateTime::createFromFormat('Gi', $configExpectedStartedTime)->getTimestamp();
+                $expectedStartedTime    = DateTime::createFromFormat('Gi', $configExpectedStartedTime)->getTimestamp();
                 $expectedStartedTimeMin = $expectedStartedTime;
                 $expectedStartedTimeMax = $expectedStartedTime + 310;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : cron5 : Marche prévu entre-> ' . date('H:i:s', $expectedStartedTimeMin) . ' et ' . date('H:i:s', $expectedStartedTimeMax));
@@ -114,7 +114,7 @@ class ethalsurveillance extends eqLogic
             $currentTempsFctTotal = $ethalsurveillance->getConfiguration('previoustpsfct') + $currentTempsFct;
 
 
-            /* mise à jour des commandes de mesure de temps si l'équiepment est actif */
+            /* mise à jour des commandes de mesure de temps si l'équipement est actif */
             if ($etat == 1) {
                 $fmtCurrentTempsFct      = $ethalsurveillance->ethFormatTpsFct($currentTempsFct);
                 $fmtCurrentTempsFctTotal = $ethalsurveillance->ethFormatTpsFct($currentTempsFctTotal);
@@ -128,7 +128,7 @@ class ethalsurveillance extends eqLogic
             /* Alarme code 1 si pas demarré a l'heure prevu + temps mini de fonctionnement et debut heure non vide */
             if ($currentTime >= ($debutHeure + ($configTempsMini * 60)) && $etat == 0 && $configTempsMini != 0) {
                 $ethalsurveillance->ethAlarmeCode(1);
-                if ($alarme == 0) {
+                if ($alarme === 0) {
                     $alarme = 1;
                     $ethalsurveillance->checkAndUpdateCmd('alarme', 1);
                     self::doAction('ethalEqAction', 'alarme', 0, $ethalsurveillance);
@@ -136,7 +136,7 @@ class ethalsurveillance extends eqLogic
                 }
             }
             /* alarme code 4 */
-            if ($currentTempsFct >= ($configTempsMax * 60) && $etat == 1 && $configTempsMax != 0) {
+            if ($currentTempsFct >= ($configTempsMax * 60) && $etat === 1 && $configTempsMax != 0) {
                 $ethalsurveillance->ethAlarmeCode(4);
                 if ($alarme == 0) {
                     $alarme = 1;
@@ -186,8 +186,11 @@ class ethalsurveillance extends eqLogic
 
     public static function deadCmd()
     {
-        $return = array();
+        /* @var $matches array */
+        $return = [];
         foreach (eqLogic::byType('ethalsurveillance') as $ethalsurveillance) {
+            /* @var $matches array */
+            $matches = [];
             preg_match_all("/#([0-9]*)#/", $ethalsurveillance->getConfiguration('cmdequipement', ''), $matches);
             foreach ($matches[1] as $cmd_id) {
                 if (!cmd::byId(str_replace('#', '', $cmd_id))) {
@@ -225,7 +228,7 @@ class ethalsurveillance extends eqLogic
 
     public function preRemove()
     {
-        $listener = listener::byClassAndFunction('ethalsurveillance', 'checkequipement', array('equipement_id' => $this->getId()));
+        $listener = listener::byClassAndFunction('ethalsurveillance', 'checkequipement', ['equipement_id' => $this->getId()]);
         if (is_object($listener)) {
             log::add('ethalsurveillance', 'debug', 'Suppression du listener->checkequipement');
             $listener->remove();
@@ -253,11 +256,8 @@ class ethalsurveillance extends eqLogic
 
             log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : checkequipement : equipement trouvé et actif');
 
-            $etat                   = 0;
-            $alarme                 = 0;
             $equipementType         = '';
             $currentTime            = time();
-            $memoCurrentTimeStatus  = 0;
             $minPuissanceDelaiReach = 0;
 
             $expectedStoppedTime    = -1;
@@ -266,6 +266,9 @@ class ethalsurveillance extends eqLogic
             $expectedStartedTimeMax = -1;
             $expectedStoppedTimeMin = -1;
             $expectedStoppedTimeMax = -1;
+
+            $etat   = $ethalsurveillance->ethGetValue('etat');
+            $alarme = $ethalsurveillance->ethGetValue('alarme');
 
             $configCmdEquipement = $ethalsurveillance->getConfiguration('cmdequipement', '');
             $puissance           = $ethalsurveillance->getConfiguration('puissance', -100000);
@@ -293,7 +296,7 @@ class ethalsurveillance extends eqLogic
 
             /* verification debut heure */
             if ($configDebutheure != '') {
-                $debutHeure    = \DateTime::createFromFormat('Gi', $configDebutheure)->getTimestamp();
+                $debutHeure    = DateTime::createFromFormat('Gi', $configDebutheure)->getTimestamp();
                 $debutHeureMin = $debutHeure - 120;
                 $debutHeureMax = $debutHeure + 120;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : checkequipement : debut heures set to->' . date('H:i:s', $debutHeureMin) . '/' . date('H:i:s', $debutHeure) . '/' . date('H:i:s', $debutHeureMax));
@@ -308,7 +311,7 @@ class ethalsurveillance extends eqLogic
                 $expectedStoppedTime = -1;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : checkequipement : Arret prévu set to->' . $expectedStoppedTime);
             } else {
-                $expectedStoppedTime    = \DateTime::createFromFormat('Gi', $configExpectedStoppedTime)->getTimestamp();
+                $expectedStoppedTime    = DateTime::createFromFormat('Gi', $configExpectedStoppedTime)->getTimestamp();
                 $expectedStoppedTimeMin = $expectedStoppedTime;
                 $expectedStoppedTimeMax = $expectedStoppedTime + 310;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : checkequipement : Arret prévu entre ->' . date('H:i:s', $expectedStoppedTimeMin) . ' et ' . date('H:i:s', $expectedStoppedTimeMax));
@@ -318,7 +321,7 @@ class ethalsurveillance extends eqLogic
                 $expectedStartedTime = -1;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : checkequipement : Marche prévu set to->' . $expectedStartedTime);
             } else {
-                $expectedStartedTime    = \DateTime::createFromFormat('Gi', $configExpectedStartedTime)->getTimestamp();
+                $expectedStartedTime    = DateTime::createFromFormat('Gi', $configExpectedStartedTime)->getTimestamp();
                 $expectedStartedTimeMin = $expectedStartedTime;
                 $expectedStartedTimeMax = $expectedStartedTime + 310;
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : checkequipement : Marche prévu entre ->' . date('H:i:s', $expectedStartedTimeMin) . ' et ' . date('H:i:s', $expectedStartedTimeMax));
@@ -327,10 +330,10 @@ class ethalsurveillance extends eqLogic
             /* Verification de la commande de mesure de l'equipement */
             $cmdEquipement = cmd::byString($configCmdEquipement);
             if (is_object($cmdEquipement)) {
-                if ($cmdEquipement->getSubType() == 'numeric') {
+                if ($cmdEquipement->getSubType() === 'numeric') {
                     $equipementType = 'numeric';
                     log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : checkequipement : Numeric : Power measurement name->' . $cmdEquipement->getHumanName() . ' Power measurement value->' . $cmdEquipement->execCmd());
-                } elseif ($cmdEquipement->getSubType() == 'binary') {
+                } elseif ($cmdEquipement->getSubType() === 'binary') {
                     $equipementType = 'binary';
                     log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : checkequipement : Binary : Equipement Cmd name->' . $cmdEquipement->getHumanName() . ' Cmd equipement state->' . $cmdEquipement->execCmd());
                 } else {
@@ -340,13 +343,10 @@ class ethalsurveillance extends eqLogic
                 log::add('ethalsurveillance', 'debug', $ethalsurveillance->getName() . ' : checkequipement : Equipment cmd not found');
             }
 
-            $etat   = $ethalsurveillance->ethGetValue('etat');
-            $alarme = $ethalsurveillance->ethGetValue('alarme');
-
             $cmdValue = $cmdEquipement->execCmd();
             $compteur = $ethalsurveillance->getCmd(null, 'count')->execCmd();
 
-            if ($pGeneral == '1' and $equipementType == 'numeric') {
+            if ($pGeneral == '1' && $equipementType == 'numeric') {
                 $cmdValue          = $cmdValue - $puissance;
                 $minPuissance      = 0;
                 $maxPuissance      = 0;
@@ -586,48 +586,46 @@ class ethalsurveillance extends eqLogic
         }
     }
 
-    private function ethFormatTpsFct($val)
+    private function ethFormatTpsFct($_val)
     {
-
         $return = '';
-        if ((floor($val / (3600 * 24))) == 0) {
-            $return = gmdate('H:i:s', $val);
+        if ((floor($_val / (3600 * 24))) == 0) {
+            $return = gmdate('H:i:s', $_val);
         } else {
-            $return = strval(floor($val / (3600 * 24))) . 'j ' . gmdate('H:i:s', $val);
+            $return = strval(floor($_val / (3600 * 24))) . 'j ' . gmdate('H:i:s', $_val);
         }
         log::add('ethalsurveillance', 'debug', 'Function : ethFormatTpsFct : Temps Fct->' . $return);
         return $return;
     }
 
-    private function ethGetValue($name)
+    private function ethGetValue($_name,$_default = 0)
     {
-        $value = $this->getCmd(null, $name)->execCmd();
-        if ($value === null || !is_int($value)) {
-            $this->checkAndUpdateCmd($name, 0);
-            $value = 0;
-            log::add('ethalsurveillance', 'debug', $this->getName() . ' : ethGetValue : ' . $name . ' current Type value->' . gettype($value) . ' return init value->' . $value);
+        $return = $this->getCmd(null, $_name)->execCmd();
+        if ($return === null || !is_int($return)) {
+            $this->checkAndUpdateCmd($_name, $_default);
+            $return = $_default;
+            log::add('ethalsurveillance', 'debug', $this->getName() . ' : ethGetValue : ' . $_name . ' current Type value->' . gettype($return) . ' return init value->' . $return);
         } else {
-            log::add('ethalsurveillance', 'debug', $this->getName() . ' : ethGetValue : ' . $name . ' return value->' . $value);
+            log::add('ethalsurveillance', 'debug', $this->getName() . ' : ethGetValue : ' . $_name . ' return value->' . $return);
         }
-        return $value;
+        return $return;
     }
 
-    private function ethGetDayValue($currentTime, $key, $default)
+    private function ethGetDayValue($_currentTime, $_key, $_default)
     {
-        $dayConfig = $this->getConfiguration(date('N', $currentTime) . $key, $default);
-        $return    = $this->getConfiguration($key, $default);
-        if ($dayConfig != $default) {
+        $dayConfig = $this->getConfiguration(date('N', $_currentTime) . $_key, $_default);
+        $return    = $this->getConfiguration($_key, $_default);
+        if ($dayConfig != $_default) {
             $return = $dayConfig;
         }
         return $return;
     }
 
-    private static function doAction($_action, $_type, $_sens, $eq)
+    private static function doAction($_action, $_type, $_sens, $_eq)
     {
 
-        foreach ($eq->getConfiguration($_action) as $action) {
+        foreach ($_eq->getConfiguration($_action) as $action) {
             $cmd = cmd::byId(str_replace('#', '', $action['cmd']));
-            log::add('ethalsurveillance', 'debug', 'Liste Action->' . $action['cmd'] . ' type->' . $action['actionType'] . '/' . $_type . ' Sens->' . $action['actionSens'] . '/' . $_sens);
             /* A revoir pas tres clair
               if (is_object($cmd) && $this->getId() == $cmd->getEqLogic_id()) {
               log::add('ethalsurveillance', 'debug', 'Action-> Oups Cmd probleme');
@@ -641,16 +639,19 @@ class ethalsurveillance extends eqLogic
                     if (isset($action['options'])) {
                         $options = $action['options'];
                     }
-                    log::add('ethalsurveillance', 'debug', 'Done Action->' . $action['cmd'] . ' type->' . $action['actionType'] . '/' . $_type . ' Sens->' . $action['actionSens'] . '/' . $_sens);
-                    scenarioExpression::createAndExec('action', $action['cmd'], $options);
-                } catch (\Exception $e) {
+                    log::add('ethalsurveillance', 'debug', 'Prepare for Action->' . $action['cmd'] . ' type->' . $action['actionType'] . '/' . $_type . ' Sens->' . $action['actionSens'] . '/' . $_sens);
+                    if ($options['enable'] == '1') {
+                        log::add('ethalsurveillance', 'debug', 'Done Action->' . $action['cmd'] . ' type->' . $action['actionType'] . '/' . $_type . ' Sens->' . $action['actionSens'] . '/' . $_sens);
+                        scenarioExpression::createAndExec('action', $action['cmd'], $options);
+                    }
+                } catch (Exception $e) {
                     log::add('ethalsurveillance', 'error', __('Erreur lors de l\'éxecution de ', __FILE__) . $action['cmd'] . __('. Détails : ', __FILE__) . $e->getMessage());
                 }
             }
         }
     }
 
-    private function ethCreateCmd($type)
+    private function ethCreateCmd($_name)
     {
         /* commande alarme code fonctionnement
           debut heure : 1
@@ -660,30 +661,37 @@ class ethalsurveillance extends eqLogic
           Marche prevu : 16
           Compteur haut : 32
          */
-        if (!is_file(dirname(__FILE__) . '/../config/devices/' . $type . '.json')) {
+        /* verify if the file existe */
+        if (!is_file(dirname(__FILE__) . '/../config/devices/' . $_name . '.json')) {
             log::add('ethalsurveillance', 'error', 'fichier commande pas trouvé');
             return;
         }
-        $content = file_get_contents(dirname(__FILE__) . '/../config/devices/' . $type . '.json');
+        /* verify if the content is json type */
+        $content = file_get_contents(dirname(__FILE__) . '/../config/devices/' . $_name . '.json');
         if (!is_json($content)) {
             log::add('ethalsurveillance', 'error', 'fichier commande impossible à lire');
             return;
         }
+        /* verify if the content is well formated */
         $device = json_decode($content, true);
         if (!is_array($device) || !isset($device['commands'])) {
             log::add('ethalsurveillance', 'error', 'format fichier commande json mauvais');
             return;
         }
         log::add('ethalsurveillance', 'debug', 'fichier commande ok');
-        /* $this->import($device); */
-        foreach ($device['commands'] as $command) {
-            $cmd = null;
-            foreach ($this->getCmd() as $liste_cmd) {
-                if ((isset($command['logicalId']) && $liste_cmd->getLogicalId() == $command['logicalId'])) {
-                    $cmd = $liste_cmd;
+        /* create command */
+        $commands = $device['commands'];
+        foreach ($commands as $command) {
+            $cmd            = null;
+            $existingCmds   = $this->getCmd();
+            /* locate existing command */
+            foreach ($existingCmds as $existingCmd) {
+                if ((isset($command['logicalId']) && $existingCmd->getLogicalId() == $command['logicalId'])) {
+                    $cmd = $existingCmd;
                     break;
                 }
             }
+            // if not exist create the command
             if ($cmd === null || !is_object($cmd)) {
                 $cmd = new ethalsurveillanceCmd();
                 $cmd->setEqLogic_id($this->getId());
@@ -805,7 +813,7 @@ class ethalsurveillanceCmd extends cmd
       }
      */
 
-    public function execute($_options = array())
+    public function execute($_options = [])
     {
         $ethalsurveillance = $this->getEqLogic();
 
