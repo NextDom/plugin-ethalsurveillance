@@ -1,12 +1,15 @@
 * Version 3( Nouvelle branche, En cours de dev)  
   * refonte du plugin  
 
-* Version 2.5(En cours de dev)  
+* Version 2.6(En cours de dev)  
   * Disponibilité du graphique du temps d'activité sur un design ???  
   * Actions sur **Code Alarme**
   * ???
 
-* Version 2.4 (Stable)
+* Version 2.5(Stable)  
+  * Amelioration du code
+
+* Version 2.4 (2018-03-25 05:00:01)
   * Possibilité de modifier le nom des commandes
   * Ajout d'une nouvelle commande **RAZ Tout**
   * Mise à jour de la documentation
