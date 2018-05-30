@@ -18,7 +18,7 @@ plugins:
 - jekyll-seo-tag
 title: "Documentation NextDom"
 description: "Ceci est la documentation du plugin de la team NextDom"
-author: "Jeedom-Plugins-Extra"
+author: "NextDom"
 image: https://avatars1.githubusercontent.com/u/36200380?s=200&v=4
 social:
   name: NextDom
