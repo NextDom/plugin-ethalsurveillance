@@ -11,10 +11,10 @@
 	"hasDependency" : false,
 	"hasOwnDeamon" : false,
 	"maxDependancyInstallTime" : 0,
-	"changelog" : "https://Jeedom-Plugins-Extra.github.io/plugin-ethalsurveillance/#language#/changelog",
-	"documentation" : "https://Jeedom-Plugins-Extra.github.io/plugin-ethalsurveillance/#language#/",
+	"changelog" : "https://nextdom.github.io/plugin-ethalsurveillance/#language#/changelog",
+	"documentation" : "https://nextdom.github.io/plugin-ethalsurveillance/#language#/",
 	"link" : {
-		"forum":"https://www.jeedom.com/forum/viewtopic.php?f=144&t=24637"
+		"forum":"https://www.nextdom.org/community/plugin-surveillance-equipement/"
 	},
 	"language" : ["fr_FR","en_US","de_DE","sp_SP","ru_RU","id_ID","it_IT"],
 	"compatibility" : ["Jeedomboard","Smart","RPI/RPI2","DIY"]
