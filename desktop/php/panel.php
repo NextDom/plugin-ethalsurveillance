@@ -9,14 +9,14 @@ $date = array(
 );
 
 if (init('object_id') == '') {
-    $object = object::byId($_SESSION['user']->getOptions('defaultDashboardObject'));
+    $jeeObject = jeeObject::byId($_SESSION['user']->getOptions('defaultDashboardObject'));
 } else {
-    $object = object::byId(init('object_id'));
+    $jeeObject = jeeObject::byId(init('object_id'));
 }
-if (!is_object($object)) {
-    $object = object::rootObject();
+if (!is_object($jeeObject)) {
+    $jeeObject = jeeObject::rootObject();
 }
-if (!is_object($object)) {
+if (!is_object($jeeObject)) {
     throw new Exception('{{Aucun objet racine trouvé. Pour en créer un, allez dans Générale -> Objet.<br/> Si vous ne savez pas quoi faire ou que c\'est la premiere fois que vous utilisez Jeedom n\'hésitez pas a consulter cette <a href="http://jeedom.fr/premier_pas.php" target="_blank">page</a>}}');
 }
 
@@ -31,10 +31,10 @@ sendVarToJs('eq_id', init('eq_id'));
                 <li class="nav-header"><i class="fa fa-bar-chart"></i> {{Surv. Equipement}}</li>
                 <li class="filter" style="margin-bottom: 5px;"><input class="filter form-control input-sm" placeholder="{{Rechercher}}" style="width: 100%"/></li>
                 <?php
-                $allObject = object::buildTree();
-                foreach ($allObject as $object) {
-                    if ($object->getIsVisible() == 1 && count($object->getEqLogic(true, true, 'ethalsurveillance')) > 0) {
-                        foreach ($object->getEqLogic() as $eqLogic) {
+                $allObject = jeeObject::buildTree();
+                foreach ($allObject as $jeeObject) {
+                    if ($jeeObject->getIsVisible() == 1 && count($jeeObject->getEqLogic(true, true, 'ethalsurveillance')) > 0) {
+                        foreach ($jeeObject>getEqLogic() as $eqLogic) {
                             $margin = 5 ;
                             if ($eqLogic->getEqType_name() == 'ethalsurveillance' && $eqLogic->getIsEnable()) {
                                 if ($eqLogic->getId() == init('eq_id')) {
